@@ -1,0 +1,5882 @@
+[
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 181,
+   "city": 226,
+   "personal": 24,
+   "simple_canton": 190,
+   "simple_city": 190,
+   "total": 431
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 190.0,
+   "canton": 180.5,
+   "municipality": 226.1,
+   "personal": 24,
+   "total_cantonal_local": 430.6
+  },
+  "mine_no_round": {
+   "simple": 190.0,
+   "canton": 180.5,
+   "municipality": 226.1,
+   "personal": 24,
+   "total_cantonal_local": 430.6
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 783,
+   "city": 981,
+   "personal": 24,
+   "simple_canton": 824,
+   "simple_city": 824,
+   "total": 1902
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 824.0,
+   "canton": 782.8,
+   "municipality": 980.56,
+   "personal": 24,
+   "total_cantonal_local": 1787.36
+  },
+  "mine_no_round": {
+   "simple": 826.5,
+   "canton": 785.17,
+   "municipality": 983.53,
+   "personal": 24,
+   "total_cantonal_local": 1792.71
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 2597,
+   "city": 3253,
+   "personal": 24,
+   "simple_canton": 2734,
+   "simple_city": 2734,
+   "total": 6545
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 2734.0,
+   "canton": 2597.3,
+   "municipality": 3253.46,
+   "personal": 24,
+   "total_cantonal_local": 5874.76
+  },
+  "mine_no_round": {
+   "simple": 2734.0,
+   "canton": 2597.3,
+   "municipality": 3253.46,
+   "personal": 24,
+   "total_cantonal_local": 5874.76
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 2597,
+   "city": 3253,
+   "personal": 24,
+   "simple_canton": 2734,
+   "simple_city": 2734,
+   "total": 6545
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 2734.0,
+   "canton": 2597.3,
+   "municipality": 3253.46,
+   "personal": 24,
+   "total_cantonal_local": 5874.76
+  },
+  "mine_no_round": {
+   "simple": 2741.92,
+   "canton": 2604.82,
+   "municipality": 3262.88,
+   "personal": 24,
+   "total_cantonal_local": 5891.71
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 4622,
+   "city": 5789,
+   "personal": 24,
+   "simple_canton": 4865,
+   "simple_city": 4865,
+   "total": 12162
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 4865.0,
+   "canton": 4621.75,
+   "municipality": 5789.35,
+   "personal": 24,
+   "total_cantonal_local": 10435.1
+  },
+  "mine_no_round": {
+   "simple": 4869.5,
+   "canton": 4626.02,
+   "municipality": 5794.7,
+   "personal": 24,
+   "total_cantonal_local": 10444.73
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 5862,
+   "city": 7342,
+   "personal": 24,
+   "simple_canton": 6170,
+   "simple_city": 6170,
+   "total": 15912
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 6170.0,
+   "canton": 5861.5,
+   "municipality": 7342.3,
+   "personal": 24,
+   "total_cantonal_local": 13227.8
+  },
+  "mine_no_round": {
+   "simple": 6170.0,
+   "canton": 5861.5,
+   "municipality": 7342.3,
+   "personal": 24,
+   "total_cantonal_local": 13227.8
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 5862,
+   "city": 7342,
+   "personal": 24,
+   "simple_canton": 6170,
+   "simple_city": 6170,
+   "total": 15912
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 6170.0,
+   "canton": 5861.5,
+   "municipality": 7342.3,
+   "personal": 24,
+   "total_cantonal_local": 13227.8
+  },
+  "mine_no_round": {
+   "simple": 6178.91,
+   "canton": 5869.96,
+   "municipality": 7352.9,
+   "personal": 24,
+   "total_cantonal_local": 13246.87
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 10569,
+   "city": 13239,
+   "personal": 24,
+   "simple_canton": 11125,
+   "simple_city": 11125,
+   "total": 30908
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 11125.0,
+   "canton": 10568.75,
+   "municipality": 13238.75,
+   "personal": 24,
+   "total_cantonal_local": 23831.5
+  },
+  "mine_no_round": {
+   "simple": 11125.0,
+   "canton": 10568.75,
+   "municipality": 13238.75,
+   "personal": 24,
+   "total_cantonal_local": 23831.5
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 15807,
+   "city": 19800,
+   "personal": 24,
+   "simple_canton": 16639,
+   "simple_city": 16639,
+   "total": 48521
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 16639.0,
+   "canton": 15807.05,
+   "municipality": 19800.41,
+   "personal": 24,
+   "total_cantonal_local": 35631.46
+  },
+  "mine_no_round": {
+   "simple": 16650.88,
+   "canton": 15818.34,
+   "municipality": 19814.55,
+   "personal": 24,
+   "total_cantonal_local": 35656.88
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 22658,
+   "city": 28383,
+   "personal": 24,
+   "simple_canton": 23851,
+   "simple_city": 23851,
+   "total": 71888
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 23851.0,
+   "canton": 22658.45,
+   "municipality": 28382.69,
+   "personal": 24,
+   "total_cantonal_local": 51065.14
+  },
+  "mine_no_round": {
+   "simple": 23851.0,
+   "canton": 22658.45,
+   "municipality": 28382.69,
+   "personal": 24,
+   "total_cantonal_local": 51065.14
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 27535,
+   "city": 34491,
+   "personal": 24,
+   "simple_canton": 28984,
+   "simple_city": 28984,
+   "total": 88153
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 28984.0,
+   "canton": 27534.8,
+   "municipality": 34490.96,
+   "personal": 24,
+   "total_cantonal_local": 62049.76
+  },
+  "mine_no_round": {
+   "simple": 28984.0,
+   "canton": 27534.8,
+   "municipality": 34490.96,
+   "personal": 24,
+   "total_cantonal_local": 62049.76
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 46060,
+   "city": 57696,
+   "personal": 24,
+   "simple_canton": 48484,
+   "simple_city": 48484,
+   "total": 149683
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 48484.0,
+   "canton": 46059.8,
+   "municipality": 57695.96,
+   "personal": 24,
+   "total_cantonal_local": 103779.76
+  },
+  "mine_no_round": {
+   "simple": 48484.0,
+   "canton": 46059.8,
+   "municipality": 57695.96,
+   "personal": 24,
+   "total_cantonal_local": 103779.76
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 89285,
+   "city": 111841,
+   "personal": 24,
+   "simple_canton": 93984,
+   "simple_city": 93984,
+   "total": 293150
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 93984.0,
+   "canton": 89284.8,
+   "municipality": 111840.96,
+   "personal": 24,
+   "total_cantonal_local": 201149.76
+  },
+  "mine_no_round": {
+   "simple": 93984.0,
+   "canton": 89284.8,
+   "municipality": 111840.96,
+   "personal": 24,
+   "total_cantonal_local": 201149.76
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 113985,
+   "city": 142781,
+   "personal": 24,
+   "simple_canton": 119984,
+   "simple_city": 119984,
+   "total": 371790
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 119984.0,
+   "canton": 113984.8,
+   "municipality": 142780.96,
+   "personal": 24,
+   "total_cantonal_local": 256789.76
+  },
+  "mine_no_round": {
+   "simple": 119984.0,
+   "canton": 113984.8,
+   "municipality": 142780.96,
+   "personal": 24,
+   "total_cantonal_local": 256789.76
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 17,
+   "city": 21,
+   "personal": 48,
+   "simple_canton": 18,
+   "simple_city": 18,
+   "total": 86
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 18.0,
+   "canton": 17.1,
+   "municipality": 21.42,
+   "personal": 48,
+   "total_cantonal_local": 86.52
+  },
+  "mine_no_round": {
+   "simple": 18.0,
+   "canton": 17.1,
+   "municipality": 21.42,
+   "personal": 48,
+   "total_cantonal_local": 86.52
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 406,
+   "city": 508,
+   "personal": 48,
+   "simple_canton": 427,
+   "simple_city": 427,
+   "total": 962
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 427.0,
+   "canton": 405.65,
+   "municipality": 508.13,
+   "personal": 48,
+   "total_cantonal_local": 961.78
+  },
+  "mine_no_round": {
+   "simple": 429.0,
+   "canton": 407.55,
+   "municipality": 510.51,
+   "personal": 48,
+   "total_cantonal_local": 966.06
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 1850,
+   "city": 2317,
+   "personal": 48,
+   "simple_canton": 1947,
+   "simple_city": 1947,
+   "total": 4584
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1947.0,
+   "canton": 1849.65,
+   "municipality": 2316.93,
+   "personal": 48,
+   "total_cantonal_local": 4214.58
+  },
+  "mine_no_round": {
+   "simple": 1947.0,
+   "canton": 1849.65,
+   "municipality": 2316.93,
+   "personal": 48,
+   "total_cantonal_local": 4214.58
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 1850,
+   "city": 2317,
+   "personal": 48,
+   "simple_canton": 1947,
+   "simple_city": 1947,
+   "total": 4584
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1947.0,
+   "canton": 1849.65,
+   "municipality": 2316.93,
+   "personal": 48,
+   "total_cantonal_local": 4214.58
+  },
+  "mine_no_round": {
+   "simple": 1952.94,
+   "canton": 1855.29,
+   "municipality": 2324.0,
+   "personal": 48,
+   "total_cantonal_local": 4227.29
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 3506,
+   "city": 4392,
+   "personal": 48,
+   "simple_canton": 3691,
+   "simple_city": 3691,
+   "total": 9131
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 3691.0,
+   "canton": 3506.45,
+   "municipality": 4392.29,
+   "personal": 48,
+   "total_cantonal_local": 7946.74
+  },
+  "mine_no_round": {
+   "simple": 3694.5,
+   "canton": 3509.78,
+   "municipality": 4396.45,
+   "personal": 48,
+   "total_cantonal_local": 7954.23
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 4506,
+   "city": 5644,
+   "personal": 48,
+   "simple_canton": 4743,
+   "simple_city": 4743,
+   "total": 12014
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 4743.0,
+   "canton": 4505.85,
+   "municipality": 5644.17,
+   "personal": 48,
+   "total_cantonal_local": 10198.02
+  },
+  "mine_no_round": {
+   "simple": 4743.0,
+   "canton": 4505.85,
+   "municipality": 5644.17,
+   "personal": 48,
+   "total_cantonal_local": 10198.02
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 4506,
+   "city": 5644,
+   "personal": 48,
+   "simple_canton": 4743,
+   "simple_city": 4743,
+   "total": 12014
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 4743.0,
+   "canton": 4505.85,
+   "municipality": 5644.17,
+   "personal": 48,
+   "total_cantonal_local": 10198.02
+  },
+  "mine_no_round": {
+   "simple": 4750.92,
+   "canton": 4513.37,
+   "municipality": 5653.59,
+   "personal": 48,
+   "total_cantonal_local": 10214.97
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 8508,
+   "city": 10658,
+   "personal": 48,
+   "simple_canton": 8956,
+   "simple_city": 8956,
+   "total": 24622
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 8956.0,
+   "canton": 8508.2,
+   "municipality": 10657.64,
+   "personal": 48,
+   "total_cantonal_local": 19213.84
+  },
+  "mine_no_round": {
+   "simple": 8956.0,
+   "canton": 8508.2,
+   "municipality": 10657.64,
+   "personal": 48,
+   "total_cantonal_local": 19213.84
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 12990,
+   "city": 16272,
+   "personal": 48,
+   "simple_canton": 13674,
+   "simple_city": 13674,
+   "total": 41177
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 13674.0,
+   "canton": 12990.3,
+   "municipality": 16272.06,
+   "personal": 48,
+   "total_cantonal_local": 29310.36
+  },
+  "mine_no_round": {
+   "simple": 13683.9,
+   "canton": 12999.7,
+   "municipality": 16283.84,
+   "personal": 48,
+   "total_cantonal_local": 29331.55
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 18936,
+   "city": 23720,
+   "personal": 48,
+   "simple_canton": 19933,
+   "simple_city": 19933,
+   "total": 62384
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 19933.0,
+   "canton": 18936.35,
+   "municipality": 23720.27,
+   "personal": 48,
+   "total_cantonal_local": 42704.62
+  },
+  "mine_no_round": {
+   "simple": 19933.0,
+   "canton": 18936.35,
+   "municipality": 23720.27,
+   "personal": 48,
+   "total_cantonal_local": 42704.62
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 23135,
+   "city": 28980,
+   "personal": 48,
+   "simple_canton": 24353,
+   "simple_city": 24353,
+   "total": 77043
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 24353.0,
+   "canton": 23135.35,
+   "municipality": 28980.07,
+   "personal": 48,
+   "total_cantonal_local": 52163.42
+  },
+  "mine_no_round": {
+   "simple": 24353.0,
+   "canton": 23135.35,
+   "municipality": 28980.07,
+   "personal": 48,
+   "total_cantonal_local": 52163.42
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 40990,
+   "city": 51345,
+   "personal": 48,
+   "simple_canton": 43147,
+   "simple_city": 43147,
+   "total": 136763
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 43147.0,
+   "canton": 40989.65,
+   "municipality": 51344.93,
+   "personal": 48,
+   "total_cantonal_local": 92382.58
+  },
+  "mine_no_round": {
+   "simple": 43147.0,
+   "canton": 40989.65,
+   "municipality": 51344.93,
+   "personal": 48,
+   "total_cantonal_local": 92382.58
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 84215,
+   "city": 105490,
+   "personal": 48,
+   "simple_canton": 88647,
+   "simple_city": 88647,
+   "total": 279633
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 88647.0,
+   "canton": 84214.65,
+   "municipality": 105489.93,
+   "personal": 48,
+   "total_cantonal_local": 189752.58
+  },
+  "mine_no_round": {
+   "simple": 88647.0,
+   "canton": 84214.65,
+   "municipality": 105489.93,
+   "personal": 48,
+   "total_cantonal_local": 189752.58
+  }
+ },
+ {
+  "canton": "ZH",
+  "municipality": "Zürich",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 108915,
+   "city": 136430,
+   "personal": 48,
+   "simple_canton": 114647,
+   "simple_city": 114647,
+   "total": 360393
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 114647.0,
+   "canton": 108914.65,
+   "municipality": 136429.93,
+   "personal": 48,
+   "total_cantonal_local": 245392.58
+  },
+  "mine_no_round": {
+   "simple": 114647.0,
+   "canton": 108914.65,
+   "municipality": 136429.93,
+   "personal": 48,
+   "total_cantonal_local": 245392.58
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 256,
+   "city": 407,
+   "personal": 0,
+   "simple_canton": 233,
+   "simple_city": 233,
+   "total": 663
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 81.46,
+   "municipality": 325.85,
+   "total_cantonal_local": 663.34
+  },
+  "mine_no_round": {
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 81.46,
+   "municipality": 325.85,
+   "total_cantonal_local": 663.34
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 729,
+   "city": 1159,
+   "personal": 0,
+   "simple_canton": 663,
+   "simple_city": 663,
+   "total": 2002
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 662.5,
+   "simple_canton": 662.5,
+   "canton": 728.75,
+   "district": 231.88,
+   "municipality": 927.5,
+   "total_cantonal_local": 1888.12
+  },
+  "mine_no_round": {
+   "simple": 664.0,
+   "simple_canton": 664.0,
+   "canton": 730.4,
+   "district": 232.4,
+   "municipality": 929.6,
+   "total_cantonal_local": 1892.4
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 2969,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 5506
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 593.88,
+   "municipality": 2375.52,
+   "total_cantonal_local": 4835.88
+  },
+  "mine_no_round": {
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 593.88,
+   "municipality": 2375.52,
+   "total_cantonal_local": 4835.88
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 2969,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 5506
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 593.88,
+   "municipality": 2375.52,
+   "total_cantonal_local": 4835.88
+  },
+  "mine_no_round": {
+   "simple": 1700.41,
+   "simple_canton": 1700.41,
+   "canton": 1870.45,
+   "district": 595.14,
+   "municipality": 2380.58,
+   "total_cantonal_local": 4846.18
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 2956,
+   "city": 4703,
+   "personal": 0,
+   "simple_canton": 2687,
+   "simple_city": 2687,
+   "total": 9386
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 2687.3,
+   "simple_canton": 2687.3,
+   "canton": 2956.03,
+   "district": 940.55,
+   "municipality": 3762.22,
+   "total_cantonal_local": 7658.81
+  },
+  "mine_no_round": {
+   "simple": 2689.25,
+   "simple_canton": 2689.25,
+   "canton": 2958.18,
+   "district": 941.24,
+   "municipality": 3764.95,
+   "total_cantonal_local": 7664.36
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 5692,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 11954
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 1138.48,
+   "municipality": 4553.92,
+   "total_cantonal_local": 9270.48
+  },
+  "mine_no_round": {
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 1138.48,
+   "municipality": 4553.92,
+   "total_cantonal_local": 9270.48
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 5692,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 11954
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 1138.48,
+   "municipality": 4553.92,
+   "total_cantonal_local": 9270.48
+  },
+  "mine_no_round": {
+   "simple": 3256.66,
+   "simple_canton": 3256.66,
+   "canton": 3582.33,
+   "district": 1139.83,
+   "municipality": 4559.33,
+   "total_cantonal_local": 9281.48
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 5723,
+   "city": 9105,
+   "personal": 0,
+   "simple_canton": 5203,
+   "simple_city": 5203,
+   "total": 21904
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 1820.98,
+   "municipality": 7283.92,
+   "total_cantonal_local": 14827.98
+  },
+  "mine_no_round": {
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 1820.98,
+   "municipality": 7283.92,
+   "total_cantonal_local": 14827.98
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 7864,
+   "city": 12511,
+   "personal": 0,
+   "simple_canton": 7149,
+   "simple_city": 7149,
+   "total": 33265
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 7148.9,
+   "simple_canton": 7148.9,
+   "canton": 7863.79,
+   "district": 2502.11,
+   "municipality": 10008.46,
+   "total_cantonal_local": 20374.36
+  },
+  "mine_no_round": {
+   "simple": 7152.76,
+   "simple_canton": 7152.76,
+   "canton": 7868.04,
+   "district": 2503.47,
+   "municipality": 10013.87,
+   "total_cantonal_local": 20385.37
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 10483,
+   "city": 16607,
+   "personal": 0,
+   "simple_canton": 9530,
+   "simple_city": 9490,
+   "total": 47913
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 3321.5,
+   "municipality": 13286.0,
+   "total_cantonal_local": 27090.5
+  },
+  "mine_no_round": {
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 3321.5,
+   "municipality": 13286.0,
+   "total_cantonal_local": 27090.5
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 13563,
+   "city": 19162,
+   "personal": 0,
+   "simple_canton": 12330,
+   "simple_city": 10950,
+   "total": 58828
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 3832.5,
+   "municipality": 15330.0,
+   "total_cantonal_local": 32725.5
+  },
+  "mine_no_round": {
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 3832.5,
+   "municipality": 15330.0,
+   "total_cantonal_local": 32725.5
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 24750,
+   "city": 28743,
+   "personal": 0,
+   "simple_canton": 22500,
+   "simple_city": 16425,
+   "total": 99396
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 5748.75,
+   "municipality": 22995.0,
+   "total_cantonal_local": 53493.75
+  },
+  "mine_no_round": {
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 5748.75,
+   "municipality": 22995.0,
+   "total_cantonal_local": 53493.75
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 44000,
+   "city": 51100,
+   "personal": 0,
+   "simple_canton": 40000,
+   "simple_city": 29200,
+   "total": 187100
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 10220.0,
+   "municipality": 40880.0,
+   "total_cantonal_local": 95100.0
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 10220.0,
+   "municipality": 40880.0,
+   "total_cantonal_local": 95100.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 63875,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 233875
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 12775.0,
+   "municipality": 51100.0,
+   "total_cantonal_local": 118875.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 12775.0,
+   "municipality": 51100.0,
+   "total_cantonal_local": 118875.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 151,
+   "city": 241,
+   "personal": 0,
+   "simple_canton": 138,
+   "simple_city": 138,
+   "total": 392
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 48.65,
+   "municipality": 194.6,
+   "total_cantonal_local": 396.15
+  },
+  "mine_no_round": {
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 48.65,
+   "municipality": 194.6,
+   "total_cantonal_local": 396.15
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 526,
+   "city": 837,
+   "personal": 0,
+   "simple_canton": 478,
+   "simple_city": 478,
+   "total": 1363
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 479.73,
+   "simple_canton": 479.73,
+   "canton": 527.7,
+   "district": 167.9,
+   "municipality": 671.62,
+   "total_cantonal_local": 1367.22
+  },
+  "mine_no_round": {
+   "simple": 480.98,
+   "simple_canton": 480.98,
+   "canton": 529.07,
+   "district": 168.34,
+   "municipality": 673.37,
+   "total_cantonal_local": 1370.78
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 2369,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 4227
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 474.36,
+   "municipality": 1897.42,
+   "total_cantonal_local": 3862.61
+  },
+  "mine_no_round": {
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 474.36,
+   "municipality": 1897.42,
+   "total_cantonal_local": 3862.61
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 2369,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 4227
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 474.36,
+   "municipality": 1897.42,
+   "total_cantonal_local": 3862.61
+  },
+  "mine_no_round": {
+   "simple": 1358.52,
+   "simple_canton": 1358.52,
+   "canton": 1494.37,
+   "district": 475.48,
+   "municipality": 1901.92,
+   "total_cantonal_local": 3871.77
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 2425,
+   "city": 3858,
+   "personal": 0,
+   "simple_canton": 2204,
+   "simple_city": 2204,
+   "total": 7468
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 2204.47,
+   "simple_canton": 2204.47,
+   "canton": 2424.92,
+   "district": 771.57,
+   "municipality": 3086.26,
+   "total_cantonal_local": 6282.75
+  },
+  "mine_no_round": {
+   "simple": 2206.22,
+   "simple_canton": 2206.22,
+   "canton": 2426.85,
+   "district": 772.18,
+   "municipality": 3088.72,
+   "total_cantonal_local": 6287.74
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 4747,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 9547
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 949.52,
+   "municipality": 3798.09,
+   "total_cantonal_local": 7731.82
+  },
+  "mine_no_round": {
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 949.52,
+   "municipality": 3798.09,
+   "total_cantonal_local": 7731.82
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 4747,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 9547
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 949.52,
+   "municipality": 3798.09,
+   "total_cantonal_local": 7731.82
+  },
+  "mine_no_round": {
+   "simple": 2716.53,
+   "simple_canton": 2716.53,
+   "canton": 2988.19,
+   "district": 950.79,
+   "municipality": 3803.15,
+   "total_cantonal_local": 7742.12
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 5082,
+   "city": 8084,
+   "personal": 0,
+   "simple_canton": 4620,
+   "simple_city": 4620,
+   "total": 18574
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 1617.11,
+   "municipality": 6468.45,
+   "total_cantonal_local": 13167.91
+  },
+  "mine_no_round": {
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 1617.11,
+   "municipality": 6468.45,
+   "total_cantonal_local": 13167.91
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 7223,
+   "city": 11491,
+   "personal": 0,
+   "simple_canton": 6566,
+   "simple_city": 6566,
+   "total": 30581
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 6566.42,
+   "simple_canton": 6566.42,
+   "canton": 7223.06,
+   "district": 2298.25,
+   "municipality": 9192.99,
+   "total_cantonal_local": 18714.3
+  },
+  "mine_no_round": {
+   "simple": 6570.28,
+   "simple_canton": 6570.28,
+   "canton": 7227.31,
+   "district": 2299.6,
+   "municipality": 9198.39,
+   "total_cantonal_local": 18725.3
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 9801,
+   "city": 15592,
+   "personal": 0,
+   "simple_canton": 8910,
+   "simple_city": 8910,
+   "total": 45073
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 3118.61,
+   "municipality": 12474.45,
+   "total_cantonal_local": 25394.41
+  },
+  "mine_no_round": {
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 3118.61,
+   "municipality": 12474.45,
+   "total_cantonal_local": 25394.41
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 11517,
+   "city": 18322,
+   "personal": 0,
+   "simple_canton": 10470,
+   "simple_city": 10470,
+   "total": 54719
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 3664.61,
+   "municipality": 14658.45,
+   "total_cantonal_local": 29840.41
+  },
+  "mine_no_round": {
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 3664.61,
+   "municipality": 14658.45,
+   "total_cantonal_local": 29840.41
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 17952,
+   "city": 28560,
+   "personal": 0,
+   "simple_canton": 16320,
+   "simple_city": 16320,
+   "total": 90892
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 5712.11,
+   "municipality": 22848.45,
+   "total_cantonal_local": 46512.91
+  },
+  "mine_no_round": {
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 5712.11,
+   "municipality": 22848.45,
+   "total_cantonal_local": 46512.91
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 43477,
+   "city": 51099,
+   "personal": 0,
+   "simple_canton": 39525,
+   "simple_city": 29200,
+   "total": 184456
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 10220.0,
+   "municipality": 40880.0,
+   "total_cantonal_local": 94579.7
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 10220.0,
+   "municipality": 40880.0,
+   "total_cantonal_local": 94579.7
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Schwyz",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 63874,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 233874
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 12775.0,
+   "municipality": 51100.0,
+   "total_cantonal_local": 118875.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 12775.0,
+   "municipality": 51100.0,
+   "total_cantonal_local": 118875.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 256,
+   "city": 161,
+   "personal": 0,
+   "simple_canton": 233,
+   "simple_city": 233,
+   "total": 417
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 32.59,
+   "municipality": 128.01,
+   "total_cantonal_local": 416.62
+  },
+  "mine_no_round": {
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 32.59,
+   "municipality": 128.01,
+   "total_cantonal_local": 416.62
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 729,
+   "city": 457,
+   "personal": 0,
+   "simple_canton": 663,
+   "simple_city": 663,
+   "total": 1300
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 662.5,
+   "simple_canton": 662.5,
+   "canton": 728.75,
+   "district": 92.75,
+   "municipality": 364.38,
+   "total_cantonal_local": 1185.88
+  },
+  "mine_no_round": {
+   "simple": 664.0,
+   "simple_canton": 664.0,
+   "canton": 730.4,
+   "district": 92.96,
+   "municipality": 365.2,
+   "total_cantonal_local": 1188.56
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 1171,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 3708
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 933.24,
+   "total_cantonal_local": 3037.27
+  },
+  "mine_no_round": {
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 933.24,
+   "total_cantonal_local": 3037.27
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 1171,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 3708
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 933.24,
+   "total_cantonal_local": 3037.27
+  },
+  "mine_no_round": {
+   "simple": 1700.41,
+   "simple_canton": 1700.41,
+   "canton": 1870.45,
+   "district": 238.06,
+   "municipality": 935.23,
+   "total_cantonal_local": 3043.74
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 2956,
+   "city": 1854,
+   "personal": 0,
+   "simple_canton": 2687,
+   "simple_city": 2687,
+   "total": 6537
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 2687.3,
+   "simple_canton": 2687.3,
+   "canton": 2956.03,
+   "district": 376.22,
+   "municipality": 1478.02,
+   "total_cantonal_local": 4810.27
+  },
+  "mine_no_round": {
+   "simple": 2689.25,
+   "simple_canton": 2689.25,
+   "canton": 2958.18,
+   "district": 376.5,
+   "municipality": 1479.09,
+   "total_cantonal_local": 4813.76
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 2244,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 8506
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1789.04,
+   "total_cantonal_local": 5822.51
+  },
+  "mine_no_round": {
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1789.04,
+   "total_cantonal_local": 5822.51
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 2244,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 8506
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1789.04,
+   "total_cantonal_local": 5822.51
+  },
+  "mine_no_round": {
+   "simple": 3256.66,
+   "simple_canton": 3256.66,
+   "canton": 3582.33,
+   "district": 455.93,
+   "municipality": 1791.16,
+   "total_cantonal_local": 5829.42
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 5723,
+   "city": 3590,
+   "personal": 0,
+   "simple_canton": 5203,
+   "simple_city": 5203,
+   "total": 16389
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 728.39,
+   "municipality": 2861.54,
+   "total_cantonal_local": 9313.01
+  },
+  "mine_no_round": {
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 728.39,
+   "municipality": 2861.54,
+   "total_cantonal_local": 9313.01
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 7864,
+   "city": 4933,
+   "personal": 0,
+   "simple_canton": 7149,
+   "simple_city": 7149,
+   "total": 25687
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 7148.9,
+   "simple_canton": 7148.9,
+   "canton": 7863.79,
+   "district": 1000.85,
+   "municipality": 3931.89,
+   "total_cantonal_local": 12796.53
+  },
+  "mine_no_round": {
+   "simple": 7152.76,
+   "simple_canton": 7152.76,
+   "canton": 7868.04,
+   "district": 1001.39,
+   "municipality": 3934.02,
+   "total_cantonal_local": 12803.44
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 10483,
+   "city": 6548,
+   "personal": 0,
+   "simple_canton": 9530,
+   "simple_city": 9490,
+   "total": 37854
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 1328.6,
+   "municipality": 5219.5,
+   "total_cantonal_local": 17031.1
+  },
+  "mine_no_round": {
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 1328.6,
+   "municipality": 5219.5,
+   "total_cantonal_local": 17031.1
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 13563,
+   "city": 7555,
+   "personal": 0,
+   "simple_canton": 12330,
+   "simple_city": 10950,
+   "total": 47221
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 1533.0,
+   "municipality": 6022.5,
+   "total_cantonal_local": 21118.5
+  },
+  "mine_no_round": {
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 1533.0,
+   "municipality": 6022.5,
+   "total_cantonal_local": 21118.5
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 24750,
+   "city": 11333,
+   "personal": 0,
+   "simple_canton": 22500,
+   "simple_city": 16425,
+   "total": 81986
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 2299.5,
+   "municipality": 9033.75,
+   "total_cantonal_local": 36083.25
+  },
+  "mine_no_round": {
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 2299.5,
+   "municipality": 9033.75,
+   "total_cantonal_local": 36083.25
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 44000,
+   "city": 20148,
+   "personal": 0,
+   "simple_canton": 40000,
+   "simple_city": 29200,
+   "total": 156148
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 4088.0,
+   "municipality": 16060.0,
+   "total_cantonal_local": 64148.0
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 4088.0,
+   "municipality": 16060.0,
+   "total_cantonal_local": 64148.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 25185,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 195185
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 20075.0,
+   "total_cantonal_local": 80185.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 20075.0,
+   "total_cantonal_local": 80185.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 151,
+   "city": 95,
+   "personal": 0,
+   "simple_canton": 138,
+   "simple_city": 138,
+   "total": 246
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 19.46,
+   "municipality": 76.45,
+   "total_cantonal_local": 248.81
+  },
+  "mine_no_round": {
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 19.46,
+   "municipality": 76.45,
+   "total_cantonal_local": 248.81
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 526,
+   "city": 330,
+   "personal": 0,
+   "simple_canton": 478,
+   "simple_city": 478,
+   "total": 856
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 479.73,
+   "simple_canton": 479.73,
+   "canton": 527.7,
+   "district": 67.16,
+   "municipality": 263.85,
+   "total_cantonal_local": 858.71
+  },
+  "mine_no_round": {
+   "simple": 480.98,
+   "simple_canton": 480.98,
+   "canton": 529.07,
+   "district": 67.34,
+   "municipality": 264.54,
+   "total_cantonal_local": 860.95
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 934,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 2792
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 745.41,
+   "total_cantonal_local": 2425.99
+  },
+  "mine_no_round": {
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 745.41,
+   "total_cantonal_local": 2425.99
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 934,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 2792
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 745.41,
+   "total_cantonal_local": 2425.99
+  },
+  "mine_no_round": {
+   "simple": 1358.52,
+   "simple_canton": 1358.52,
+   "canton": 1494.37,
+   "district": 190.19,
+   "municipality": 747.18,
+   "total_cantonal_local": 2431.75
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 2425,
+   "city": 1521,
+   "personal": 0,
+   "simple_canton": 2204,
+   "simple_city": 2204,
+   "total": 5131
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 2204.47,
+   "simple_canton": 2204.47,
+   "canton": 2424.92,
+   "district": 308.63,
+   "municipality": 1212.46,
+   "total_cantonal_local": 3946.01
+  },
+  "mine_no_round": {
+   "simple": 2206.22,
+   "simple_canton": 2206.22,
+   "canton": 2426.85,
+   "district": 308.87,
+   "municipality": 1213.42,
+   "total_cantonal_local": 3949.14
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 1872,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 6672
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1492.11,
+   "total_cantonal_local": 4856.13
+  },
+  "mine_no_round": {
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1492.11,
+   "total_cantonal_local": 4856.13
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 1872,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 6672
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1492.11,
+   "total_cantonal_local": 4856.13
+  },
+  "mine_no_round": {
+   "simple": 2716.53,
+   "simple_canton": 2716.53,
+   "canton": 2988.19,
+   "district": 380.31,
+   "municipality": 1494.09,
+   "total_cantonal_local": 4862.59
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 5082,
+   "city": 3188,
+   "personal": 0,
+   "simple_canton": 4620,
+   "simple_city": 4620,
+   "total": 13678
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 646.84,
+   "municipality": 2541.18,
+   "total_cantonal_local": 8270.37
+  },
+  "mine_no_round": {
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 646.84,
+   "municipality": 2541.18,
+   "total_cantonal_local": 8270.37
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 7223,
+   "city": 4531,
+   "personal": 0,
+   "simple_canton": 6566,
+   "simple_city": 6566,
+   "total": 23621
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 6566.42,
+   "simple_canton": 6566.42,
+   "canton": 7223.06,
+   "district": 919.3,
+   "municipality": 3611.53,
+   "total_cantonal_local": 11753.89
+  },
+  "mine_no_round": {
+   "simple": 6570.28,
+   "simple_canton": 6570.28,
+   "canton": 7227.31,
+   "district": 919.84,
+   "municipality": 3613.65,
+   "total_cantonal_local": 11760.8
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 9801,
+   "city": 6148,
+   "personal": 0,
+   "simple_canton": 8910,
+   "simple_city": 8910,
+   "total": 35629
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 1247.44,
+   "municipality": 4900.68,
+   "total_cantonal_local": 15949.47
+  },
+  "mine_no_round": {
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 1247.44,
+   "municipality": 4900.68,
+   "total_cantonal_local": 15949.47
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 11517,
+   "city": 7224,
+   "personal": 0,
+   "simple_canton": 10470,
+   "simple_city": 10470,
+   "total": 43621
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 1465.84,
+   "municipality": 5758.68,
+   "total_cantonal_local": 18741.87
+  },
+  "mine_no_round": {
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 1465.84,
+   "municipality": 5758.68,
+   "total_cantonal_local": 18741.87
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 17952,
+   "city": 11261,
+   "personal": 0,
+   "simple_canton": 16320,
+   "simple_city": 16320,
+   "total": 73593
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 2284.84,
+   "municipality": 8976.18,
+   "total_cantonal_local": 29213.37
+  },
+  "mine_no_round": {
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 2284.84,
+   "municipality": 8976.18,
+   "total_cantonal_local": 29213.37
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 43477,
+   "city": 20148,
+   "personal": 0,
+   "simple_canton": 39525,
+   "simple_city": 29200,
+   "total": 153505
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 4088.0,
+   "municipality": 16060.0,
+   "total_cantonal_local": 63627.7
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 4088.0,
+   "municipality": 16060.0,
+   "total_cantonal_local": 63627.7
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Feusisberg",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 25185,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 195185
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 20075.0,
+   "total_cantonal_local": 80185.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 20075.0,
+   "total_cantonal_local": 80185.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 256,
+   "city": 149,
+   "personal": 0,
+   "simple_canton": 233,
+   "simple_city": 233,
+   "total": 405
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 32.59,
+   "municipality": 116.38,
+   "total_cantonal_local": 404.98
+  },
+  "mine_no_round": {
+   "simple": 232.75,
+   "simple_canton": 232.75,
+   "canton": 256.02,
+   "district": 32.59,
+   "municipality": 116.38,
+   "total_cantonal_local": 404.98
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 729,
+   "city": 424,
+   "personal": 0,
+   "simple_canton": 663,
+   "simple_city": 663,
+   "total": 1267
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 662.5,
+   "simple_canton": 662.5,
+   "canton": 728.75,
+   "district": 92.75,
+   "municipality": 331.25,
+   "total_cantonal_local": 1152.75
+  },
+  "mine_no_round": {
+   "simple": 664.0,
+   "simple_canton": 664.0,
+   "canton": 730.4,
+   "district": 92.96,
+   "municipality": 332.0,
+   "total_cantonal_local": 1155.36
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 1086,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 3623
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 848.4,
+   "total_cantonal_local": 2952.43
+  },
+  "mine_no_round": {
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 848.4,
+   "total_cantonal_local": 2952.43
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 1866,
+   "city": 1086,
+   "personal": 0,
+   "simple_canton": 1697,
+   "simple_city": 1697,
+   "total": 3623
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 1696.8,
+   "simple_canton": 1696.8,
+   "canton": 1866.48,
+   "district": 237.55,
+   "municipality": 848.4,
+   "total_cantonal_local": 2952.43
+  },
+  "mine_no_round": {
+   "simple": 1700.41,
+   "simple_canton": 1700.41,
+   "canton": 1870.45,
+   "district": 238.06,
+   "municipality": 850.21,
+   "total_cantonal_local": 2958.72
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 2956,
+   "city": 1720,
+   "personal": 0,
+   "simple_canton": 2687,
+   "simple_city": 2687,
+   "total": 6403
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 2687.3,
+   "simple_canton": 2687.3,
+   "canton": 2956.03,
+   "district": 376.22,
+   "municipality": 1343.65,
+   "total_cantonal_local": 4675.9
+  },
+  "mine_no_round": {
+   "simple": 2689.25,
+   "simple_canton": 2689.25,
+   "canton": 2958.18,
+   "district": 376.5,
+   "municipality": 1344.62,
+   "total_cantonal_local": 4679.3
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 2082,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 8344
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1626.4,
+   "total_cantonal_local": 5659.87
+  },
+  "mine_no_round": {
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1626.4,
+   "total_cantonal_local": 5659.87
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 3578,
+   "city": 2082,
+   "personal": 0,
+   "simple_canton": 3253,
+   "simple_city": 3253,
+   "total": 8344
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 3252.8,
+   "simple_canton": 3252.8,
+   "canton": 3578.08,
+   "district": 455.39,
+   "municipality": 1626.4,
+   "total_cantonal_local": 5659.87
+  },
+  "mine_no_round": {
+   "simple": 3256.66,
+   "simple_canton": 3256.66,
+   "canton": 3582.33,
+   "district": 455.93,
+   "municipality": 1628.33,
+   "total_cantonal_local": 5666.59
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 5723,
+   "city": 3330,
+   "personal": 0,
+   "simple_canton": 5203,
+   "simple_city": 5203,
+   "total": 16129
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 728.39,
+   "municipality": 2601.4,
+   "total_cantonal_local": 9052.87
+  },
+  "mine_no_round": {
+   "simple": 5202.8,
+   "simple_canton": 5202.8,
+   "canton": 5723.08,
+   "district": 728.39,
+   "municipality": 2601.4,
+   "total_cantonal_local": 9052.87
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 7864,
+   "city": 4575,
+   "personal": 0,
+   "simple_canton": 7149,
+   "simple_city": 7149,
+   "total": 25329
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 7148.9,
+   "simple_canton": 7148.9,
+   "canton": 7863.79,
+   "district": 1000.85,
+   "municipality": 3574.45,
+   "total_cantonal_local": 12439.09
+  },
+  "mine_no_round": {
+   "simple": 7152.76,
+   "simple_canton": 7152.76,
+   "canton": 7868.04,
+   "district": 1001.39,
+   "municipality": 3576.38,
+   "total_cantonal_local": 12445.8
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 10483,
+   "city": 6073,
+   "personal": 0,
+   "simple_canton": 9530,
+   "simple_city": 9490,
+   "total": 37379
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 1328.6,
+   "municipality": 4745.0,
+   "total_cantonal_local": 16556.6
+  },
+  "mine_no_round": {
+   "simple": 9490.0,
+   "simple_canton": 9530.0,
+   "canton": 10483.0,
+   "district": 1328.6,
+   "municipality": 4745.0,
+   "total_cantonal_local": 16556.6
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 13563,
+   "city": 7008,
+   "personal": 0,
+   "simple_canton": 12330,
+   "simple_city": 10950,
+   "total": 46674
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 1533.0,
+   "municipality": 5475.0,
+   "total_cantonal_local": 20571.0
+  },
+  "mine_no_round": {
+   "simple": 10950.0,
+   "simple_canton": 12330.0,
+   "canton": 13563.0,
+   "district": 1533.0,
+   "municipality": 5475.0,
+   "total_cantonal_local": 20571.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 24750,
+   "city": 10512,
+   "personal": 0,
+   "simple_canton": 22500,
+   "simple_city": 16425,
+   "total": 81165
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 2299.5,
+   "municipality": 8212.5,
+   "total_cantonal_local": 35262.0
+  },
+  "mine_no_round": {
+   "simple": 16425.0,
+   "simple_canton": 22500.0,
+   "canton": 24750.0,
+   "district": 2299.5,
+   "municipality": 8212.5,
+   "total_cantonal_local": 35262.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 44000,
+   "city": 18688,
+   "personal": 0,
+   "simple_canton": 40000,
+   "simple_city": 29200,
+   "total": 154688
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 4088.0,
+   "municipality": 14600.0,
+   "total_cantonal_local": 62688.0
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 40000.0,
+   "canton": 44000.0,
+   "district": 4088.0,
+   "municipality": 14600.0,
+   "total_cantonal_local": 62688.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 23360,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 193360
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 18250.0,
+   "total_cantonal_local": 78360.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 18250.0,
+   "total_cantonal_local": 78360.0
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 151,
+   "city": 88,
+   "personal": 0,
+   "simple_canton": 138,
+   "simple_city": 138,
+   "total": 239
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 19.46,
+   "municipality": 69.5,
+   "total_cantonal_local": 241.86
+  },
+  "mine_no_round": {
+   "simple": 139.0,
+   "simple_canton": 139.0,
+   "canton": 152.9,
+   "district": 19.46,
+   "municipality": 69.5,
+   "total_cantonal_local": 241.86
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 526,
+   "city": 306,
+   "personal": 0,
+   "simple_canton": 478,
+   "simple_city": 478,
+   "total": 832
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 479.73,
+   "simple_canton": 479.73,
+   "canton": 527.7,
+   "district": 67.16,
+   "municipality": 239.86,
+   "total_cantonal_local": 834.72
+  },
+  "mine_no_round": {
+   "simple": 480.98,
+   "simple_canton": 480.98,
+   "canton": 529.07,
+   "district": 67.34,
+   "municipality": 240.49,
+   "total_cantonal_local": 836.9
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 866,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 2724
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 677.65,
+   "total_cantonal_local": 2358.22
+  },
+  "mine_no_round": {
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 677.65,
+   "total_cantonal_local": 2358.22
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 1489,
+   "city": 866,
+   "personal": 0,
+   "simple_canton": 1354,
+   "simple_city": 1354,
+   "total": 2724
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1355.3,
+   "simple_canton": 1355.3,
+   "canton": 1490.83,
+   "district": 189.74,
+   "municipality": 677.65,
+   "total_cantonal_local": 2358.22
+  },
+  "mine_no_round": {
+   "simple": 1358.52,
+   "simple_canton": 1358.52,
+   "canton": 1494.37,
+   "district": 190.19,
+   "municipality": 679.26,
+   "total_cantonal_local": 2363.82
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 2425,
+   "city": 1411,
+   "personal": 0,
+   "simple_canton": 2204,
+   "simple_city": 2204,
+   "total": 5021
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 2204.47,
+   "simple_canton": 2204.47,
+   "canton": 2424.92,
+   "district": 308.63,
+   "municipality": 1102.24,
+   "total_cantonal_local": 3835.79
+  },
+  "mine_no_round": {
+   "simple": 2206.22,
+   "simple_canton": 2206.22,
+   "canton": 2426.85,
+   "district": 308.87,
+   "municipality": 1103.11,
+   "total_cantonal_local": 3838.83
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 1736,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 6536
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1356.46,
+   "total_cantonal_local": 4720.48
+  },
+  "mine_no_round": {
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1356.46,
+   "total_cantonal_local": 4720.48
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 2984,
+   "city": 1736,
+   "personal": 0,
+   "simple_canton": 2712,
+   "simple_city": 2712,
+   "total": 6536
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 2712.92,
+   "simple_canton": 2712.92,
+   "canton": 2984.21,
+   "district": 379.81,
+   "municipality": 1356.46,
+   "total_cantonal_local": 4720.48
+  },
+  "mine_no_round": {
+   "simple": 2716.53,
+   "simple_canton": 2716.53,
+   "canton": 2988.19,
+   "district": 380.31,
+   "municipality": 1358.27,
+   "total_cantonal_local": 4726.77
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 5082,
+   "city": 2957,
+   "personal": 0,
+   "simple_canton": 4620,
+   "simple_city": 4620,
+   "total": 13447
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 646.84,
+   "municipality": 2310.16,
+   "total_cantonal_local": 8039.36
+  },
+  "mine_no_round": {
+   "simple": 4620.32,
+   "simple_canton": 4620.32,
+   "canton": 5082.35,
+   "district": 646.84,
+   "municipality": 2310.16,
+   "total_cantonal_local": 8039.36
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 7223,
+   "city": 4202,
+   "personal": 0,
+   "simple_canton": 6566,
+   "simple_city": 6566,
+   "total": 23292
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 6566.42,
+   "simple_canton": 6566.42,
+   "canton": 7223.06,
+   "district": 919.3,
+   "municipality": 3283.21,
+   "total_cantonal_local": 11425.57
+  },
+  "mine_no_round": {
+   "simple": 6570.28,
+   "simple_canton": 6570.28,
+   "canton": 7227.31,
+   "district": 919.84,
+   "municipality": 3285.14,
+   "total_cantonal_local": 11432.29
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 9801,
+   "city": 5702,
+   "personal": 0,
+   "simple_canton": 8910,
+   "simple_city": 8910,
+   "total": 35183
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 1247.44,
+   "municipality": 4455.16,
+   "total_cantonal_local": 15503.96
+  },
+  "mine_no_round": {
+   "simple": 8910.32,
+   "simple_canton": 8910.32,
+   "canton": 9801.35,
+   "district": 1247.44,
+   "municipality": 4455.16,
+   "total_cantonal_local": 15503.96
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 11517,
+   "city": 6701,
+   "personal": 0,
+   "simple_canton": 10470,
+   "simple_city": 10470,
+   "total": 43098
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 1465.84,
+   "municipality": 5235.16,
+   "total_cantonal_local": 18218.36
+  },
+  "mine_no_round": {
+   "simple": 10470.32,
+   "simple_canton": 10470.32,
+   "canton": 11517.35,
+   "district": 1465.84,
+   "municipality": 5235.16,
+   "total_cantonal_local": 18218.36
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 17952,
+   "city": 10445,
+   "personal": 0,
+   "simple_canton": 16320,
+   "simple_city": 16320,
+   "total": 72777
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 2284.84,
+   "municipality": 8160.16,
+   "total_cantonal_local": 28397.36
+  },
+  "mine_no_round": {
+   "simple": 16320.32,
+   "simple_canton": 16320.32,
+   "canton": 17952.35,
+   "district": 2284.84,
+   "municipality": 8160.16,
+   "total_cantonal_local": 28397.36
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 43477,
+   "city": 18688,
+   "personal": 0,
+   "simple_canton": 39525,
+   "simple_city": 29200,
+   "total": 152045
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 4088.0,
+   "municipality": 14600.0,
+   "total_cantonal_local": 62167.7
+  },
+  "mine_no_round": {
+   "simple": 29200.0,
+   "simple_canton": 39527.0,
+   "canton": 43479.7,
+   "district": 4088.0,
+   "municipality": 14600.0,
+   "total_cantonal_local": 62167.7
+  }
+ },
+ {
+  "canton": "SZ",
+  "municipality": "Freienbach",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 55000,
+   "city": 23360,
+   "personal": 0,
+   "simple_canton": 50000,
+   "simple_city": 36500,
+   "total": 193360
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 18250.0,
+   "total_cantonal_local": 78360.0
+  },
+  "mine_no_round": {
+   "simple": 36500.0,
+   "simple_canton": 50000.0,
+   "canton": 55000.0,
+   "district": 5110.0,
+   "municipality": 18250.0,
+   "total_cantonal_local": 78360.0
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 283,
+   "city": 189,
+   "personal": 0,
+   "simple_canton": 363,
+   "simple_city": 363,
+   "total": 472
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 362.75,
+   "canton": 282.94,
+   "municipality": 188.63,
+   "total_cantonal_local": 471.57
+  },
+  "mine_no_round": {
+   "simple": 362.75,
+   "canton": 282.94,
+   "municipality": 188.63,
+   "total_cantonal_local": 471.57
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 739,
+   "city": 492,
+   "personal": 0,
+   "simple_canton": 947,
+   "simple_city": 947,
+   "total": 1345
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 947.0,
+   "canton": 738.66,
+   "municipality": 492.44,
+   "total_cantonal_local": 1231.1
+  },
+  "mine_no_round": {
+   "simple": 949.25,
+   "canton": 740.41,
+   "municipality": 493.61,
+   "total_cantonal_local": 1234.03
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 1990,
+   "city": 1327,
+   "personal": 0,
+   "simple_canton": 2551,
+   "simple_city": 2551,
+   "total": 3988
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 2551.0,
+   "canton": 1989.78,
+   "municipality": 1326.52,
+   "total_cantonal_local": 3316.3
+  },
+  "mine_no_round": {
+   "simple": 2551.0,
+   "canton": 1989.78,
+   "municipality": 1326.52,
+   "total_cantonal_local": 3316.3
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 1990,
+   "city": 1327,
+   "personal": 0,
+   "simple_canton": 2551,
+   "simple_city": 2551,
+   "total": 3988
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 2551.0,
+   "canton": 1989.78,
+   "municipality": 1326.52,
+   "total_cantonal_local": 3316.3
+  },
+  "mine_no_round": {
+   "simple": 2557.43,
+   "canton": 1994.8,
+   "municipality": 1329.87,
+   "total_cantonal_local": 3324.67
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 3409,
+   "city": 2273,
+   "personal": 0,
+   "simple_canton": 4371,
+   "simple_city": 4371,
+   "total": 7409
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 4370.5,
+   "canton": 3408.99,
+   "municipality": 2272.66,
+   "total_cantonal_local": 5681.65
+  },
+  "mine_no_round": {
+   "simple": 4374.5,
+   "canton": 3412.11,
+   "municipality": 2274.74,
+   "total_cantonal_local": 5686.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 4395,
+   "city": 2930,
+   "personal": 0,
+   "simple_canton": 5635,
+   "simple_city": 5635,
+   "total": 10009
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 5634.5,
+   "canton": 4394.91,
+   "municipality": 2929.94,
+   "total_cantonal_local": 7324.85
+  },
+  "mine_no_round": {
+   "simple": 5634.5,
+   "canton": 4394.91,
+   "municipality": 2929.94,
+   "total_cantonal_local": 7324.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 4395,
+   "city": 2930,
+   "personal": 0,
+   "simple_canton": 5635,
+   "simple_city": 5635,
+   "total": 10009
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 5634.5,
+   "canton": 4394.91,
+   "municipality": 2929.94,
+   "total_cantonal_local": 7324.85
+  },
+  "mine_no_round": {
+   "simple": 5644.4,
+   "canton": 4402.63,
+   "municipality": 2935.09,
+   "total_cantonal_local": 7337.72
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 8061,
+   "city": 5374,
+   "personal": 0,
+   "simple_canton": 10335,
+   "simple_city": 10335,
+   "total": 20511
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 10334.5,
+   "canton": 8060.91,
+   "municipality": 5373.94,
+   "total_cantonal_local": 13434.85
+  },
+  "mine_no_round": {
+   "simple": 10334.5,
+   "canton": 8060.91,
+   "municipality": 5373.94,
+   "total_cantonal_local": 13434.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 11175,
+   "city": 7450,
+   "personal": 0,
+   "simple_canton": 14327,
+   "simple_city": 14327,
+   "total": 31515
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 14326.5,
+   "canton": 11174.67,
+   "municipality": 7449.78,
+   "total_cantonal_local": 18624.45
+  },
+  "mine_no_round": {
+   "simple": 14334.42,
+   "canton": 11180.85,
+   "municipality": 7453.9,
+   "total_cantonal_local": 18634.75
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 14925,
+   "city": 9950,
+   "personal": 0,
+   "simple_canton": 19135,
+   "simple_city": 19135,
+   "total": 45698
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 19134.5,
+   "canton": 14924.91,
+   "municipality": 9949.94,
+   "total_cantonal_local": 24874.85
+  },
+  "mine_no_round": {
+   "simple": 19134.5,
+   "canton": 14924.91,
+   "municipality": 9949.94,
+   "total_cantonal_local": 24874.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 17421,
+   "city": 11614,
+   "personal": 0,
+   "simple_canton": 22335,
+   "simple_city": 22335,
+   "total": 55138
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 22334.5,
+   "canton": 17420.91,
+   "municipality": 11613.94,
+   "total_cantonal_local": 29034.85
+  },
+  "mine_no_round": {
+   "simple": 22334.5,
+   "canton": 17420.91,
+   "municipality": 11613.94,
+   "total_cantonal_local": 29034.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 26781,
+   "city": 17854,
+   "personal": 0,
+   "simple_canton": 34335,
+   "simple_city": 34335,
+   "total": 90538
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 34334.5,
+   "canton": 26780.91,
+   "municipality": 17853.94,
+   "total_cantonal_local": 44634.85
+  },
+  "mine_no_round": {
+   "simple": 34334.5,
+   "canton": 26780.91,
+   "municipality": 17853.94,
+   "total_cantonal_local": 44634.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 48621,
+   "city": 32414,
+   "personal": 0,
+   "simple_canton": 62335,
+   "simple_city": 62335,
+   "total": 173035
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 62334.5,
+   "canton": 48620.91,
+   "municipality": 32413.94,
+   "total_cantonal_local": 81034.85
+  },
+  "mine_no_round": {
+   "simple": 62334.5,
+   "canton": 48620.91,
+   "municipality": 32413.94,
+   "total_cantonal_local": 81034.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 61101,
+   "city": 40734,
+   "personal": 0,
+   "simple_canton": 78335,
+   "simple_city": 78335,
+   "total": 216835
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 78334.5,
+   "canton": 61100.91,
+   "municipality": 40733.94,
+   "total_cantonal_local": 101834.85
+  },
+  "mine_no_round": {
+   "simple": 78334.5,
+   "canton": 61100.91,
+   "municipality": 40733.94,
+   "total_cantonal_local": 101834.85
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 196,
+   "city": 131,
+   "personal": 0,
+   "simple_canton": 251,
+   "simple_city": 251,
+   "total": 327
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 251.0,
+   "canton": 195.78,
+   "municipality": 130.52,
+   "total_cantonal_local": 326.3
+  },
+  "mine_no_round": {
+   "simple": 251.0,
+   "canton": 195.78,
+   "municipality": 130.52,
+   "total_cantonal_local": 326.3
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 566,
+   "city": 377,
+   "personal": 0,
+   "simple_canton": 726,
+   "simple_city": 726,
+   "total": 943
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 725.5,
+   "canton": 565.89,
+   "municipality": 377.26,
+   "total_cantonal_local": 943.15
+  },
+  "mine_no_round": {
+   "simple": 727.12,
+   "canton": 567.16,
+   "municipality": 378.11,
+   "total_cantonal_local": 945.26
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 1477,
+   "city": 985,
+   "personal": 0,
+   "simple_canton": 1894,
+   "simple_city": 1894,
+   "total": 2831
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1894.0,
+   "canton": 1477.32,
+   "municipality": 984.88,
+   "total_cantonal_local": 2462.2
+  },
+  "mine_no_round": {
+   "simple": 1894.0,
+   "canton": 1477.32,
+   "municipality": 984.88,
+   "total_cantonal_local": 2462.2
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 1477,
+   "city": 985,
+   "personal": 0,
+   "simple_canton": 1894,
+   "simple_city": 1894,
+   "total": 2831
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 1894.0,
+   "canton": 1477.32,
+   "municipality": 984.88,
+   "total_cantonal_local": 2462.2
+  },
+  "mine_no_round": {
+   "simple": 1898.45,
+   "canton": 1480.79,
+   "municipality": 987.2,
+   "total_cantonal_local": 2467.99
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 2495,
+   "city": 1663,
+   "personal": 0,
+   "simple_canton": 3199,
+   "simple_city": 3199,
+   "total": 5343
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 3198.5,
+   "canton": 2494.83,
+   "municipality": 1663.22,
+   "total_cantonal_local": 4158.05
+  },
+  "mine_no_round": {
+   "simple": 3201.25,
+   "canton": 2496.97,
+   "municipality": 1664.65,
+   "total_cantonal_local": 4161.62
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 3117,
+   "city": 2078,
+   "personal": 0,
+   "simple_canton": 3996,
+   "simple_city": 3996,
+   "total": 7011
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 3996.0,
+   "canton": 3116.88,
+   "municipality": 2077.92,
+   "total_cantonal_local": 5194.8
+  },
+  "mine_no_round": {
+   "simple": 3996.0,
+   "canton": 3116.88,
+   "municipality": 2077.92,
+   "total_cantonal_local": 5194.8
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 3117,
+   "city": 2078,
+   "personal": 0,
+   "simple_canton": 3996,
+   "simple_city": 3996,
+   "total": 7011
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 3996.0,
+   "canton": 3116.88,
+   "municipality": 2077.92,
+   "total_cantonal_local": 5194.8
+  },
+  "mine_no_round": {
+   "simple": 4001.45,
+   "canton": 3121.13,
+   "municipality": 2080.75,
+   "total_cantonal_local": 5201.88
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 5508,
+   "city": 3672,
+   "personal": 0,
+   "simple_canton": 7061,
+   "simple_city": 7061,
+   "total": 14588
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 7061.0,
+   "canton": 5507.58,
+   "municipality": 3671.72,
+   "total_cantonal_local": 9179.3
+  },
+  "mine_no_round": {
+   "simple": 7061.0,
+   "canton": 5507.58,
+   "municipality": 3671.72,
+   "total_cantonal_local": 9179.3
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 8782,
+   "city": 5855,
+   "personal": 0,
+   "simple_canton": 11259,
+   "simple_city": 11259,
+   "total": 26504
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 11259.0,
+   "canton": 8782.02,
+   "municipality": 5854.68,
+   "total_cantonal_local": 14636.7
+  },
+  "mine_no_round": {
+   "simple": 11268.9,
+   "canton": 8789.74,
+   "municipality": 5859.83,
+   "total_cantonal_local": 14649.57
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 13315,
+   "city": 8877,
+   "personal": 0,
+   "simple_canton": 17071,
+   "simple_city": 17071,
+   "total": 41872
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 17071.0,
+   "canton": 13315.38,
+   "municipality": 8876.92,
+   "total_cantonal_local": 22192.3
+  },
+  "mine_no_round": {
+   "simple": 17071.0,
+   "canton": 13315.38,
+   "municipality": 8876.92,
+   "total_cantonal_local": 22192.3
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 16122,
+   "city": 10748,
+   "personal": 0,
+   "simple_canton": 20669,
+   "simple_city": 20669,
+   "total": 51750
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 20669.0,
+   "canton": 16121.82,
+   "municipality": 10747.88,
+   "total_cantonal_local": 26869.7
+  },
+  "mine_no_round": {
+   "simple": 20669.0,
+   "canton": 16121.82,
+   "municipality": 10747.88,
+   "total_cantonal_local": 26869.7
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 25482,
+   "city": 16988,
+   "personal": 0,
+   "simple_canton": 32669,
+   "simple_city": 32669,
+   "total": 86850
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 32669.0,
+   "canton": 25481.82,
+   "municipality": 16987.88,
+   "total_cantonal_local": 42469.7
+  },
+  "mine_no_round": {
+   "simple": 32669.0,
+   "canton": 25481.82,
+   "municipality": 16987.88,
+   "total_cantonal_local": 42469.7
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 47322,
+   "city": 31548,
+   "personal": 0,
+   "simple_canton": 60669,
+   "simple_city": 60669,
+   "total": 168750
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 60669.0,
+   "canton": 47321.82,
+   "municipality": 31547.88,
+   "total_cantonal_local": 78869.7
+  },
+  "mine_no_round": {
+   "simple": 60669.0,
+   "canton": 47321.82,
+   "municipality": 31547.88,
+   "total_cantonal_local": 78869.7
+  }
+ },
+ {
+  "canton": "ZG",
+  "municipality": "Zug",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 59802,
+   "city": 39868,
+   "personal": 0,
+   "simple_canton": 76669,
+   "simple_city": 76669,
+   "total": 214670
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 76669.0,
+   "canton": 59801.82,
+   "municipality": 39867.88,
+   "total_cantonal_local": 99669.7
+  },
+  "mine_no_round": {
+   "simple": 76669.0,
+   "canton": 59801.82,
+   "municipality": 39867.88,
+   "total_cantonal_local": 99669.7
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 143,
+   "city": 188,
+   "personal": 0,
+   "simple_canton": 136,
+   "simple_city": 136,
+   "total": 331
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 136.0,
+   "canton": 142.8,
+   "municipality": 187.68,
+   "total_cantonal_local": 330.48
+  },
+  "mine_no_round": {
+   "simple": 136.0,
+   "canton": 142.8,
+   "municipality": 187.68,
+   "total_cantonal_local": 330.48
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 1071,
+   "city": 1408,
+   "personal": 0,
+   "simple_canton": 1020,
+   "simple_city": 1020,
+   "total": 2593
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 1020.0,
+   "canton": 1071.0,
+   "municipality": 1407.6,
+   "total_cantonal_local": 2478.6
+  },
+  "mine_no_round": {
+   "simple": 1023.0,
+   "canton": 1074.15,
+   "municipality": 1411.74,
+   "total_cantonal_local": 2485.89
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 3511,
+   "city": 4615,
+   "personal": 0,
+   "simple_canton": 3344,
+   "simple_city": 3344,
+   "total": 8797
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 4614.72,
+   "total_cantonal_local": 8125.92
+  },
+  "mine_no_round": {
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 4614.72,
+   "total_cantonal_local": 8125.92
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 3511,
+   "city": 4615,
+   "personal": 0,
+   "simple_canton": 3344,
+   "simple_city": 3344,
+   "total": 8797
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 4614.72,
+   "total_cantonal_local": 8125.92
+  },
+  "mine_no_round": {
+   "simple": 3351.92,
+   "canton": 3519.52,
+   "municipality": 4625.65,
+   "total_cantonal_local": 8145.17
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 5971,
+   "city": 7847,
+   "personal": 0,
+   "simple_canton": 5686,
+   "simple_city": 5686,
+   "total": 15545
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 5686.4,
+   "canton": 5970.72,
+   "municipality": 7847.23,
+   "total_cantonal_local": 13817.95
+  },
+  "mine_no_round": {
+   "simple": 5691.0,
+   "canton": 5975.55,
+   "municipality": 7853.58,
+   "total_cantonal_local": 13829.13
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 7375,
+   "city": 9693,
+   "personal": 0,
+   "simple_canton": 7024,
+   "simple_city": 7024,
+   "total": 19752
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 9692.57,
+   "total_cantonal_local": 17067.35
+  },
+  "mine_no_round": {
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 9692.57,
+   "total_cantonal_local": 17067.35
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 7375,
+   "city": 9693,
+   "personal": 0,
+   "simple_canton": 7024,
+   "simple_city": 7024,
+   "total": 19752
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 9692.57,
+   "total_cantonal_local": 17067.35
+  },
+  "mine_no_round": {
+   "simple": 7032.91,
+   "canton": 7384.55,
+   "municipality": 9705.41,
+   "total_cantonal_local": 17089.96
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 12310,
+   "city": 16179,
+   "personal": 0,
+   "simple_canton": 11724,
+   "simple_city": 11724,
+   "total": 35565
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 11723.6,
+   "canton": 12309.78,
+   "municipality": 16178.57,
+   "total_cantonal_local": 28488.35
+  },
+  "mine_no_round": {
+   "simple": 11723.6,
+   "canton": 12309.78,
+   "municipality": 16178.57,
+   "total_cantonal_local": 28488.35
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 17235,
+   "city": 22652,
+   "personal": 0,
+   "simple_canton": 16414,
+   "simple_city": 16414,
+   "total": 52777
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 16414.2,
+   "canton": 17234.91,
+   "municipality": 22651.6,
+   "total_cantonal_local": 39886.51
+  },
+  "mine_no_round": {
+   "simple": 16423.51,
+   "canton": 17244.68,
+   "municipality": 22664.44,
+   "total_cantonal_local": 39909.12
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 23167,
+   "city": 30448,
+   "personal": 0,
+   "simple_canton": 22064,
+   "simple_city": 22064,
+   "total": 74438
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 22063.6,
+   "canton": 23166.78,
+   "municipality": 30447.77,
+   "total_cantonal_local": 53614.55
+  },
+  "mine_no_round": {
+   "simple": 22063.6,
+   "canton": 23166.78,
+   "municipality": 30447.77,
+   "total_cantonal_local": 53614.55
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 26779,
+   "city": 35196,
+   "personal": 0,
+   "simple_canton": 25504,
+   "simple_city": 25504,
+   "total": 88078
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 25500.0,
+   "canton": 26775.0,
+   "municipality": 35190.0,
+   "total_cantonal_local": 61965.0
+  },
+  "mine_no_round": {
+   "simple": 25500.0,
+   "canton": 26775.0,
+   "municipality": 35190.0,
+   "total_cantonal_local": 61965.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 40167,
+   "city": 52791,
+   "personal": 0,
+   "simple_canton": 38254,
+   "simple_city": 38254,
+   "total": 138861
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 38250.0,
+   "canton": 40162.5,
+   "municipality": 52785.0,
+   "total_cantonal_local": 92947.5
+  },
+  "mine_no_round": {
+   "simple": 38250.0,
+   "canton": 40162.5,
+   "municipality": 52785.0,
+   "total_cantonal_local": 92947.5
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 71404,
+   "city": 93846,
+   "personal": 0,
+   "simple_canton": 68004,
+   "simple_city": 68004,
+   "total": 257250
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 93840.0,
+   "total_cantonal_local": 165240.0
+  },
+  "mine_no_round": {
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 93840.0,
+   "total_cantonal_local": 165240.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 89254,
+   "city": 117306,
+   "personal": 0,
+   "simple_canton": 85004,
+   "simple_city": 85004,
+   "total": 321560
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 117300.0,
+   "total_cantonal_local": 206550.0
+  },
+  "mine_no_round": {
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 117300.0,
+   "total_cantonal_local": 206550.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 0,
+   "city": 0,
+   "personal": 0,
+   "simple_canton": 0,
+   "simple_city": 0,
+   "total": 0
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 0.0,
+   "canton": 0.0,
+   "municipality": 0.0,
+   "total_cantonal_local": 0.0
+  },
+  "mine_no_round": {
+   "simple": 0.0,
+   "canton": 0.0,
+   "municipality": 0.0,
+   "total_cantonal_local": 0.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 286,
+   "city": 375,
+   "personal": 0,
+   "simple_canton": 272,
+   "simple_city": 272,
+   "total": 661
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 272.0,
+   "canton": 285.6,
+   "municipality": 375.36,
+   "total_cantonal_local": 660.96
+  },
+  "mine_no_round": {
+   "simple": 274.0,
+   "canton": 287.7,
+   "municipality": 378.12,
+   "total_cantonal_local": 665.82
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 2142,
+   "city": 2815,
+   "personal": 0,
+   "simple_canton": 2040,
+   "simple_city": 2040,
+   "total": 5326
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 2815.2,
+   "total_cantonal_local": 4957.2
+  },
+  "mine_no_round": {
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 2815.2,
+   "total_cantonal_local": 4957.2
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 2142,
+   "city": 2815,
+   "personal": 0,
+   "simple_canton": 2040,
+   "simple_city": 2040,
+   "total": 5326
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 2815.2,
+   "total_cantonal_local": 4957.2
+  },
+  "mine_no_round": {
+   "simple": 2045.94,
+   "canton": 2148.24,
+   "municipality": 2823.4,
+   "total_cantonal_local": 4971.63
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 4121,
+   "city": 5416,
+   "personal": 0,
+   "simple_canton": 3925,
+   "simple_city": 3925,
+   "total": 10722
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 3928.0,
+   "canton": 4124.4,
+   "municipality": 5420.64,
+   "total_cantonal_local": 9545.04
+  },
+  "mine_no_round": {
+   "simple": 3932.0,
+   "canton": 4128.6,
+   "municipality": 5426.16,
+   "total_cantonal_local": 9554.76
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 5342,
+   "city": 7021,
+   "personal": 0,
+   "simple_canton": 5088,
+   "simple_city": 5088,
+   "total": 14179
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 7021.44,
+   "total_cantonal_local": 12363.84
+  },
+  "mine_no_round": {
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 7021.44,
+   "total_cantonal_local": 12363.84
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 5342,
+   "city": 7021,
+   "personal": 0,
+   "simple_canton": 5088,
+   "simple_city": 5088,
+   "total": 14179
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 7021.44,
+   "total_cantonal_local": 12363.84
+  },
+  "mine_no_round": {
+   "simple": 5095.92,
+   "canton": 5350.72,
+   "municipality": 7032.37,
+   "total_cantonal_local": 12383.09
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 9913,
+   "city": 13028,
+   "personal": 0,
+   "simple_canton": 9441,
+   "simple_city": 9441,
+   "total": 28349
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 9440.8,
+   "canton": 9912.84,
+   "municipality": 13028.3,
+   "total_cantonal_local": 22941.14
+  },
+  "mine_no_round": {
+   "simple": 9440.8,
+   "canton": 9912.84,
+   "municipality": 13028.3,
+   "total_cantonal_local": 22941.14
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 14737,
+   "city": 19369,
+   "personal": 0,
+   "simple_canton": 14035,
+   "simple_city": 14035,
+   "total": 45973
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 14037.8,
+   "canton": 14739.69,
+   "municipality": 19372.16,
+   "total_cantonal_local": 34111.85
+  },
+  "mine_no_round": {
+   "simple": 14047.11,
+   "canton": 14749.46,
+   "municipality": 19385.01,
+   "total_cantonal_local": 34134.47
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 20672,
+   "city": 27168,
+   "personal": 0,
+   "simple_canton": 19687,
+   "simple_city": 19687,
+   "total": 67520
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 19687.2,
+   "canton": 20671.56,
+   "municipality": 27168.34,
+   "total_cantonal_local": 47839.9
+  },
+  "mine_no_round": {
+   "simple": 19687.2,
+   "canton": 20671.56,
+   "municipality": 27168.34,
+   "total_cantonal_local": 47839.9
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 24620,
+   "city": 32357,
+   "personal": 0,
+   "simple_canton": 23447,
+   "simple_city": 23447,
+   "total": 81857
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 23447.2,
+   "canton": 24619.56,
+   "municipality": 32357.14,
+   "total_cantonal_local": 56976.7
+  },
+  "mine_no_round": {
+   "simple": 23447.2,
+   "canton": 24619.56,
+   "municipality": 32357.14,
+   "total_cantonal_local": 56976.7
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 39425,
+   "city": 51815,
+   "personal": 0,
+   "simple_canton": 37547,
+   "simple_city": 37547,
+   "total": 135620
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 37547.2,
+   "canton": 39424.56,
+   "municipality": 51815.14,
+   "total_cantonal_local": 91239.7
+  },
+  "mine_no_round": {
+   "simple": 37547.2,
+   "canton": 39424.56,
+   "municipality": 51815.14,
+   "total_cantonal_local": 91239.7
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 71409,
+   "city": 93851,
+   "personal": 0,
+   "simple_canton": 68008,
+   "simple_city": 68008,
+   "total": 255140
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 93840.0,
+   "total_cantonal_local": 165240.0
+  },
+  "mine_no_round": {
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 93840.0,
+   "total_cantonal_local": 165240.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "St. Gallen",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 89259,
+   "city": 117311,
+   "personal": 0,
+   "simple_canton": 85008,
+   "simple_city": 85008,
+   "total": 321570
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 117300.0,
+   "total_cantonal_local": 206550.0
+  },
+  "mine_no_round": {
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 117300.0,
+   "total_cantonal_local": 206550.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 143,
+   "city": 101,
+   "personal": 0,
+   "simple_canton": 136,
+   "simple_city": 136,
+   "total": 244
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 136.0,
+   "canton": 142.8,
+   "municipality": 100.64,
+   "total_cantonal_local": 243.44
+  },
+  "mine_no_round": {
+   "simple": 136.0,
+   "canton": 142.8,
+   "municipality": 100.64,
+   "total_cantonal_local": 243.44
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 114,
+   "canton": 1071,
+   "city": 755,
+   "personal": 0,
+   "simple_canton": 1020,
+   "simple_city": 1020,
+   "total": 1940
+  },
+  "mine": {
+   "fed": 113.96,
+   "simple": 1020.0,
+   "canton": 1071.0,
+   "municipality": 754.8,
+   "total_cantonal_local": 1825.8
+  },
+  "mine_no_round": {
+   "simple": 1023.0,
+   "canton": 1074.15,
+   "municipality": 757.02,
+   "total_cantonal_local": 1831.17
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 671,
+   "canton": 3511,
+   "city": 2475,
+   "personal": 0,
+   "simple_canton": 3344,
+   "simple_city": 3344,
+   "total": 6657
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 2474.56,
+   "total_cantonal_local": 5985.76
+  },
+  "mine_no_round": {
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 2474.56,
+   "total_cantonal_local": 5985.76
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 671,
+   "canton": 3511,
+   "city": 2475,
+   "personal": 0,
+   "simple_canton": 3344,
+   "simple_city": 3344,
+   "total": 6657
+  },
+  "mine": {
+   "fed": 671.4,
+   "simple": 3344.0,
+   "canton": 3511.2,
+   "municipality": 2474.56,
+   "total_cantonal_local": 5985.76
+  },
+  "mine_no_round": {
+   "simple": 3351.92,
+   "canton": 3519.52,
+   "municipality": 2480.42,
+   "total_cantonal_local": 5999.94
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1727,
+   "canton": 5971,
+   "city": 4208,
+   "personal": 0,
+   "simple_canton": 5686,
+   "simple_city": 5686,
+   "total": 11906
+  },
+  "mine": {
+   "fed": 1727.35,
+   "simple": 5686.4,
+   "canton": 5970.72,
+   "municipality": 4207.94,
+   "total_cantonal_local": 10178.66
+  },
+  "mine_no_round": {
+   "simple": 5691.0,
+   "canton": 5975.55,
+   "municipality": 4211.34,
+   "total_cantonal_local": 10186.89
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 2684,
+   "canton": 7375,
+   "city": 5197,
+   "personal": 0,
+   "simple_canton": 7024,
+   "simple_city": 7024,
+   "total": 15256
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 5197.46,
+   "total_cantonal_local": 12572.24
+  },
+  "mine_no_round": {
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 5197.46,
+   "total_cantonal_local": 12572.24
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 2684,
+   "canton": 7375,
+   "city": 5197,
+   "personal": 0,
+   "simple_canton": 7024,
+   "simple_city": 7024,
+   "total": 15256
+  },
+  "mine": {
+   "fed": 2684.35,
+   "simple": 7023.6,
+   "canton": 7374.78,
+   "municipality": 5197.46,
+   "total_cantonal_local": 12572.24
+  },
+  "mine_no_round": {
+   "simple": 7032.91,
+   "canton": 7384.55,
+   "municipality": 5204.35,
+   "total_cantonal_local": 12588.9
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 7076,
+   "canton": 12310,
+   "city": 8675,
+   "personal": 0,
+   "simple_canton": 11724,
+   "simple_city": 11724,
+   "total": 28061
+  },
+  "mine": {
+   "fed": 7075.55,
+   "simple": 11723.6,
+   "canton": 12309.78,
+   "municipality": 8675.46,
+   "total_cantonal_local": 20985.24
+  },
+  "mine_no_round": {
+   "simple": 11723.6,
+   "canton": 12309.78,
+   "municipality": 8675.46,
+   "total_cantonal_local": 20985.24
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 12890,
+   "canton": 17235,
+   "city": 12147,
+   "personal": 0,
+   "simple_canton": 16414,
+   "simple_city": 16414,
+   "total": 42272
+  },
+  "mine": {
+   "fed": 12890.15,
+   "simple": 16414.2,
+   "canton": 17234.91,
+   "municipality": 12146.51,
+   "total_cantonal_local": 29381.42
+  },
+  "mine_no_round": {
+   "simple": 16423.51,
+   "canton": 17244.68,
+   "municipality": 12153.39,
+   "total_cantonal_local": 29398.08
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 20823,
+   "canton": 23167,
+   "city": 16327,
+   "personal": 0,
+   "simple_canton": 22064,
+   "simple_city": 22064,
+   "total": 60317
+  },
+  "mine": {
+   "fed": 20823.35,
+   "simple": 22063.6,
+   "canton": 23166.78,
+   "municipality": 16327.06,
+   "total_cantonal_local": 39493.84
+  },
+  "mine_no_round": {
+   "simple": 22063.6,
+   "canton": 23166.78,
+   "municipality": 16327.06,
+   "total_cantonal_local": 39493.84
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 26103,
+   "canton": 26779,
+   "city": 18873,
+   "personal": 0,
+   "simple_canton": 25504,
+   "simple_city": 25504,
+   "total": 71755
+  },
+  "mine": {
+   "fed": 26103.35,
+   "simple": 25500.0,
+   "canton": 26775.0,
+   "municipality": 18870.0,
+   "total_cantonal_local": 45645.0
+  },
+  "mine_no_round": {
+   "simple": 25500.0,
+   "canton": 26775.0,
+   "municipality": 18870.0,
+   "total_cantonal_local": 45645.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 45903,
+   "canton": 40167,
+   "city": 28308,
+   "personal": 0,
+   "simple_canton": 38254,
+   "simple_city": 38254,
+   "total": 114378
+  },
+  "mine": {
+   "fed": 45903.35,
+   "simple": 38250.0,
+   "canton": 40162.5,
+   "municipality": 28305.0,
+   "total_cantonal_local": 68467.5
+  },
+  "mine_no_round": {
+   "simple": 38250.0,
+   "canton": 40162.5,
+   "municipality": 28305.0,
+   "total_cantonal_local": 68467.5
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 92000,
+   "canton": 71404,
+   "city": 50323,
+   "personal": 0,
+   "simple_canton": 68004,
+   "simple_city": 68004,
+   "total": 213727
+  },
+  "mine": {
+   "fed": 92000.0,
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 50320.0,
+   "total_cantonal_local": 121720.0
+  },
+  "mine_no_round": {
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 50320.0,
+   "total_cantonal_local": 121720.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": false,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 89254,
+   "city": 62903,
+   "personal": 0,
+   "simple_canton": 85004,
+   "simple_city": 85004,
+   "total": 267157
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 62900.0,
+   "total_cantonal_local": 152150.0
+  },
+  "mine_no_round": {
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 62900.0,
+   "total_cantonal_local": 152150.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 15000,
+  "estv": {
+   "fed": 0,
+   "canton": 0,
+   "city": 0,
+   "personal": 0,
+   "simple_canton": 0,
+   "simple_city": 0,
+   "total": 0
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 0.0,
+   "canton": 0.0,
+   "municipality": 0.0,
+   "total_cantonal_local": 0.0
+  },
+  "mine_no_round": {
+   "simple": 0.0,
+   "canton": 0.0,
+   "municipality": 0.0,
+   "total_cantonal_local": 0.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 30050,
+  "estv": {
+   "fed": 0,
+   "canton": 286,
+   "city": 201,
+   "personal": 0,
+   "simple_canton": 272,
+   "simple_city": 272,
+   "total": 487
+  },
+  "mine": {
+   "fed": 0.0,
+   "simple": 272.0,
+   "canton": 285.6,
+   "municipality": 201.28,
+   "total_cantonal_local": 486.88
+  },
+  "mine_no_round": {
+   "simple": 274.0,
+   "canton": 287.7,
+   "municipality": 202.76,
+   "total_cantonal_local": 490.46
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 60000,
+  "estv": {
+   "fed": 369,
+   "canton": 2142,
+   "city": 1510,
+   "personal": 0,
+   "simple_canton": 2040,
+   "simple_city": 2040,
+   "total": 4021
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 1509.6,
+   "total_cantonal_local": 3651.6
+  },
+  "mine_no_round": {
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 1509.6,
+   "total_cantonal_local": 3651.6
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 60099,
+  "estv": {
+   "fed": 369,
+   "canton": 2142,
+   "city": 1510,
+   "personal": 0,
+   "simple_canton": 2040,
+   "simple_city": 2040,
+   "total": 4021
+  },
+  "mine": {
+   "fed": 369.0,
+   "simple": 2040.0,
+   "canton": 2142.0,
+   "municipality": 1509.6,
+   "total_cantonal_local": 3651.6
+  },
+  "mine_no_round": {
+   "simple": 2045.94,
+   "canton": 2148.24,
+   "municipality": 1514.0,
+   "total_cantonal_local": 3662.23
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 85550,
+  "estv": {
+   "fed": 1185,
+   "canton": 4121,
+   "city": 2904,
+   "personal": 0,
+   "simple_canton": 3925,
+   "simple_city": 3925,
+   "total": 8210
+  },
+  "mine": {
+   "fed": 1185.0,
+   "simple": 3928.0,
+   "canton": 4124.4,
+   "municipality": 2906.72,
+   "total_cantonal_local": 7031.12
+  },
+  "mine_no_round": {
+   "simple": 3932.0,
+   "canton": 4128.6,
+   "municipality": 2909.68,
+   "total_cantonal_local": 7038.28
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 100000,
+  "estv": {
+   "fed": 1816,
+   "canton": 5342,
+   "city": 3765,
+   "personal": 0,
+   "simple_canton": 5088,
+   "simple_city": 5088,
+   "total": 10923
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 3765.12,
+   "total_cantonal_local": 9107.52
+  },
+  "mine_no_round": {
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 3765.12,
+   "total_cantonal_local": 9107.52
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 100099,
+  "estv": {
+   "fed": 1816,
+   "canton": 5342,
+   "city": 3765,
+   "personal": 0,
+   "simple_canton": 5088,
+   "simple_city": 5088,
+   "total": 10923
+  },
+  "mine": {
+   "fed": 1816.0,
+   "simple": 5088.0,
+   "canton": 5342.4,
+   "municipality": 3765.12,
+   "total_cantonal_local": 9107.52
+  },
+  "mine_no_round": {
+   "simple": 5095.92,
+   "canton": 5350.72,
+   "municipality": 3770.98,
+   "total_cantonal_local": 9121.7
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 150000,
+  "estv": {
+   "fed": 5408,
+   "canton": 9913,
+   "city": 6986,
+   "personal": 0,
+   "simple_canton": 9441,
+   "simple_city": 9441,
+   "total": 22307
+  },
+  "mine": {
+   "fed": 5408.0,
+   "simple": 9440.8,
+   "canton": 9912.84,
+   "municipality": 6986.19,
+   "total_cantonal_local": 16899.03
+  },
+  "mine_no_round": {
+   "simple": 9440.8,
+   "canton": 9912.84,
+   "municipality": 6986.19,
+   "total_cantonal_local": 16899.03
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 199999,
+  "estv": {
+   "fed": 11867,
+   "canton": 14737,
+   "city": 10386,
+   "personal": 0,
+   "simple_canton": 14035,
+   "simple_city": 14035,
+   "total": 36990
+  },
+  "mine": {
+   "fed": 11867.0,
+   "simple": 14037.8,
+   "canton": 14739.69,
+   "municipality": 10387.97,
+   "total_cantonal_local": 25127.66
+  },
+  "mine_no_round": {
+   "simple": 14047.11,
+   "canton": 14749.46,
+   "municipality": 10394.86,
+   "total_cantonal_local": 25144.32
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 260000,
+  "estv": {
+   "fed": 19680,
+   "canton": 20672,
+   "city": 14569,
+   "personal": 0,
+   "simple_canton": 19687,
+   "simple_city": 19687,
+   "total": 54921
+  },
+  "mine": {
+   "fed": 19680.0,
+   "simple": 19687.2,
+   "canton": 20671.56,
+   "municipality": 14568.53,
+   "total_cantonal_local": 35240.09
+  },
+  "mine_no_round": {
+   "simple": 19687.2,
+   "canton": 20671.56,
+   "municipality": 14568.53,
+   "total_cantonal_local": 35240.09
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 300000,
+  "estv": {
+   "fed": 24880,
+   "canton": 24620,
+   "city": 17351,
+   "personal": 0,
+   "simple_canton": 23447,
+   "simple_city": 23447,
+   "total": 66851
+  },
+  "mine": {
+   "fed": 24880.0,
+   "simple": 23447.2,
+   "canton": 24619.56,
+   "municipality": 17350.93,
+   "total_cantonal_local": 41970.49
+  },
+  "mine_no_round": {
+   "simple": 23447.2,
+   "canton": 24619.56,
+   "municipality": 17350.93,
+   "total_cantonal_local": 41970.49
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 450000,
+  "estv": {
+   "fed": 44380,
+   "canton": 39425,
+   "city": 27785,
+   "personal": 0,
+   "simple_canton": 37547,
+   "simple_city": 37547,
+   "total": 111590
+  },
+  "mine": {
+   "fed": 44380.0,
+   "simple": 37547.2,
+   "canton": 39424.56,
+   "municipality": 27784.93,
+   "total_cantonal_local": 67209.49
+  },
+  "mine_no_round": {
+   "simple": 37547.2,
+   "canton": 39424.56,
+   "municipality": 27784.93,
+   "total_cantonal_local": 67209.49
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 800000,
+  "estv": {
+   "fed": 89880,
+   "canton": 71409,
+   "city": 50326,
+   "personal": 0,
+   "simple_canton": 68008,
+   "simple_city": 68008,
+   "total": 211615
+  },
+  "mine": {
+   "fed": 89880.0,
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 50320.0,
+   "total_cantonal_local": 121720.0
+  },
+  "mine_no_round": {
+   "simple": 68000.0,
+   "canton": 71400.0,
+   "municipality": 50320.0,
+   "total_cantonal_local": 121720.0
+  }
+ },
+ {
+  "canton": "SG",
+  "municipality": "Rapperswil-Jona",
+  "married": true,
+  "taxable_income": 1000000,
+  "estv": {
+   "fed": 115000,
+   "canton": 89259,
+   "city": 62906,
+   "personal": 0,
+   "simple_canton": 85008,
+   "simple_city": 85008,
+   "total": 267165
+  },
+  "mine": {
+   "fed": 115000.0,
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 62900.0,
+   "total_cantonal_local": 152150.0
+  },
+  "mine_no_round": {
+   "simple": 85000.0,
+   "canton": 89250.0,
+   "municipality": 62900.0,
+   "total_cantonal_local": 152150.0
+  }
+ }
+]

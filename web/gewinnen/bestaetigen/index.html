@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teilnahme bestätigen | allnova Gewinnspiel</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="../assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+  body { min-height: 100svh; display: grid; place-items: center; transition: background-color .8s; }
+  .confirm { width: min(100% - 40px, 720px); padding: clamp(32px, 6vw, 72px) 0; display: grid; gap: 26px; justify-items: center; text-align: center; }
+  .confirm .brand { margin-bottom: 18px; }
+  .seal { width: 128px; height: 128px; }
+  .confirm h1 { font-weight: 800; letter-spacing: -.035em; line-height: 1.02; font-size: clamp(40px, 6vw, 72px); }
+  .confirm .lead { margin: 0 auto; max-width: 46ch; }
+  .app { width: 100%; display: grid; gap: 18px; justify-items: center; padding: clamp(26px, 4vw, 40px); border-radius: var(--r-l); background: var(--surface); box-shadow: var(--shadow); }
+  .theme-dark .app { box-shadow: inset 0 0 0 1.5px var(--line-2); }
+  .app .h3 { max-width: 24ch; }
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .spinner { width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .theme-ivory .brand { background: var(--ink); padding: 11px 16px; border-radius: 14px; }
+</style>
+</head>
+<body class="theme-ivory">
+<main class="confirm" aria-live="polite">
+  <span class="brand"><img src="../assets/brand/allnova-logo.png" alt="allnova" width="2140" height="375" style="height: 24px; width: auto"></span>
+  <div data-view="loading"><div class="spinner" role="status" aria-label="Wird bestätigt"></div></div>
+  <p class="lead" data-view="loading">Wir bestätigen deine Teilnahme …</p>
+</main>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/DrawSVGPlugin.min.js"></script>
+<script type="module">
+import { confirmEntry, track, DEMO } from '../assets/js/api.js';
+
+const { gsap } = window;
+gsap.registerPlugin(window.DrawSVGPlugin);
+const cfg = window.ALLNOVA_CONFIG || {};
+const main = document.querySelector('.confirm');
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmtDate = (d) => (d ? new Date(`${d}T12:00:00`).toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '');
+const PAGES = { steuer: '../steuern/', fahrstart: '../fahrstart/' };
+const seal = `<svg class="seal" viewBox="0 0 128 128" aria-hidden="true"><circle class="s-ring" cx="64" cy="64" r="58" fill="none" stroke="#b69a5c" stroke-width="5"/><circle class="s-fill" cx="64" cy="64" r="50" fill="#b69a5c"/><path class="s-check" d="M42 65l15 15 30-33" fill="none" stroke="#111512" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+
+function render(html, kind) {
+  if (kind === 'fahrstart') { document.body.classList.replace('theme-ivory', 'theme-dark'); }
+  main.querySelectorAll('[data-view]').forEach((el) => el.remove());
+  main.insertAdjacentHTML('beforeend', html);
+  gsap.from(main.querySelectorAll('[data-view="result"] > *, [data-view="result"]'), { opacity: 0, y: 26, duration: 1, ease: 'expo.out', stagger: 0.07 });
+  const ring = main.querySelector('.s-ring');
+  if (ring) {
+    gsap.timeline()
+      .from(ring, { drawSVG: '0%', duration: 1.1, ease: 'power2.inOut' })
+      .from(main.querySelector('.s-fill'), { scale: 0, transformOrigin: '50% 50%', duration: 0.6, ease: 'back.out(1.8)' }, 0.6)
+      .from(main.querySelector('.s-check'), { drawSVG: '0%', duration: 0.5, ease: 'power2.out' }, 0.95);
+  }
+}
+
+const token = new URLSearchParams(location.search).get('token') || '';
+let r;
+try { r = await confirmEntry(token); } catch (e) { r = { ok: false, error: 'network' }; }
+const back = PAGES[r.kind] || '../';
+
+if (r.ok) {
+  const again = r.status === 'already_confirmed';
+  const appBtn = cfg.appUrl
+    ? `<a class="btn btn--gold" href="${esc(cfg.appUrl)}" data-app>allnova App entdecken${arrow}</a>`
+    : (DEMO ? '<p class="small">Vorschau: Der App-Link wird in <code>assets/js/config.js</code> (appUrl) hinterlegt.</p>' : '');
+  render(`<div data-view="result" style="display:grid;gap:22px;justify-items:center">
+      ${seal}
+      <h1>${again ? 'Du bist bereits dabei.' : 'Deine Teilnahme ist bestätigt.'}</h1>
+      <p class="lead">${r.first_name ? `${esc(r.first_name)}, du` : 'Du'} nimmst am ${esc(r.campaign_title)} teil.${r.draw_on ? ` Die Auslosung findet am ${fmtDate(r.draw_on)} statt.` : ''} Viel Glück!</p>
+    </div>
+    <div class="app" data-view="result">
+      <p class="h3">Entdecke jetzt regionale Vorteile in der allnova App.</p>
+      <div class="actions">${appBtn}<a class="btn btn--ghost" href="${back}" data-later>Später</a></div>
+      <p class="small">Für Installation, Newsletter oder Beratung gibt es keine zusätzlichen Lose.</p>
+    </div>`, r.kind);
+  main.querySelector('[data-app]')?.addEventListener('click', () => track(r.campaign, 'app_cta_click'));
+  main.querySelector('[data-later]')?.addEventListener('click', () => track(r.campaign, 'app_later_click'));
+} else {
+  const T = {
+    expired: ['Der Bestätigungslink ist abgelaufen.', 'Die Bestätigung muss innerhalb der Teilnahmefrist erfolgen. Läuft das Gewinnspiel noch, kannst du dich erneut eintragen – du erhältst dann einen neuen Link.'],
+    invalid_token: ['Dieser Link ist leider ungültig.', 'Bitte öffne den Link direkt aus deiner Bestätigungsmail. Falls es weiterhin nicht klappt, melde dich unter info@allnova.ch.'],
+    network: ['Das hat nicht geklappt.', 'Bitte prüfe deine Internetverbindung und lade die Seite neu.'],
+  };
+  const [h, p] = T[r.error] || T.invalid_token;
+  render(`<div data-view="result" style="display:grid;gap:22px;justify-items:center">
+      <h1>${h}</h1><p class="lead">${p}</p>
+      <div class="actions"><a class="btn btn--gold" href="${back}">Zur Gewinnspielseite${arrow}</a></div>
+    </div>`, r.kind);
+}
+</script>
+</body>
+</html>
