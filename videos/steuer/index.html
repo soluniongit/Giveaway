@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>allnova · Steuergewinnspiel · 30 s · 9:16</title>
+<link rel="stylesheet" href="../assets/base.css">
+<style>
+  #stage {
+    background:
+      radial-gradient(120% 70% at 50% 28%, #fdfcf8 0%, var(--ivory) 52%, #efeadf 100%);
+    color: var(--ink);
+  }
+  .blob { position: absolute; border-radius: 50%; pointer-events: none; }
+  #blobA { width: 1200px; height: 1200px; left: -420px; top: -380px; background: radial-gradient(closest-side, rgba(201, 182, 142, .30), rgba(201, 182, 142, 0)); }
+  #blobB { width: 1300px; height: 1300px; left: 240px; top: 1060px; background: radial-gradient(closest-side, rgba(176, 160, 120, .22), rgba(176, 160, 120, 0)); }
+
+  /* Header */
+  #hdr { left: 90px; top: 214px; width: 900px; height: 40px; }
+  #hdr .dot { position: absolute; left: 0; top: 13px; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); }
+  #hdr .lbl { position: absolute; left: 30px; top: 2px; font-size: 26px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; }
+  #hdr .rule { position: absolute; left: 300px; right: 120px; top: 19px; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(182, 154, 92, .15)); transform-origin: 0 50%; }
+  #hdr .count { position: absolute; right: 0; top: 2px; height: 34px; overflow: hidden; font-size: 26px; font-weight: 700; letter-spacing: .08em; color: var(--muted); font-variant-numeric: tabular-nums; }
+  #hdr .count .strip > div { height: 34px; line-height: 34px; }
+  #hdr .count .of { display: inline-block; vertical-align: top; color: #b9b3a5; }
+
+  .gold-text {
+    background: var(--gold-grad);
+    background-size: 220% 100%;
+    background-position: 0% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Scene 1 */
+  #s1-three { left: 54px; top: 236px; font-family: var(--serif); font-size: 900px; line-height: 900px; height: 800px; padding-right: 30px; }
+  #s1-jahre { left: 500px; top: 800px; font-size: 156px; font-weight: 800; letter-spacing: -.032em; line-height: 170px; height: 178px; }
+  #s1-l2 { left: 88px; top: 990px; font-size: 118px; font-weight: 800; letter-spacing: -.032em; line-height: 132px; height: 146px; }
+  #s1-l3 { left: 84px; top: 1108px; font-family: var(--serif); font-style: italic; font-size: 210px; line-height: 220px; height: 236px; padding-right: 40px; }
+
+  /* Document cards */
+  .doc {
+    position: absolute;
+    width: 280px; height: 372px;
+    border-radius: 26px;
+    background: var(--paper);
+    box-shadow: 0 40px 70px -30px rgba(60, 50, 25, .35), 0 6px 18px -6px rgba(60, 50, 25, .14), inset 0 0 0 1.5px rgba(182, 154, 92, .18);
+    overflow: hidden;
+  }
+  .doc-in { position: absolute; left: 0; top: 0; width: 280px; height: 372px; padding: 30px 28px; }
+  .doc-top { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .doc-top i { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); display: block; }
+  .doc-year { margin-top: 18px; font-size: 66px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .doc-lines { margin-top: 30px; }
+  .doc-lines i { display: block; height: 12px; border-radius: 6px; background: #eee9de; margin-bottom: 16px; }
+  .doc-seal { position: absolute; right: 26px; bottom: 26px; width: 58px; height: 58px; border-radius: 50%; border: 2.5px solid var(--gold); display: grid; place-items: center; }
+  .doc-seal svg { width: 30px; height: 30px; }
+  .doc-corner { position: absolute; left: 28px; bottom: 34px; width: 90px; height: 12px; border-radius: 6px; background: rgba(182, 154, 92, .35); }
+
+  /* Scene 2 */
+  #s2-top { left: 0; width: 1080px; top: 470px; text-align: center; font-size: 104px; font-weight: 800; letter-spacing: -.032em; line-height: 124px; height: 140px; }
+  #s2-bot { left: 0; width: 1080px; top: 1206px; text-align: center; font-size: 84px; font-weight: 800; letter-spacing: -.03em; line-height: 150px; height: 160px; }
+  #s2-bot .serif { font-size: 124px; letter-spacing: 0; margin-right: 8px; }
+  #frame { left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
+  #badge {
+    left: 395px; top: 698px; width: 290px; height: 72px; border-radius: 36px;
+    background: var(--ink); color: var(--ivory);
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-size: 30px; font-weight: 700; letter-spacing: .01em;
+    box-shadow: 0 16px 34px -14px rgba(17, 21, 18, .55);
+  }
+  #badge svg { width: 34px; height: 34px; }
+
+  /* Scene 3 */
+  .detail { position: absolute; left: 0; top: 0; width: 840px; height: 600px; padding: 50px 56px; }
+  .detail-top { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .detail-top .k { font-size: 24px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 14px; }
+  .detail-top .k i { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); display: block; }
+  .chip { height: 56px; padding: 0 26px; border-radius: 28px; background: var(--gold-grad); color: var(--ink); display: flex; align-items: center; font-family: var(--serif); font-style: italic; font-size: 40px; }
+  .detail-rule { height: 2px; background: var(--line); margin: 30px 0 0; transform-origin: 0 50%; }
+  .row { position: absolute; left: 56px; height: 124px; width: 730px; }
+  .row .ic { position: absolute; left: 0; top: 0; width: 124px; height: 124px; }
+  .row .txt { position: absolute; left: 160px; top: 4px; }
+  .row .t { font-size: 66px; font-weight: 800; letter-spacing: -.03em; line-height: 76px; height: 82px; }
+  .row .s { font-size: 30px; font-weight: 500; color: var(--muted); line-height: 40px; height: 42px; }
+  #row1 { top: 172px; }
+  #row2 { top: 418px; }
+  #plus { position: absolute; left: 56px; top: 296px; width: 124px; height: 122px; }
+
+  #hint {
+    left: 120px; top: 1112px; width: 840px; height: 250px; border-radius: 36px;
+    background: var(--ink); color: var(--ivory);
+    box-shadow: 0 30px 60px -30px rgba(17, 21, 18, .6);
+    overflow: hidden;
+  }
+  #hint .ic { position: absolute; left: 50px; top: 77px; width: 96px; height: 96px; border-radius: 28px; background: rgba(201, 182, 142, .12); display: grid; place-items: center; }
+  #hint .ic svg { width: 56px; height: 56px; }
+  #hint .k { position: absolute; left: 180px; top: 48px; font-size: 22px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-hi); }
+  #hint .t { position: absolute; left: 180px; top: 88px; width: 540px; font-size: 46px; font-weight: 700; letter-spacing: -.02em; line-height: 56px; height: 120px; }
+
+  /* Scene 4 */
+  #s4-title { left: 90px; top: 330px; font-size: 92px; font-weight: 800; letter-spacing: -.032em; line-height: 108px; height: 120px; }
+  #s4-title .serif { font-style: italic; font-size: 112px; letter-spacing: -.01em; }
+  #steps { left: 0; top: 0; width: 1080px; height: 1920px; }
+  .track { position: absolute; left: 163px; width: 6px; border-radius: 3px; background: #e6e0d2; }
+  .track-fill { position: absolute; left: 163px; width: 6px; border-radius: 3px; background: linear-gradient(180deg, var(--gold-hi), var(--gold)); transform-origin: 50% 0; }
+  .node { position: absolute; left: 90px; width: 152px; height: 152px; }
+  .node .bg { position: absolute; inset: 0; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 3px #e6e0d2, 0 20px 40px -24px rgba(60, 50, 25, .35); }
+  .node .on { position: absolute; inset: 0; border-radius: 50%; background: var(--gold-grad); box-shadow: 0 24px 44px -20px rgba(149, 124, 69, .75); }
+  .node .ring { position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--gold); }
+  .node svg { position: absolute; left: 36px; top: 36px; width: 80px; height: 80px; }
+  .step-txt { position: absolute; left: 290px; }
+  .step-txt .n { font-size: 24px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); line-height: 32px; height: 34px; }
+  .step-txt .t { font-size: 80px; font-weight: 800; letter-spacing: -.032em; line-height: 92px; height: 98px; }
+  #free {
+    left: 90px; top: 1336px; width: 900px; height: 150px; border-radius: 75px;
+    background: var(--ivory-hi);
+    box-shadow: inset 0 0 0 2.5px rgba(182, 154, 92, .55), 0 26px 50px -30px rgba(60, 50, 25, .35);
+  }
+  #free .ic { position: absolute; left: 22px; top: 22px; width: 106px; height: 106px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; }
+  #free .ic svg { width: 54px; height: 54px; }
+  #free .t { position: absolute; left: 156px; top: 30px; font-size: 44px; font-weight: 800; letter-spacing: -.025em; line-height: 52px; }
+  #free .s { position: absolute; left: 156px; top: 84px; font-size: 28px; font-weight: 600; color: var(--muted); line-height: 36px; }
+
+  /* Scene 5 — end card */
+  #logo-badge {
+    left: 230px; top: 300px; width: 620px; height: 196px; border-radius: 40px;
+    background: var(--ink);
+    display: grid; place-items: center;
+    box-shadow: 0 34px 60px -34px rgba(17, 21, 18, .7);
+  }
+  #logo-badge img { width: 452px; height: auto; display: block; }
+  #e-l1 { left: 0; width: 1080px; top: 588px; text-align: center; height: 250px; line-height: 250px; }
+  #e-l1 .serif { font-size: 300px; vertical-align: top; letter-spacing: 0; }
+  #e-l1 .s { font-size: 140px; font-weight: 800; letter-spacing: -.036em; vertical-align: top; margin-left: 10px; }
+  #e-l2 { left: 0; width: 1080px; top: 832px; text-align: center; font-size: 116px; font-weight: 800; letter-spacing: -.036em; line-height: 132px; height: 146px; }
+  #e-l3 { left: 0; width: 1080px; top: 952px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 176px; line-height: 186px; height: 200px; }
+  #cta {
+    left: 150px; top: 1206px; width: 780px; height: 150px; border-radius: 75px;
+    background: var(--gold-grad);
+    box-shadow: 0 36px 60px -30px rgba(149, 124, 69, .8);
+  }
+  #cta .t { position: absolute; left: 70px; top: 0; line-height: 150px; font-size: 52px; font-weight: 800; letter-spacing: -.025em; color: var(--ink); }
+  #cta .arr { position: absolute; right: 22px; top: 22px; width: 106px; height: 106px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; }
+  #cta .arr svg { width: 50px; height: 50px; }
+  #e-meta { left: 0; width: 1080px; top: 1406px; text-align: center; font-size: 31px; font-weight: 700; letter-spacing: -.005em; color: var(--ink-3); line-height: 42px; }
+  #e-meta2 { left: 0; width: 1080px; top: 1456px; text-align: center; font-size: 28px; font-weight: 600; color: var(--muted); line-height: 40px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="blob" id="blobA"></div>
+  <div class="blob" id="blobB"></div>
+
+  <!-- Header -->
+  <div class="abs" id="hdr">
+    <div class="dot"></div>
+    <div class="lbl mask"><span data-text="label"></span></div>
+    <div class="rule"></div>
+    <div class="count"><div class="strip"><div>01</div><div>02</div><div>03</div><div>04</div></div></div>
+  </div>
+
+  <!-- Scene 1 -->
+  <div class="abs mask" id="s1-three"><span class="gold-text" data-text="s1_big"></span></div>
+  <div class="abs mask nowrap" id="s1-jahre"><span data-text="s1_l1"></span></div>
+  <div class="abs mask nowrap" id="s1-l2"><span data-text="s1_l2"></span></div>
+  <div class="abs mask nowrap" id="s1-l3"><span class="gold-text" data-text="s1_l3"></span></div>
+
+  <!-- Scene 2 -->
+  <div class="abs mask nowrap" id="s2-top"><span><span class="gold-text" data-text="s2_num"></span> <span data-text="s2_top"></span></span></div>
+  <svg class="abs" id="frame" viewBox="0 0 1080 1920"><rect id="frame-rect" x="66" y="734" width="948" height="424" rx="44" fill="none" stroke="#b69a5c" stroke-width="3.5"/></svg>
+
+  <!-- Document cards (scene 1 → 3) -->
+  <div class="doc" id="doc0"></div>
+  <div class="doc" id="doc2"></div>
+  <div class="doc" id="doc1">
+    <div class="detail" id="detail">
+      <div class="detail-top"><div class="k"><i></i><span data-text="s3_card"></span></div><div class="chip" data-text="s3_chip"></div></div>
+      <div class="detail-rule"></div>
+      <div class="row" id="row1">
+        <svg class="ic" viewBox="0 0 124 124">
+          <circle class="c-ring" cx="62" cy="62" r="59" fill="none" stroke="#b69a5c" stroke-width="3.5"/>
+          <circle class="c-fill" cx="62" cy="62" r="60" fill="#b69a5c"/>
+          <path class="c-mark" d="M40 63 L56 79 L86 46" fill="none" stroke="#fffefb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="txt"><div class="mask t"><span data-text="s3_row1"></span></div><div class="mask s"><span data-text="s3_row1_sub"></span></div></div>
+      </div>
+      <svg id="plus" viewBox="0 0 124 122">
+        <line class="pl-a" x1="62" y1="6" x2="62" y2="36" stroke="#e6e0d2" stroke-width="3"/>
+        <line class="pl-b" x1="62" y1="86" x2="62" y2="116" stroke="#e6e0d2" stroke-width="3"/>
+        <g class="pl-c"><circle cx="62" cy="61" r="20" fill="#f8f6f0" stroke="#b69a5c" stroke-width="3"/><path d="M62 52 V70 M53 61 H71" stroke="#b69a5c" stroke-width="3.5" stroke-linecap="round"/></g>
+      </svg>
+      <div class="row" id="row2">
+        <svg class="ic" viewBox="0 0 124 124">
+          <circle class="c-ring" cx="62" cy="62" r="59" fill="none" stroke="#b69a5c" stroke-width="3.5"/>
+          <circle class="c-fill" cx="62" cy="62" r="60" fill="#b69a5c"/>
+          <g class="plane"><path d="M36 61 L88 38 L74 90 L60 70 Z" fill="none" stroke="#fffefb" stroke-width="6" stroke-linejoin="round"/><path d="M60 70 L88 38" fill="none" stroke="#fffefb" stroke-width="6" stroke-linecap="round"/></g>
+        </svg>
+        <div class="txt"><div class="mask t"><span data-text="s3_row2"></span></div><div class="mask s"><span data-text="s3_row2_sub"></span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="abs" id="badge">
+    <svg viewBox="0 0 34 34"><circle cx="17" cy="11" r="6.5" fill="none" stroke="#c9b68e" stroke-width="2.6"/><path d="M5 31 C6 23 11 19.5 17 19.5 C23 19.5 28 23 29 31" fill="none" stroke="#c9b68e" stroke-width="2.6" stroke-linecap="round"/></svg>
+    <span data-text="s2_badge"></span>
+  </div>
+  <div class="abs mask nowrap" id="s2-bot"><span><span class="serif gold-text" data-text="s2_bot_num"></span><span data-text="s2_bot"></span></span></div>
+
+  <!-- Scene 3 hint -->
+  <div class="abs" id="hint">
+    <div class="ic"><svg viewBox="0 0 56 56"><path d="M14 6 H42 V50 L37.5 46.5 L33 50 L28 46.5 L23 50 L18.5 46.5 L14 50 Z" fill="none" stroke="#c9b68e" stroke-width="3" stroke-linejoin="round"/><path d="M20 17 H36 M20 25 H36 M20 33 H29" stroke="#c9b68e" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <div class="k mask"><span data-text="s3_hint_label"></span></div>
+    <div class="t mask"><span data-text="s3_hint"></span></div>
+  </div>
+
+  <!-- Scene 4 -->
+  <div class="abs mask nowrap" id="s4-title"><span><span data-text="s4_title"></span> <span class="serif gold-text" data-text="s4_title_it"></span></span></div>
+  <div class="abs" id="steps">
+    <div class="track" style="top: 646px; height: 560px;"></div>
+    <div class="track-fill" id="fill1" style="top: 646px; height: 280px;"></div>
+    <div class="track-fill" id="fill2" style="top: 926px; height: 280px;"></div>
+
+    <div class="node" id="node1" style="top: 570px;">
+      <div class="bg"></div><div class="on"></div><div class="ring"></div>
+      <svg viewBox="0 0 80 80"><g fill="none" stroke-width="5.5" stroke-linecap="round" class="ico"><path d="M34 46 L46 34"/><path d="M30 38 L24 44 A9 9 0 0 0 36 56 L42 50"/><path d="M38 30 L44 24 A9 9 0 0 1 56 36 L50 42"/></g></svg>
+    </div>
+    <div class="node" id="node2" style="top: 850px;">
+      <div class="bg"></div><div class="on"></div><div class="ring"></div>
+      <svg viewBox="0 0 80 80"><g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="ico"><rect x="18" y="12" width="44" height="56" rx="7"/><path d="M27 27 H53"/><rect x="27" y="36" width="26" height="9" rx="3"/><path d="M27 55 H41"/></g></svg>
+    </div>
+    <div class="node" id="node3" style="top: 1130px;">
+      <div class="bg"></div><div class="on"></div><div class="ring"></div>
+      <svg viewBox="0 0 80 80"><g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="ico"><rect x="12" y="20" width="50" height="38" rx="6"/><path d="M14 24 L37 41 L60 24"/></g><g class="mailcheck"><circle cx="60" cy="56" r="13" fill="#111512"/><path d="M54 56 L58.5 60.5 L66 52" fill="none" stroke="#fffefb" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+    </div>
+
+    <div class="step-txt" id="st1" style="top: 590px;"><div class="mask n"><span data-text="s4_n1"></span></div><div class="mask t"><span data-text="s4_t1"></span></div></div>
+    <div class="step-txt" id="st2" style="top: 870px;"><div class="mask n"><span data-text="s4_n2"></span></div><div class="mask t"><span data-text="s4_t2"></span></div></div>
+    <div class="step-txt" id="st3" style="top: 1150px;"><div class="mask n"><span data-text="s4_n3"></span></div><div class="mask t"><span data-text="s4_t3"></span></div></div>
+  </div>
+  <div class="abs" id="free">
+    <div class="ic"><svg viewBox="0 0 54 54"><path d="M15 28 L23.5 36.5 L40 19" fill="none" stroke="#c9b68e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="t mask nowrap"><span data-text="s4_free"></span></div>
+    <div class="s mask nowrap"><span data-text="s4_free_sub"></span></div>
+  </div>
+
+  <!-- Scene 5 — end card -->
+  <div class="abs" id="logo-badge"><img src="../assets/brand/allnova-logo.png" alt="allnova"></div>
+  <div class="abs mask nowrap" id="e-l1"><span><span class="serif gold-text" data-text="end_num"></span><span class="s" data-text="end_l1"></span></span></div>
+  <div class="abs mask nowrap" id="e-l2"><span data-text="end_l2"></span></div>
+  <div class="abs mask nowrap" id="e-l3"><span class="gold-text" data-text="end_l3"></span></div>
+  <div class="abs" id="cta">
+    <div class="t mask nowrap"><span data-text="cta"></span></div>
+    <div class="arr"><svg viewBox="0 0 50 50"><path d="M11 25 H37 M27 15 L38 25 L27 35" fill="none" stroke="#f8f6f0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+  <div class="abs mask nowrap" id="e-meta"><span data-text="end_meta"></span></div>
+  <div class="abs mask nowrap" id="e-meta2"><span data-text="end_meta2"></span></div>
+
+  <div class="grain"></div>
+</div>
+
+<script src="../assets/gsap.min.js"></script>
+<script src="../assets/DrawSVGPlugin.min.js"></script>
+<script src="../assets/runtime.js"></script>
+<script>
+/* ============================================================
+ * Bildschirmtexte — hier editieren.
+ * Offene Punkte gem. Skript: bestätigte Steuerjahre, Enddatum,
+ * Mindestalter, Region (aktuell gesetzte Annahmen, s. README).
+ * ============================================================ */
+const C = {
+  label: 'Gewinnspiel',
+  // 0–4 s
+  s1_big: '3', s1_l1: 'Jahre.', s1_l2: 'Steuererklärung.', s1_l3: 'Gratis.',
+  // 4–10 s
+  years: ['2026', '2027', '2028'],
+  doc_kicker: 'Steuer­erklärung',
+  s2_num: '1', s2_top: 'Person gewinnt', s2_badge: '1 Person', s2_bot_num: '3', s2_bot: 'Steuererklärungen',
+  // 10–16 s
+  s3_card: 'Steuererklärung 2027', s3_chip: 'gratis',
+  s3_row1: 'Erstellung', s3_row1_sub: 'Wir erstellen sie für dich.',
+  s3_row2: 'Einreichung', s3_row2_sub: 'Wir reichen sie für dich ein.',
+  s3_hint_label: 'Gut zu wissen', s3_hint: 'Deine Steuerrechnung bleibt bei dir.',
+  // 16–23 s
+  s4_title: 'So machst du', s4_title_it: 'mit.',
+  s4_n1: '01 · Gewinnspielseite', s4_t1: 'Öffnen',
+  s4_n2: '02 · Formular', s4_t2: 'Ausfüllen',
+  s4_n3: '03 · E-Mail', s4_t3: 'Bestätigen',
+  s4_free: 'Kostenlose Teilnahme', s4_free_sub: 'Ohne Versicherungsabschluss',
+  // 23–30 s
+  end_num: '3', end_l1: 'Jahre', end_l2: 'Steuererklärung', end_l3: 'gratis.',
+  cta: 'Jetzt teilnehmen',
+  end_meta: 'Bis 28.02.2027 • ab 18 • Wohnsitz ZH, SZ, ZG oder SG',
+  end_meta2: 'Alle Details & Teilnahmebedingungen im Link',
+};
+
+applyTexts(C);
+
+// Build the three document cards (shared markup, different years)
+const docInner = (year) => `
+  <div class="doc-in">
+    <div class="doc-top"><i></i><span>${C.doc_kicker}</span></div>
+    <div class="doc-year">${year}</div>
+    <div class="doc-lines"><i style="width:88%"></i><i style="width:66%"></i><i style="width:78%"></i></div>
+    <div class="doc-corner"></div>
+    <div class="doc-seal"><svg viewBox="0 0 30 30"><path d="M8 15.5 L13 20.5 L22.5 10" fill="none" stroke="#b69a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>`;
+['doc0', 'doc1', 'doc2'].forEach((id, i) => {
+  document.getElementById(id).insertAdjacentHTML('afterbegin', docInner(C.years[i]));
+});
+
+gsap.registerPlugin(DrawSVGPlugin);
+
+defineComposition({
+  duration: 30,
+  fps: 30,
+  build() {
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => [...document.querySelectorAll(s)];
+    const inner = (sel) => $$(sel).map((el) => el.firstElementChild);
+
+    // ---------- Initial states ----------
+    const masked = [
+      '#hdr .lbl', '#s1-three', '#s1-jahre', '#s1-l2', '#s1-l3', '#s2-top', '#s2-bot',
+      '#row1 .t', '#row1 .s', '#row2 .t', '#row2 .s', '#hint .k', '#hint .t',
+      '#s4-title', '#st1 .n', '#st1 .t', '#st2 .n', '#st2 .t', '#st3 .n', '#st3 .t', '#free .t', '#free .s',
+      '#e-l1', '#e-l2', '#e-l3', '#cta .t', '#e-meta', '#e-meta2',
+    ];
+    gsap.set(inner(masked.join(',')), { yPercent: 135 });
+    gsap.set('#hdr .dot', { scale: 0 });
+    gsap.set('#hdr .rule', { scaleX: 0 });
+    gsap.set('#hdr .count', { opacity: 0 });
+
+    // Cards: fanned below the headline, off-screen at start
+    const fan = [
+      { left: 168, top: 1418, rotation: -11 },
+      { left: 400, top: 1376, rotation: 0 },
+      { left: 632, top: 1418, rotation: 11 },
+    ];
+    ['#doc0', '#doc1', '#doc2'].forEach((id, i) => gsap.set(id, { ...fan[i], y: 700, width: 280, height: 372 }));
+    gsap.set('#detail', { opacity: 0 });
+    gsap.set('#frame-rect', { drawSVG: '0%' });
+    gsap.set('#badge', { scale: 0.6, opacity: 0 });
+    gsap.set('#row1 .c-fill, #row2 .c-fill', { scale: 0, transformOrigin: '50% 50%' });
+    gsap.set('#row1 .c-mark', { drawSVG: '0%' });
+    gsap.set('#row1 .c-ring, #row2 .c-ring', { drawSVG: '0%' });
+    gsap.set('#row2 .plane', { opacity: 0, x: -26, y: 22 });
+    gsap.set('#plus .pl-a, #plus .pl-b', { drawSVG: '0%' });
+    gsap.set('#plus .pl-c', { scale: 0, transformOrigin: '50% 50%' });
+    gsap.set('.detail-rule', { scaleX: 0 });
+    gsap.set('#hint', { y: 120, opacity: 0 });
+    gsap.set('#steps .track', { scaleY: 0, transformOrigin: '50% 0' });
+    gsap.set('#fill1, #fill2', { scaleY: 0 });
+    gsap.set('.node', { scale: 0.4, opacity: 0 });
+    gsap.set('.node .on', { scale: 0 });
+    gsap.set('.node .ring', { scale: 1, opacity: 0 });
+    gsap.set('.node .ico', { stroke: '#b9b3a5' });
+    gsap.set('.mailcheck', { scale: 0, transformOrigin: '60px 56px' });
+    gsap.set('#free', { y: 90, opacity: 0 });
+    gsap.set('#free .ic', { scale: 0 });
+    gsap.set('#logo-badge', { y: 50, opacity: 0, scale: 0.94 });
+    gsap.set('#cta', { scaleX: 0.25, opacity: 0 });
+    gsap.set('#cta .arr', { scale: 0 });
+
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out', duration: 1 } });
+    const reveal = (sel, at, o = {}) => tl.to(inner(sel), { yPercent: 0, duration: 1.05, ease: 'expo.out', stagger: 0.09, ...o }, at);
+    const hide = (sel, at, o = {}) => tl.to(sel, { y: -70, opacity: 0, duration: 0.38, ease: 'power2.in', stagger: 0.035, ...o }, at);
+    const count = (i, at) => tl.to('#hdr .strip', { y: -34 * i, duration: 0.7, ease: 'expo.inOut' }, at);
+
+    // Ambient light drift — stops at 27 s so the last 3 s are fully static
+    tl.to('#blobA', { x: 260, y: 220, duration: 27, ease: 'sine.inOut' }, 0);
+    tl.to('#blobB', { x: -300, y: -260, duration: 27, ease: 'sine.inOut' }, 0);
+
+    // ---------- 0–4 s · Hook ----------
+    tl.to('#hdr .dot', { scale: 1, duration: 0.6, ease: 'back.out(2.2)' }, 0.1);
+    reveal('#hdr .lbl', 0.18);
+    tl.to('#hdr .rule', { scaleX: 1, duration: 1.4, ease: 'expo.inOut' }, 0.3);
+    tl.to('#hdr .count', { opacity: 1, duration: 0.5, ease: 'power1.out' }, 0.9);
+
+    tl.to(inner('#s1-three'), { yPercent: 0, duration: 1.3, ease: 'expo.out' }, 0.25);
+    tl.fromTo('#s1-three span', { scale: 1.12, transformOrigin: '30% 90%' }, { scale: 1, duration: 1.8, ease: 'expo.out', immediateRender: false }, 0.25);
+    tl.to('.gold-text', { backgroundPosition: '100% 0', duration: 2.4, ease: 'sine.inOut' }, 1.0);
+
+    tl.to(['#doc0', '#doc1', '#doc2'], { y: 0, duration: 1.25, ease: 'expo.out', stagger: 0.09 }, 0.75);
+    reveal('#s1-jahre', 0.95);
+    reveal('#s1-l2', 1.55);
+    reveal('#s1-l3', 2.15);
+
+    // ---------- 4–10 s · Der Gewinn ----------
+    hide(['#s1-three', '#s1-jahre', '#s1-l2', '#s1-l3'], 3.85);
+    count(1, 3.95);
+    const row = [{ left: 94, top: 774 }, { left: 400, top: 774 }, { left: 706, top: 774 }];
+    ['#doc0', '#doc1', '#doc2'].forEach((id, i) => tl.to(id, { ...row[i], rotation: 0, duration: 1.15, ease: 'expo.inOut' }, 4.0 + i * 0.05));
+    reveal('#s2-top', 4.55);
+    tl.to('#frame-rect', { drawSVG: '100%', duration: 1.3, ease: 'power3.inOut' }, 5.15);
+    tl.to('#badge', { scale: 1, opacity: 1, duration: 0.7, ease: 'back.out(1.8)' }, 6.05);
+    reveal('#s2-bot', 6.5);
+
+    // ---------- 10–16 s · Was ist inklusive ----------
+    hide(['#s2-top', '#badge', '#s2-bot'], 9.6);
+    tl.to('#frame-rect', { drawSVG: '50% 50%', opacity: 0, duration: 0.5, ease: 'power2.in' }, 9.65);
+    count(2, 9.75);
+    tl.to('#doc0', { x: -520, opacity: 0, rotation: -8, duration: 0.8, ease: 'power3.in' }, 9.7);
+    tl.to('#doc2', { x: 520, opacity: 0, rotation: 8, duration: 0.8, ease: 'power3.in' }, 9.7);
+    tl.to('#doc1 .doc-in', { opacity: 0, duration: 0.3, ease: 'power1.in' }, 9.75);
+    tl.to('#doc1', { left: 120, top: 470, width: 840, height: 600, borderRadius: 40, duration: 1.15, ease: 'expo.inOut' }, 9.85);
+    tl.to('#detail', { opacity: 1, duration: 0.01 }, 10.6);
+    tl.to('.detail-top', { opacity: 0, duration: 0.01 }, 0); // hidden until reveal
+    tl.to('.detail-top', { opacity: 1, duration: 0.5, ease: 'power1.out' }, 10.65);
+    tl.to('.detail-rule', { scaleX: 1, duration: 1.0, ease: 'expo.inOut' }, 10.65);
+
+    tl.to('#row1 .c-ring', { drawSVG: '100%', duration: 0.8, ease: 'power3.inOut' }, 10.8);
+    reveal('#row1 .t, #row1 .s', 10.9);
+    tl.to('#row1 .c-fill', { scale: 1, duration: 0.55, ease: 'back.out(1.6)' }, 11.45);
+    tl.to('#row1 .c-mark', { drawSVG: '100%', duration: 0.45, ease: 'power2.out' }, 11.7);
+
+    tl.to('#plus .pl-a', { drawSVG: '100%', duration: 0.35, ease: 'power2.out' }, 11.55);
+    tl.to('#plus .pl-c', { scale: 1, duration: 0.5, ease: 'back.out(2)' }, 11.75);
+    tl.to('#plus .pl-b', { drawSVG: '100%', duration: 0.35, ease: 'power2.out' }, 11.9);
+
+    tl.to('#row2 .c-ring', { drawSVG: '100%', duration: 0.8, ease: 'power3.inOut' }, 11.9);
+    reveal('#row2 .t, #row2 .s', 12.0);
+    tl.to('#row2 .c-fill', { scale: 1, duration: 0.55, ease: 'back.out(1.6)' }, 12.55);
+    tl.to('#row2 .plane', { opacity: 1, x: 0, y: 0, duration: 0.7, ease: 'expo.out' }, 12.75);
+
+    tl.to('#hint', { y: 0, opacity: 1, duration: 1.0, ease: 'expo.out' }, 13.25);
+    reveal('#hint .k, #hint .t', 13.45);
+    // small "send" gesture on the plane
+    tl.to('#row2 .plane', { x: 7, y: -7, duration: 0.45, ease: 'power2.out' }, 14.3);
+    tl.to('#row2 .plane', { x: 0, y: 0, duration: 0.7, ease: 'power2.inOut' }, 14.75);
+
+    // ---------- 16–23 s · So machst du mit ----------
+    hide(['#doc1', '#hint'], 15.6, { y: -90, stagger: 0.06 });
+    count(3, 15.75);
+    reveal('#s4-title', 16.05);
+    tl.to('#steps .track', { scaleY: 1, duration: 1.2, ease: 'expo.inOut' }, 16.2);
+    tl.to('.node', { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.5)', stagger: 0.12 }, 16.25);
+    reveal('#st1 .n, #st1 .t, #st2 .n, #st2 .t, #st3 .n, #st3 .t', 16.4, { stagger: 0.06 });
+    tl.to('.step-txt .t span', { color: '#c2bdb0', duration: 0.01 }, 16.35);
+
+    const activate = (n, at) => {
+      tl.to(`#node${n} .on`, { scale: 1, duration: 0.6, ease: 'expo.out' }, at);
+      tl.to(`#node${n} .ico`, { stroke: '#fffefb', duration: 0.3, ease: 'power1.out' }, at + 0.05);
+      tl.to(`#node${n}`, { scale: 1.08, duration: 0.25, ease: 'power2.out' }, at);
+      tl.to(`#node${n}`, { scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.5)' }, at + 0.25);
+      tl.to(`#node${n} .ring`, { opacity: 0.9, duration: 0.01 }, at);
+      tl.to(`#node${n} .ring`, { scale: 1.55, opacity: 0, duration: 1.0, ease: 'power2.out' }, at + 0.02);
+      tl.to(`#st${n} .t span`, { color: '#111512', duration: 0.4, ease: 'power1.out' }, at + 0.05);
+    };
+    activate(1, 17.0);
+    tl.to('#fill1', { scaleY: 1, duration: 1.0, ease: 'power2.inOut' }, 17.55);
+    activate(2, 18.45);
+    tl.to('#fill2', { scaleY: 1, duration: 1.0, ease: 'power2.inOut' }, 19.0);
+    activate(3, 19.9);
+    tl.to('.mailcheck', { scale: 1, duration: 0.6, ease: 'back.out(2.4)' }, 20.3);
+
+    tl.to('#free', { y: 0, opacity: 1, duration: 1.0, ease: 'expo.out' }, 20.85);
+    tl.to('#free .ic', { scale: 1, duration: 0.6, ease: 'back.out(2)' }, 21.1);
+    reveal('#free .t, #free .s', 21.05);
+
+    // ---------- 23–30 s · Endkarte ----------
+    hide(['#hdr', '#s4-title', '#steps', '#free'], 22.9, { stagger: 0.05 });
+    tl.to('#logo-badge', { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'expo.out' }, 23.45);
+    reveal('#e-l1', 23.7);
+    reveal('#e-l2', 23.85);
+    reveal('#e-l3', 24.0);
+    tl.to('#cta', { scaleX: 1, opacity: 1, duration: 1.1, ease: 'expo.out' }, 24.45);
+    reveal('#cta .t', 24.75);
+    tl.to('#cta .arr', { scale: 1, duration: 0.6, ease: 'back.out(2)' }, 24.95);
+    reveal('#e-meta, #e-meta2', 25.2);
+    // final sheen on the gold, then everything rests (static from 27 s)
+    tl.fromTo('#e-l1 .gold-text, #e-l3 .gold-text', { backgroundPosition: '0% 0' }, { backgroundPosition: '100% 0', duration: 1.6, ease: 'sine.inOut', immediateRender: false }, 25.2);
+    tl.to({}, { duration: 0.01 }, 30);
+    return tl;
+  },
+});
+</script>
+</body>
+</html>
