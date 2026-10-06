@@ -12,7 +12,7 @@ function hero() {
   const stage = $('.hero-stage');
   const docs = $$('.doc', stage);
   const fan = () => {
-    const k = mobile() ? 0.52 : 1;
+    const k = mobile() ? 0.44 : 1;
     return [
       { x: -168 * k, y: 26 * k, rotation: -13 },
       { x: 0, y: -18 * k, rotation: 2 },
@@ -47,8 +47,10 @@ function hero() {
   }
 
   // Karten lassen sich werfen und kehren elastisch zurück
+  const touch = matchMedia('(pointer: coarse)').matches;
   Draggable.create(docs, {
-    type: 'x,y',
+    type: touch ? 'x' : 'x,y',
+    allowNativeTouchScrolling: true,
     inertia: true,
     bounds: '.hero',
     edgeResistance: 0.75,
@@ -95,7 +97,10 @@ function packageScene() {
   ScrollTrigger.addEventListener('refreshInit', size);
   if (reduced) return;
 
-  const tl = gsap.timeline({ scrollTrigger: { trigger: pkg, start: 'top 82%', end: 'top 22%', scrub: 1 } });
+  // Desktop: an den Scroll gekoppelt; Mobile: einmal abspielen (die Karten stehen untereinander)
+  const tl = gsap.timeline(mobile()
+    ? { scrollTrigger: { trigger: pkg, start: 'top 80%', once: true }, defaults: { duration: 1 } }
+    : { scrollTrigger: { trigger: pkg, start: 'top 82%', end: 'top 22%', scrub: 1 } });
   tl.from('.year-card', { y: 140, opacity: 0, rotation: (i) => [-6, 0, 6][i], stagger: 0.15, duration: 1, ease: 'power3.out' }, 0)
     .fromTo(rect, { drawSVG: '50% 50%' }, { drawSVG: '0% 100%', duration: 1.4, ease: 'power2.inOut' }, 0.3)
     .from('.year-card .arrow-line', { scaleX: 0, stagger: 0.15, duration: 0.8 }, 0.8)
@@ -284,7 +289,7 @@ async function calculator() {
       ScrollTrigger.create({ trigger: curveBox, start: 'top 85%', once: true, onEnter: () => gsap.from(line, { drawSVG: '0%', duration: 1.6, ease: 'power2.inOut' }) });
     }
   }
-  curveBox.addEventListener('pointermove', (e) => {
+  const onCurve = (e) => {
     if (!curve) return;
     const svg = curveBox.querySelector('svg');
     const r = svg.getBoundingClientRect();
@@ -302,7 +307,9 @@ async function calculator() {
     tip.style.left = `${(x / curve.W) * r.width}px`;
     tip.style.top = `${(y / curve.H) * r.height}px`;
     tip.style.opacity = 1;
-  });
+  };
+  curveBox.addEventListener('pointermove', onCurve);
+  curveBox.addEventListener('pointerdown', onCurve);
   curveBox.addEventListener('pointerleave', () => {
     tip.style.opacity = 0;
     curveBox.querySelectorAll('.cross, .hov').forEach((el) => { el.style.opacity = 0; });

@@ -45,6 +45,34 @@ function anchors() {
   });
 }
 
+function mobileNav() {
+  const h = $('.site-header');
+  const nav = $('.nav', h || document);
+  if (!h || !nav) return;
+  const links = $$('a[href^="#"]:not(.btn)', nav);
+  const panel = document.createElement('div');
+  panel.className = 'nav-panel';
+  panel.id = 'nav-panel';
+  panel.innerHTML = links.map((a) => `<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('');
+  const btn = document.createElement('button');
+  btn.className = 'nav-toggle';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Menü öffnen');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', 'nav-panel');
+  btn.innerHTML = '<i></i><i></i><i></i>';
+  nav.appendChild(btn);
+  h.appendChild(panel);
+  const set = (open) => {
+    h.classList.toggle('nav-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  };
+  btn.addEventListener('click', () => set(!h.classList.contains('nav-open')));
+  panel.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+}
+
 function header() {
   const h = $('.site-header');
   if (!h) return;
@@ -54,7 +82,7 @@ function header() {
     onUpdate: (self) => {
       const y = self.scroll();
       h.classList.toggle('is-scrolled', y > 24);
-      h.classList.toggle('is-hidden', y > 600 && y > last + 4);
+      h.classList.toggle('is-hidden', y > 600 && y > last + 4 && !h.classList.contains('nav-open'));
       if (y < last - 4) h.classList.remove('is-hidden');
       last = y;
     },
@@ -332,6 +360,7 @@ export async function boot({ slug, requirePool = false }) {
   document.documentElement.classList.add('js');
   smoothScroll();
   anchors();
+  mobileNav();
   header();
   glow();
   magnetic();

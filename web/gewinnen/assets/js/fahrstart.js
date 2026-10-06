@@ -307,7 +307,7 @@ function roadmap() {
   $('[data-rm-kicker]').textContent = 'Tippe auf deinen Schritt';
   $('[data-rm-title]').textContent = 'Wo stehst du gerade?';
   $('[data-rm-text]').textContent = 'Vom Nothelferkurs bis zum Führerausweis auf Probe – wähle oben deinen aktuellen Schritt.';
-  $('.rm-reco').style.visibility = 'hidden';
+  $('.rm-reco').hidden = true;
 
   const set = (i) => {
     current = i;
@@ -323,7 +323,7 @@ function roadmap() {
     $('[data-rm-title]').textContent = s.t;
     $('[data-rm-text]').textContent = `${s.d} ${s.why}`;
     $('[data-rm-reco]').textContent = s.r;
-    $('.rm-reco').style.visibility = 'visible';
+    $('.rm-reco').hidden = false;
     pick.querySelector('.label').textContent = s.reco === 'share' ? 'Gewinnspiel teilen' : s.reco === 'vku' ? 'Diesen Gewinn wählen' : 'Passende Anbieter zeigen';
     if (!reduced) gsap.from('.rm-info > *, .rm-reco > *', { opacity: 0, y: 16, duration: 0.6, ease: 'expo.out', stagger: 0.05 });
     $$('.prov').forEach((el) => {
