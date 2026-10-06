@@ -123,7 +123,7 @@ function scopeAndFlow() {
 const COLORS = { federal: '#111512', canton: '#b69a5c', district: '#c9b68e', municipality: '#ddd2b9', church: '#6f6a5d', personal: '#8f7642' };
 const LABELS = { federal: 'Bund', canton: 'Kanton', district: 'Bezirk', municipality: 'Gemeinde', church: 'Kirche', personal: 'Personalsteuer' };
 const CANTON_NAMES = { ZH: 'Kanton Zürich', SZ: 'Kanton Schwyz', ZG: 'Kanton Zug', SG: 'Kanton St. Gallen' };
-const FEATURED = ['Zürich', 'Schwyz', 'Zug', 'St. Gallen', 'Küsnacht (ZH)', 'Meilen', 'Stäfa', 'Horgen', 'Wädenswil', 'Richterswil', 'Freienbach', 'Feusisberg', 'Rapperswil-Jona'];
+const FEATURED = ['Zürich', 'Schwyz', 'Zug', 'St. Gallen', 'Küsnacht', 'Meilen', 'Stäfa', 'Horgen', 'Wädenswil', 'Richterswil', 'Freienbach', 'Feusisberg', 'Rapperswil-Jona'];
 const PARTS = ['federal', 'canton', 'district', 'municipality', 'church', 'personal'];
 const fold = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 

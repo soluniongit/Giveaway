@@ -30,7 +30,11 @@ Fertige Exporte liegen in `videos/out/`:
 - `allnova-steuergewinnspiel-30s.mp4`
 - `allnova-fahrstart-gewinnspiel-30s.mp4`
 
-Beide sind 1080 × 1920, 30 fps, H.264, 30 s lang, ohne Ton und ohne Musik. Dazu gibt es je ein Posterbild (Endkarte).
+Beide sind 1080 × 1920, 30 fps, H.264, 30 s lang, **mit Sounddesign** (AAC, ca. −14 LUFS). Zusätzlich gibt es je eine stumme Fassung (`…-ohne-ton.mp4`, wie im Konzept gewünscht) und ein Posterbild (Endkarte).
+
+- **Sounddesign:** vollständig synthetisch erzeugt (`videos/sound/sounddesign.py`), also ohne Musikrechte-Fragen. Ein Musikbett (Pad, Sub-Bass, Pluck-Arpeggio; Fahrstart mit weichem Puls) und Effekte synchron zur Animation: Whooshes bei Szenenwechseln, Ticks bei Texten, Pops/Chimes bei Häkchen und Badges, ein weicher Impact auf der Endkarte. Über der statischen Endkarte klingt die Musik aus.
+- **Logo:** auf hellem Grund die helle Fassung («all» Gold, «nova» Anthrazit; `assets/brand/allnova-logo-hell.png`), auf Anthrazit das Original.
+- **Textprüfung:** `node clipcheck.mjs steuer 3.7,9.4,…` vergleicht jedes Bild mit geöffneten Masken und meldet abgeschnittene Glyphen (Umlaute, Unterlängen, kursive Überhänge).
 
 - **Gestaltung:** Elfenbein #F8F6F0, Anthrazit #111512 und Gold #B69A5C/#C9B68E nach Konzept. Schrift: Inter Tight, mit Akzenten in Instrument Serif.
 - **Original-Logo:** unverändert aus dem PDF übernommen, auf Elfenbein in einer anthrazitfarbenen Fläche.
@@ -46,13 +50,15 @@ Beide sind 1080 × 1920, 30 fps, H.264, 30 s lang, ohne Ton und ohne Musik. Dazu
 ```bash
 cd videos
 npm install
-npm run render            # beide Videos (Motion-Blur 4×, ~6 min pro Video)
+npm run render            # Ton erzeugen + beide Videos rendern (Motion-Blur 8×, ~15 min pro Video)
+npm run sound             # nur die Tonspuren (out/sound/*.wav)
+node render.mjs --mux     # Ton neu unter die stummen Exporte legen
 npm run render:steuer     # nur eines
 node render.mjs steuer --stills=2,8,29   # Einzelbilder zur Kontrolle
 npm run preview           # Live-Vorschau im Browser: http://localhost:8080/steuer/
 ```
 
-Der Renderer (`render.mjs`) spielt die GSAP-Timeline Frame für Frame in Chromium ab (Playwright) und kodiert sie mit ffmpeg. Für Motion-Blur verwendet er 4 Teilbilder pro Frame.
+Der Renderer (`render.mjs`) spielt die GSAP-Timeline Frame für Frame in Chromium ab (Playwright) und kodiert sie mit ffmpeg. Für Motion-Blur verwendet er 8 Teilbilder pro Frame. Beim Fahrstart heben sich die Inhalte vor jeder Kamerafahrt ab, damit nur die Weglinie mitfährt.
 
 Noch offen laut Konzept: 10-Sekunden-Schnitte und eine Version mit Voice-over (dann mit Untertiteln). Die Musikrechte sind zu klären, falls Musik gewünscht ist.
 
@@ -89,10 +95,13 @@ appUrl: '<Link zur allnova App>',
 
 Bleiben die Felder leer, läuft die Seite im **Demo-Modus**: Das Formular simuliert die Teilnahme, und es werden keine Daten gesendet.
 
-**Steuerrechner:** Er rechnet die Einkommenssteuer 2026 (Bund, Kanton, Bezirk, Gemeinde, ZH-Personalsteuer; ohne Kirchensteuer) auf dem *steuerbaren* Einkommen. Abgedeckt sind die Gemeinden Zürich, Schwyz, Feusisberg (Schindellegi), Freienbach, Zug, St. Gallen und Rapperswil-Jona.
+**Steuerrechner:** Er rechnet die Einkommenssteuer 2026 (Bund, Kanton, Bezirk, Gemeinde, Kirche, ZH-Personalsteuer; ohne Vermögenssteuer) auf dem *steuerbaren* Einkommen – für **alle 276 Gemeinden** in ZH (160), SZ (30), ZG (11) und SG (75).
+
+- **Funktionen:** Gemeindesuche, Zivilstand/Kinder (Elternabzug Bund), Konfession (Kirchensteuer), Ergebnis mit Durchschnitts- und Grenzsteuersatz, Aufteilung nach Ebenen, interaktive **Steuerkurve**, **Abzugsrechner** (Säule 3a bis CHF 7'258 für 2026 + weitere Abzüge → Steuerersparnis), **Rangliste** der Gemeinden im eigenen Kanton bzw. Hauptorte & Zürichsee, offengelegter **Rechnungsweg**.
 
 - **Daten:** Tarife und Steuerfüsse 2026 aus amtlichen Quellen, in `assets/data/steuertarife-2026.json`. Quellen und Herleitung stehen in `docs/steuerrechner-tarife-2026.md`.
-- **Prüfung:** Die Ergebnisse sind gegen 196 Ergebnisse des ESTV-Steuerrechners geprüft (max. Abweichung 1.43 CHF). Ausnahme: der St.-Galler Spitzensatz für Verheiratete, wo bewusst Gesetz und amtliche Tabelle gelten; dort weicht der ESTV-Rechner um ca. 20 CHF ab.
+- **Prüfung gegen den ESTV-Steuerrechner 2026:** 196 Tariffälle (max. 1.43 CHF), 20 Fälle in zusätzlichen Gemeinden (max. 1.24 CHF), 9 Kirchensteuerfälle (max. 0.44 CHF) und die Steuerfüsse aller 276 Gemeinden (0 Abweichungen). Abweichungen in Franken entstehen, weil die ESTV jede Position auf ganze Franken rundet. Ausnahme: der St.-Galler Spitzensatz für Verheiratete, wo bewusst Gesetz und amtliche Tabelle gelten (ESTV ca. 20 CHF höher). Quellen und offene Punkte: `docs/steuerrechner-tarife-2026.md`, `docs/steuerrechner-gemeinden-2026.md`.
+- **Bekannte Grenzen:** Gemeinden mit zwei Steuerfuss-Gebieten rechnen mit dem Hauptgebiet; in 5 St.-Galler Gemeinden ist kein einheitlicher Kirchensteuerfuss publiziert (dort wird keine Kirchensteuer gerechnet); Bürgergemeindesteuer ZG und konfessionsverschiedene Ehepaare sind nicht abgebildet.
 - **Test:** `cd web && npm install && npm test`
 - **Datenschutz:** Eingaben bleiben im Browser. Getrackt wird nur «Rechner genutzt» mit dem Kanton, ohne Beträge.
 

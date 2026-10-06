@@ -1,0 +1,5732 @@
+[
+ {
+  "canton": "ZH",
+  "name": "Aeugst a.A.",
+  "bfs": 1,
+  "locations": [
+   {
+    "zip": "8914",
+    "city": "Aeugst am Albis",
+    "id": 891400000,
+    "local_pct": 92.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Affoltern a.A.",
+  "bfs": 2,
+  "locations": [
+   {
+    "zip": "8910",
+    "city": "Affoltern am Albis",
+    "id": 891000000,
+    "local_pct": 122.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bonstetten",
+  "bfs": 3,
+  "locations": [
+   {
+    "zip": "8906",
+    "city": "Bonstetten",
+    "id": 890600000,
+    "local_pct": 106.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hausen a.A.",
+  "bfs": 4,
+  "locations": [
+   {
+    "zip": "8915",
+    "city": "Hausen am Albis",
+    "id": 891500000,
+    "local_pct": 112.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hedingen",
+  "bfs": 5,
+  "locations": [
+   {
+    "zip": "8908",
+    "city": "Hedingen",
+    "id": 890800000,
+    "local_pct": 100.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Kappel a.A.",
+  "bfs": 6,
+  "locations": [
+   {
+    "zip": "8926",
+    "city": "Kappel am Albis",
+    "id": 892600000,
+    "local_pct": 102.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Knonau",
+  "bfs": 7,
+  "locations": [
+   {
+    "zip": "8934",
+    "city": "Knonau",
+    "id": 893400000,
+    "local_pct": 116.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Maschwanden",
+  "bfs": 8,
+  "locations": [
+   {
+    "zip": "8933",
+    "city": "Maschwanden",
+    "id": 893300000,
+    "local_pct": 128.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Mettmenstetten",
+  "bfs": 9,
+  "locations": [
+   {
+    "zip": "8932",
+    "city": "Mettmenstetten",
+    "id": 893200000,
+    "local_pct": 98.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Obfelden",
+  "bfs": 10,
+  "locations": [
+   {
+    "zip": "8912",
+    "city": "Obfelden",
+    "id": 891200000,
+    "local_pct": 118.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Ottenbach",
+  "bfs": 11,
+  "locations": [
+   {
+    "zip": "8913",
+    "city": "Ottenbach",
+    "id": 891300000,
+    "local_pct": 115.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rifferswil",
+  "bfs": 12,
+  "locations": [
+   {
+    "zip": "8911",
+    "city": "Rifferswil",
+    "id": 891100000,
+    "local_pct": 120.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Stallikon",
+  "bfs": 13,
+  "locations": [
+   {
+    "zip": "8143",
+    "city": "Stallikon",
+    "id": 814300000,
+    "local_pct": 101.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wettswil a.A.",
+  "bfs": 14,
+  "locations": [
+   {
+    "zip": "8907",
+    "city": "Wettswil",
+    "id": 890700000,
+    "local_pct": 89.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Benken",
+  "bfs": 22,
+  "locations": [
+   {
+    "zip": "8463",
+    "city": "Benken ZH",
+    "id": 846300000,
+    "local_pct": 110.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Berg a.I.",
+  "bfs": 23,
+  "locations": [
+   {
+    "zip": "8415",
+    "city": "Berg am Irchel",
+    "id": 841500000,
+    "local_pct": 98.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Buch a.I.",
+  "bfs": 24,
+  "locations": [
+   {
+    "zip": "8414",
+    "city": "Buch am Irchel",
+    "id": 841400000,
+    "local_pct": 106.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dachsen",
+  "bfs": 25,
+  "locations": [
+   {
+    "zip": "8447",
+    "city": "Dachsen",
+    "id": 844700000,
+    "local_pct": 111.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dorf",
+  "bfs": 26,
+  "locations": [
+   {
+    "zip": "8458",
+    "city": "Dorf",
+    "id": 845800000,
+    "local_pct": 99.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Feuerthalen",
+  "bfs": 27,
+  "locations": [
+   {
+    "zip": "8245",
+    "city": "Feuerthalen",
+    "id": 824500000,
+    "local_pct": 114.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Flaach",
+  "bfs": 28,
+  "locations": [
+   {
+    "zip": "8416",
+    "city": "Flaach",
+    "id": 841600000,
+    "local_pct": 107.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Flurlingen",
+  "bfs": 29,
+  "locations": [
+   {
+    "zip": "8247",
+    "city": "Flurlingen",
+    "id": 824700000,
+    "local_pct": 111.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Henggart",
+  "bfs": 31,
+  "locations": [
+   {
+    "zip": "8444",
+    "city": "Henggart",
+    "id": 844400000,
+    "local_pct": 111.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Kleinandelfingen",
+  "bfs": 33,
+  "locations": [
+   {
+    "zip": "8451",
+    "city": "Kleinandelfingen",
+    "id": 845100000,
+    "local_pct": 118.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Laufen-Uhwiesen",
+  "bfs": 34,
+  "locations": [
+   {
+    "zip": "8248",
+    "city": "Uhwiesen",
+    "id": 824800000,
+    "local_pct": 104.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Marthalen",
+  "bfs": 35,
+  "locations": [
+   {
+    "zip": "8460",
+    "city": "Marthalen",
+    "id": 846000000,
+    "local_pct": 107.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Ossingen",
+  "bfs": 37,
+  "locations": [
+   {
+    "zip": "8475",
+    "city": "Ossingen",
+    "id": 847500000,
+    "local_pct": 113.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rheinau",
+  "bfs": 38,
+  "locations": [
+   {
+    "zip": "8462",
+    "city": "Rheinau",
+    "id": 846200000,
+    "local_pct": 112.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Thalheim a.d.Th.",
+  "bfs": 39,
+  "locations": [
+   {
+    "zip": "8478",
+    "city": "Thalheim an der Thur",
+    "id": 847800000,
+    "local_pct": 117.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Trüllikon",
+  "bfs": 40,
+  "locations": [
+   {
+    "zip": "8466",
+    "city": "Trüllikon",
+    "id": 846600000,
+    "local_pct": 110.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Truttikon",
+  "bfs": 41,
+  "locations": [
+   {
+    "zip": "8467",
+    "city": "Truttikon",
+    "id": 846700000,
+    "local_pct": 107.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Volken",
+  "bfs": 43,
+  "locations": [
+   {
+    "zip": "8459",
+    "city": "Volken",
+    "id": 845900000,
+    "local_pct": 111.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bachenbülach",
+  "bfs": 51,
+  "locations": [
+   {
+    "zip": "8184",
+    "city": "Bachenbülach",
+    "id": 818400000,
+    "local_pct": 106.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bassersdorf",
+  "bfs": 52,
+  "locations": [
+   {
+    "zip": "8303",
+    "city": "Bassersdorf",
+    "id": 830300000,
+    "local_pct": 114.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bülach",
+  "bfs": 53,
+  "locations": [
+   {
+    "zip": "8180",
+    "city": "Bülach",
+    "id": 818000000,
+    "local_pct": 114.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dietlikon",
+  "bfs": 54,
+  "locations": [
+   {
+    "zip": "8305",
+    "city": "Dietlikon",
+    "id": 830500000,
+    "local_pct": 105.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Eglisau",
+  "bfs": 55,
+  "locations": [
+   {
+    "zip": "8193",
+    "city": "Eglisau",
+    "id": 819300000,
+    "local_pct": 113.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Embrach",
+  "bfs": 56,
+  "locations": [
+   {
+    "zip": "8423",
+    "city": "Embrach-Embraport",
+    "id": 842300000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   },
+   {
+    "zip": "8424",
+    "city": "Embrach",
+    "id": 842400000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Freienstein-Teufen",
+  "bfs": 57,
+  "locations": [
+   {
+    "zip": "8427",
+    "city": "Freienstein",
+    "id": 842702000,
+    "local_pct": 99.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Glattfelden",
+  "bfs": 58,
+  "locations": [
+   {
+    "zip": "8192",
+    "city": "Glattfelden",
+    "id": 819200000,
+    "local_pct": 120.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hochfelden",
+  "bfs": 59,
+  "locations": [
+   {
+    "zip": "8182",
+    "city": "Hochfelden",
+    "id": 818200000,
+    "local_pct": 116.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Höri",
+  "bfs": 60,
+  "locations": [
+   {
+    "zip": "8181",
+    "city": "Höri",
+    "id": 818100000,
+    "local_pct": 110.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hüntwangen",
+  "bfs": 61,
+  "locations": [
+   {
+    "zip": "8194",
+    "city": "Hüntwangen",
+    "id": 819400000,
+    "local_pct": 108.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Kloten",
+  "bfs": 62,
+  "locations": [
+   {
+    "zip": "8302",
+    "city": "Kloten",
+    "id": 830200000,
+    "local_pct": 100.0,
+    "reformiert_pct": 9.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Lufingen",
+  "bfs": 63,
+  "locations": [
+   {
+    "zip": "8426",
+    "city": "Lufingen",
+    "id": 842600000,
+    "local_pct": 97.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Nürensdorf",
+  "bfs": 64,
+  "locations": [
+   {
+    "zip": "8309",
+    "city": "Nürensdorf",
+    "id": 830900000,
+    "local_pct": 90.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oberembrach",
+  "bfs": 65,
+  "locations": [
+   {
+    "zip": "8425",
+    "city": "Oberembrach",
+    "id": 842500000,
+    "local_pct": 117.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Opfikon",
+  "bfs": 66,
+  "locations": [
+   {
+    "zip": "8152",
+    "city": "Opfikon",
+    "id": 815201000,
+    "local_pct": 94.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 7.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rafz",
+  "bfs": 67,
+  "locations": [
+   {
+    "zip": "8197",
+    "city": "Rafz",
+    "id": 819700000,
+    "local_pct": 113.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rorbas",
+  "bfs": 68,
+  "locations": [
+   {
+    "zip": "8427",
+    "city": "Rorbas",
+    "id": 842703000,
+    "local_pct": 103.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   },
+   {
+    "zip": "8427",
+    "city": "Rorbas-Freienstein",
+    "id": 842700000,
+    "local_pct": 103.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wallisellen",
+  "bfs": 69,
+  "locations": [
+   {
+    "zip": "8304",
+    "city": "Wallisellen",
+    "id": 830400000,
+    "local_pct": 93.0,
+    "reformiert_pct": 7.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wasterkingen",
+  "bfs": 70,
+  "locations": [
+   {
+    "zip": "8195",
+    "city": "Wasterkingen",
+    "id": 819500000,
+    "local_pct": 116.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wil",
+  "bfs": 71,
+  "locations": [
+   {
+    "zip": "8196",
+    "city": "Wil ZH",
+    "id": 819600000,
+    "local_pct": 97.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Winkel",
+  "bfs": 72,
+  "locations": [
+   {
+    "zip": "8185",
+    "city": "Winkel",
+    "id": 818500000,
+    "local_pct": 76.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bachs",
+  "bfs": 81,
+  "locations": [
+   {
+    "zip": "8164",
+    "city": "Bachs",
+    "id": 816400000,
+    "local_pct": 128.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Boppelsen",
+  "bfs": 82,
+  "locations": [
+   {
+    "zip": "8113",
+    "city": "Boppelsen",
+    "id": 811300000,
+    "local_pct": 94.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Buchs",
+  "bfs": 83,
+  "locations": [
+   {
+    "zip": "8107",
+    "city": "Buchs ZH",
+    "id": 810700000,
+    "local_pct": 105.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dällikon",
+  "bfs": 84,
+  "locations": [
+   {
+    "zip": "8108",
+    "city": "Dällikon",
+    "id": 810800000,
+    "local_pct": 107.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dänikon",
+  "bfs": 85,
+  "locations": [
+   {
+    "zip": "8114",
+    "city": "Dänikon ZH",
+    "id": 811400000,
+    "local_pct": 120.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dielsdorf",
+  "bfs": 86,
+  "locations": [
+   {
+    "zip": "8157",
+    "city": "Dielsdorf",
+    "id": 815700000,
+    "local_pct": 105.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hüttikon",
+  "bfs": 87,
+  "locations": [
+   {
+    "zip": "8115",
+    "city": "Hüttikon",
+    "id": 811500000,
+    "local_pct": 113.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Neerach",
+  "bfs": 88,
+  "locations": [
+   {
+    "zip": "8173",
+    "city": "Neerach",
+    "id": 817300000,
+    "local_pct": 77.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Niederglatt",
+  "bfs": 89,
+  "locations": [
+   {
+    "zip": "8172",
+    "city": "Niederglatt ZH",
+    "id": 817200000,
+    "local_pct": 106.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Niederhasli",
+  "bfs": 90,
+  "locations": [
+   {
+    "zip": "8155",
+    "city": "Niederhasli",
+    "id": 815500000,
+    "local_pct": 112.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Niederweningen",
+  "bfs": 91,
+  "locations": [
+   {
+    "zip": "8166",
+    "city": "Niederweningen",
+    "id": 816600000,
+    "local_pct": 100.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oberglatt",
+  "bfs": 92,
+  "locations": [
+   {
+    "zip": "8154",
+    "city": "Oberglatt ZH",
+    "id": 815400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oberweningen",
+  "bfs": 93,
+  "locations": [
+   {
+    "zip": "8165",
+    "city": "Oberweningen",
+    "id": 816502000,
+    "local_pct": 94.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Otelfingen",
+  "bfs": 94,
+  "locations": [
+   {
+    "zip": "8112",
+    "city": "Otelfingen",
+    "id": 811200000,
+    "local_pct": 108.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Regensberg",
+  "bfs": 95,
+  "locations": [
+   {
+    "zip": "8158",
+    "city": "Regensberg",
+    "id": 815800000,
+    "local_pct": 115.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Regensdorf",
+  "bfs": 96,
+  "locations": [
+   {
+    "zip": "8105",
+    "city": "Regensdorf",
+    "id": 810500000,
+    "local_pct": 117.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8106",
+    "city": "Regensdorf",
+    "id": 810600000,
+    "local_pct": 117.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rümlang",
+  "bfs": 97,
+  "locations": [
+   {
+    "zip": "8153",
+    "city": "Rümlang",
+    "id": 815300000,
+    "local_pct": 113.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Schleinikon",
+  "bfs": 98,
+  "locations": [
+   {
+    "zip": "8165",
+    "city": "Schleinikon",
+    "id": 816503000,
+    "local_pct": 106.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Schöfflisdorf",
+  "bfs": 99,
+  "locations": [
+   {
+    "zip": "8165",
+    "city": "Schöfflisdorf",
+    "id": 816500000,
+    "local_pct": 94.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Stadel",
+  "bfs": 100,
+  "locations": [
+   {
+    "zip": "8174",
+    "city": "Stadel b. Niederglatt",
+    "id": 817400000,
+    "local_pct": 111.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Steinmaur",
+  "bfs": 101,
+  "locations": [
+   {
+    "zip": "8162",
+    "city": "Steinmaur",
+    "id": 816200000,
+    "local_pct": 108.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Weiach",
+  "bfs": 102,
+  "locations": [
+   {
+    "zip": "8187",
+    "city": "Weiach",
+    "id": 843300000,
+    "local_pct": 96.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bäretswil",
+  "bfs": 111,
+  "locations": [
+   {
+    "zip": "8344",
+    "city": "Bäretswil",
+    "id": 834400000,
+    "local_pct": 104.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bubikon",
+  "bfs": 112,
+  "locations": [
+   {
+    "zip": "8608",
+    "city": "Bubikon",
+    "id": 860800000,
+    "local_pct": 118.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dürnten",
+  "bfs": 113,
+  "locations": [
+   {
+    "zip": "8635",
+    "city": "Dürnten",
+    "id": 863500000,
+    "local_pct": 113.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Fischenthal",
+  "bfs": 114,
+  "locations": [
+   {
+    "zip": "8497",
+    "city": "Fischenthal",
+    "id": 849700000,
+    "local_pct": 122.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Gossau",
+  "bfs": 115,
+  "locations": [
+   {
+    "zip": "8625",
+    "city": "Gossau ZH",
+    "id": 862500000,
+    "local_pct": 117.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Grüningen",
+  "bfs": 116,
+  "locations": [
+   {
+    "zip": "8627",
+    "city": "Grüningen",
+    "id": 862700000,
+    "local_pct": 116.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hinwil",
+  "bfs": 117,
+  "locations": [
+   {
+    "zip": "8340",
+    "city": "Hinwil",
+    "id": 834000000,
+    "local_pct": 116.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 16.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rüti",
+  "bfs": 118,
+  "locations": [
+   {
+    "zip": "8630",
+    "city": "Rüti ZH",
+    "id": 863000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Seegräben",
+  "bfs": 119,
+  "locations": [
+   {
+    "zip": "8607",
+    "city": "Seegräben",
+    "id": 860700001,
+    "local_pct": 111.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wald",
+  "bfs": 120,
+  "locations": [
+   {
+    "zip": "8636",
+    "city": "Wald ZH",
+    "id": 863600000,
+    "local_pct": 122.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wetzikon",
+  "bfs": 121,
+  "locations": [
+   {
+    "zip": "8620",
+    "city": "Wetzikon ZH",
+    "id": 862000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   },
+   {
+    "zip": "8621",
+    "city": "Wetzikon",
+    "id": 862100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   },
+   {
+    "zip": "8622",
+    "city": "Wetzikon ZH",
+    "id": 862200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   },
+   {
+    "zip": "8623",
+    "city": "Wetzikon ZH",
+    "id": 862300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Adliswil",
+  "bfs": 131,
+  "locations": [
+   {
+    "zip": "8134",
+    "city": "Adliswil",
+    "id": 813400000,
+    "local_pct": 104.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Kilchberg",
+  "bfs": 135,
+  "locations": [
+   {
+    "zip": "8802",
+    "city": "Kilchberg ZH",
+    "id": 880200000,
+    "local_pct": 72.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 6.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Langnau a.A.",
+  "bfs": 136,
+  "locations": [
+   {
+    "zip": "8135",
+    "city": "Langnau am Albis",
+    "id": 813500000,
+    "local_pct": 106.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oberrieden",
+  "bfs": 137,
+  "locations": [
+   {
+    "zip": "8942",
+    "city": "Oberrieden",
+    "id": 894200000,
+    "local_pct": 84.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Richterswil",
+  "bfs": 138,
+  "locations": [
+   {
+    "zip": "8805",
+    "city": "Richterswil",
+    "id": 880500000,
+    "local_pct": 99.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   },
+   {
+    "zip": "8805",
+    "city": "Richterswil Burghalden",
+    "id": 880500001,
+    "local_pct": 99.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rüschlikon",
+  "bfs": 139,
+  "locations": [
+   {
+    "zip": "8803",
+    "city": "Rüschlikon",
+    "id": 880300000,
+    "local_pct": 75.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Thalwil",
+  "bfs": 141,
+  "locations": [
+   {
+    "zip": "8800",
+    "city": "Thalwil",
+    "id": 880000000,
+    "local_pct": 78.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8801",
+    "city": "Thalwil",
+    "id": 880100000,
+    "local_pct": 78.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Erlenbach",
+  "bfs": 151,
+  "locations": [
+   {
+    "zip": "8703",
+    "city": "Erlenbach ZH",
+    "id": 870300000,
+    "local_pct": 76.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 7.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Herrliberg",
+  "bfs": 152,
+  "locations": [
+   {
+    "zip": "8704",
+    "city": "Herrliberg",
+    "id": 870400000,
+    "local_pct": 73.0,
+    "reformiert_pct": 9.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hombrechtikon",
+  "bfs": 153,
+  "locations": [
+   {
+    "zip": "8634",
+    "city": "Hombrechtikon",
+    "id": 863400000,
+    "local_pct": 113.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Küsnacht",
+  "bfs": 154,
+  "locations": [
+   {
+    "zip": "8700",
+    "city": "Küsnacht ZH",
+    "id": 870000000,
+    "local_pct": 73.0,
+    "reformiert_pct": 7.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 7.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Männedorf",
+  "bfs": 155,
+  "locations": [
+   {
+    "zip": "8708",
+    "city": "Männedorf",
+    "id": 870800000,
+    "local_pct": 87.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Meilen",
+  "bfs": 156,
+  "locations": [
+   {
+    "zip": "8706",
+    "city": "Meilen",
+    "id": 870600000,
+    "local_pct": 79.0,
+    "reformiert_pct": 9.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 7.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oetwil a.S.",
+  "bfs": 157,
+  "locations": [
+   {
+    "zip": "8618",
+    "city": "Oetwil am See",
+    "id": 861800000,
+    "local_pct": 114.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Stäfa",
+  "bfs": 158,
+  "locations": [
+   {
+    "zip": "8712",
+    "city": "Stäfa",
+    "id": 871200000,
+    "local_pct": 83.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Uetikon a.S.",
+  "bfs": 159,
+  "locations": [
+   {
+    "zip": "8707",
+    "city": "Uetikon am See",
+    "id": 870700000,
+    "local_pct": 84.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Zumikon",
+  "bfs": 160,
+  "locations": [
+   {
+    "zip": "8126",
+    "city": "Zumikon",
+    "id": 812600000,
+    "local_pct": 71.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Zollikon",
+  "bfs": 161,
+  "locations": [
+   {
+    "zip": "8702",
+    "city": "Zollikon",
+    "id": 870200000,
+    "local_pct": 76.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   },
+   {
+    "zip": "8702",
+    "city": "Zollikon Dorf",
+    "id": 870201000,
+    "local_pct": 76.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   },
+   {
+    "zip": "8702",
+    "city": "Zollikon Station",
+    "id": 870202000,
+    "local_pct": 76.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Fehraltorf",
+  "bfs": 172,
+  "locations": [
+   {
+    "zip": "8320",
+    "city": "Fehraltorf",
+    "id": 832000000,
+    "local_pct": 111.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hittnau",
+  "bfs": 173,
+  "locations": [
+   {
+    "zip": "8335",
+    "city": "Hittnau",
+    "id": 833500000,
+    "local_pct": 113.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Lindau",
+  "bfs": 176,
+  "locations": [
+   {
+    "zip": "8315",
+    "city": "Lindau",
+    "id": 831500000,
+    "local_pct": 106.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Pfäffikon",
+  "bfs": 177,
+  "locations": [
+   {
+    "zip": "8330",
+    "city": "Pfäffikon ZH",
+    "id": 833000000,
+    "local_pct": 110.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Russikon",
+  "bfs": 178,
+  "locations": [
+   {
+    "zip": "8332",
+    "city": "Russikon",
+    "id": 833200000,
+    "local_pct": 113.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Weisslingen",
+  "bfs": 180,
+  "locations": [
+   {
+    "zip": "8484",
+    "city": "Weisslingen",
+    "id": 848400000,
+    "local_pct": 116.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wila",
+  "bfs": 181,
+  "locations": [
+   {
+    "zip": "8492",
+    "city": "Wila",
+    "id": 849200000,
+    "local_pct": 122.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wildberg",
+  "bfs": 182,
+  "locations": [
+   {
+    "zip": "8489",
+    "city": "Wildberg",
+    "id": 832100000,
+    "local_pct": 124.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dübendorf",
+  "bfs": 191,
+  "locations": [
+   {
+    "zip": "8600",
+    "city": "Dübendorf",
+    "id": 860000000,
+    "local_pct": 92.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Egg",
+  "bfs": 192,
+  "locations": [
+   {
+    "zip": "8132",
+    "city": "Egg b. Zürich",
+    "id": 813200000,
+    "local_pct": 101.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Fällanden",
+  "bfs": 193,
+  "locations": [
+   {
+    "zip": "8117",
+    "city": "Fällanden",
+    "id": 811700000,
+    "local_pct": 99.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Greifensee",
+  "bfs": 194,
+  "locations": [
+   {
+    "zip": "8606",
+    "city": "Greifensee",
+    "id": 860602000,
+    "local_pct": 101.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Maur",
+  "bfs": 195,
+  "locations": [
+   {
+    "zip": "8124",
+    "city": "Maur",
+    "id": 812400000,
+    "local_pct": 81.0,
+    "reformiert_pct": 9.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Mönchaltorf",
+  "bfs": 196,
+  "locations": [
+   {
+    "zip": "8617",
+    "city": "Mönchaltorf",
+    "id": 861700000,
+    "local_pct": 108.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Schwerzenbach",
+  "bfs": 197,
+  "locations": [
+   {
+    "zip": "8603",
+    "city": "Schwerzenbach",
+    "id": 860300000,
+    "local_pct": 103.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   },
+   {
+    "zip": "8609",
+    "city": "Schwerzenbach Herz",
+    "id": 860900000,
+    "local_pct": 103.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Uster",
+  "bfs": 198,
+  "locations": [
+   {
+    "zip": "8610",
+    "city": "Uster",
+    "id": 861000000,
+    "local_pct": 112.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8612",
+    "city": "Uster",
+    "id": 861200000,
+    "local_pct": 112.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8613",
+    "city": "Uster",
+    "id": 861300000,
+    "local_pct": 112.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Volketswil",
+  "bfs": 199,
+  "locations": [
+   {
+    "zip": "8604",
+    "city": "Volketswil",
+    "id": 860400000,
+    "local_pct": 101.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wangen-Brüttisellen",
+  "bfs": 200,
+  "locations": [
+   {
+    "zip": "8306",
+    "city": "Brüttisellen",
+    "id": 830600000,
+    "local_pct": 101.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Altikon",
+  "bfs": 211,
+  "locations": [
+   {
+    "zip": "8479",
+    "city": "Altikon",
+    "id": 847900000,
+    "local_pct": 114.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Brütten",
+  "bfs": 213,
+  "locations": [
+   {
+    "zip": "8311",
+    "city": "Brütten",
+    "id": 831100000,
+    "local_pct": 85.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dägerlen",
+  "bfs": 214,
+  "locations": [
+   {
+    "zip": "8471",
+    "city": "Dägerlen",
+    "id": 847102000,
+    "local_pct": 106.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dättlikon",
+  "bfs": 215,
+  "locations": [
+   {
+    "zip": "8421",
+    "city": "Dättlikon",
+    "id": 842100000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dinhard",
+  "bfs": 216,
+  "locations": [
+   {
+    "zip": "8474",
+    "city": "Dinhard",
+    "id": 847400000,
+    "local_pct": 90.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Ellikon a.d.Th.",
+  "bfs": 218,
+  "locations": [
+   {
+    "zip": "8548",
+    "city": "Ellikon an der Thur",
+    "id": 854800000,
+    "local_pct": 117.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Elsau",
+  "bfs": 219,
+  "locations": [
+   {
+    "zip": "8352",
+    "city": "Elsau",
+    "id": 835200001,
+    "local_pct": 117.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hagenbuch",
+  "bfs": 220,
+  "locations": [
+   {
+    "zip": "8523",
+    "city": "Hagenbuch ZH",
+    "id": 852300000,
+    "local_pct": 121.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Hettlingen",
+  "bfs": 221,
+  "locations": [
+   {
+    "zip": "8442",
+    "city": "Hettlingen",
+    "id": 844200000,
+    "local_pct": 97.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Neftenbach",
+  "bfs": 223,
+  "locations": [
+   {
+    "zip": "8413",
+    "city": "Neftenbach",
+    "id": 841300000,
+    "local_pct": 98.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Pfungen",
+  "bfs": 224,
+  "locations": [
+   {
+    "zip": "8422",
+    "city": "Pfungen",
+    "id": 842200000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Rickenbach",
+  "bfs": 225,
+  "locations": [
+   {
+    "zip": "8545",
+    "city": "Rickenbach Sulz",
+    "id": 854400000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   },
+   {
+    "zip": "8545",
+    "city": "Rickenbach ZH",
+    "id": 854500000,
+    "local_pct": 112.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Schlatt",
+  "bfs": 226,
+  "locations": [
+   {
+    "zip": "8418",
+    "city": "Schlatt ZH",
+    "id": 841800000,
+    "local_pct": 123.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Seuzach",
+  "bfs": 227,
+  "locations": [
+   {
+    "zip": "8472",
+    "city": "Seuzach",
+    "id": 847200000,
+    "local_pct": 100.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Turbenthal",
+  "bfs": 228,
+  "locations": [
+   {
+    "zip": "8488",
+    "city": "Turbenthal",
+    "id": 848800000,
+    "local_pct": 122.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Winterthur",
+  "bfs": 230,
+  "locations": [
+   {
+    "zip": "8400",
+    "city": "Winterthur",
+    "id": 840000000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8401",
+    "city": "Winterthur",
+    "id": 840100000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8402",
+    "city": "Winterthur",
+    "id": 840200000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8403",
+    "city": "Winterthur",
+    "id": 840300000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8404",
+    "city": "Winterthur",
+    "id": 840400000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8405",
+    "city": "Winterthur",
+    "id": 840500000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8406",
+    "city": "Winterthur",
+    "id": 840600000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8407",
+    "city": "Winterthur",
+    "id": 840700000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8408",
+    "city": "Winterthur",
+    "id": 840800000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8409",
+    "city": "Winterthur",
+    "id": 840900000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8410",
+    "city": "Winterthur",
+    "id": 841000000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   },
+   {
+    "zip": "8411",
+    "city": "Winterthur",
+    "id": 841100000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 17.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Zell",
+  "bfs": 231,
+  "locations": [
+   {
+    "zip": "8487",
+    "city": "Zell ZH",
+    "id": 848700000,
+    "local_pct": 115.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Aesch",
+  "bfs": 241,
+  "locations": [
+   {
+    "zip": "8904",
+    "city": "Aesch ZH",
+    "id": 890400000,
+    "local_pct": 91.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Birmensdorf",
+  "bfs": 242,
+  "locations": [
+   {
+    "zip": "8903",
+    "city": "Birmensdorf ZH",
+    "id": 890300000,
+    "local_pct": 112.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Dietikon",
+  "bfs": 243,
+  "locations": [
+   {
+    "zip": "8953",
+    "city": "Dietikon",
+    "id": 895300000,
+    "local_pct": 121.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Geroldswil",
+  "bfs": 244,
+  "locations": [
+   {
+    "zip": "8954",
+    "city": "Geroldswil",
+    "id": 895400000,
+    "local_pct": 112.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oberengstringen",
+  "bfs": 245,
+  "locations": [
+   {
+    "zip": "8102",
+    "city": "Oberengstringen",
+    "id": 810200000,
+    "local_pct": 109.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Oetwil a.d.L.",
+  "bfs": 246,
+  "locations": [
+   {
+    "zip": "8955",
+    "city": "Oetwil an der Limmat",
+    "id": 895500000,
+    "local_pct": 107.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Schlieren",
+  "bfs": 247,
+  "locations": [
+   {
+    "zip": "8952",
+    "city": "Schlieren",
+    "id": 895200000,
+    "local_pct": 111.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Uitikon",
+  "bfs": 248,
+  "locations": [
+   {
+    "zip": "8142",
+    "city": "Uitikon Waldegg",
+    "id": 814200000,
+    "local_pct": 78.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Unterengstringen",
+  "bfs": 249,
+  "locations": [
+   {
+    "zip": "8103",
+    "city": "Unterengstringen",
+    "id": 810300000,
+    "local_pct": 102.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Urdorf",
+  "bfs": 250,
+  "locations": [
+   {
+    "zip": "8902",
+    "city": "Urdorf",
+    "id": 890200000,
+    "local_pct": 115.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Weiningen",
+  "bfs": 251,
+  "locations": [
+   {
+    "zip": "8104",
+    "city": "Weiningen ZH",
+    "id": 810400000,
+    "local_pct": 107.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Zürich",
+  "bfs": 261,
+  "locations": [
+   {
+    "zip": "8000",
+    "city": "Zurich",
+    "id": 800000002,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8000",
+    "city": "Zürich",
+    "id": 800000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8000",
+    "city": "Zürichhorn",
+    "id": 800000001,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8001",
+    "city": "Zürich",
+    "id": 800100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8002",
+    "city": "Zürich",
+    "id": 800200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8003",
+    "city": "Zürich",
+    "id": 800300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8004",
+    "city": "Zürich",
+    "id": 800400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8005",
+    "city": "Zürich",
+    "id": 800500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8006",
+    "city": "Zürich",
+    "id": 800600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8008",
+    "city": "Zürich",
+    "id": 800800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8010",
+    "city": "Zürich Güterbahnhof GK",
+    "id": 801000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8010",
+    "city": "Zürich Mülligen",
+    "id": 801000001,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8012",
+    "city": "Zürich",
+    "id": 801200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8021",
+    "city": "Zürich",
+    "id": 802100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8022",
+    "city": "Zürich",
+    "id": 802200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8023",
+    "city": "Zürich",
+    "id": 802300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8024",
+    "city": "Zürich",
+    "id": 802400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8025",
+    "city": "Zürich",
+    "id": 802500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8026",
+    "city": "Zürich",
+    "id": 802600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8027",
+    "city": "Zürich",
+    "id": 802700000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8028",
+    "city": "Zürich",
+    "id": 802800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8029",
+    "city": "Zürich",
+    "id": 802900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8030",
+    "city": "Zürich",
+    "id": 803000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8031",
+    "city": "Zürich",
+    "id": 803100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8032",
+    "city": "Zürich",
+    "id": 803200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8033",
+    "city": "Zürich",
+    "id": 803300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8034",
+    "city": "Zürich",
+    "id": 803400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8035",
+    "city": "Zürich",
+    "id": 803500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8036",
+    "city": "Zürich",
+    "id": 803600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8037",
+    "city": "Zürich",
+    "id": 803700000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8038",
+    "city": "Zürich",
+    "id": 803800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8039",
+    "city": "Zürich",
+    "id": 803900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8040",
+    "city": "Zürich",
+    "id": 804000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8041",
+    "city": "Zürich",
+    "id": 804100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8042",
+    "city": "Zürich",
+    "id": 804200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8043",
+    "city": "Zürich",
+    "id": 804300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8044",
+    "city": "Zürich",
+    "id": 804400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8045",
+    "city": "Zürich",
+    "id": 804500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8046",
+    "city": "Zürich",
+    "id": 804600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8047",
+    "city": "Zürich",
+    "id": 804700000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8048",
+    "city": "Zürich",
+    "id": 804800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8049",
+    "city": "Zürich",
+    "id": 804900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8050",
+    "city": "Zürich",
+    "id": 805000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8051",
+    "city": "Zürich",
+    "id": 805100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8052",
+    "city": "Zürich",
+    "id": 805200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8053",
+    "city": "Zürich",
+    "id": 805300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8055",
+    "city": "Zürich",
+    "id": 805500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8056",
+    "city": "Zürich",
+    "id": 805600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8057",
+    "city": "Zürich",
+    "id": 805700000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8058",
+    "city": "Zürich Flughafen",
+    "id": 805800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8059",
+    "city": "Zürich",
+    "id": 805900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8060",
+    "city": "Zürich",
+    "id": 806000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8061",
+    "city": "Zürich",
+    "id": 806100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8062",
+    "city": "Zürich",
+    "id": 806200000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8063",
+    "city": "Zürich",
+    "id": 806300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8064",
+    "city": "Zürich",
+    "id": 806400000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8065",
+    "city": "Zürich",
+    "id": 806500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8066",
+    "city": "Zürich",
+    "id": 806600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8070",
+    "city": "Zürich",
+    "id": 807000001,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8075",
+    "city": "Zürich",
+    "id": 807500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8079",
+    "city": "Zürich",
+    "id": 807900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8080",
+    "city": "Zürich",
+    "id": 808000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8085",
+    "city": "Zürich",
+    "id": 808500000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8087",
+    "city": "Zürich",
+    "id": 808700000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8088",
+    "city": "Zürich",
+    "id": 808800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8090",
+    "city": "Zürich",
+    "id": 809000001,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8091",
+    "city": "Zürich",
+    "id": 809100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8093",
+    "city": "Zürich",
+    "id": 809300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8098",
+    "city": "Zürich",
+    "id": 809800000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   },
+   {
+    "zip": "8099",
+    "city": "Zürich",
+    "id": 809900000,
+    "local_pct": 119.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 10.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Andelfingen",
+  "bfs": 291,
+  "locations": [
+   {
+    "zip": "8450",
+    "city": "Andelfingen",
+    "id": 845000000,
+    "local_pct": 119.0,
+    "reformiert_pct": 12.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Stammheim",
+  "bfs": 292,
+  "locations": [
+   {
+    "zip": "8476",
+    "city": "Stammheim",
+    "id": 847600001,
+    "local_pct": 112.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   },
+   {
+    "zip": "8477",
+    "city": "Stammheim",
+    "id": 847700001,
+    "local_pct": 112.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wädenswil",
+  "bfs": 293,
+  "locations": [
+   {
+    "zip": "8820",
+    "city": "Wädenswil",
+    "id": 882000000,
+    "local_pct": 102.0,
+    "reformiert_pct": 11.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Elgg",
+  "bfs": 294,
+  "locations": [
+   {
+    "zip": "8353",
+    "city": "Elgg",
+    "id": 835300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 14.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Horgen",
+  "bfs": 295,
+  "locations": [
+   {
+    "zip": "8810",
+    "city": "Horgen",
+    "id": 881000000,
+    "local_pct": 90.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   },
+   {
+    "zip": "8812",
+    "city": "Horgen",
+    "id": 881200000,
+    "local_pct": 90.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   },
+   {
+    "zip": "8813",
+    "city": "Horgen",
+    "id": 881300000,
+    "local_pct": 90.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   },
+   {
+    "zip": "8815",
+    "city": "Horgenberg",
+    "id": 881500000,
+    "local_pct": 90.0,
+    "reformiert_pct": 10.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Illnau-Effretikon",
+  "bfs": 296,
+  "locations": [
+   {
+    "zip": "8307",
+    "city": "Effretikon",
+    "id": 830700000,
+    "local_pct": 113.0,
+    "reformiert_pct": 13.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Bauma",
+  "bfs": 297,
+  "locations": [
+   {
+    "zip": "8494",
+    "city": "Bauma",
+    "id": 849400000,
+    "local_pct": 120.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 13.0
+   }
+  ]
+ },
+ {
+  "canton": "ZH",
+  "name": "Wiesendangen",
+  "bfs": 298,
+  "locations": [
+   {
+    "zip": "8542",
+    "city": "Wiesendangen",
+    "id": 854200000,
+    "local_pct": 86.0,
+    "reformiert_pct": 14.0,
+    "canton_pct": 95.0,
+    "roemisch_katholisch_pct": 12.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Wollerau",
+  "bfs": 1323,
+  "locations": [
+   {
+    "zip": "8832",
+    "city": "Wollerau",
+    "id": 883200000,
+    "local_pct": 64.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Freienbach",
+  "bfs": 1322,
+  "locations": [
+   {
+    "zip": "8807",
+    "city": "Freienbach",
+    "id": 880700000,
+    "local_pct": 64.0,
+    "reformiert_pct": 8.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Feusisberg",
+  "bfs": 1321,
+  "locations": [
+   {
+    "zip": "8835",
+    "city": "Feusisberg",
+    "id": 883500000,
+    "local_pct": 68.99,
+    "reformiert_pct": 8.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 15.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Altendorf",
+  "bfs": 1341,
+  "locations": [
+   {
+    "zip": "8852",
+    "city": "Altendorf",
+    "id": 885200000,
+    "local_pct": 115.0,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 15.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Lachen",
+  "bfs": 1344,
+  "locations": [
+   {
+    "zip": "8853",
+    "city": "Lachen SZ",
+    "id": 885300000,
+    "local_pct": 125.0,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 11.99
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Küssnacht",
+  "bfs": 1331,
+  "locations": [
+   {
+    "zip": "6403",
+    "city": "Küssnacht am Rigi",
+    "id": 640300000,
+    "local_pct": 145.0,
+    "reformiert_pct": 15.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 18.01
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Oberiberg",
+  "bfs": 1368,
+  "locations": [
+   {
+    "zip": "8843",
+    "city": "Oberiberg",
+    "id": 884300000,
+    "local_pct": 125.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 28.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Riemenstalden",
+  "bfs": 1369,
+  "locations": [
+   {
+    "zip": "6452",
+    "city": "Riemenstalden",
+    "id": 645300000,
+    "local_pct": 134.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Unteriberg",
+  "bfs": 1375,
+  "locations": [
+   {
+    "zip": "8842",
+    "city": "Unteriberg",
+    "id": 884200000,
+    "local_pct": 155.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Gersau",
+  "bfs": 1311,
+  "locations": [
+   {
+    "zip": "6442",
+    "city": "Gersau",
+    "id": 644200000,
+    "local_pct": 145.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Galgenen",
+  "bfs": 1342,
+  "locations": [
+   {
+    "zip": "8854",
+    "city": "Galgenen",
+    "id": 885402000,
+    "local_pct": 155.0,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 15.99
+   },
+   {
+    "zip": "8854",
+    "city": "Galgenen-Siebnen",
+    "id": 885402001,
+    "local_pct": 155.0,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Arth",
+  "bfs": 1362,
+  "locations": [
+   {
+    "zip": "6415",
+    "city": "Arth",
+    "id": 641500000,
+    "local_pct": 145.0,
+    "reformiert_pct": 30.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 27.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Innerthal",
+  "bfs": 1343,
+  "locations": [
+   {
+    "zip": "8858",
+    "city": "Innerthal",
+    "id": 885800000,
+    "local_pct": 140.0,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 32.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Muotathal",
+  "bfs": 1367,
+  "locations": [
+   {
+    "zip": "6436",
+    "city": "Muotathal",
+    "id": 643600000,
+    "local_pct": 149.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Tuggen",
+  "bfs": 1347,
+  "locations": [
+   {
+    "zip": "8856",
+    "city": "Tuggen",
+    "id": 885600000,
+    "local_pct": 153.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Rothenthurm",
+  "bfs": 1370,
+  "locations": [
+   {
+    "zip": "6418",
+    "city": "Rothenthurm",
+    "id": 641800000,
+    "local_pct": 155.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Alpthal",
+  "bfs": 1361,
+  "locations": [
+   {
+    "zip": "8849",
+    "city": "Alpthal",
+    "id": 884900000,
+    "local_pct": 155.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Ingenbohl",
+  "bfs": 1364,
+  "locations": [
+   {
+    "zip": "6440",
+    "city": "Ingenbohl",
+    "id": 644000001,
+    "local_pct": 164.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 18.01
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Steinerberg",
+  "bfs": 1374,
+  "locations": [
+   {
+    "zip": "6416",
+    "city": "Steinerberg",
+    "id": 641600000,
+    "local_pct": 155.0,
+    "reformiert_pct": 30.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Sattel",
+  "bfs": 1371,
+  "locations": [
+   {
+    "zip": "6417",
+    "city": "Sattel",
+    "id": 641700000,
+    "local_pct": 155.0,
+    "reformiert_pct": 30.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.99
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Wangen",
+  "bfs": 1349,
+  "locations": [
+   {
+    "zip": "8855",
+    "city": "Wangen SZ",
+    "id": 885500000,
+    "local_pct": 164.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.0
+   },
+   {
+    "zip": "8855",
+    "city": "Wangen-Siebnen",
+    "id": 885500002,
+    "local_pct": 164.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Einsiedeln",
+  "bfs": 1301,
+  "locations": [
+   {
+    "zip": "8840",
+    "city": "Einsiedeln",
+    "id": 884000000,
+    "local_pct": 170.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Vorderthal",
+  "bfs": 1348,
+  "locations": [
+   {
+    "zip": "8857",
+    "city": "Vorderthal",
+    "id": 885700000,
+    "local_pct": 164.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 32.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Schwyz",
+  "bfs": 1372,
+  "locations": [
+   {
+    "zip": "6430",
+    "city": "Schwyz",
+    "id": 643000000,
+    "local_pct": 174.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "6431",
+    "city": "Schwyz",
+    "id": 643100001,
+    "local_pct": 174.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Morschach",
+  "bfs": 1366,
+  "locations": [
+   {
+    "zip": "6443",
+    "city": "Morschach",
+    "id": 644300000,
+    "local_pct": 164.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 36.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Lauerz",
+  "bfs": 1365,
+  "locations": [
+   {
+    "zip": "6424",
+    "city": "Lauerz",
+    "id": 642400000,
+    "local_pct": 174.99,
+    "reformiert_pct": 30.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 28.99
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Schübelbach",
+  "bfs": 1346,
+  "locations": [
+   {
+    "zip": "8862",
+    "city": "Schübelbach",
+    "id": 886200000,
+    "local_pct": 179.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 38.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Reichenburg",
+  "bfs": 1345,
+  "locations": [
+   {
+    "zip": "8864",
+    "city": "Reichenburg",
+    "id": 886400000,
+    "local_pct": 179.99,
+    "reformiert_pct": 13.99,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.0
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Steinen",
+  "bfs": 1373,
+  "locations": [
+   {
+    "zip": "6422",
+    "city": "Steinen",
+    "id": 642200000,
+    "local_pct": 195.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 28.99
+   }
+  ]
+ },
+ {
+  "canton": "SZ",
+  "name": "Illgau",
+  "bfs": 1363,
+  "locations": [
+   {
+    "zip": "6434",
+    "city": "Illgau",
+    "id": 643400000,
+    "local_pct": 195.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 110.0,
+    "roemisch_katholisch_pct": 30.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Zug",
+  "bfs": 1711,
+  "locations": [
+   {
+    "zip": "6300",
+    "city": "Zug",
+    "id": 630000000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6300",
+    "city": "Zugerberg",
+    "id": 630005000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6300",
+    "city": "Zugo",
+    "id": 630000010,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6301",
+    "city": "Zug",
+    "id": 630100000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6302",
+    "city": "Zug",
+    "id": 630200000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6303",
+    "city": "Zug",
+    "id": 630300000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6304",
+    "city": "Zug",
+    "id": 630400000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6305",
+    "city": "Zug",
+    "id": 630500000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   },
+   {
+    "zip": "6310",
+    "city": "Zug",
+    "id": 631000000,
+    "local_pct": 52.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 5.95
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Oberägeri",
+  "bfs": 1706,
+  "locations": [
+   {
+    "zip": "6315",
+    "city": "Oberägeri",
+    "id": 631500000,
+    "local_pct": 54.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Unterägeri",
+  "bfs": 1709,
+  "locations": [
+   {
+    "zip": "6314",
+    "city": "Unterägeri",
+    "id": 631400000,
+    "local_pct": 53.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 7.5
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Menzingen",
+  "bfs": 1704,
+  "locations": [
+   {
+    "zip": "6313",
+    "city": "Menzingen",
+    "id": 631300000,
+    "local_pct": 55.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Baar",
+  "bfs": 1701,
+  "locations": [
+   {
+    "zip": "6340",
+    "city": "Baar",
+    "id": 634000000,
+    "local_pct": 47.53,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 6.65
+   },
+   {
+    "zip": "6341",
+    "city": "Baar",
+    "id": 634100000,
+    "local_pct": 47.53,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 6.65
+   },
+   {
+    "zip": "6342",
+    "city": "Baar",
+    "id": 634200000,
+    "local_pct": 47.53,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 6.65
+   },
+   {
+    "zip": "6349",
+    "city": "Baar",
+    "id": 634900000,
+    "local_pct": 47.53,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 6.65
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Cham",
+  "bfs": 1702,
+  "locations": [
+   {
+    "zip": "6330",
+    "city": "Cham",
+    "id": 633000000,
+    "local_pct": 54.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 8.1
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Hünenberg",
+  "bfs": 1703,
+  "locations": [
+   {
+    "zip": "6331",
+    "city": "Hünenberg",
+    "id": 633101000,
+    "local_pct": 53.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 8.1
+   },
+   {
+    "zip": "6333",
+    "city": "Hünenberg See",
+    "id": 633301000,
+    "local_pct": 53.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 8.1
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Steinhausen",
+  "bfs": 1708,
+  "locations": [
+   {
+    "zip": "6312",
+    "city": "Steinhausen",
+    "id": 631200000,
+    "local_pct": 53.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Risch",
+  "bfs": 1707,
+  "locations": [
+   {
+    "zip": "6343",
+    "city": "Risch",
+    "id": 634303000,
+    "local_pct": 54.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 8.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Walchwil",
+  "bfs": 1710,
+  "locations": [
+   {
+    "zip": "6318",
+    "city": "Walchwil",
+    "id": 631800000,
+    "local_pct": 51.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 11.0
+   }
+  ]
+ },
+ {
+  "canton": "ZG",
+  "name": "Neuheim",
+  "bfs": 1705,
+  "locations": [
+   {
+    "zip": "6345",
+    "city": "Neuheim",
+    "id": 634500000,
+    "local_pct": 59.0,
+    "reformiert_pct": 6.0,
+    "canton_pct": 78.0,
+    "roemisch_katholisch_pct": 9.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "St. Gallen",
+  "bfs": 3203,
+  "locations": [
+   {
+    "zip": "9000",
+    "city": "St. Gallen",
+    "id": 900000000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9001",
+    "city": "St. Gallen",
+    "id": 900100000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9003",
+    "city": "St. Gallen",
+    "id": 900300000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9004",
+    "city": "St. Gallen",
+    "id": 900400000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9006",
+    "city": "St. Gallen",
+    "id": 900600000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9007",
+    "city": "St. Gallen",
+    "id": 900700000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9008",
+    "city": "St. Gallen",
+    "id": 900800000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9009",
+    "city": "St. Gallen",
+    "id": 900900000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9010",
+    "city": "St. Gallen",
+    "id": 901000000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9011",
+    "city": "St. Gallen",
+    "id": 901100000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9012",
+    "city": "St. Gallen",
+    "id": 901200000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9013",
+    "city": "St. Gallen",
+    "id": 901300000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9014",
+    "city": "St. Gallen",
+    "id": 901400000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9015",
+    "city": "St. Gallen",
+    "id": 901500000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9016",
+    "city": "St. Gallen",
+    "id": 901600000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9020",
+    "city": "St. Gallen",
+    "id": 902000000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9022",
+    "city": "St. Gallen",
+    "id": 902200000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9023",
+    "city": "St. Gallen",
+    "id": 902300000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9028",
+    "city": "St. Gallen",
+    "id": 902800000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   },
+   {
+    "zip": "9029",
+    "city": "St. Gallen",
+    "id": 902900000,
+    "local_pct": 138.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Wittenbach",
+  "bfs": 3204,
+  "locations": [
+   {
+    "zip": "9300",
+    "city": "Wittenbach",
+    "id": 930300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   },
+   {
+    "zip": "9301",
+    "city": "Wittenbach",
+    "id": 930100000,
+    "local_pct": 119.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Häggenschwil",
+  "bfs": 3201,
+  "locations": [
+   {
+    "zip": "9312",
+    "city": "Häggenschwil",
+    "id": 931200000,
+    "local_pct": 115.0,
+    "reformiert_pct": 16.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Muolen",
+  "bfs": 3202,
+  "locations": [
+   {
+    "zip": "9313",
+    "city": "Muolen",
+    "id": 931300000,
+    "local_pct": 115.99,
+    "reformiert_pct": 20.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Mörschwil",
+  "bfs": 3214,
+  "locations": [
+   {
+    "zip": "9402",
+    "city": "Mörschwil",
+    "id": 940200000,
+    "local_pct": 67.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 16.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Goldach",
+  "bfs": 3213,
+  "locations": [
+   {
+    "zip": "9403",
+    "city": "Goldach",
+    "id": 940300000,
+    "local_pct": 99.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Steinach",
+  "bfs": 3217,
+  "locations": [
+   {
+    "zip": "9323",
+    "city": "Steinach",
+    "id": 932300000,
+    "local_pct": 122.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 16.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Berg",
+  "bfs": 3211,
+  "locations": [
+   {
+    "zip": "9305",
+    "city": "Berg SG",
+    "id": 930500000,
+    "local_pct": 123.0,
+    "reformiert_pct": 16.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Tübach",
+  "bfs": 3218,
+  "locations": [
+   {
+    "zip": "9327",
+    "city": "Tübach",
+    "id": 932700000,
+    "local_pct": 79.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Untereggen",
+  "bfs": 3219,
+  "locations": [
+   {
+    "zip": "9033",
+    "city": "Untereggen",
+    "id": 903300000,
+    "local_pct": 119.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Eggersriet",
+  "bfs": 3212,
+  "locations": [
+   {
+    "zip": "9034",
+    "city": "Eggersriet",
+    "id": 903400000,
+    "local_pct": 120.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rorschacherberg",
+  "bfs": 3216,
+  "locations": [
+   {
+    "zip": "9404",
+    "city": "Rorschacherberg",
+    "id": 940400000,
+    "local_pct": 105.0,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rorschach",
+  "bfs": 3215,
+  "locations": [
+   {
+    "zip": "9400",
+    "city": "Rorschach",
+    "id": 940000000,
+    "local_pct": 128.99,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   },
+   {
+    "zip": "9401",
+    "city": "Rorschach",
+    "id": 940100000,
+    "local_pct": 128.99,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Thal",
+  "bfs": 3237,
+  "locations": [
+   {
+    "zip": "9425",
+    "city": "Thal",
+    "id": 942500000,
+    "local_pct": 89.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rheineck",
+  "bfs": 3235,
+  "locations": [
+   {
+    "zip": "9424",
+    "city": "Rheineck",
+    "id": 942400000,
+    "local_pct": 113.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "St. Margrethen",
+  "bfs": 3236,
+  "locations": [
+   {
+    "zip": "9430",
+    "city": "St. Margrethen SG",
+    "id": 943000000,
+    "local_pct": 109.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Au",
+  "bfs": 3231,
+  "locations": [
+   {
+    "zip": "9434",
+    "city": "Au SG",
+    "id": 943400000,
+    "local_pct": 99.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 21.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Berneck",
+  "bfs": 3233,
+  "locations": [
+   {
+    "zip": "9442",
+    "city": "Berneck",
+    "id": 944200000,
+    "local_pct": 92.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 17.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Balgach",
+  "bfs": 3232,
+  "locations": [
+   {
+    "zip": "9436",
+    "city": "Balgach",
+    "id": 943600000,
+    "local_pct": 61.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 17.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Diepoldsau",
+  "bfs": 3234,
+  "locations": [
+   {
+    "zip": "9444",
+    "city": "Diepoldsau",
+    "id": 944400000,
+    "local_pct": 85.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Widnau",
+  "bfs": 3238,
+  "locations": [
+   {
+    "zip": "9443",
+    "city": "Widnau",
+    "id": 944300000,
+    "local_pct": 76.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 17.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rebstein",
+  "bfs": 3255,
+  "locations": [
+   {
+    "zip": "9445",
+    "city": "Rebstein",
+    "id": 944500000,
+    "local_pct": 107.99,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Marbach",
+  "bfs": 3253,
+  "locations": [
+   {
+    "zip": "9437",
+    "city": "Marbach SG",
+    "id": 943700000,
+    "local_pct": 102.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Altstätten",
+  "bfs": 3251,
+  "locations": [
+   {
+    "zip": "9450",
+    "city": "Altstätten SG",
+    "id": 945000000,
+    "local_pct": 107.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Eichberg",
+  "bfs": 3252,
+  "locations": [
+   {
+    "zip": "9453",
+    "city": "Eichberg",
+    "id": 945300000,
+    "local_pct": 104.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Oberriet",
+  "bfs": 3254,
+  "locations": [
+   {
+    "zip": "9463",
+    "city": "Oberriet SG",
+    "id": 946300000,
+    "local_pct": 95.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rüthi",
+  "bfs": 3256,
+  "locations": [
+   {
+    "zip": "9464",
+    "city": "Rüthi (Rheintal)",
+    "id": 946400000,
+    "local_pct": 109.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Sennwald",
+  "bfs": 3274,
+  "locations": [
+   {
+    "zip": "9466",
+    "city": "Sennwald",
+    "id": 946600000,
+    "local_pct": 70.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 16.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Gams",
+  "bfs": 3272,
+  "locations": [
+   {
+    "zip": "9473",
+    "city": "Gams",
+    "id": 947300000,
+    "local_pct": 115.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Grabs",
+  "bfs": 3273,
+  "locations": [
+   {
+    "zip": "9472",
+    "city": "Grabs",
+    "id": 947200000,
+    "local_pct": 100.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 18.0
+   },
+   {
+    "zip": "9472",
+    "city": "Grabserberg",
+    "id": 947202000,
+    "local_pct": 100.0,
+    "reformiert_pct": 27.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 18.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Buchs",
+  "bfs": 3271,
+  "locations": [
+   {
+    "zip": "9470",
+    "city": "Buchs SG",
+    "id": 947000000,
+    "local_pct": 118.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 18.0
+   },
+   {
+    "zip": "9471",
+    "city": "Buchs",
+    "id": 947100000,
+    "local_pct": 118.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 18.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Sevelen",
+  "bfs": 3275,
+  "locations": [
+   {
+    "zip": "9475",
+    "city": "Sevelen",
+    "id": 947500000,
+    "local_pct": 118.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 20.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Wartau",
+  "bfs": 3276,
+  "locations": [
+   {
+    "zip": "9478",
+    "city": "Wartau",
+    "id": 947802000,
+    "local_pct": 145.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Sargans",
+  "bfs": 3296,
+  "locations": [
+   {
+    "zip": "7320",
+    "city": "Sargans",
+    "id": 732000000,
+    "local_pct": 128.99,
+    "reformiert_pct": 22.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 21.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Vilters-Wangs",
+  "bfs": 3297,
+  "locations": [
+   {
+    "zip": "7324",
+    "city": "Vilters",
+    "id": 732400000,
+    "local_pct": 117.0,
+    "reformiert_pct": 22.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Bad Ragaz",
+  "bfs": 3291,
+  "locations": [
+   {
+    "zip": "7310",
+    "city": "Bad Ragaz",
+    "id": 731000000,
+    "local_pct": 92.0,
+    "reformiert_pct": 22.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 17.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Pfäfers",
+  "bfs": 3294,
+  "locations": [
+   {
+    "zip": "7312",
+    "city": "Pfäfers",
+    "id": 731200000,
+    "local_pct": 136.0,
+    "reformiert_pct": 22.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Mels",
+  "bfs": 3293,
+  "locations": [
+   {
+    "zip": "8887",
+    "city": "Mels",
+    "id": 888700000,
+    "local_pct": 125.0,
+    "reformiert_pct": 22.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 20.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Flums",
+  "bfs": 3292,
+  "locations": [
+   {
+    "zip": "8890",
+    "city": "Flums",
+    "id": 889000000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8893",
+    "city": "Flums Hochwiese",
+    "id": 889300000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8894",
+    "city": "Flumserberg Saxli",
+    "id": 889400000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8895",
+    "city": "Flumserberg Portels",
+    "id": 889500000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8896",
+    "city": "Flumserberg Bergheim",
+    "id": 889600000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8897",
+    "city": "Flumserberg Tannenheim",
+    "id": 889700000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8898",
+    "city": "Flumserberg Tannenbodenalp",
+    "id": 889800000,
+    "local_pct": 125.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Walenstadt",
+  "bfs": 3298,
+  "locations": [
+   {
+    "zip": "8880",
+    "city": "Walenstadt",
+    "id": 888000000,
+    "local_pct": 110.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "8881",
+    "city": "Walenstadtberg",
+    "id": 888101000,
+    "local_pct": 110.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Quarten",
+  "bfs": 3295,
+  "locations": [
+   {
+    "zip": "8883",
+    "city": "Quarten",
+    "id": 888300000,
+    "local_pct": 102.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Amden",
+  "bfs": 3311,
+  "locations": [
+   {
+    "zip": "8873",
+    "city": "Amden",
+    "id": 887300000,
+    "local_pct": 99.0,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Weesen",
+  "bfs": 3316,
+  "locations": [
+   {
+    "zip": "8872",
+    "city": "Weesen",
+    "id": 887200000,
+    "local_pct": 115.0,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Schänis",
+  "bfs": 3315,
+  "locations": [
+   {
+    "zip": "8718",
+    "city": "Schänis",
+    "id": 871800000,
+    "local_pct": 125.0,
+    "reformiert_pct": 20.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Benken",
+  "bfs": 3312,
+  "locations": [
+   {
+    "zip": "8717",
+    "city": "Benken SG",
+    "id": 871700000,
+    "local_pct": 117.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Kaltbrunn",
+  "bfs": 3313,
+  "locations": [
+   {
+    "zip": "8722",
+    "city": "Kaltbrunn",
+    "id": 872200000,
+    "local_pct": 110.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 21.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Gommiswald",
+  "bfs": 3341,
+  "locations": [
+   {
+    "zip": "8737",
+    "city": "Gommiswald",
+    "id": 873700000,
+    "local_pct": 103.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Uznach",
+  "bfs": 3339,
+  "locations": [
+   {
+    "zip": "8730",
+    "city": "Uznach",
+    "id": 873000000,
+    "local_pct": 115.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Schmerikon",
+  "bfs": 3338,
+  "locations": [
+   {
+    "zip": "8716",
+    "city": "Schmerikon",
+    "id": 871600000,
+    "local_pct": 113.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Rapperswil-Jona",
+  "bfs": 3340,
+  "locations": [
+   {
+    "zip": "8645",
+    "city": "Jona",
+    "id": 864500000,
+    "local_pct": 74.0,
+    "reformiert_pct": 20.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Eschenbach",
+  "bfs": 3342,
+  "locations": [
+   {
+    "zip": "8733",
+    "city": "Eschenbach SG",
+    "id": 873300000,
+    "local_pct": 117.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Wildhaus-Alt St. Johann",
+  "bfs": 3359,
+  "locations": [
+   {
+    "zip": "9658",
+    "city": "Wildhaus",
+    "id": 965800000,
+    "local_pct": 118.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Nesslau",
+  "bfs": 3360,
+  "locations": [
+   {
+    "zip": "9650",
+    "city": "Nesslau",
+    "id": 965000000,
+    "local_pct": 114.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 18.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Ebnat-Kappel",
+  "bfs": 3352,
+  "locations": [
+   {
+    "zip": "9642",
+    "city": "Ebnat-Kappel",
+    "id": 964200000,
+    "local_pct": 139.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Wattwil",
+  "bfs": 3379,
+  "locations": [
+   {
+    "zip": "9630",
+    "city": "Wattwil",
+    "id": 963000000,
+    "local_pct": 128.99,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 26.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Lichtensteig",
+  "bfs": 3374,
+  "locations": [
+   {
+    "zip": "9620",
+    "city": "Lichtensteig",
+    "id": 962000000,
+    "local_pct": 128.99,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Neckertal",
+  "bfs": 3396,
+  "locations": [
+   {
+    "zip": "9125",
+    "city": "Brunnadern",
+    "id": 912500000,
+    "local_pct": 120.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Bütschwil-Ganterschwil",
+  "bfs": 3395,
+  "locations": [
+   {
+    "zip": "9606",
+    "city": "Bütschwil",
+    "id": 960600000,
+    "local_pct": 119.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Lütisburg",
+  "bfs": 3393,
+  "locations": [
+   {
+    "zip": "9601",
+    "city": "Lütisburg Station",
+    "id": 960100000,
+    "local_pct": 155.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   },
+   {
+    "zip": "9604",
+    "city": "Lütisburg",
+    "id": 923500000,
+    "local_pct": 155.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Mosnang",
+  "bfs": 3394,
+  "locations": [
+   {
+    "zip": "9607",
+    "city": "Mosnang",
+    "id": 960700000,
+    "local_pct": 128.99,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Kirchberg",
+  "bfs": 3392,
+  "locations": [
+   {
+    "zip": "9533",
+    "city": "Kirchberg SG",
+    "id": 953300000,
+    "local_pct": 120.0,
+    "reformiert_pct": 26.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 23.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Jonschwil",
+  "bfs": 3405,
+  "locations": [
+   {
+    "zip": "9243",
+    "city": "Jonschwil",
+    "id": 924300000,
+    "local_pct": 128.99,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Oberuzwil",
+  "bfs": 3407,
+  "locations": [
+   {
+    "zip": "9242",
+    "city": "Oberuzwil",
+    "id": 924200000,
+    "local_pct": 117.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Uzwil",
+  "bfs": 3408,
+  "locations": [
+   {
+    "zip": "9240",
+    "city": "Uzwil",
+    "id": 924000000,
+    "local_pct": 122.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 23.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Flawil",
+  "bfs": 3402,
+  "locations": [
+   {
+    "zip": "9230",
+    "city": "Flawil",
+    "id": 923000000,
+    "local_pct": 127.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Degersheim",
+  "bfs": 3401,
+  "locations": [
+   {
+    "zip": "9113",
+    "city": "Degersheim",
+    "id": 911300000,
+    "local_pct": 138.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 25.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Wil",
+  "bfs": 3427,
+  "locations": [
+   {
+    "zip": "9500",
+    "city": "Wil SG",
+    "id": 950000000,
+    "local_pct": 115.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   },
+   {
+    "zip": "9501",
+    "city": "Wil",
+    "id": 950100000,
+    "local_pct": 115.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 22.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Zuzwil",
+  "bfs": 3426,
+  "locations": [
+   {
+    "zip": "9524",
+    "city": "Zuzwil SG",
+    "id": 952400000,
+    "local_pct": 77.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 21.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Oberbüren",
+  "bfs": 3424,
+  "locations": [
+   {
+    "zip": "9245",
+    "city": "Oberbüren",
+    "id": 924500000,
+    "local_pct": 100.0,
+    "reformiert_pct": 25.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 27.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Niederbüren",
+  "bfs": 3422,
+  "locations": [
+   {
+    "zip": "9246",
+    "city": "Niederbüren",
+    "id": 924600000,
+    "local_pct": 115.99,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Niederhelfenschwil",
+  "bfs": 3423,
+  "locations": [
+   {
+    "zip": "9527",
+    "city": "Niederhelfenschwil",
+    "id": 952700000,
+    "local_pct": 104.0,
+    "reformiert_pct": 24.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Gossau",
+  "bfs": 3443,
+  "locations": [
+   {
+    "zip": "9200",
+    "city": "Gossau SG",
+    "id": 920200000,
+    "local_pct": 115.99,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 20.0
+   },
+   {
+    "zip": "9201",
+    "city": "Gossau SG",
+    "id": 920100000,
+    "local_pct": 115.99,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 20.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Andwil",
+  "bfs": 3441,
+  "locations": [
+   {
+    "zip": "9204",
+    "city": "Andwil SG",
+    "id": 920400000,
+    "local_pct": 113.0,
+    "reformiert_pct": 23.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 19.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Waldkirch",
+  "bfs": 3444,
+  "locations": [
+   {
+    "zip": "9205",
+    "city": "Waldkirch",
+    "id": 920500000,
+    "local_pct": 122.0,
+    "reformiert_pct": 28.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 24.0
+   }
+  ]
+ },
+ {
+  "canton": "SG",
+  "name": "Gaiserwald",
+  "bfs": 3442,
+  "locations": [
+   {
+    "zip": "9030",
+    "city": "Gaiserwald",
+    "id": 903000001,
+    "local_pct": 99.0,
+    "reformiert_pct": 21.0,
+    "canton_pct": 105.0,
+    "roemisch_katholisch_pct": 21.0
+   }
+  ]
+ }
+]

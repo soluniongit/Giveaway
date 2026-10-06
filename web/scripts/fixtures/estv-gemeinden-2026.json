@@ -1,0 +1,863 @@
+{
+ "tool": "ESTV Steuerrechner API_calculateSimpleTaxes, TaxYear 2026",
+ "run": "2026-10-06T11:20:23.849Z",
+ "cases": [
+  {
+   "canton": "ZH",
+   "municipality": "Winterthur",
+   "bfs": 230,
+   "estv_location": "8400 Winterthur (840000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 125
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 2597.3,
+    "local": 3417.5,
+    "personal": 24,
+    "total": 6710.2
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 2597,
+    "local": 3418,
+    "personal": 24,
+    "total": 6710,
+    "simple_canton": 2734,
+    "simple_city": 2734
+   },
+   "diff_total": 0.2,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.3,
+    "local": -0.5,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Winterthur",
+   "bfs": 230,
+   "estv_location": "8400 Winterthur (840000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 125
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 4505.85,
+    "local": 5928.75,
+    "personal": 48,
+    "total": 12298.6
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 4506,
+    "local": 5929,
+    "personal": 48,
+    "total": 12299,
+    "simple_canton": 4743,
+    "simple_city": 4743
+   },
+   "diff_total": -0.4,
+   "diff": {
+    "fed": 0,
+    "canton": -0.15,
+    "local": -0.25,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Uster",
+   "bfs": 198,
+   "estv_location": "8610 Uster (861000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 112
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 2597.3,
+    "local": 3062.08,
+    "personal": 24,
+    "total": 6354.78
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 2597,
+    "local": 3062,
+    "personal": 24,
+    "total": 6354,
+    "simple_canton": 2734,
+    "simple_city": 2734
+   },
+   "diff_total": 0.78,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.3,
+    "local": 0.08,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Uster",
+   "bfs": 198,
+   "estv_location": "8610 Uster (861000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 112
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 4505.85,
+    "local": 5312.16,
+    "personal": 48,
+    "total": 11682.01
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 4506,
+    "local": 5312,
+    "personal": 48,
+    "total": 11682,
+    "simple_canton": 4743,
+    "simple_city": 4743
+   },
+   "diff_total": 0.01,
+   "diff": {
+    "fed": 0,
+    "canton": -0.15,
+    "local": 0.16,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Küsnacht",
+   "bfs": 154,
+   "estv_location": "8700 Küsnacht ZH (870000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 73
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 2597.3,
+    "local": 1995.82,
+    "personal": 24,
+    "total": 5288.52
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 2597,
+    "local": 1996,
+    "personal": 24,
+    "total": 5288,
+    "simple_canton": 2734,
+    "simple_city": 2734
+   },
+   "diff_total": 0.52,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.3,
+    "local": -0.18,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Küsnacht",
+   "bfs": 154,
+   "estv_location": "8700 Küsnacht ZH (870000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 95,
+    "district": null,
+    "municipal": 73
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 4505.85,
+    "local": 3462.39,
+    "personal": 48,
+    "total": 9832.24
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 4506,
+    "local": 3462,
+    "personal": 48,
+    "total": 9832,
+    "simple_canton": 4743,
+    "simple_city": 4743
+   },
+   "diff_total": 0.24,
+   "diff": {
+    "fed": 0,
+    "canton": -0.15,
+    "local": 0.39,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Einsiedeln",
+   "bfs": 1301,
+   "estv_location": "8840 Einsiedeln (884000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 110,
+    "district": 0,
+    "municipal": 170
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 1866.48,
+    "local": 2884.56,
+    "personal": 0,
+    "total": 5422.44
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 1866,
+    "local": 2885,
+    "personal": 0,
+    "total": 5422,
+    "simple_canton": 1697,
+    "simple_city": 1697
+   },
+   "diff_total": 0.44,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.48,
+    "local": -0.44,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Einsiedeln",
+   "bfs": 1301,
+   "estv_location": "8840 Einsiedeln (884000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 110,
+    "district": 0,
+    "municipal": 170
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 2983.59,
+    "local": 4611.01,
+    "personal": 0,
+    "total": 9410.6
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 2984,
+    "local": 4611,
+    "personal": 0,
+    "total": 9411,
+    "simple_canton": 2712,
+    "simple_city": 2712
+   },
+   "diff_total": -0.4,
+   "diff": {
+    "fed": 0,
+    "canton": -0.41,
+    "local": 0.01,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Küssnacht",
+   "bfs": 1331,
+   "estv_location": "6403 Küssnacht am Rigi (640300000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 110,
+    "district": 0,
+    "municipal": 145
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 1866.48,
+    "local": 2460.36,
+    "personal": 0,
+    "total": 4998.24
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 1866,
+    "local": 2460,
+    "personal": 0,
+    "total": 4997,
+    "simple_canton": 1697,
+    "simple_city": 1697
+   },
+   "diff_total": 1.24,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.48,
+    "local": 0.36,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Küssnacht",
+   "bfs": 1331,
+   "estv_location": "6403 Küssnacht am Rigi (640300000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 110,
+    "district": 0,
+    "municipal": 145
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 2983.59,
+    "local": 3932.92,
+    "personal": 0,
+    "total": 8732.51
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 2984,
+    "local": 3933,
+    "personal": 0,
+    "total": 8733,
+    "simple_canton": 2712,
+    "simple_city": 2712
+   },
+   "diff_total": -0.49,
+   "diff": {
+    "fed": 0,
+    "canton": -0.41,
+    "local": -0.08,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Lachen",
+   "bfs": 1344,
+   "estv_location": "8853 Lachen SZ (885300000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 110,
+    "district": 30,
+    "municipal": 95
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 1866.48,
+    "local": 2121,
+    "personal": 0,
+    "total": 4658.88
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 1866,
+    "local": 2121,
+    "personal": 0,
+    "total": 4658,
+    "simple_canton": 1697,
+    "simple_city": 1697
+   },
+   "diff_total": 0.88,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.48,
+    "local": 0,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Lachen",
+   "bfs": 1344,
+   "estv_location": "8853 Lachen SZ (885300000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 110,
+    "district": 30,
+    "municipal": 95
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 2983.59,
+    "local": 3390.45,
+    "personal": 0,
+    "total": 8190.04
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 2984,
+    "local": 3390,
+    "personal": 0,
+    "total": 8190,
+    "simple_canton": 2712,
+    "simple_city": 2712
+   },
+   "diff_total": 0.04,
+   "diff": {
+    "fed": 0,
+    "canton": -0.41,
+    "local": 0.45,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Baar",
+   "bfs": 1701,
+   "estv_location": "6340 Baar (634000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 78,
+    "district": null,
+    "municipal": 47.53
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 1989.78,
+    "local": 1212.49,
+    "personal": 0,
+    "total": 3873.67
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 1990,
+    "local": 1212,
+    "personal": 0,
+    "total": 3873,
+    "simple_canton": 2551,
+    "simple_city": 2551
+   },
+   "diff_total": 0.67,
+   "diff": {
+    "fed": 0.4,
+    "canton": -0.22,
+    "local": 0.49,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Baar",
+   "bfs": 1701,
+   "estv_location": "6340 Baar (634000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 78,
+    "district": null,
+    "municipal": 47.53
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 3116.88,
+    "local": 1899.3,
+    "personal": 0,
+    "total": 6832.18
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 3117,
+    "local": 1899,
+    "personal": 0,
+    "total": 6832,
+    "simple_canton": 3996,
+    "simple_city": 3996
+   },
+   "diff_total": 0.18,
+   "diff": {
+    "fed": 0,
+    "canton": -0.12,
+    "local": 0.3,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Walchwil",
+   "bfs": 1710,
+   "estv_location": "6318 Walchwil (631800000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 78,
+    "district": null,
+    "municipal": 51
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 1989.78,
+    "local": 1301.01,
+    "personal": 0,
+    "total": 3962.19
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 1990,
+    "local": 1301,
+    "personal": 0,
+    "total": 3962,
+    "simple_canton": 2551,
+    "simple_city": 2551
+   },
+   "diff_total": 0.19,
+   "diff": {
+    "fed": 0.4,
+    "canton": -0.22,
+    "local": 0.01,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Walchwil",
+   "bfs": 1710,
+   "estv_location": "6318 Walchwil (631800000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 78,
+    "district": null,
+    "municipal": 51
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 3116.88,
+    "local": 2037.96,
+    "personal": 0,
+    "total": 6970.84
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 3117,
+    "local": 2038,
+    "personal": 0,
+    "total": 6971,
+    "simple_canton": 3996,
+    "simple_city": 3996
+   },
+   "diff_total": -0.16,
+   "diff": {
+    "fed": 0,
+    "canton": -0.12,
+    "local": -0.04,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SG",
+   "municipality": "Wil",
+   "bfs": 3427,
+   "estv_location": "9500 Wil SG (950000000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 105,
+    "district": null,
+    "municipal": 115
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 3511.2,
+    "local": 3845.6,
+    "personal": 0,
+    "total": 8028.2
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 3511,
+    "local": 3846,
+    "personal": 0,
+    "total": 8028,
+    "simple_canton": 3344,
+    "simple_city": 3344
+   },
+   "diff_total": 0.2,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.2,
+    "local": -0.4,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SG",
+   "municipality": "Wil",
+   "bfs": 3427,
+   "estv_location": "9500 Wil SG (950000000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 105,
+    "district": null,
+    "municipal": 115
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 5342.4,
+    "local": 5851.2,
+    "personal": 0,
+    "total": 13009.6
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 5342,
+    "local": 5851,
+    "personal": 0,
+    "total": 13009,
+    "simple_canton": 5088,
+    "simple_city": 5088
+   },
+   "diff_total": 0.6,
+   "diff": {
+    "fed": 0,
+    "canton": 0.4,
+    "local": 0.2,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SG",
+   "municipality": "Gossau",
+   "bfs": 3443,
+   "estv_location": "9200 Gossau SG (920200000)",
+   "status": "single",
+   "taxable_income": 60000,
+   "multipliers": {
+    "canton": 105,
+    "district": null,
+    "municipal": 116
+   },
+   "computed": {
+    "fed": 671.4,
+    "canton": 3511.2,
+    "local": 3879.04,
+    "personal": 0,
+    "total": 8061.64
+   },
+   "estv_calculator": {
+    "fed": 671,
+    "canton": 3511,
+    "local": 3879,
+    "personal": 0,
+    "total": 8061,
+    "simple_canton": 3344,
+    "simple_city": 3344
+   },
+   "diff_total": 0.64,
+   "diff": {
+    "fed": 0.4,
+    "canton": 0.2,
+    "local": 0.04,
+    "personal": 0
+   }
+  },
+  {
+   "canton": "SG",
+   "municipality": "Gossau",
+   "bfs": 3443,
+   "estv_location": "9200 Gossau SG (920200000)",
+   "status": "married",
+   "taxable_income": 100000,
+   "multipliers": {
+    "canton": 105,
+    "district": null,
+    "municipal": 116
+   },
+   "computed": {
+    "fed": 1816,
+    "canton": 5342.4,
+    "local": 5902.08,
+    "personal": 0,
+    "total": 13060.48
+   },
+   "estv_calculator": {
+    "fed": 1816,
+    "canton": 5342,
+    "local": 5902,
+    "personal": 0,
+    "total": 13060,
+    "simple_canton": 5088,
+    "simple_city": 5088
+   },
+   "diff_total": 0.48,
+   "diff": {
+    "fed": 0,
+    "canton": 0.4,
+    "local": 0.08,
+    "personal": 0
+   }
+  }
+ ],
+ "church": [
+  {
+   "canton": "ZH",
+   "municipality": "Uster",
+   "confession": "reformiert",
+   "status": "single",
+   "taxable_income": 60000,
+   "simple_tax_base_used": 2734,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 11,
+   "computed_church_tax": 300.74,
+   "estv_church_tax": 301,
+   "estv_simple_city": 2734,
+   "estv_simple_canton": 2734,
+   "diff": -0.26
+  },
+  {
+   "canton": "ZH",
+   "municipality": "Winterthur",
+   "confession": "christkatholisch",
+   "status": "married",
+   "taxable_income": 100000,
+   "simple_tax_base_used": 4743,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 14,
+   "computed_church_tax": 664.02,
+   "estv_church_tax": 664,
+   "estv_simple_city": 4743,
+   "estv_simple_canton": 4743,
+   "diff": 0.02
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Lachen",
+   "confession": "roemisch_katholisch",
+   "status": "single",
+   "taxable_income": 60000,
+   "simple_tax_base_used": 1696.8,
+   "base_kind": "einfache Steuer T36 (Gemeinde-/Bezirkstarif)",
+   "church_multiplier_percent": 12,
+   "computed_church_tax": 203.62,
+   "estv_church_tax": 204,
+   "estv_simple_city": 1697,
+   "estv_simple_canton": 1697,
+   "diff": -0.38
+  },
+  {
+   "canton": "SZ",
+   "municipality": "Einsiedeln",
+   "confession": "reformiert",
+   "status": "married",
+   "taxable_income": 100000,
+   "simple_tax_base_used": 2712.36,
+   "base_kind": "einfache Steuer T36 (Gemeinde-/Bezirkstarif)",
+   "church_multiplier_percent": 25,
+   "computed_church_tax": 678.09,
+   "estv_church_tax": 678,
+   "estv_simple_city": 2712,
+   "estv_simple_canton": 2712,
+   "diff": 0.09
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Baar",
+   "confession": "roemisch_katholisch",
+   "status": "married",
+   "taxable_income": 100000,
+   "simple_tax_base_used": 3996,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 6.65,
+   "computed_church_tax": 265.73,
+   "estv_church_tax": 266,
+   "estv_simple_city": 3996,
+   "estv_simple_canton": 3996,
+   "diff": -0.27
+  },
+  {
+   "canton": "ZG",
+   "municipality": "Walchwil",
+   "confession": "reformiert",
+   "status": "single",
+   "taxable_income": 60000,
+   "simple_tax_base_used": 2551,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 6,
+   "computed_church_tax": 153.06,
+   "estv_church_tax": 153,
+   "estv_simple_city": 2551,
+   "estv_simple_canton": 2551,
+   "diff": 0.06
+  },
+  {
+   "canton": "SG",
+   "municipality": "Wil",
+   "confession": "reformiert",
+   "status": "married",
+   "taxable_income": 100000,
+   "simple_tax_base_used": 5088,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 23,
+   "computed_church_tax": 1170.24,
+   "estv_church_tax": 1170,
+   "estv_simple_city": 5088,
+   "estv_simple_canton": 5088,
+   "diff": 0.24
+  },
+  {
+   "canton": "SG",
+   "municipality": "Gossau",
+   "confession": "roemisch_katholisch",
+   "status": "single",
+   "taxable_income": 60000,
+   "simple_tax_base_used": 3344,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 20,
+   "computed_church_tax": 668.8,
+   "estv_church_tax": 669,
+   "estv_simple_city": 3344,
+   "estv_simple_canton": 3344,
+   "diff": -0.2
+  },
+  {
+   "canton": "SG",
+   "municipality": "Gossau",
+   "confession": "christkatholisch",
+   "status": "single",
+   "taxable_income": 60000,
+   "simple_tax_base_used": 3344,
+   "base_kind": "einfache (Staats-)Steuer",
+   "church_multiplier_percent": 24,
+   "computed_church_tax": 802.56,
+   "estv_church_tax": 803,
+   "estv_simple_city": 3344,
+   "estv_simple_canton": 3344,
+   "diff": -0.44
+  }
+ ]
+}
