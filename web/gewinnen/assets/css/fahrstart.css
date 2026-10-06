@@ -106,13 +106,14 @@ main > section { position: relative; z-index: 1; }
 
 /* ---------------- Roadmap ---------------- */
 .rm { position: relative; }
+.rm-path { position: relative; }
 .rm-steps { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.rm-steps button {
+.rm-steps li > button {
   width: 100%; display: grid; justify-items: center; gap: 14px; padding: 0 4px; border: 0; background: none; cursor: pointer; text-align: center;
 }
 .rm-steps .dot { position: relative; width: 26px; height: 26px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 2px rgba(248, 246, 240, .25); transition: box-shadow .4s, background .4s, transform .5s var(--ease); }
 .rm-steps .t { font-size: 15px; font-weight: 700; color: var(--muted); line-height: 1.25; transition: color .4s; }
-.rm-steps button:hover .dot { transform: scale(1.18); box-shadow: inset 0 0 0 2px var(--gold); }
+.rm-steps li > button:hover .dot { transform: scale(1.18); box-shadow: inset 0 0 0 2px var(--gold); }
 .rm-steps li.is-done .dot { background: var(--gold); box-shadow: none; }
 .rm-steps li.is-done .t { color: var(--text-2); }
 .rm-steps li.is-current .dot { background: var(--ivory); box-shadow: 0 0 0 7px rgba(201, 182, 142, .3); }
@@ -129,12 +130,21 @@ main > section { position: relative; z-index: 1; }
 .rm-reco .v { font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
 .rm-note { margin-top: 20px; }
 @media (max-width: 900px) {
+  /* Mobil: vertikaler Zeitstrahl, Linie exakt vom ersten bis zum letzten Punkt (Masse per JS), Details klappen unter dem Schritt auf */
   .rm-steps { grid-template-columns: 1fr; gap: 0; }
-  .rm-steps button { grid-template-columns: 26px 1fr; justify-items: start; align-items: center; gap: 18px; padding: 12px 0; text-align: left; }
-  .rm-track { left: 12px; right: auto; top: 24px; bottom: 24px; width: 2px; height: auto; }
+  .rm-steps li > button { grid-template-columns: 26px 1fr; justify-items: start; align-items: center; gap: 18px; padding: 11px 0; text-align: left; }
+  .rm-steps .t { font-size: 16px; }
+  .rm-track { left: 12px; right: auto; top: 24px; width: 2px; height: 0; }
   .rm-fill { width: 100%; height: 0; }
-  .rm-car { display: none; }
-  .rm-detail { grid-template-columns: 1fr; }
+  .rm-car { top: 0; left: 1px; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 5px; }
+  .rm-detail { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
+  .rm-steps li > .rm-detail { margin: 2px 0 14px 44px; padding: 20px; }
+  .rm-info { gap: 6px; }
+  .rm-info .h3 { font-size: 22px; }
+  .rm-info .small { font-size: 15px; }
+  .rm-reco { padding: 16px 18px; gap: 8px; }
+  .rm-reco .v { font-size: 22px; }
+  .rm-reco .btn { width: 100%; justify-content: space-between; }
 }
 
 /* ---------------- Anbieter ---------------- */

@@ -323,6 +323,11 @@ function roadmap() {
   const fill = $('.rm-fill');
   const car = $('.rm-car');
   const pick = $('[data-rm-pick]');
+  const rm = $('.rm');
+  const line = $('.rm-track');
+  const detail = $('.rm-detail');
+  const note = $('.rm-note');
+  const mq = matchMedia('(max-width: 900px)');
   let current = -1;
   let used = false;
   $('[data-rm-kicker]').textContent = 'Tippe auf deinen Schritt';
@@ -330,21 +335,40 @@ function roadmap() {
   $('[data-rm-text]').textContent = 'Vom Nothelferkurs bis zum Führerausweis auf Probe – wähle oben deinen aktuellen Schritt.';
   $('.rm-reco').hidden = true;
 
+  // Mitte eines Punkts relativ zur Schrittliste (mobil: Linie und Füllung in px, da Zeilen unterschiedlich hoch sind)
+  const dotY = (li) => { const d = $('.dot', li); return d.offsetTop + d.offsetHeight / 2; }; // offsetParent: .rm-steps
+  const place = (animate) => {
+    const dur = animate ? 0.8 : 0;
+    if (mq.matches) {
+      // Details unter dem gewählten Schritt, sonst unter der Liste
+      const host = current >= 0 ? items[current] : null;
+      if (host && detail.parentElement !== host) host.appendChild(detail);
+      if (!host && detail.parentElement !== rm) rm.insertBefore(detail, note);
+      const top = dotY(items[0]);
+      line.style.top = `${top}px`;
+      line.style.height = `${dotY(items[items.length - 1]) - top}px`;
+      const y = current >= 0 ? dotY(items[current]) - top : 0;
+      gsap.to(fill, { height: y, width: '100%', duration: dur, ease: 'expo.out', overwrite: true });
+      gsap.to(car, { top: y, left: 1, rotation: 180, opacity: current >= 0 ? 1 : 0, duration: dur, ease: 'expo.out', overwrite: true });
+    } else {
+      if (detail.parentElement !== rm) rm.insertBefore(detail, note);
+      line.style.top = ''; line.style.height = '';
+      const pct = current >= 0 ? (current / (STEPS.length - 1)) * 100 : 0;
+      gsap.to(fill, { width: `${pct}%`, height: '100%', duration: dur ? 0.9 : 0, ease: 'expo.out', overwrite: true });
+      gsap.to(car, { left: `${pct}%`, top: -9, rotation: 0, opacity: current >= 0 ? 1 : 0, duration: dur ? 0.9 : 0, ease: 'expo.out', overwrite: true });
+    }
+  };
+
   const set = (i) => {
     current = i;
     const s = STEPS[i];
     items.forEach((li, k) => { li.classList.toggle('is-done', k < i); li.classList.toggle('is-current', k === i); });
-    const pct = (i / (STEPS.length - 1)) * 100;
-    if (innerWidth < 900) gsap.to(fill, { height: `${pct}%`, width: '100%', duration: 0.8, ease: 'expo.out' });
-    else {
-      gsap.to(fill, { width: `${pct}%`, height: '100%', duration: 0.9, ease: 'expo.out' });
-      gsap.to(car, { left: `${pct}%`, opacity: 1, duration: 0.9, ease: 'expo.out' });
-    }
     $('[data-rm-kicker]').textContent = `Schritt ${i + 1} von ${STEPS.length}`;
     $('[data-rm-title]').textContent = s.t;
     $('[data-rm-text]').textContent = `${s.d} ${s.why}`;
     $('[data-rm-reco]').textContent = s.r;
     $('.rm-reco').hidden = false;
+    place(true);
     pick.querySelector('.label').textContent = s.reco === 'share' ? 'Gewinnspiel teilen' : s.reco === 'vku' ? 'Diesen Gewinn wählen' : 'Passende Anbieter zeigen';
     if (!reduced) gsap.from('.rm-info > *, .rm-reco > *', { opacity: 0, y: 16, duration: 0.6, ease: 'expo.out', stagger: 0.05 });
     $$('.prov').forEach((el) => {
@@ -354,6 +378,11 @@ function roadmap() {
     if (!used) { used = true; track(SLUG, 'roadmap_used', { step: i }); }
   };
   items.forEach((li, i) => $('button', li).addEventListener('click', () => set(i)));
+  place(false);
+  let raf = 0;
+  // Grössenänderung (Drehen, Schrift geladen) → ohne Animation nachführen, laufende Animation nicht abwürgen
+  new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { if (!gsap.isTweening(fill)) place(false); }); }).observe($('.rm-path'));
+  mq.addEventListener('change', () => place(false));
   pick.addEventListener('click', async () => {
     const s = STEPS[current];
     if (!s) return;
