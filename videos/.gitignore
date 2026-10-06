@@ -2,3 +2,4 @@ node_modules/
 frames/
 out/stills/
 out/sound/
+__pycache__/
