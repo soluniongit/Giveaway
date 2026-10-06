@@ -10,7 +10,12 @@ main { position: relative; overflow-x: clip; }
 main > section { position: relative; z-index: 1; }
 
 /* ---------------- Road ---------------- */
-.road { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: visible; }
+.road { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+/* Statische Pfade, Fortschritt nur über Compositor-Transforms (Clip-Ebene + Gegenverschiebung) */
+.road-svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
+.road-clip { position: absolute; left: -24px; right: -24px; top: 0; height: 100%; overflow: hidden; transform: translate3d(0, -100%, 0); will-change: transform; }
+.road-clip > .road-fill { left: 24px; width: calc(100% - 48px); will-change: transform; }
+.road-car { position: absolute; left: -24px; top: -24px; width: 48px; height: 48px; overflow: visible; opacity: 0; will-change: transform; transition: opacity .4s; }
 .road-base { stroke: rgba(248, 246, 240, .06); stroke-width: 3; stroke-dasharray: 2 14; stroke-linecap: round; }
 .road-glow { stroke: rgba(182, 154, 92, .16); stroke-width: 18; stroke-linecap: round; }
 .road-line { stroke-width: 4; stroke-linecap: round; }

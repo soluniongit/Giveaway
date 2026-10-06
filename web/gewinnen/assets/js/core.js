@@ -76,17 +76,27 @@ function mobileNav() {
 function header() {
   const h = $('.site-header');
   if (!h) return;
-  let last = 0;
-  ScrollTrigger.create({
-    start: 0, end: 'max',
-    onUpdate: (self) => {
-      const y = self.scroll();
-      h.classList.toggle('is-scrolled', y > 24);
-      h.classList.toggle('is-hidden', y > 600 && y > last + 4 && !h.classList.contains('nav-open'));
-      if (y < last - 4) h.classList.remove('is-hidden');
-      last = y;
-    },
-  });
+  // Runter scrollen → ausblenden; erst bei bewusstem Hochscrollen (> 60 px am Stück) wieder einblenden
+  let last = scrollY;
+  let upRun = 0;
+  let scrolled = null;
+  let hidden = false;
+  const onScroll = () => {
+    if (ScrollTrigger.isRefreshing) { last = scrollY; return; }
+    const y = scrollY;
+    const dy = y - last;
+    last = y;
+    const s = y > 24;
+    if (s !== scrolled) { scrolled = s; h.classList.toggle('is-scrolled', s); }
+    if (h.classList.contains('nav-open')) return;
+    let hide = hidden;
+    if (y < 120) { hide = false; upRun = 0; }
+    else if (dy > 0) { upRun = 0; if (y > 240) hide = true; }
+    else if (dy < 0) { upRun -= dy; if (upRun > 60) hide = false; }
+    if (hide !== hidden) { hidden = hide; h.classList.toggle('is-hidden', hide); }
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 function glow() {
@@ -139,6 +149,10 @@ function reveals() {
   });
 }
 
+// Mehrere Layout-Änderungen kurz hintereinander → nur ein ScrollTrigger.refresh
+let refreshTimer = 0;
+const refreshSoon = () => { clearTimeout(refreshTimer); refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 150); };
+
 /** Akkordeon mit weicher Höhenanimation. */
 export function accordion(root = document) {
   $$('.acc-btn', root).forEach((btn) => {
@@ -148,7 +162,7 @@ export function accordion(root = document) {
     btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
-      gsap.to(panel, { height: open ? 0 : 'auto', duration: reduced ? 0 : 0.6, ease: 'expo.out', onComplete: () => ScrollTrigger.refresh() });
+      gsap.to(panel, { height: open ? 0 : 'auto', duration: reduced ? 0 : 0.55, ease: 'expo.out', onComplete: refreshSoon });
     });
   });
 }

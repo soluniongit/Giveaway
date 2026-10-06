@@ -35,17 +35,19 @@
 </header>
 
 <main id="main">
-  <svg class="road" aria-hidden="true">
-    <defs>
-      <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#d8c7a0"/><stop offset=".5" stop-color="#b69a5c"/><stop offset="1" stop-color="#c9b68e"/>
-      </linearGradient>
-    </defs>
-    <path class="road-base" fill="none"/>
-    <path class="road-glow" fill="none"/>
-    <path class="road-line" fill="none" stroke="url(#roadGrad)"/>
-    <g class="road-car"><circle r="22" class="car-halo"/><rect x="-11" y="-18" width="22" height="36" rx="9" class="car-body"/><rect x="-7" y="-11" width="14" height="9" rx="3" class="car-glass"/></g>
-  </svg>
+  <div class="road" aria-hidden="true">
+    <svg class="road-svg"><path class="road-base" fill="none"/></svg>
+    <div class="road-clip"><svg class="road-svg road-fill">
+      <defs>
+        <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#d8c7a0"/><stop offset=".5" stop-color="#b69a5c"/><stop offset="1" stop-color="#c9b68e"/>
+        </linearGradient>
+      </defs>
+      <path class="road-glow" fill="none"/>
+      <path class="road-line" fill="none" stroke="url(#roadGrad)"/>
+    </svg></div>
+    <svg class="road-car" viewBox="-24 -24 48 48"><circle r="22" class="car-halo"/><rect x="-11" y="-18" width="22" height="36" rx="9" class="car-body"/><rect x="-7" y="-11" width="14" height="9" rx="3" class="car-glass"/></svg>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="top" data-hero>

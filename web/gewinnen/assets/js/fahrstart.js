@@ -8,104 +8,125 @@ const isMobile = () => innerWidth < 760;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // ------------------------------------------------------------------ Weglinie
+// Die Linie wird analytisch abgetastet (keine teuren getPointAtLength-Aufrufe) und folgt der
+// Scrollposition in y — so bleibt das Auto ruhig, auch wenn sich die Seitenhöhe ändert (FAQ, Bedingungen).
 function road() {
   const main = $('main');
-  const svg = $('.road', main);
-  const paths = $$('.road-base, .road-glow, .road-line', svg);
-  const [, glow, line] = paths;
-  const car = $('.road-car', svg);
-  let total = 0;
-  let lens = [];
-  let maxY = [];
-  const proxy = { len: 0 };
+  const road = $('.road', main);
+  const svgs = $$('.road-svg', road);
+  const paths = $$('.road-base, .road-glow, .road-line', road);
+  const clip = $('.road-clip', road);
+  const fill = $('.road-fill', road);
+  const car = $('.road-car', road);
+  let xs = new Float32Array(0);
+  let ys = new Float32Array(0);
+  let maxY = new Float32Array(0);
+  let H = 0;
+  let key = '';
+  let shown = -1;
+  let lastY = NaN;
+  const proxy = { y: 0 };
 
-  const railX = (W, pct) => {
-    if (!isMobile()) return (W * pct) / 100;
-    return 9; // mobil: eine ruhige Linie am linken Rand statt Kurven durch den Inhalt
-  };
+  const railX = (W, pct) => (isMobile() ? 9 : (W * pct) / 100); // mobil: ruhige Linie am linken Rand
 
-  // Catmull-Rom → kubische Bézier-Kurven
-  const spline = (pts, W) => {
-    let d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+  // Catmull-Rom → kubische Bézier-Segmente
+  const segments = (pts, W) => {
+    const cx = (x) => Math.max(4, Math.min(W - 4, x));
+    const out = [];
     for (let i = 0; i < pts.length - 1; i++) {
       const p0 = pts[i - 1] || pts[i];
       const p1 = pts[i];
       const p2 = pts[i + 1];
       const p3 = pts[i + 2] || p2;
-      const cx = (x) => Math.max(4, Math.min(W - 4, x));
-      const c1 = [cx(p1[0] + (p2[0] - p0[0]) / 6), p1[1] + (p2[1] - p0[1]) / 6];
-      const c2 = [cx(p2[0] - (p3[0] - p1[0]) / 6), p2[1] - (p3[1] - p1[1]) / 6];
-      d += ` C ${c1[0].toFixed(1)} ${c1[1].toFixed(1)}, ${c2[0].toFixed(1)} ${c2[1].toFixed(1)}, ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+      out.push([p1, [cx(p1[0] + (p2[0] - p0[0]) / 6), p1[1] + (p2[1] - p0[1]) / 6], [cx(p2[0] - (p3[0] - p1[0]) / 6), p2[1] - (p3[1] - p1[1]) / 6], p2]);
     }
-    return d;
+    return out;
   };
 
   function build() {
     const W = main.offsetWidth;
-    const H = main.offsetHeight;
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    svg.style.height = `${H}px`;
+    H = main.offsetHeight;
     const top = main.getBoundingClientRect().top + scrollY;
     const rel = (el) => { const r = el.getBoundingClientRect(); return { top: r.top + scrollY - top, bottom: r.bottom + scrollY - top, cx: r.left + r.width / 2, cy: r.top + scrollY - top + r.height / 2 }; };
-
     const plate = rel($('.lplate'));
     const pts = [[plate.cx, plate.cy], [plate.cx, plate.bottom + 90]];
     $$('[data-road]').forEach((sec) => {
       const r = rel(sec);
       const x = railX(W, +sec.dataset.road);
-      if (sec.hasAttribute('data-road-end')) {
-        pts.push([x, r.top + 40]);
-      } else {
-        pts.push([x, r.top + 110]);
-        pts.push([x, r.bottom - 110]);
+      if (sec.hasAttribute('data-road-end')) pts.push([x, r.top + 40]);
+      else { pts.push([x, r.top + 110]); pts.push([x, r.bottom - 110]); }
+    });
+    const k = `${W}|${H}|${pts.map((p) => p.map(Math.round).join(',')).join(';')}`;
+    if (k === key) return;
+    key = k;
+    svgs.forEach((s) => s.setAttribute('viewBox', `0 0 ${W} ${H}`));
+    road.style.height = `${H}px`;
+    const segs = segments(pts, W);
+    const d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}` + segs.map(([, a, b, c]) => ` C ${a[0].toFixed(1)} ${a[1].toFixed(1)}, ${b[0].toFixed(1)} ${b[1].toFixed(1)}, ${c[0].toFixed(1)} ${c[1].toFixed(1)}`).join('');
+    paths.forEach((p) => p.setAttribute('d', d));
+    const N = 32;
+    const n = segs.length * N + 1;
+    xs = new Float32Array(n); ys = new Float32Array(n); maxY = new Float32Array(n);
+    let k2 = 0;
+    segs.forEach(([p, a, b, c], si) => {
+      for (let t = si ? 1 : 0; t <= N; t++) {
+        const u = t / N; const v = 1 - u;
+        xs[k2] = v * v * v * p[0] + 3 * v * v * u * a[0] + 3 * v * u * u * b[0] + u * u * u * c[0];
+        ys[k2] = v * v * v * p[1] + 3 * v * v * u * a[1] + 3 * v * u * u * b[1] + u * u * u * c[1];
+        maxY[k2] = k2 ? Math.max(maxY[k2 - 1], ys[k2]) : ys[k2];
+        k2++;
       }
     });
-    const d = spline(pts, W);
-    paths.forEach((p) => p.setAttribute('d', d));
-    total = line.getTotalLength();
-    lens = [];
-    maxY = [];
-    let m = -Infinity;
-    for (let l = 0; l <= total; l += 6) {
-      m = Math.max(m, line.getPointAtLength(l).y);
-      lens.push(l);
-      maxY.push(m);
-    }
+    lastY = NaN;
     paint();
   }
 
-  const lenAtY = (y) => {
+  // Index der ersten Stützstelle, die y erreicht
+  const idxAtY = (y) => {
     let lo = 0;
     let hi = maxY.length - 1;
     if (y <= maxY[0]) return 0;
-    if (y >= maxY[hi]) return total;
+    if (y >= maxY[hi]) return hi;
     while (lo < hi) { const mid = (lo + hi) >> 1; if (maxY[mid] < y) lo = mid + 1; else hi = mid; }
-    return lens[lo];
+    return lo;
   };
 
+  // Nur Compositor-Arbeit pro Frame: Clip-Ebene + Gegenverschiebung zeigen die Linie bis y, das Auto ist eine eigene Ebene
   function paint() {
-    const L = reduced ? total : Math.max(0, Math.min(total, proxy.len));
-    const dash = `${L} ${total + 40}`;
-    line.style.strokeDasharray = dash;
-    glow.style.strokeDasharray = dash;
-    const p = line.getPointAtLength(L);
-    const q = line.getPointAtLength(Math.min(total, L + 2));
-    const ang = (Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI + 90;
-    car.setAttribute('transform', `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${(L >= total - 2 ? 180 : ang).toFixed(1)})`);
-    car.style.opacity = L < 4 ? 0 : 1;
+    if (!ys.length) return;
+    const y = reduced ? maxY[maxY.length - 1] : Math.max(ys[0], Math.min(maxY[maxY.length - 1], proxy.y));
+    if (Math.abs(y - lastY) < 0.25) return;
+    lastY = y;
+    clip.style.transform = `translate3d(0, ${(y - H).toFixed(1)}px, 0)`;
+    fill.style.transform = `translate3d(0, ${(H - y).toFixed(1)}px, 0)`;
+    const j = Math.max(1, idxAtY(y));
+    const i = j - 1;
+    const f = ys[j] > ys[i] ? Math.min(1, Math.max(0, (y - ys[i]) / (ys[j] - ys[i]))) : 1;
+    const x = xs[i] + (xs[j] - xs[i]) * f;
+    const ang = (Math.atan2(ys[j] - ys[i], xs[j] - xs[i]) * 180) / Math.PI + 90;
+    car.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) rotate(${ang.toFixed(1)}deg)`;
+    const on = y - ys[0] > 4 ? 1 : 0;
+    if (on !== shown) { shown = on; car.style.opacity = on; }
   }
 
-  const follow = gsap.quickTo(proxy, 'len', { duration: 0.9, ease: 'power3', onUpdate: paint });
-  const target = () => {
-    const top = main.getBoundingClientRect().top + scrollY;
-    return lenAtY(scrollY + innerHeight * 0.64 - top);
+  const follow = gsap.quickTo(proxy, 'y', { duration: 0.9, ease: 'power3', onUpdate: paint });
+  const target = () => scrollY + innerHeight * 0.64 - (main.getBoundingClientRect().top + scrollY);
+  // während ScrollTrigger misst (kurzer Sprung an den Seitenanfang) nicht mitfahren
+  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: () => { if (!ScrollTrigger.isRefreshing) follow(target()); } });
+
+  // Bei Layout-Änderungen (Akkordeons, Resize, nachgeladene Inhalte) höchstens einmal pro Frame neu aufbauen
+  let queued = false;
+  const schedule = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; build(); });
   };
-  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: () => follow(target()) });
-  ScrollTrigger.addEventListener('refresh', () => { build(); proxy.len = target(); paint(); });
+  new ResizeObserver(schedule).observe(main);
+  ScrollTrigger.addEventListener('refresh', () => { schedule(); follow(target()); });
   build();
   if (!reduced) {
-    proxy.len = 0;
-    gsap.to(proxy, { len: target(), duration: 2.2, delay: 0.6, ease: 'power2.inOut', onUpdate: paint });
+    proxy.y = 0;
+    gsap.to(proxy, { y: target(), duration: 2.2, delay: 0.6, ease: 'power2.inOut', onUpdate: paint });
   }
 }
 
