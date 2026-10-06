@@ -264,6 +264,15 @@ ul, ol { padding: 0; list-style: none; }
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
 .video-frame .replay svg { width: 20px; height: 20px; }
+.video-frame .sound {
+  position: absolute; left: 14px; bottom: 14px; height: 46px; padding: 0 14px; border-radius: 23px; border: 0; cursor: pointer;
+  background: rgba(17, 21, 18, .7); color: var(--ivory); display: grid; place-items: center;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.video-frame .sound svg { width: 22px; height: 22px; }
+.video-frame .sound .on { display: none; }
+.video-frame .sound[aria-pressed='true'] .on { display: inline; }
+.video-frame .sound[aria-pressed='true'] .off { display: none; }
 
 /* Form */
 .form-card { padding: clamp(24px, 4vw, 52px); }

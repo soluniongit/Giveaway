@@ -146,6 +146,13 @@ function videos(slug) {
       } else v.pause();
     }, { threshold: 0.35 }).observe(frame);
     $('.replay', frame)?.addEventListener('click', () => { v.currentTime = 0; v.play().catch(() => {}); });
+    const snd = $('.sound', frame);
+    snd?.addEventListener('click', () => {
+      v.muted = !v.muted;
+      snd.setAttribute('aria-pressed', String(!v.muted));
+      snd.setAttribute('aria-label', v.muted ? 'Ton einschalten' : 'Ton ausschalten');
+      if (!v.muted) { v.currentTime = 0; v.play().catch(() => {}); }
+    });
   });
 }
 
