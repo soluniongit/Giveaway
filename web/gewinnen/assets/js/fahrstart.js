@@ -359,7 +359,22 @@ function roadmap() {
     }
   };
 
+  // Einladung zum Antippen: Puls-Welle über die Punkte, solange noch nichts gewählt ist und die Sektion sichtbar ist
+  const dots = $$('.rm-steps .dot');
+  const hint = $('[data-rm-hint]');
+  let wave = null;
+  if (!reduced) {
+    wave = gsap.timeline({ repeat: -1, repeatDelay: 1.6, paused: true })
+      .to(dots, { scale: 1.2, duration: 0.26, ease: 'power2.out', stagger: 0.09, yoyo: true, repeat: 1 });
+    ScrollTrigger.create({ trigger: '.rm', start: 'top 85%', end: 'bottom 15%', onToggle: (st) => { if (wave) st.isActive ? wave.play() : wave.pause(); } });
+  }
+  const stopHint = () => {
+    if (wave) { wave.kill(); wave = null; gsap.set(dots, { clearProps: 'transform' }); }
+    hint?.classList.add('is-gone');
+  };
+
   const set = (i) => {
+    stopHint();
     current = i;
     const s = STEPS[i];
     items.forEach((li, k) => { li.classList.toggle('is-done', k < i); li.classList.toggle('is-current', k === i); });
