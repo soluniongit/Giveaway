@@ -73,7 +73,9 @@ body {
 }
 
 .abs { position: absolute; }
-.mask { overflow: hidden; display: block; }
+/* Reveal-Maske: unten bündig (Text gleitet von unten herein), oben/seitlich/unten mit Luft für
+   Umlaute, Akzente, kursive Überhänge und Unterlängen — nichts wird abgeschnitten */
+.mask { overflow: visible; display: block; clip-path: inset(-0.7em -0.5em -0.32em -0.5em); }
 .mask > * { display: block; will-change: transform; }
 .nowrap { white-space: nowrap; }
 .serif { font-family: var(--serif); font-weight: 400; }

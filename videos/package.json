@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Motion-Design-Animationen (HTML + GSAP), deterministisch gerendert zu MP4 1080x1920",
   "scripts": {
-    "render": "node render.mjs",
+    "sound": "python3 sound/sounddesign.py",
+    "render": "python3 sound/sounddesign.py && node render.mjs",
     "render:steuer": "node render.mjs steuer",
     "render:fahrstart": "node render.mjs fahrstart",
     "preview": "npx http-server . -p 8080 -c-1"

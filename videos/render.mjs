@@ -5,8 +5,10 @@
  *   node render.mjs                     → both videos
  *   node render.mjs steuer              → only one
  *   node render.mjs steuer --stills=1,5.5,29   → PNG stills to out/stills (for review)
+ *   node render.mjs --mux                → only re-attach out/sound/<name>.wav to the silent export
  *
- * Options: --mb=4        sub-frames per frame for motion blur (1 = off)
+ * Output: <name>.mp4 (with sound design) and <name>-ohne-ton.mp4 (silent).
+ * Options: --mb=8        sub-frames per frame for motion blur (1 = off)
  *          --workers=8   parallel browser instances
  */
 import { chromium } from 'playwright-core';
@@ -32,7 +34,7 @@ const opt = (name, def) => {
 };
 const names = args.filter((a) => !a.startsWith('--'));
 const targets = names.length ? names : Object.keys(COMPOSITIONS);
-const MB = parseInt(opt('mb', '4'), 10);
+const MB = parseInt(opt('mb', '8'), 10);
 const SHUTTER = 0.5; // 180° shutter
 const WORKERS = parseInt(opt('workers', String(Math.max(1, Math.min(8, os.cpus().length - 2)))), 10);
 const STILLS = opt('stills', null);
@@ -131,7 +133,7 @@ async function renderVideo(name, base) {
 
   const list = path.join(tmp, 'list.txt');
   fs.writeFileSync(list, segs.map((s) => `file '${s}'`).join('\n'));
-  const out = path.join(OUT, `${comp.file}.mp4`);
+  const out = path.join(OUT, `${comp.file}-ohne-ton.mp4`);
   const final = ffmpeg([
     '-f', 'concat', '-safe', '0', '-i', list,
     '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p',
@@ -147,6 +149,18 @@ async function renderVideo(name, base) {
   fs.writeFileSync(path.join(OUT, `${comp.file}-poster.png`), await poster.capture(poster.duration - 0.5));
   await poster.browser.close();
   console.log(`  → ${path.relative(ROOT, out)}`);
+  await mux(name);
+}
+
+// Tonspur (sound/sounddesign.py → out/sound/<name>.wav) unter das stumme Video legen
+async function mux(name) {
+  const comp = COMPOSITIONS[name];
+  const silent = path.join(OUT, `${comp.file}-ohne-ton.mp4`);
+  const wav = path.join(OUT, 'sound', `${name}.wav`);
+  if (!fs.existsSync(wav)) { console.log(`  (keine Tonspur ${path.relative(ROOT, wav)} — nur stumme Fassung)`); return; }
+  const out = path.join(OUT, `${comp.file}.mp4`);
+  await ffmpeg(['-i', silent, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', out]).done;
+  console.log(`  → ${path.relative(ROOT, out)} (mit Sounddesign)`);
 }
 
 async function renderStills(name, base, times) {
@@ -169,6 +183,7 @@ try {
   for (const name of targets) {
     if (!COMPOSITIONS[name]) throw new Error(`Unbekannte Komposition: ${name}`);
     if (STILLS) await renderStills(name, base, STILLS.split(',').map(Number));
+    else if (args.includes('--mux')) await mux(name);
     else {
       console.log(`Rendere ${name} (Motion-Blur ${MB}×, ${WORKERS} Worker)…`);
       await renderVideo(name, base);

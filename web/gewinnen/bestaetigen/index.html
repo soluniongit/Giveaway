@@ -20,12 +20,11 @@
   .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
   .spinner { width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .theme-ivory .brand { background: var(--ink); padding: 11px 16px; border-radius: 14px; }
 </style>
 </head>
 <body class="theme-ivory">
 <main class="confirm" aria-live="polite">
-  <span class="brand"><img src="../assets/brand/allnova-logo.png" alt="allnova" width="2140" height="375" style="height: 24px; width: auto"></span>
+  <span class="brand"><img src="../assets/brand/allnova-logo-hell.png" data-logo alt="allnova" width="2140" height="375" style="height: 24px; width: auto"></span>
   <div data-view="loading"><div class="spinner" role="status" aria-label="Wird bestätigt"></div></div>
   <p class="lead" data-view="loading">Wir bestätigen deine Teilnahme …</p>
 </main>
@@ -47,7 +46,10 @@ const seal = `<svg class="seal" viewBox="0 0 128 128" aria-hidden="true"><circle
 const arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
 
 function render(html, kind) {
-  if (kind === 'fahrstart') { document.body.classList.replace('theme-ivory', 'theme-dark'); }
+  if (kind === 'fahrstart') {
+    document.body.classList.replace('theme-ivory', 'theme-dark');
+    document.querySelector('[data-logo]').src = '../assets/brand/allnova-logo.png';
+  }
   main.querySelectorAll('[data-view]').forEach((el) => el.remove());
   main.insertAdjacentHTML('beforeend', html);
   gsap.from(main.querySelectorAll('[data-view="result"] > *, [data-view="result"]'), { opacity: 0, y: 26, duration: 1, ease: 'expo.out', stagger: 0.07 });

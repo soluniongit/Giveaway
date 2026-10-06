@@ -23,7 +23,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="allnova – zum Seitenanfang"><img src="../assets/brand/allnova-logo.png" alt="allnova" width="2140" height="375"></a>
+    <a class="brand" href="#top" aria-label="allnova – zum Seitenanfang"><img src="../assets/brand/allnova-logo-hell.png" alt="allnova" width="2140" height="375"></a>
     <nav class="nav" aria-label="Seitennavigation">
       <a href="#gewinn">Der Gewinn</a>
       <a href="#rechner">Steuerrechner</a>
@@ -147,14 +147,18 @@
       <div class="sec-head">
         <span class="eyebrow"><span class="num">03</span> Steuerrechner 2026</span>
         <h2 class="h2" data-split>Was kostet dich <span class="serif it gold">dein Steuerjahr?</span></h2>
-        <p class="lead" data-reveal>Schätze in Sekunden deine Einkommenssteuer 2026 – für Gemeinden in Zürich, Schwyz, Zug und St. Gallen. Die Rechnung bleibt bei dir. Die Steuererklärung kannst du gewinnen.</p>
+        <p class="lead" data-reveal>Rechne deine Einkommenssteuer 2026 für jede Gemeinde in Zürich, Schwyz, Zug und St. Gallen – mit Kirchensteuer, Säule-3a-Effekt und Gemeindevergleich. Die Rechnung bleibt bei dir. Die Steuererklärung kannst du gewinnen.</p>
       </div>
 
       <div class="calc card" data-calc data-reveal>
         <form class="calc-controls" data-calc-form onsubmit="return false">
           <div class="field">
-            <label for="calc-place">Wohnort</label>
-            <select class="select" id="calc-place" name="place" data-calc-place></select>
+            <label for="calc-place">Wohngemeinde</label>
+            <div class="combo" data-combo>
+              <input class="input" id="calc-place" role="combobox" aria-expanded="false" aria-controls="calc-place-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" data-calc-place>
+              <span class="combo-ct" data-combo-ct></span>
+              <ul class="combo-list" id="calc-place-list" role="listbox" hidden data-combo-list></ul>
+            </div>
           </div>
           <div class="field">
             <span class="label" id="calc-status-l">Zivilstand</span>
@@ -164,12 +168,23 @@
               <i class="seg-thumb" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="field" data-kids-field hidden>
-            <span class="label" id="calc-kids-l">Kinder</span>
-            <div class="stepper" role="group" aria-labelledby="calc-kids-l">
-              <button type="button" data-kids="-1" aria-label="Ein Kind weniger">−</button>
-              <output data-kids-out aria-live="polite">0</output>
-              <button type="button" data-kids="1" aria-label="Ein Kind mehr">+</button>
+          <div class="field-row">
+            <div class="field" data-kids-field hidden>
+              <span class="label" id="calc-kids-l">Kinder</span>
+              <div class="stepper" role="group" aria-labelledby="calc-kids-l">
+                <button type="button" data-kids="-1" aria-label="Ein Kind weniger">−</button>
+                <output data-kids-out aria-live="polite">0</output>
+                <button type="button" data-kids="1" aria-label="Ein Kind mehr">+</button>
+              </div>
+            </div>
+            <div class="field" data-church-field>
+              <label for="calc-church">Konfession</label>
+              <select class="select" id="calc-church" data-calc-church>
+                <option value="">Keine / andere</option>
+                <option value="ref">Evangelisch-reformiert</option>
+                <option value="kath">Römisch-katholisch</option>
+                <option value="christkath">Christkatholisch</option>
+              </select>
             </div>
           </div>
           <div class="field field--income">
@@ -179,14 +194,14 @@
               <input class="income-input" id="calc-income" inputmode="numeric" autocomplete="off" value="60’000" data-calc-income>
             </div>
             <input class="range" type="range" min="0" max="300000" step="1000" value="60000" aria-label="Steuerbares Einkommen" data-calc-range>
-            <p class="small">Das steuerbare Einkommen steht auf deiner letzten Steuerveranlagung – also nach allen Abzügen, nicht der Bruttolohn.</p>
+            <p class="small">Das steuerbare Einkommen steht auf deiner letzten Steuerveranlagung – nach allen Abzügen, nicht der Bruttolohn.</p>
           </div>
         </form>
 
         <div class="calc-result" aria-live="polite">
           <span class="k">Geschätzte Einkommenssteuer 2026</span>
           <div class="total"><span class="cur">CHF</span> <span data-out-total>0</span></div>
-          <div class="permonth">≈ CHF <span data-out-month>0</span> pro Monat</div>
+          <div class="permonth">≈ CHF <span data-out-month>0</span> pro Monat zurücklegen</div>
           <div class="rates">
             <div><span class="v" data-out-eff>0 %</span><span class="l">Durchschnitt</span></div>
             <div><span class="v" data-out-marg>0 %</span><span class="l">Grenzsteuersatz<button type="button" class="info" aria-label="Was ist der Grenzsteuersatz?" data-tip="So viel geht von jedem zusätzlich verdienten Franken an Steuern.">i</button></span></div>
@@ -195,13 +210,55 @@
           <ul class="legend" data-out-legend></ul>
         </div>
 
+        <div class="calc-curve">
+          <div class="calc-sub">
+            <h3 class="h3">Deine <span class="serif it gold">Steuerkurve</span></h3>
+            <p class="small">Durchschnittlicher Steuersatz je nach steuerbarem Einkommen in <strong data-out-placename>Zürich</strong>. Fahre über die Kurve.</p>
+          </div>
+          <div class="curve" data-curve></div>
+        </div>
+
+        <div class="calc-ded">
+          <div class="calc-sub">
+            <h3 class="h3">Was bringt <span class="serif it gold">ein Abzug?</span></h3>
+            <p class="small">Abzüge senken dein steuerbares Einkommen – und damit die Steuer zu deinem Grenzsteuersatz.</p>
+          </div>
+          <div class="ded-row">
+            <label for="ded-3a">Einzahlung Säule 3a</label>
+            <output data-ded3a-out>CHF 0</output>
+            <input class="range" type="range" id="ded-3a" min="0" step="1" value="0" data-ded3a>
+            <p class="small" data-ded3a-note></p>
+          </div>
+          <div class="ded-row">
+            <label for="ded-other">Weitere Abzüge (z. B. Weiterbildung, Spenden)</label>
+            <output data-dedx-out>CHF 0</output>
+            <input class="range" type="range" id="ded-other" min="0" max="20000" step="100" value="0" data-dedx>
+          </div>
+          <div class="ded-save">
+            <span class="k">Deine Steuerersparnis</span>
+            <span class="v"><span class="cur">CHF</span> <span data-ded-save>0</span></span>
+            <span class="small" data-ded-detail>Schieb einen Regler, um den Effekt zu sehen.</span>
+          </div>
+        </div>
+
         <div class="calc-compare">
-          <h3 class="h3">Gleiches Einkommen, <span class="serif it gold">anderer Ort</span></h3>
+          <div class="calc-sub">
+            <h3 class="h3">Gleiches Einkommen, <span class="serif it gold">anderer Ort</span></h3>
+            <p class="small" data-rank></p>
+          </div>
+          <div class="cmp-tabs" role="tablist" aria-label="Vergleich">
+            <button type="button" role="tab" aria-selected="true" data-cmp="canton">Mein Kanton</button>
+            <button type="button" role="tab" aria-selected="false" data-cmp="capitals">Hauptorte &amp; Zürichsee</button>
+          </div>
           <ol class="bars" data-out-bars></ol>
         </div>
 
         <div class="calc-foot">
-          <p class="small">Schätzung ohne Gewähr: Einkommenssteuer von Bund, Kanton, Bezirk (SZ) und Gemeinde inkl. Personalsteuer (ZH), ohne Kirchen- und Vermögenssteuer. Tarife und Steuerfüsse 2026 aus amtlichen Quellen, abgeglichen mit dem Steuerrechner der ESTV. Deine Angaben bleiben in deinem Browser.</p>
+          <details class="sources rechnungsweg">
+            <summary>Rechnungsweg anzeigen</summary>
+            <table class="rw" data-rw></table>
+          </details>
+          <p class="small">Schätzung ohne Gewähr: Einkommenssteuer von Bund, Kanton, Bezirk (SZ), Gemeinde und – falls gewählt – Kirche, inkl. Personalsteuer (ZH); ohne Vermögenssteuer. Tarife und Steuerfüsse 2026 aus amtlichen Quellen, abgeglichen mit dem Steuerrechner der ESTV. Deine Angaben bleiben in deinem Browser.</p>
           <details class="sources">
             <summary>Grundlagen &amp; Quellen</summary>
             <ul data-out-sources></ul>
@@ -378,7 +435,7 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="brand" href="#top"><img src="../assets/brand/allnova-logo.png" alt="allnova" width="2140" height="375"></a>
+        <a class="brand" href="#top"><img src="../assets/brand/allnova-logo-hell.png" alt="allnova" width="2140" height="375"></a>
         <p style="margin-top: 18px; max-width: 36ch">Ein Gewinnspiel von allnova. Gesponsert und durchgeführt von der Allfinanz Consulting GmbH.</p>
       </div>
       <div>

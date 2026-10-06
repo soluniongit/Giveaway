@@ -58,46 +58,58 @@ function sgT(C, x) {
 
 const round05 = (v) => Math.floor(v * 20 + 0.5) / 20;
 
-export function cantonalTax(T, canton, municipality, income, married = false) {
+/**
+ * Kantons-, Bezirks-, Gemeinde- und (optional) Kirchensteuer.
+ * confession: null | 'ref' | 'kath' | 'christkath' — Kirchensteuer = einfache Steuer × Kirchensteuerfuss
+ * der Gemeinde (siehe docs/steuerrechner-tarife-2026.md).
+ */
+export function cantonalTax(T, canton, municipality, income, married = false, confession = null) {
   const C = T.cantons[canton];
   const M = C.municipalities[municipality];
   const y = floor100(income);
-  const out = { canton: 0, district: 0, municipality: 0, personal: 0 };
+  const out = { canton: 0, district: 0, municipality: 0, personal: 0, church: 0, simple: 0, simpleCanton: 0, rates: {} };
+  let esLocal;
+  let esCanton;
   if (canton === 'ZH') {
     const tar = C.tariffs[married ? 'married' : 'single'];
-    const es = stepTax(tar.steps, y, tar.top.rate_percent);
-    out.canton = (es * C.canton_multiplier_percent) / 100;
-    out.municipality = (es * M.municipal_multiplier_percent) / 100;
+    esLocal = esCanton = stepTax(tar.steps, y, tar.top.rate_percent);
     out.personal = C.personal_tax.chf_per_person * (married ? 2 : 1);
   } else if (canton === 'SZ') {
-    let esL, esK;
     if (!married) {
-      esL = szT36(C, y);
-      esK = szT36a(C, y);
+      esLocal = szT36(C, y);
+      esCanton = szT36a(C, y);
     } else {
       const q = floor100(y / 1.9);
-      esL = q > 0 ? (y * szT36(C, q)) / q : 0;
-      esK = q > 0 ? (y * szT36a(C, q)) / q : 0;
+      esLocal = q > 0 ? (y * szT36(C, q)) / q : 0;
+      esCanton = q > 0 ? (y * szT36a(C, q)) / q : 0;
     }
-    out.canton = (esK * C.canton_multiplier_percent) / 100;
-    out.district = (esL * M.district_multiplier_percent) / 100;
-    out.municipality = (esL * M.municipal_multiplier_percent) / 100;
   } else if (canton === 'ZG') {
     const tar = C.tariffs[married ? 'married' : 'single'];
-    const es = stepTax(tar.steps, y, tar.top.rate_percent);
-    out.canton = (es * C.canton_multiplier_percent) / 100;
-    out.municipality = (es * M.municipal_multiplier_percent) / 100;
+    esLocal = esCanton = stepTax(tar.steps, y, tar.top.rate_percent);
   } else if (canton === 'SG') {
-    let es;
-    if (!married) es = sgT(C, y);
+    if (!married) esLocal = sgT(C, y);
     else {
       const q = floor100(y / 2);
-      es = q > 0 ? round05((y * sgT(C, q)) / q) : 0;
+      esLocal = q > 0 ? round05((y * sgT(C, q)) / q) : 0;
     }
-    out.canton = (es * C.canton_multiplier_percent) / 100;
-    out.municipality = (es * M.municipal_multiplier_percent) / 100;
+    esCanton = esLocal;
   } else {
     throw new Error(`Kanton ${canton} nicht unterstützt`);
+  }
+  out.simple = esLocal;
+  out.simpleCanton = esCanton;
+  out.rates.canton = C.canton_multiplier_percent;
+  out.rates.municipality = M.municipal_multiplier_percent;
+  out.canton = (esCanton * C.canton_multiplier_percent) / 100;
+  out.municipality = (esLocal * M.municipal_multiplier_percent) / 100;
+  if (canton === 'SZ') {
+    out.rates.district = M.district_multiplier_percent;
+    out.district = (esLocal * M.district_multiplier_percent) / 100;
+  }
+  const cp = confession && M.church ? M.church[confession] : null;
+  if (cp != null) {
+    out.rates.church = cp;
+    out.church = (esLocal * cp) / 100;
   }
   return out;
 }
@@ -106,24 +118,27 @@ export function cantonalTax(T, canton, municipality, income, married = false) {
 export function places(T) {
   const list = [];
   for (const [canton, C] of Object.entries(T.cantons)) {
-    for (const name of Object.keys(C.municipalities)) list.push({ canton, municipality: name, label: `${name} (${canton})` });
+    for (const [name, M] of Object.entries(C.municipalities)) {
+      list.push({ canton, municipality: name, label: `${name} (${canton})`, church: M.church || null, district: M.district || null });
+    }
   }
-  return list;
+  return list.sort((a, b) => a.municipality.localeCompare(b.municipality, 'de-CH'));
 }
 
 /** Gesamtrechnung inkl. Durchschnitts- und Grenzsteuersatz. */
-export function calculate(T, { canton, municipality, income, married = false, children = 0 }) {
+export function calculate(T, { canton, municipality, income, married = false, children = 0, confession = null }) {
   const inc = Math.max(0, Number(income) || 0);
   const kids = married ? Math.max(0, Math.floor(children)) : 0;
   const one = (y) => {
     const fed = federalTax(T, y, married, kids);
-    const cl = cantonalTax(T, canton, municipality, y, married);
-    return { federal: fed, ...cl, total: fed + cl.canton + cl.district + cl.municipality + cl.personal };
+    const cl = cantonalTax(T, canton, municipality, y, married, confession);
+    return { federal: fed, ...cl, total: fed + cl.canton + cl.district + cl.municipality + cl.personal + cl.church };
   };
   const r = one(inc);
   const step = one(inc + 1000);
   return {
     ...r,
+    income: inc,
     effectiveRate: inc > 0 ? r.total / inc : 0,
     marginalRate: (step.total - r.total) / 1000,
   };

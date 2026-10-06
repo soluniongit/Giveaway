@@ -124,13 +124,9 @@
   #free .s { position: absolute; left: 156px; top: 84px; font-size: 28px; font-weight: 600; color: var(--muted); line-height: 36px; }
 
   /* Scene 5 — end card */
-  #logo-badge {
-    left: 230px; top: 300px; width: 620px; height: 196px; border-radius: 40px;
-    background: var(--ink);
-    display: grid; place-items: center;
-    box-shadow: 0 34px 60px -34px rgba(17, 21, 18, .7);
-  }
-  #logo-badge img { width: 452px; height: auto; display: block; }
+  /* Original-Logo in der hellen Fassung: «all» Gold, «nova» Anthrazit — direkt auf Elfenbein */
+  #logo-badge { left: 240px; top: 330px; width: 600px; height: 106px; display: grid; place-items: center; }
+  #logo-badge img { width: 600px; height: auto; display: block; }
   #e-l1 { left: 0; width: 1080px; top: 588px; text-align: center; height: 250px; line-height: 250px; }
   #e-l1 .serif { font-size: 300px; vertical-align: top; letter-spacing: 0; }
   #e-l1 .s { font-size: 140px; font-weight: 800; letter-spacing: -.036em; vertical-align: top; margin-left: 10px; }
@@ -246,7 +242,7 @@
   </div>
 
   <!-- Scene 5 — end card -->
-  <div class="abs" id="logo-badge"><img src="../assets/brand/allnova-logo.png" alt="allnova"></div>
+  <div class="abs" id="logo-badge"><img src="../assets/brand/allnova-logo-hell.png" alt="allnova"></div>
   <div class="abs mask nowrap" id="e-l1"><span><span class="serif gold-text" data-text="end_num"></span><span class="s" data-text="end_l1"></span></span></div>
   <div class="abs mask nowrap" id="e-l2"><span data-text="end_l2"></span></div>
   <div class="abs mask nowrap" id="e-l3"><span class="gold-text" data-text="end_l3"></span></div>
@@ -327,7 +323,7 @@ defineComposition({
       '#s4-title', '#st1 .n', '#st1 .t', '#st2 .n', '#st2 .t', '#st3 .n', '#st3 .t', '#free .t', '#free .s',
       '#e-l1', '#e-l2', '#e-l3', '#cta .t', '#e-meta', '#e-meta2',
     ];
-    gsap.set(inner(masked.join(',')), { yPercent: 135 });
+    gsap.set(inner(masked.join(',')), { yPercent: 175 });
     gsap.set('#hdr .dot', { scale: 0 });
     gsap.set('#hdr .rule', { scaleX: 0 });
     gsap.set('#hdr .count', { opacity: 0 });

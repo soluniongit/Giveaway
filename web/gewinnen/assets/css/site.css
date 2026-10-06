@@ -171,7 +171,7 @@ ul, ol { padding: 0; list-style: none; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; text-decoration: none; }
 .brand img { height: 22px; width: auto; }
-.theme-ivory .brand { background: var(--ink); padding: 11px 16px; border-radius: 14px; }
+.brand img { height: 24px; }
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a:not(.btn) { font-size: 15px; font-weight: 600; text-decoration: none; color: var(--text-2); transition: color .3s; }
 .nav a:not(.btn):hover { color: var(--text); }
