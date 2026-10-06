@@ -4,7 +4,7 @@
  * Video-Autoplay, Kampagnenstatus (Laufzeit, Phase, Countdown), Teilnahmeformular, Tracking.
  * Benötigt global: gsap, ScrollTrigger, SplitText, Lenis (siehe <script>-Tags der Seiten).
  */
-import { DEMO, getCampaign, submitEntry, source, track } from './api.js';
+import { DEMO, getCampaign, submitEntry, source, referral, track } from './api.js';
 
 const { gsap, ScrollTrigger, SplitText } = window;
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -369,6 +369,20 @@ function share(slug) {
   }));
 }
 
+// ---------------------------------------------------------------- Einladung (doppelte Chance)
+function invite(slug) {
+  const ref = referral();
+  const note = $('[data-invite]');
+  if (ref && note) note.hidden = false;
+  if (ref && new URLSearchParams(location.search).has('ref')) track(slug, 'referral_visit');
+  const tickets = $('[data-bonus] .tickets');
+  if (!tickets || reduced) return;
+  gsap.timeline({ scrollTrigger: { trigger: tickets, start: 'top 85%', once: true } })
+    .from(tickets.querySelector('g'), { y: 18, rotation: -20, opacity: 0, transformOrigin: '50% 50%', duration: 0.9, ease: 'expo.out' })
+    .from(tickets.querySelector('.t2g'), { x: -26, rotation: -10, opacity: 0, transformOrigin: '50% 50%', duration: 1, ease: 'back.out(1.7)' }, 0.25)
+    .to(tickets.querySelector('.t2'), { strokeDashoffset: -18, duration: 1.6, ease: 'none', repeat: 2 }, 0.6);
+}
+
 // ---------------------------------------------------------------- Boot
 export async function boot({ slug, requirePool = false }) {
   document.documentElement.classList.add('js');
@@ -383,6 +397,7 @@ export async function boot({ slug, requirePool = false }) {
   videos(slug);
   share(slug);
   source();
+  invite(slug);
 
   let phase = 'upcoming';
   entryForm(slug, () => phase, requirePool);
@@ -397,6 +412,9 @@ export async function boot({ slug, requirePool = false }) {
   if (data?.ok) {
     phase = data.phase;
     applyCampaign(data);
+    if (data.campaign.referral_bonus_max === 0) {
+      $$('[data-bonus], [data-invite], .success-bonus').forEach((el) => { el.hidden = true; });
+    }
     const form = $('form[data-entry-form]');
     if (form) {
       form.dataset.phase = phase;

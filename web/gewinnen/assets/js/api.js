@@ -57,7 +57,8 @@ export async function confirmEntry(token) {
     const c = DEMO_CAMPAIGNS[slug] || DEMO_CAMPAIGNS['steuern-2027'];
     if (token === 'abgelaufen') return { ok: false, error: 'expired', kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url };
     if (!token) return { ok: false, error: 'invalid_token' };
-    return { ok: true, status: 'confirmed', demo: true, kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url, first_name: demo?.first_name || null, prize: c.pools[0].title, draw_on: c.draw_on };
+    const bonus = params.get('bonus') === '1' ? 1 : 0; // Vorschau: ?bonus=1 zeigt das aktive Bonuslos
+    return { ok: true, status: bonus ? 'already_confirmed' : 'confirmed', demo: true, kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url, first_name: demo?.first_name || null, prize: c.pools[0].title, draw_on: c.draw_on, share_code: 'k7m2p9qa', bonus_entries: bonus, bonus_max: 1 };
   }
   return rpc('confirm_entry', { p_token: token });
 }
@@ -75,6 +76,18 @@ function session() {
   return sessionId;
 }
 
+/** Einladungscode aus ?ref=… — pro Gewinnspielseite gemerkt, damit er auch beim späteren Wiederkommen zählt. */
+const REF_RE = /^[a-z2-9]{8}$/;
+export function referral() {
+  const key = `allnova_ref:${location.pathname}`;
+  const fromUrl = (params.get('ref') || '').toLowerCase();
+  if (REF_RE.test(fromUrl)) {
+    try { localStorage.setItem(key, fromUrl); } catch (e) { /* storage blocked */ }
+    return fromUrl;
+  }
+  try { const v = localStorage.getItem(key); return REF_RE.test(v || '') ? v : null; } catch (e) { return null; }
+}
+
 /** Herkunft (UTM, Referrer, Einstiegsseite) — einmal pro Sitzung festgehalten. */
 export function source() {
   const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -85,7 +98,8 @@ export function source() {
     src = { ...fromUrl, referrer: document.referrer.slice(0, 500), landing_path: location.pathname };
     try { sessionStorage.setItem('allnova_src', JSON.stringify(src)); } catch (e) { /* ignore */ }
   }
-  return src;
+  const ref = referral();
+  return ref ? { ...src, ref } : src;
 }
 
 export function track(slug, event, meta = {}) {

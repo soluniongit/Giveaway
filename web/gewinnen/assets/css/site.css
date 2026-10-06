@@ -333,6 +333,26 @@ ul, ol { padding: 0; list-style: none; }
 .success { display: none; text-align: center; padding: clamp(20px, 4vw, 40px) 0; }
 .success.is-visible { display: grid; justify-items: center; gap: 16px; }
 .success svg.env { width: 150px; height: 120px; }
+.success-bonus { max-width: 46ch; margin: 4px auto 0; padding: 14px 18px; border-radius: var(--r-m); background: color-mix(in srgb, var(--gold) 12%, transparent); font-size: 15px; }
+
+/* Doppelte Chance: Einladung / Bonuslos */
+.bonus-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: center; margin-top: 26px; padding: 18px 22px 18px 14px; border-radius: var(--r-m); background: color-mix(in srgb, var(--gold) 10%, transparent); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--gold) 35%, transparent); }
+.bonus-card p { margin: 0; font-size: 15px; line-height: 1.5; }
+.bonus-card .bonus-kicker { margin-bottom: 4px; font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-text); }
+.tickets { width: 112px; height: auto; overflow: visible; }
+.tickets .t1 { fill: var(--gold); }
+.tickets .t1-l { stroke: rgba(17, 21, 18, .35); stroke-width: 1.6; stroke-dasharray: 3 3; }
+.tickets .t1-x { font: 800 17px/1 var(--font, sans-serif); fill: #111512; text-anchor: middle; }
+.tickets .t2 { fill: none; stroke: var(--gold); stroke-width: 2; stroke-dasharray: 5 4; }
+.tickets .t2-x { font: 800 16px/1 var(--font, sans-serif); fill: var(--accent-text); text-anchor: middle; }
+.tickets.is-active .t2 { fill: var(--gold); stroke-dasharray: none; }
+.tickets.is-active .t2-x { fill: #111512; }
+.invite-note { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 22px; padding: 14px 18px; border-radius: var(--r-m); background: color-mix(in srgb, var(--gold) 14%, transparent); font-size: 15px; line-height: 1.5; }
+.invite-note svg { flex: none; width: 22px; height: 22px; margin-top: 1px; color: var(--accent-text); }
+@media (max-width: 420px) {
+  .bonus-card { grid-template-columns: 1fr; justify-items: start; padding: 18px; }
+  .tickets { width: 104px; }
+}
 
 /* Pool radio cards (Fahrstart) */
 .pools { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }

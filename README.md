@@ -83,7 +83,7 @@ npx http-server . -p 8080 -c-1
 # http://localhost:8080/gewinnen/steuern/?phase=open
 ```
 
-`?phase=open|upcoming|closed` simuliert im Demo-Modus den Kampagnenstatus. Ohne den Parameter gilt das echte Datum: Beide Gewinnspiele sind aktuell «upcoming», das Formular ist also bis zum Start gesperrt.
+`?phase=open|upcoming|closed` simuliert im Demo-Modus den Kampagnenstatus. Ohne den Parameter gilt das echte Datum: Beide Gewinnspiele sind aktuell «upcoming», das Formular ist also bis zum Start gesperrt. Die Bestätigungsseite lässt sich mit `bestaetigen/?token=demo&kampagne=steuern-2027` ansehen, `&bonus=1` zeigt das aktive Bonuslos.
 
 **Konfiguration** (`web/gewinnen/assets/js/config.js`):
 
@@ -133,7 +133,7 @@ Migrationen: `supabase/migrations/20261006120000_gewinnspiele_schema.sql` (Schem
 | `prize_pools` | Was gewonnen werden kann. Fahrstart: ein Pool pro Anbieter (A/B/C) |
 | `partners` | Preispartner. Name, Ort und Logo sind erst öffentlich, wenn `status = 'zugesagt'` gesetzt ist |
 | `landing_pages` | Seiteninhalte als JSON (Hero, Umfang, FAQ, Formular- und Rechtstexte) |
-| `entries` | Teilnahmen, eine pro Person und Gewinnspiel. Gültig erst nach E-Mail-Bestätigung innerhalb der Frist |
+| `entries` | Teilnahmen, eine pro Person und Gewinnspiel. Gültig erst nach E-Mail-Bestätigung innerhalb der Frist. Mit Einladungscode (`share_code`) und Herkunft (`referred_by`) |
 | `marketing_consents` | Freiwillige Werbeeinwilligungen, getrennt dokumentiert |
 | `events` | Anonyme Interaktionen, z. B. App-Klicks |
 | `draws`, `draw_results` | Ziehungsprotokoll mit Gewinnern und Reserveliste |
@@ -151,7 +151,15 @@ Migrationen: `supabase/migrations/20261006120000_gewinnspiele_schema.sql` (Schem
 - `admin_draw('fahrstart-2026')` zieht je Pool mit kryptografischem Zufall und protokolliert die Ziehung.
 - `admin_anonymize_campaign(...)` anonymisiert Nicht-Gewinner (Frist: 90 Tage).
 
-Für die Auswertung gibt es die Views `campaign_stats`, `campaign_source_stats`, `campaign_event_stats` und `entries_export`.
+**Doppelte Chance durch Einladung** (Migration `20261006120200_einladung_bonuslos.sql`):
+
+- Nach der Bestätigung zeigt die Bestätigungsseite einen persönlichen Link (`…/steuern/?ref=k7m2p9qa`) mit Kopieren-, Teilen- und WhatsApp-Knopf. Über den Link aus der Bestätigungsmail lässt sich der Status jederzeit wieder ansehen.
+- Ein **Bonuslos** gibt es erst, wenn eine andere Person über den Link teilnimmt **und** ihre E-Mail bestätigt. Pro Person höchstens 1 Bonuslos (`campaigns.referral_bonus_max`, 0 schaltet die Funktion ab), also maximal 2 Lose.
+- Nicht gezählt werden die eigene E-Mail, derselbe Internetanschluss (kampagnenbezogener IP-Hash), Codes anderer Kampagnen und Testteilnahmen.
+- `admin_draw` zieht gewichtet: Schlüssel `-ln(u)/Lose` mit `u` aus dem CSPRNG. Wer 2 Lose hat, liegt mit Wahrscheinlichkeit 2/3 vor einer Person mit 1 Los (im Test gemessen). Das Protokoll enthält Teilnahmen und Lose.
+- **Rechtlicher Rahmen (Schweiz):** Die Teilnahme bleibt gratis und ohne Kauf, darum ist das kein Geldspiel im Sinne des BGS. Die Regeln stehen transparent in den Teilnahmebedingungen (Ziffern 4 und 9, Version `v2`). allnova verschickt selbst keine Einladungsmails, es gibt also kein Spam-Risiko nach UWG. Belohnt wird nicht das Posten auf einer Plattform, sondern die gültige Teilnahme einer weiteren Person. Damit bleibt die Funktion auch mit den Promotion-Regeln von Meta vereinbar; in Instagram- und Facebook-Posts daher «Lade Freunde ein» schreiben, nicht «Teile diesen Beitrag für ein Extralos». Die Bedingungen vor dem Livegang juristisch freigeben lassen.
+
+Für die Auswertung gibt es die Views `campaign_stats`, `campaign_source_stats`, `campaign_event_stats`, `campaign_referral_stats` und `entries_export` (inkl. `bonus_entries`).
 
 **Lokal testen** (Postgres 16+):
 
@@ -159,7 +167,10 @@ Für die Auswertung gibt es die Views `campaign_stats`, `campaign_source_stats`,
 psql -d test -f supabase/tests/local_supabase_shim.sql
 psql -d test -f supabase/migrations/20261006120000_gewinnspiele_schema.sql
 psql -d test -f supabase/migrations/20261006120100_gewinnspiele_seed.sql
-psql -U authenticator -d test -f supabase/tests/rpc_tests.sql   # → ALL RPC TESTS PASSED
+psql -d test -f supabase/migrations/20261006120200_einladung_bonuslos.sql
+psql -U authenticator -d test -f supabase/tests/rpc_tests.sql        # → ALL RPC TESTS PASSED
+# auf einer zweiten, frisch aufgesetzten DB:
+psql -U authenticator -d test2 -f supabase/tests/referral_tests.sql  # → ALL REFERRAL TESTS PASSED
 ```
 
 **Freischalten:**

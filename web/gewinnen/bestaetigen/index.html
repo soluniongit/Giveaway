@@ -18,6 +18,19 @@
   .theme-dark .app { box-shadow: inset 0 0 0 1.5px var(--line-2); }
   .app .h3 { max-width: 24ch; }
   .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .invite { width: 100%; display: grid; gap: 16px; justify-items: center; padding: clamp(26px, 4vw, 40px); border-radius: var(--r-l); background: color-mix(in srgb, var(--gold) 11%, var(--surface)); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--gold) 40%, transparent); }
+  .invite .tickets { width: 150px; }
+  .invite .h3 { max-width: 22ch; }
+  .invite p { margin: 0; max-width: 48ch; }
+  .link-row { width: 100%; max-width: 520px; display: flex; gap: 8px; padding: 6px; border-radius: 999px; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line-2); }
+  .link-row input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 0 14px; font: inherit; font-size: 15px; font-weight: 600; color: var(--text); text-overflow: ellipsis; }
+  .link-row input:focus { outline: none; }
+  .link-row button { flex: none; height: 44px; padding: 0 18px; border: 0; border-radius: 999px; cursor: pointer; font: inherit; font-size: 14px; font-weight: 700; background: var(--text); color: var(--bg); }
+  .bonus-status { display: inline-flex; gap: 10px; align-items: center; padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--bg-2); }
+  .bonus-status i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+  .bonus-status.is-active { background: var(--gold-grad); color: #111512; }
+  .bonus-status.is-active i { background: #111512; }
+  @media (max-width: 420px) { .link-row { flex-direction: column; border-radius: 22px; } .link-row input { height: 40px; text-align: center; } }
   .spinner { width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>
@@ -62,6 +75,56 @@ function render(html, kind) {
   }
 }
 
+// Persönlicher Einladungslink: Bonuslos, sobald eine eingeladene Person gültig teilnimmt
+const tickets = (active) => `<svg class="tickets${active ? ' is-active' : ''}" viewBox="0 0 132 84" aria-hidden="true"><g transform="translate(6 30) rotate(-8)"><path class="t1" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><path class="t1-l" d="M44 6v28"/><text x="22" y="25" class="t1-x">1</text></g><g class="t2g" transform="translate(62 12) rotate(9)"><path class="t2" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><text x="32" y="26" class="t2-x">+1</text></g></svg>`;
+const SHARE_TEXT = {
+  steuer: 'Ich mache beim allnova Steuergewinnspiel mit – zu gewinnen gibt es 3 Jahre Steuererklärung. Mach auch mit:',
+  fahrstart: 'Beim allnova Fahrstart-Gewinnspiel gibt es Fahrlektionen und einen VKU-Kursplatz zu gewinnen. Mach auch mit:',
+};
+function inviteCard(r, back) {
+  const slot = main.querySelector('[data-invite-slot]');
+  const url = new URL(back, location.href);
+  url.search = new URLSearchParams({ ref: r.share_code, utm_source: 'einladung', utm_medium: 'referral' }).toString();
+  const link = url.toString();
+  const text = SHARE_TEXT[r.kind] || 'Mach mit beim allnova Gewinnspiel:';
+  const active = (r.bonus_entries || 0) >= (r.bonus_max || 1);
+  slot.className = 'invite';
+  slot.hidden = false;
+  slot.innerHTML = `${tickets(active)}
+    <p class="eyebrow" style="margin:0">Doppelte Chance</p>
+    <p class="h3">${active ? 'Bonuslos aktiv – deine Chance ist verdoppelt.' : 'Verdopple deine Gewinnchance.'}</p>
+    <p>${active ? 'Danke fürs Weitersagen! Mehr als ein Bonuslos ist nicht möglich – teilen darfst du natürlich trotzdem.' : 'Teile deinen persönlichen Link. Sobald eine Freundin oder ein Freund darüber teilnimmt und die E-Mail bestätigt, erhältst du ein Bonuslos.'}</p>
+    <div class="link-row"><input type="text" readonly value="${esc(link)}" aria-label="Dein Einladungslink"><button type="button" data-copy>Kopieren</button></div>
+    <div class="actions">
+      <button class="btn btn--gold" type="button" data-native-share>Link teilen${arrow}</button>
+      <a class="btn btn--ghost" href="https://wa.me/?text=${encodeURIComponent(`${text} ${link}`)}" target="_blank" rel="noopener" data-wa>WhatsApp</a>
+    </div>
+    <span class="bonus-status${active ? ' is-active' : ''}"><i></i>${active ? 'Bonuslos: aktiv (2 Lose)' : 'Bonuslos: noch offen (1 Los)'}</span>
+    <p class="small">Teile den Link nur mit Personen, die sich dafür interessieren – kein Massenversand. Die eingeladene Person nimmt zu den gleichen Bedingungen teil; du erfährst nicht, wer teilgenommen hat. Deinen Status siehst du jederzeit über den Link in deiner Bestätigungsmail. <a href="${back}#bedingungen">Teilnahmebedingungen, Ziffer 9</a></p>`;
+  const input = slot.querySelector('input');
+  input.addEventListener('focus', () => input.select());
+  const copyBtn = slot.querySelector('[data-copy]');
+  copyBtn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(link); } catch (e) { input.select(); document.execCommand?.('copy'); }
+    copyBtn.textContent = 'Kopiert ✓';
+    setTimeout(() => { copyBtn.textContent = 'Kopieren'; }, 1800);
+    track(r.campaign, 'invite_copy');
+  });
+  const shareBtn = slot.querySelector('[data-native-share]');
+  if (!navigator.share) shareBtn.hidden = true;
+  shareBtn.addEventListener('click', async () => {
+    track(r.campaign, 'invite_share');
+    try { await navigator.share({ title: r.campaign_title, text, url: link }); } catch (e) { /* abgebrochen */ }
+  });
+  slot.querySelector('[data-wa]').addEventListener('click', () => track(r.campaign, 'invite_whatsapp'));
+
+  const t = slot.querySelector('.tickets');
+  gsap.timeline({ delay: 0.5 })
+    .from(t.querySelector('g'), { y: 18, rotation: -20, opacity: 0, transformOrigin: '50% 50%', duration: 0.9, ease: 'expo.out' })
+    .from(t.querySelector('.t2g'), { x: -30, rotation: -12, opacity: 0, transformOrigin: '50% 50%', duration: 1, ease: 'back.out(1.7)' }, 0.25)
+    .from(slot.querySelector('.bonus-status'), { scale: 0.8, opacity: 0, duration: 0.6, ease: 'back.out(2)' }, 0.6);
+}
+
 const token = new URLSearchParams(location.search).get('token') || '';
 let r;
 try { r = await confirmEntry(token); } catch (e) { r = { ok: false, error: 'network' }; }
@@ -77,11 +140,13 @@ if (r.ok) {
       <h1>${again ? 'Du bist bereits dabei.' : 'Deine Teilnahme ist bestätigt.'}</h1>
       <p class="lead">${r.first_name ? `${esc(r.first_name)}, du` : 'Du'} nimmst am ${esc(r.campaign_title)} teil.${r.draw_on ? ` Die Auslosung findet am ${fmtDate(r.draw_on)} statt.` : ''} Viel Glück!</p>
     </div>
+    <div data-view="result" data-invite-slot hidden></div>
     <div class="app" data-view="result">
       <p class="h3">Entdecke jetzt regionale Vorteile in der allnova App.</p>
       <div class="actions">${appBtn}<a class="btn btn--ghost" href="${back}" data-later>Später</a></div>
-      <p class="small">Für Installation, Newsletter oder Beratung gibt es keine zusätzlichen Lose.</p>
+      <p class="small">${r.share_code ? 'Zusätzliche Lose gibt es nur über deinen Einladungslink – nicht für App, Newsletter oder Beratung.' : 'Für Installation, Newsletter oder Beratung gibt es keine zusätzlichen Lose.'}</p>
     </div>`, r.kind);
+  if (r.share_code) inviteCard(r, back);
   main.querySelector('[data-app]')?.addEventListener('click', () => track(r.campaign, 'app_cta_click'));
   main.querySelector('[data-later]')?.addEventListener('click', () => track(r.campaign, 'app_later_click'));
 } else {
