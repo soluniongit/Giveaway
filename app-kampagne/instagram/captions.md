@@ -6,7 +6,7 @@ Der Link im Profil (allnova.ch) führt auf die App-Seite mit den Downloads für 
 
 Finanzen. Einfach im Griff.
 
-Persönliche Beratung zu Versicherungen, Vorsorge und Finanzplanung – und mit der allnova App alles digital im Blick.
+Persönliche Beratung zu Versicherungen, Vorsorge und Finanzplanung – und mit der allnova App alle Policen und Dokumente digital dabei.
 
 Die App gibt es kostenlos über den Link im Profil.
 
@@ -14,9 +14,9 @@ Die App gibt es kostenlos über den Link im Profil.
 
 ## 2 · Reel Mitte – App-Teaser
 
-Mehr für dich. Die allnova App ist da.
+Sparen. Profitieren. Entdecken. Die allnova App ist da.
 
-Geschenkkarten von 100+ Marken mit Cashback*, dein Guthaben im Blick, Policen und Dokumente an einem Ort.
+Geschenkkarten von Marken wie Swarovski, IKEA, Zalando oder Manor mit Cashback*, dein Guthaben im Blick, Policen und Dokumente an einem Ort.
 
 Jetzt kostenlos herunterladen – über den Link im Profil.
 
@@ -28,10 +28,10 @@ Jetzt kostenlos herunterladen – über den Link im Profil.
 
 Alles an einem Ort.
 
-Gutscheine, Cashback*, Guthaben, Policen und der direkte Draht zu deiner Beratung – in einer App.
+Geschenkkarten mit Cashback* von Swarovski, PowerFood, Manor, Orell Füssli, IKEA und Zalando – dazu Guthaben, Policen und der direkte Draht zu deiner Beratung. In einer App.
 
 Kostenlos für iOS und Android. Download über den Link im Profil.
 
 *Cashback je nach Angebot und Bedingungen.
 
-#allnova #allnovaApp #Cashback #Versicherung #Policen #Finanzen #Schweiz
+#allnova #allnovaApp #Cashback #Geschenkkarten #Shopping #Finanzen #Schweiz
