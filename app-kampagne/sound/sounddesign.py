@@ -305,12 +305,8 @@ def app():
     place(s, swish(0.4), 18.67, 0.22)
     place(s, pan(tick(1500), 0.3), 18.62 + 2 * B, 0.07)
     place(s, chime(note('A4'), 1.8), 18.62 + 2 * B + 0.12, 0.10)
-    # 21.7–25.3 s: Verdichtung — drei Akzente
+    # 21.7–25.3 s: Verdichtung — die drei Handys kommen ohne Klang-Akzente (nur Musik)
     place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42, 0.20)
-    for k, n in enumerate(('F4', 'A4', 'C5')):
-        at = 21.72 + 0.05 + k * B
-        place(s, pan(pop(280, 600, 0.1), -0.3 + 0.3 * k), at + 0.1, 0.22)
-        place(s, chime(note(n), 1.4), at + 0.12, 0.08)
     # 25.3–30 s: Endkarte — Handys raus (fallender Whoosh), Logo/Text rein (Swoosh, Spitze ~25.55 s), Ausklang
     place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
     place(s, whoosh(0.75, 420, 3400, peak=0.42, width=0.6), 25.24, 0.26)
