@@ -33,7 +33,7 @@ out/         fertige Exporte
 
 - **1:1 App-Oberfläche:** Die echten Screenshots sind feste Bildebenen. Animiert werden nur Position, Grösse, Ausschnitt und Masken, die Markenlogos bleiben unverändert.
 - **Anonymisierung:** Persönliche Felder sind in den Pixeln selbst entfernt (`teaser/build-assets.py`), darunter liegt also nichts, das in Zooms oder in der Bewegungsunschärfe durchscheinen könnte. Ersetzt wurden: Name und Avatar («Alex», «A»), Policennummern (DEMO-001 bis DEMO-003), Ablaufdaten (••.••.••••), Prämien (•••.•• CHF/Jahr) und der Punktestand (Demowert, als «Demodaten» gekennzeichnet). Die Ersatztexte sind in Poppins gesetzt; Grösse, Gewicht und Grundlinie habe ich per Pixelvergleich mit dem Original kalibriert.
-- **Originale:** Die Original-Screenshots enthalten persönliche Daten und liegen **nicht** im Repository. Neu erzeugen: `python3 teaser/build-assets.py <Ordner 02_Screenshots_Originale>`.
+- **Originale:** Die Original-Screenshots enthalten persönliche Daten und liegen **nicht** im Repository. Neu erzeugen: `python3 teaser/build-assets.py <Ordner 02_Screenshots_Originale> <Entdecken-Screenshot mit Nikin/IKEA/Deezer>`.
 - **Vor Veröffentlichung:** Die gezeigten Cashback-Sätze mit den aktuellen Angeboten in der App abgleichen. Die Fussnote «*Cashback je nach Angebot und Bedingungen.» ist im Video und im rechten Post enthalten.
 
 ## Bauen
