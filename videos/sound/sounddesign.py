@@ -379,8 +379,85 @@ def fahrstart():
     write('out/sound/fahrstart.wav', master(mus, s, 0.62, 1.0))
 
 
+# ------------------------------------------------------------------ App-Teaser (116 BPM, F-Dur, Puls)
+def app():
+    B = 60 / 116
+    chords = [
+        (0.0, 2.6, ['F2', 'C3', 'F3', 'A3', 'E4']),
+        (2.6, 6.72, ['D2', 'A2', 'D3', 'F3', 'C4']),
+        (6.72, 10.34, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
+        (10.34, 14.48, ['F2', 'C3', 'F3', 'A3', 'E4']),
+        (14.48, 18.62, ['G2', 'D3', 'G3', 'A#3', 'F4']),   # Dokumente: offener, Puls pausiert
+        (18.62, 21.72, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
+        (21.72, 25.34, ['C2', 'G2', 'C3', 'E3', 'D4']),
+        (25.34, 30.0, ['F2', 'C3', 'F3', 'A3', 'E4']),
+    ]
+    mus = music(chords, 116, start_arp=2.6, stop_arp=25.3, hats=(2.6, 25.3), kicks=(2.6, 14.48), end_fade=(26.4, 30.0))
+    # Puls nach der Dokumentenszene wieder aufnehmen
+    t = 18.62
+    while t < 25.3:
+        place(mus, kick(), t, 0.22)
+        i0, i1 = int(t * SR), int((t + 0.22) * SR)
+        mus[:, i0:i1] *= np.linspace(0.6, 1.0, i1 - i0)
+        t += B
+    s = np.zeros((2, N))
+    # 0–2.6 s: Hook — feiner Klangimpuls, Wortwechsel
+    place(s, impact(), 0.05, 0.38)
+    place(s, shimmer([note('C6'), note('F6'), note('A6')], 2.0), 0.1, 0.18)
+    place(s, whoosh(2.6, 400, 1800, peak=0.5, width=0.7), 0.0, 0.12)
+    for at in (0.12, 0.32, 0.32 + 1.5 * B, 0.32 + 3 * B):
+        place(s, pan(tick(2400), 0.1), at, 0.14)
+    place(s, whoosh(0.7, 300, 4200, peak=0.7), 2.3, 0.42)
+    # 2.6–6.7 s: Marken
+    place(s, whoosh(0.9, 900, 250, peak=0.35), 2.55, 0.25)
+    for i in range(6):
+        place(s, pan(pop(300, 640, 0.1), -0.3 + 0.12 * i), 3.02 + i * B / 2, 0.20)
+    for k, at in enumerate((3.3, 3.45, 3.7, 3.8)):
+        place(s, swish(0.32), at, 0.16)
+    place(s, pan(tick(), 0), 3.5, 0.12)
+    # 6.7–10.3 s: Cashback — heller, warmer Ton (keine Kasse)
+    for at, p_ in ((6.47, -0.5), (6.52, 0.5)):
+        place(s, swish(0.35), at, 0.16)
+    place(s, whoosh(1.0, 400, 3000, peak=0.6), 6.7, 0.36)
+    place(s, chime(note('F6'), 2.6), 7.87, 0.26)
+    place(s, chime(note('C7'), 2.2), 7.93, 0.14)
+    place(s, shimmer([note('A6'), note('C7'), note('F7')], 1.4, 0.03), 7.84, 0.12)
+    # 10.3–14.5 s: Wallet — weich, Puls ruhig
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 10.0, 0.20)
+    place(s, swish(0.4), 10.39, 0.22)
+    for at in (10.34 + 2 * B, 10.34 + 3 * B, 10.34 + 4 * B):
+        place(s, pan(pop(240, 420, 0.09), 0.2), at + 0.05, 0.26)
+    place(s, pan(tick(2000), -0.1), 11.14, 0.10)
+    # 14.5–18.6 s: Dokumente — Rhythmus ausgedünnt, trockene Klicks
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 14.18, 0.20)
+    place(s, whoosh(1.0, 300, 2400, peak=0.6), 14.45, 0.30)
+    for k in range(3):
+        at = 14.48 + 0.62 + k * B
+        place(s, swish(0.3), at - 0.05, 0.14)
+        place(s, pan(pop(220, 380, 0.08), 0.1), at + 0.18, 0.28)
+    # 18.6–21.7 s: Kontakt — dezenter Ton zum Symbol
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 18.27, 0.20)
+    place(s, swish(0.4), 18.67, 0.22)
+    place(s, pan(tick(2600), 0.3), 18.62 + 2 * B, 0.14)
+    place(s, chime(note('A5'), 1.8), 18.62 + 2 * B + 0.12, 0.16)
+    # 21.7–25.3 s: Verdichtung — drei Akzente
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42, 0.20)
+    for k, n in enumerate(('F5', 'A5', 'C6')):
+        at = 21.72 + 0.05 + k * B
+        place(s, pan(pop(280, 600, 0.1), -0.3 + 0.3 * k), at + 0.1, 0.22)
+        place(s, chime(note(n), 1.4), at + 0.12, 0.13)
+    # 25.3–30 s: Endkarte — warmer Zweiklang, Ausklang
+    place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
+    place(s, impact(), 25.44, 0.40)
+    place(s, chime(note('F5'), 3.4), 25.46, 0.24)
+    place(s, chime(note('C6'), 3.2), 25.72, 0.20)
+    place(s, pan(pop(380, 900, 0.12), 0), 26.12, 0.24)
+    write('out/sound/app.wav', master(mus, s, 0.6, 1.0))
+
+
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     steuer()
     fahrstart()
-    print('out/sound/steuer.wav, out/sound/fahrstart.wav')
+    app()
+    print('out/sound/steuer.wav, out/sound/fahrstart.wav, out/sound/app.wav')

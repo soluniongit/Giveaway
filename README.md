@@ -29,6 +29,7 @@ Fertige Exporte liegen in `videos/out/`:
 
 - `allnova-steuergewinnspiel-30s.mp4`
 - `allnova-fahrstart-gewinnspiel-30s.mp4`
+- `allnova-app-teaser-30s.mp4` (App-Teaser, siehe unten)
 
 Beide sind 1080 × 1920, 30 fps, H.264, 30 s lang, **mit Sounddesign** (AAC, ca. −14 LUFS). Zusätzlich gibt es je eine stumme Fassung (`…-ohne-ton.mp4`, wie im Konzept gewünscht) und ein Posterbild (Endkarte).
 
@@ -61,6 +62,16 @@ npm run preview           # Live-Vorschau im Browser: http://localhost:8080/steu
 Der Renderer (`render.mjs`) spielt die GSAP-Timeline Frame für Frame in Chromium ab (Playwright) und kodiert sie mit ffmpeg. Für Motion-Blur verwendet er 8 Teilbilder pro Frame. Beim Fahrstart heben sich die Inhalte vor jeder Kamerafahrt ab, damit nur die Weglinie mitfährt.
 
 Noch offen laut Konzept: 10-Sekunden-Schnitte und eine Version mit Voice-over (dann mit Untertiteln). Die Musikrechte sind zu klären, falls Musik gewünscht ist.
+
+### App-Teaser (`allnova-app-teaser-30s.mp4`)
+
+30 s, 1080 × 1920, schnell geschnitten im 116-BPM-Takt, mit synthetischem Sounddesign und stummer Fassung. Ablauf: dunkler Hook mit Gutscheinkacheln («Mehr sparen / Überblick / für dich») → Entdecken-Screen mit aufpoppenden Kacheln («Über 100 Marken») → Match-Cut auf die Zalando-Kachel mit Cashback-Moment → Wallet-Ausschnitte → Dokumente → Kontakt (WhatsApp) → Montage aus drei Screens → ruhige Endkarte mit «Jetzt kostenlos herunterladen».
+
+- **1:1 App-Oberfläche:** Die echten Screenshots dienen als feste Bildebenen, animiert werden nur Position, Grösse, Ausschnitt und Masken. Markenlogos bleiben unverändert.
+- **Anonymisierung:** Persönliche Felder sind in den Pixeln selbst entfernt (`videos/app/build-assets.py`), es liegt also nichts darunter, das in Zooms oder in der Bewegungsunschärfe durchscheinen könnte. Ersetzt wurden Name und Avatar («Alex», «A»), die Policennummern (DEMO-001 bis DEMO-003), Ablaufdaten (••.••.••••), Prämien (•••.•• CHF/Jahr) und der Punktestand (Demowert, gekennzeichnet mit «Demodaten»). Die Ersatztexte sind in Poppins gesetzt; Grösse, Gewicht und Grundlinie habe ich per Pixelvergleich mit dem Original kalibriert. Diagramme, GTA-Banner, Projekte und Standortdialog kommen nicht vor.
+- **Originale:** Die Original-Screenshots enthalten persönliche Daten und sind **nicht** im Repository. Neu erzeugen: `python3 videos/app/build-assets.py <Ordner 02_Screenshots_Originale>`.
+- **Vor Veröffentlichung:** Das offizielle deutsche App-Store-Badge war hier nicht abrufbar, darum steht auf der Endkarte ein neutraler Button «Im App Store laden». Für die Anzeige durch das offizielle Badge ersetzen (`#cta` in `videos/app/index.html`). Ausserdem die gezeigten Cashback-Sätze der Kacheln mit den aktuellen Angeboten in der App abgleichen. Der Fussnotentext steht im Video.
+- **Texte ändern:** Objekt `C` oben in `videos/app/index.html`. Neu rendern: `node render.mjs app`.
 
 ---
 

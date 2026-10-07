@@ -25,6 +25,7 @@ const OUT = path.join(ROOT, 'out');
 const COMPOSITIONS = {
   steuer: { page: 'steuer/index.html', file: 'allnova-steuergewinnspiel-30s' },
   fahrstart: { page: 'fahrstart/index.html', file: 'allnova-fahrstart-gewinnspiel-30s' },
+  app: { page: 'app/index.html', file: 'allnova-app-teaser-30s' },
 };
 
 const args = process.argv.slice(2);
