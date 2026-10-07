@@ -306,10 +306,13 @@ defineComposition({
 
     const tl = gsap.timeline({ defaults: { ease: 'expo.out', duration: 1 } });
     const pts = { v: 0 };
+    const textLayers = $$('.phone, .ui');
     const reveal = (sel, at, o = {}) => tl.to(inner(sel), { yPercent: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08, ...o }, at);
     const hide = (sel, at, o = {}) => tl.to(inner(sel), { yPercent: -45, opacity: 0, duration: 0.38, ease: 'power3.in', stagger: 0.04, ...o }, at);
     const gold = (sel, at, d = 2.4) => tl.to(inner(sel), { backgroundPosition: '100% 0', duration: d, ease: 'sine.inOut' }, at);
 
+    // Hinweis: Elemente mit echtem Text (Telefone, UI-Karten) stehen nach dem Einfliegen still –
+    // langsame Drifts lassen Text in Chromium pixelweise springen. Nur Bilder (Kacheln, Badges) driften.
     tl.to('#blobA', { x: 260, y: 240, duration: 27, ease: 'sine.inOut' }, 0);
     tl.to('#blobB', { x: -300, y: -240, duration: 27, ease: 'sine.inOut' }, 0);
 
@@ -347,7 +350,6 @@ defineComposition({
     tl.to('#fl-t2', { y: '-=80', rotation: 5, duration: 1.8, ease: 'sine.inOut' }, t2 + 1.9);
     tl.to('#fl-b1', { y: '-=50', duration: 1.6, ease: 'sine.inOut' }, t2 + 2.1);
     tl.to('#fl-b2', { y: '+=60', duration: 1.5, ease: 'sine.inOut' }, t2 + 2.2);
-    tl.to('#phA', { y: 600, duration: 2.9, ease: 'sine.inOut' }, t2 + 1.1);
     reveal('#foot', t2 + 0.9);
 
     // ================= 6.7 – 10.3 s · Cashback =================
@@ -376,7 +378,6 @@ defineComposition({
       tl.to(id, { scale: 1.6, opacity: 0, duration: 1.1, ease: 'power2.out' }, t3 + 1.15 + i * 0.22);
     });
     tl.fromTo('#shine i', { x: 0 }, { x: 520, duration: 0.8, ease: 'power2.inOut' }, t3 + 1.12);
-    tl.to('#detail', { scale: 1.3, x: 540 - 574 * 1.3 / 2, y: 626, duration: 2.2, ease: 'sine.inOut' }, t3 + 1.0);
 
     // ================= 10.3 – 14.5 s · Wallet =================
     const t4 = 10.34;
@@ -391,7 +392,6 @@ defineComposition({
     tl.to('#w-tab', { x: 72, opacity: 1, duration: 0.7 }, t4 + 3 * B);
     tl.to('#w-nav', { x: 72, opacity: 1, duration: 0.7 }, t4 + 4 * B);
     tl.to('#tag4', { opacity: 1, y: 0, duration: 0.6 }, t4 + 0.8);
-    tl.to(['#w-head', '#w-btn', '#w-tab', '#w-nav'], { y: '-=26', duration: 2.3, ease: 'sine.inOut' }, t4 + 1.4);
 
     // ================= 14.5 – 18.6 s · Dokumente =================
     const t5 = 14.48;
@@ -404,7 +404,6 @@ defineComposition({
     tl.fromTo('#phB', { ...P(0.55, 540, 2000), rotation: -4 }, { ...P(0.55, 540, 620), rotation: 0, duration: 1.0 }, t5);
     $$('.doc-card').forEach((el, k) => tl.to(el, { x: 0, opacity: 1, duration: 0.75, ease: 'expo.out' }, t5 + 0.62 + k * B));
     tl.to('#tag5', { opacity: 1, y: 0, duration: 0.6 }, t5 + 0.9);
-    tl.to('#phB', { ...P(0.58, 540, 590), duration: 2.8, ease: 'sine.inOut' }, t5 + 0.9);
 
     // ================= 18.6 – 21.7 s · Kontakt =================
     const t6 = 18.62;
@@ -421,7 +420,6 @@ defineComposition({
     tl.to('#wa', { scale: 1.22, transformOrigin: '50% 50%', duration: 0.25, ease: 'power2.out' }, t6 + 2 * B + 0.1);
     tl.to('#wa', { scale: 1, duration: 0.6, ease: 'elastic.out(1, .5)' }, t6 + 2 * B + 0.35);
     ['#war1', '#war2'].forEach((id, i) => tl.fromTo(id, { scale: 0.6, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.1, ease: 'power2.out' }, t6 + 2 * B + 0.15 + i * 0.25));
-    tl.to(['#home', '#h-nav'], { y: '-=24', duration: 1.9, ease: 'sine.inOut' }, t6 + 0.9);
 
     // ================= 21.7 – 25.3 s · Montage =================
     const t7 = 21.72;
@@ -434,9 +432,6 @@ defineComposition({
     tl.to('#phC', { ...P(0.46, 540, 700), duration: 0.9 }, t7 + 0.05);
     tl.to('#phL', { ...P(0.38, 250, 800), rotation: -9, duration: 0.9 }, t7 + 0.05 + B);
     tl.to('#phR', { ...P(0.38, 830, 800), rotation: 9, duration: 0.9 }, t7 + 0.05 + 2 * B);
-    tl.to('#phC', { y: 660, duration: 2.4, ease: 'sine.inOut' }, t7 + 0.9);
-    tl.to('#phL', { y: 770, rotation: -11, duration: 1.6, ease: 'sine.inOut' }, t7 + 0.05 + B + 0.9);
-    tl.to('#phR', { y: 770, rotation: 11, duration: 1.2, ease: 'sine.inOut' }, t7 + 0.05 + 2 * B + 0.9);
 
     // ================= 25.3 – 30 s · Endcard =================
     const t8 = 25.34;
@@ -455,7 +450,11 @@ defineComposition({
 
     return {
       timeline: tl,
-      onSeek() { $('#w-pts').textContent = `${pts.v.toFixed(2)} Punkte`; },
+      onSeek() {
+        $('#w-pts').textContent = `${pts.v.toFixed(2)} Punkte`;
+        // Elemente mit echtem Text auf ganze Pixel setzen: Text und Bild bewegen sich exakt gemeinsam (kein Text-Ruckeln)
+        textLayers.forEach((el) => gsap.set(el, { x: Math.round(gsap.getProperty(el, 'x')), y: Math.round(gsap.getProperty(el, 'y')) }));
+      },
     };
   },
 });
