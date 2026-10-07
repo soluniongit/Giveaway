@@ -52,6 +52,9 @@
   .ov-prem { font-size: 36px; font-weight: 500; color: #525252; text-align: right; }
 
   /* ---------- UI-Ausschnitte ---------- */
+  /* Render: Handy und UI-Ausschnitte als eigene Compositor-Ebenen → Texte werden einmal gerastert und
+     bewegen sich wie Bilder subpixel-genau mit (sonst rastet Chromium Glyphen bei langsamen Drifts aufs Pixelraster). */
+  html.render .phone, html.render .ui { will-change: transform; }
   .ui { position: absolute; left: 0; top: 0; transform-origin: 0 0; border-radius: 64px; overflow: hidden; background: #f5f5f7;
     box-shadow: 0 90px 120px -60px rgba(48, 38, 14, .42), 0 20px 40px -18px rgba(48, 38, 14, .2), inset 0 0 0 2px rgba(255, 255, 255, .6); }
   .ui > img { position: absolute; left: 0; top: 0; display: block; }
