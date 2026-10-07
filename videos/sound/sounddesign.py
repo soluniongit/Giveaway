@@ -403,10 +403,10 @@ def app():
     s = np.zeros((2, N))
     # 0–2.6 s: Hook — feiner Klangimpuls, Wortwechsel
     place(s, impact(), 0.05, 0.38)
-    place(s, shimmer([note('C6'), note('F6'), note('A6')], 2.0), 0.1, 0.18)
+    place(s, shimmer([note('C5'), note('F5'), note('A5')], 2.0), 0.1, 0.08)
     place(s, whoosh(2.6, 400, 1800, peak=0.5, width=0.7), 0.0, 0.12)
     for at in (0.12, 0.32, 0.32 + 1.5 * B, 0.32 + 3 * B):
-        place(s, pan(tick(2400), 0.1), at, 0.14)
+        place(s, pan(tick(1500), 0.1), at, 0.07)
     place(s, whoosh(0.7, 300, 4200, peak=0.7), 2.3, 0.42)
     # 2.6–6.7 s: Marken
     place(s, whoosh(0.9, 900, 250, peak=0.35), 2.55, 0.25)
@@ -414,20 +414,20 @@ def app():
         place(s, pan(pop(300, 640, 0.1), -0.3 + 0.12 * i), 3.02 + i * B / 2, 0.20)
     for k, at in enumerate((3.3, 3.45, 3.7, 3.8)):
         place(s, swish(0.32), at, 0.16)
-    place(s, pan(tick(), 0), 3.5, 0.12)
+    place(s, pan(tick(1500), 0), 3.5, 0.06)
     # 6.7–10.3 s: Cashback — heller, warmer Ton (keine Kasse)
     for at, p_ in ((6.47, -0.5), (6.52, 0.5)):
         place(s, swish(0.35), at, 0.16)
     place(s, whoosh(1.0, 400, 3000, peak=0.6), 6.7, 0.36)
-    place(s, chime(note('F6'), 2.6), 7.87, 0.26)
-    place(s, chime(note('C7'), 2.2), 7.93, 0.14)
-    place(s, shimmer([note('A6'), note('C7'), note('F7')], 1.4, 0.03), 7.84, 0.12)
+    place(s, chime(note('F5'), 2.6), 7.87, 0.15)
+    place(s, chime(note('C6'), 2.2), 7.93, 0.06)
+    place(s, shimmer([note('A5'), note('C6'), note('F6')], 1.4, 0.03), 7.84, 0.05)
     # 10.3–14.5 s: Wallet — weich, Puls ruhig
     place(s, whoosh(0.6, 2000, 6000, peak=0.5), 10.0, 0.20)
     place(s, swish(0.4), 10.39, 0.22)
     for at in (10.34 + 2 * B, 10.34 + 3 * B, 10.34 + 4 * B):
         place(s, pan(pop(240, 420, 0.09), 0.2), at + 0.05, 0.26)
-    place(s, pan(tick(2000), -0.1), 11.14, 0.10)
+    place(s, pan(tick(1400), -0.1), 11.14, 0.05)
     # 14.5–18.6 s: Dokumente — Rhythmus ausgedünnt, trockene Klicks
     place(s, whoosh(0.6, 2000, 6000, peak=0.5), 14.18, 0.20)
     place(s, whoosh(1.0, 300, 2400, peak=0.6), 14.45, 0.30)
@@ -438,19 +438,19 @@ def app():
     # 18.6–21.7 s: Kontakt — dezenter Ton zum Symbol
     place(s, whoosh(0.6, 2000, 6000, peak=0.5), 18.27, 0.20)
     place(s, swish(0.4), 18.67, 0.22)
-    place(s, pan(tick(2600), 0.3), 18.62 + 2 * B, 0.14)
-    place(s, chime(note('A5'), 1.8), 18.62 + 2 * B + 0.12, 0.16)
+    place(s, pan(tick(1500), 0.3), 18.62 + 2 * B, 0.07)
+    place(s, chime(note('A4'), 1.8), 18.62 + 2 * B + 0.12, 0.10)
     # 21.7–25.3 s: Verdichtung — drei Akzente
     place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42, 0.20)
-    for k, n in enumerate(('F5', 'A5', 'C6')):
+    for k, n in enumerate(('F4', 'A4', 'C5')):
         at = 21.72 + 0.05 + k * B
         place(s, pan(pop(280, 600, 0.1), -0.3 + 0.3 * k), at + 0.1, 0.22)
-        place(s, chime(note(n), 1.4), at + 0.12, 0.13)
+        place(s, chime(note(n), 1.4), at + 0.12, 0.08)
     # 25.3–30 s: Endkarte — warmer Zweiklang, Ausklang
     place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
     place(s, impact(), 25.44, 0.40)
-    place(s, chime(note('F5'), 3.4), 25.46, 0.24)
-    place(s, chime(note('C6'), 3.2), 25.72, 0.20)
+    place(s, chime(note('F4'), 3.4), 25.46, 0.16)
+    place(s, chime(note('C5'), 3.2), 25.72, 0.12)
     place(s, pan(pop(380, 900, 0.12), 0), 26.12, 0.24)
     write('out/sound/app.wav', master(mus, s, 0.6, 1.0))
 
