@@ -17,7 +17,7 @@ import wave
 import numpy as np
 
 SR = 48000
-SFX = 0.38  # Effekte gegenüber der Musik (vorher 1.0, dann 0.55) — dezent, nicht lauter als das Musikbett
+SFX = 0.22  # Effekte gegenüber der Musik (vorher 1.0 → 0.55 → 0.38) — dezent, nicht lauter als das Musikbett
 DUR = 30.0
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
@@ -316,6 +316,8 @@ def app():
     place(s, whoosh(0.75, 420, 3400, peak=0.42, width=0.6), 25.24, 0.26)
     place(s, impact(), 25.44, 0.16)
     place(s, swish(0.32), 26.0, 0.12)   # Store-Badges
+    # Effekte weicher: Höhen sanft absenken (weniger spitz/penetrant)
+    s = np.stack([onepole_lp(ch, 4500) for ch in s])
     write('out/sound/teaser.wav', master(mus, s, 0.6, SFX))
 
 
