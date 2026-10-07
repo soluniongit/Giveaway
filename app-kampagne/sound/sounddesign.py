@@ -17,6 +17,7 @@ import wave
 import numpy as np
 
 SR = 48000
+SFX = 0.55  # Effekte gegenüber der Musik (vorher 1.0) — dezent, nicht lauter als das Musikbett
 DUR = 30.0
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
@@ -266,9 +267,8 @@ def app():
         mus[:, i0:i1] *= np.linspace(0.6, 1.0, i1 - i0)
         t += B
     s = np.zeros((2, N))
-    # 0–2.6 s: Hook — feiner Klangimpuls, Wortwechsel
-    place(s, impact(), 0.05, 0.38)
-    place(s, shimmer([note('C5'), note('F5'), note('A5')], 2.0), 0.1, 0.08)
+    # 0–2.6 s: Hook — Swoosh ins Bild (Spitze bei ~0.15 s, wenn «Mehr» und der Markenstrom einlaufen)
+    place(s, whoosh(0.5, 450, 3800, peak=0.3, width=0.6), 0.0, 0.34)
     place(s, whoosh(2.6, 400, 1800, peak=0.5, width=0.7), 0.0, 0.12)
     for at in (0.12, 0.32, 0.32 + 1.5 * B, 0.32 + 3 * B):
         place(s, pan(tick(1500), 0.1), at, 0.07)
@@ -311,13 +311,12 @@ def app():
         at = 21.72 + 0.05 + k * B
         place(s, pan(pop(280, 600, 0.1), -0.3 + 0.3 * k), at + 0.1, 0.22)
         place(s, chime(note(n), 1.4), at + 0.12, 0.08)
-    # 25.3–30 s: Endkarte — warmer Zweiklang, Ausklang
+    # 25.3–30 s: Endkarte — Handys raus (fallender Whoosh), Logo/Text rein (Swoosh, Spitze ~25.55 s), Ausklang
     place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
-    place(s, impact(), 25.44, 0.40)
-    place(s, chime(note('F4'), 3.4), 25.46, 0.16)
-    place(s, chime(note('C5'), 3.2), 25.72, 0.12)
-    place(s, pan(pop(380, 900, 0.12), 0), 26.12, 0.24)
-    write('out/sound/teaser.wav', master(mus, s, 0.6, 1.0))
+    place(s, whoosh(0.75, 420, 3400, peak=0.42, width=0.6), 25.24, 0.26)
+    place(s, impact(), 25.44, 0.16)
+    place(s, swish(0.32), 26.0, 0.12)   # Store-Badges
+    write('out/sound/teaser.wav', master(mus, s, 0.6, SFX))
 
 
 if __name__ == '__main__':
