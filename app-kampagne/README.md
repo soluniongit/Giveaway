@@ -16,16 +16,16 @@ out/         fertige Exporte
 |---|---|
 | `allnova-app-teaser-30s.mp4` | Reel, 1080 × 1920, 30 fps, mit Sounddesign |
 | `allnova-app-teaser-30s-ohne-ton.mp4` | stumme Fassung |
-| `instagram/allnova-ig-1-links-allnova.png/.jpg` | Post **links** (1080 × 1350): allnova – Beratung + App |
+| `instagram/allnova-ig-1-links-allnova.png/.jpg` | Post **links** (1080 × 1350): «Finanzen. einfach im Griff.» + Telefon (Dokumente, Demodaten) |
 | `instagram/allnova-ig-2-mitte-reel-cover.png/.jpg` | **Cover** für das Reel in der Mitte (1080 × 1920, beim Hochladen als Titelbild wählen) |
-| `instagram/allnova-ig-3-rechts-app.png/.jpg` | Post **rechts** (1080 × 1350): die App mit Funktionen + Store-Badges |
+| `instagram/allnova-ig-3-rechts-app.png/.jpg` | Post **rechts** (1080 × 1350): «Alles an einem Ort.» + Telefon (Entdecken) + Store-Badges |
 | `instagram/vorschau-profilraster.png` | Vorschau, wie die drei Kacheln im Profil erscheinen (3:4-Ausschnitt) |
 
 **Reihenfolge beim Fixieren:** Instagram zeigt die zuletzt fixierten Beiträge zuerst. Damit die Reihe «links – Reel – rechts» entsteht, die drei Beiträge in der Reihenfolge **rechts → Reel → links** fixieren (bei Bedarf in der Vorschau prüfen).
 
-**Gestaltung:** Links und rechts dunkel (Anthrazit/Gold), das Reel hell in der Mitte. Die Telefone ragen jeweils vom Rand zur Mitte hin und führen so zum Video. Alle wichtigen Inhalte liegen im 3:4-Ausschnitt, den das Profilraster zeigt.
+**Gestaltung:** bewusst reduziert und plakativ, je Kachel eine Aussage. Links und rechts dunkel (Anthrazit/Gold), das Reel hell in der Mitte. Die Telefone ragen jeweils vom Rand zur Mitte hin und führen so zum Video. Alle wichtigen Inhalte liegen im 3:4-Ausschnitt, den das Profilraster zeigt.
 
-**Inhalte:** Die Aussagen stammen von allnova.ch (Startseite «Die allnova App», «Dienstleistungen», «Über uns»). Dazu gehören 100+ Marken mit Cashback je nach Angebot, Guthaben, Policen und Dokumente, Fristen, die persönliche Beratung sowie Versicherungen, Vorsorge, Finanzplanung und Steuern. Die Store-Badges sind die von allnova.ch (`/app/appstore.png`, `/app/googleplay.png`). Sie liegen nur in 240 × 80 vor; für die Endkarte des Videos sind sie leicht vergrössert. Für maximale Schärfe die offiziellen Vektor-Badges von Apple/Google einsetzen.
+**Inhalte:** Die Claims stammen von allnova.ch («Finanzen. Einfach im Griff.», «Alles an einem Ort»). Die Store-Badges sind die von allnova.ch (`/app/appstore.png`, `/app/googleplay.png`). Sie liegen nur in 240 × 80 vor; für die Endkarte des Videos sind sie leicht vergrössert. Für maximale Schärfe die offiziellen Vektor-Badges von Apple/Google einsetzen.
 
 ## App-Teaser
 
