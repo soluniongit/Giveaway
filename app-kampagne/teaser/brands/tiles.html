@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<title>Markenkacheln</title>
+<style>
+  html, body { margin: 0; background: transparent; }
+  #grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; width: 1800px; }
+  .tile { position: relative; width: 542px; height: 379px; border-radius: 26px; overflow: hidden; display: grid; place-items: center; }
+  .tile .logo { display: block; }
+  .tile .logo svg { display: block; width: 100%; height: 100%; }
+  .tile > img.full { position: absolute; inset: 0; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<div id="grid"></div>
+<script>
+/*
+ * Einheitliche Markenkacheln (542 × 379, wie die App-Kacheln @3x).
+ * Logos: offizielle Dateien der Marken-Websites bzw. Simple Icons (siehe README).
+ * Grösse: gleiche optische Fläche für alle Logos (AREA), begrenzt auf MAXW × MAXH.
+ * tile: vorhandene Original-Kachel aus der App verwenden.
+ */
+const AREA = 30000, MAXW = 340, MAXH = 150;
+window.BRANDS = [
+  { n: 'rituals', bg: '#1A1919', logo: 'logos/rituals.svg', k: 0.9 },
+  { n: 'swarovski', bg: '#FFFFFF', logo: 'logos/swarovski.svg', k: 1.25 },
+  { n: 'powerfood', bg: '#000000', logo: 'logos/powerfood.png', k: 1.25 },
+  { n: 'decathlon', tile: '../img/tile-decathlon.png' },
+  { n: 'manor', bg: '#FFFFFF', logo: 'logos/manor.svg' },
+  { n: 'orellfuessli', bg: '#FFFFFF', logo: 'logos/orellfuessli.svg' },
+  { n: 'ikea', bg: '#FFFFFF', logo: 'logos/ikea.svg' },
+  { n: 'zalando', tile: '../img/tile-zalando.png' },
+  { n: 'justeat', bg: '#FF8000', logo: 'logos/justeat.svg', k: 0.75 },
+  { n: 'mediamarkt', bg: '#DF0000', logo: 'logos/mediamarkt.svg' },
+  { n: 'hm', bg: '#EFE9E3', logo: 'logos/hm.svg', k: 1.0 },
+  { n: 'airbnb', bg: '#FFFFFF', logo: 'logos/airbnb.svg' },
+  { n: 'sony', bg: '#FFFFFF', logo: 'logos/sony.svg', k: 0.75 },
+  { n: 'skysport', bg: 'linear-gradient(135deg, #0A1F5C 0%, #1747B5 100%)', logo: 'logos/skysport.svg' },
+  { n: 'nintendo', bg: '#E60012', logo: 'logos/nintendo.svg' },
+  { n: 'tchibo', bg: '#FFFFFF', logo: 'logos/tchibo.svg' },
+  { n: 'mobility', bg: '#FFFFFF', logo: 'logos/mobility.svg' },
+  { n: 'adidas', bg: '#000000', logo: 'logos/adidas.svg', k: 0.8 },
+];
+
+async function logoEl(src) {
+  if (src.endsWith('.png')) {
+    const img = new Image(); img.src = src; await img.decode();
+    return { el: img, ar: img.naturalWidth / img.naturalHeight };
+  }
+  const txt = await (await fetch(src)).text();
+  const wrap = document.createElement('div');
+  wrap.innerHTML = txt;
+  const svg = wrap.querySelector('svg');
+  svg.removeAttribute('width'); svg.removeAttribute('height'); svg.removeAttribute('class');
+  svg.style.cssText = svg.style.cssText.replace(/display:[^;]+;?/, '');
+  // Viewbox auf den tatsächlichen Inhalt zuschneiden
+  const probe = document.createElement('div'); probe.style.cssText = 'position:absolute;left:-9999px;width:1000px;height:1000px';
+  probe.appendChild(svg); document.body.appendChild(probe);
+  svg.setAttribute('width', 1000); svg.setAttribute('height', 1000);
+  const bb = svg.getBBox();
+  svg.setAttribute('viewBox', `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.removeAttribute('width'); svg.removeAttribute('height');
+  probe.remove();
+  return { el: svg, ar: bb.width / bb.height };
+}
+
+window.ready = (async () => {
+  const grid = document.getElementById('grid');
+  for (const b of window.BRANDS) {
+    const t = document.createElement('div'); t.className = 'tile'; t.id = `t-${b.n}`;
+    if (b.tile) { t.innerHTML = `<img class="full" src="${b.tile}">`; await t.firstChild.decode(); }
+    else {
+      t.style.background = b.bg;
+      const { el, ar } = await logoEl(b.logo);
+      let w = Math.sqrt(AREA * (b.k || 1) * (b.k || 1) * ar), h = w / ar;
+      if (w > MAXW) { w = MAXW; h = w / ar; }
+      if (h > MAXH) { h = MAXH; w = h * ar; }
+      const box = document.createElement('div'); box.className = 'logo'; box.style.width = `${w}px`; box.style.height = `${h}px`;
+      if (el.tagName === 'IMG') { el.style.width = '100%'; el.style.height = '100%'; }
+      box.appendChild(el); t.appendChild(box);
+    }
+    grid.appendChild(t);
+  }
+  document.body.dataset.ready = '1';
+})();
+</script>
+</body>
+</html>

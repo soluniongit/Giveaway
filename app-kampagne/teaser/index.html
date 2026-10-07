@@ -56,8 +56,13 @@
     box-shadow: 0 90px 120px -60px rgba(48, 38, 14, .42), 0 20px 40px -18px rgba(48, 38, 14, .2), inset 0 0 0 2px rgba(255, 255, 255, .6); }
   .ui > img { position: absolute; left: 0; top: 0; display: block; }
   #detail { width: 574px; height: 664px; border-radius: 40px; background: #f8fafc; }
-  #detail .crop { position: absolute; inset: 0; background: url('img/entdecken.png') -576px -1556px no-repeat; }
-  #shine { position: absolute; left: 16px; top: 571px; width: 303px; height: 76px; border-radius: 24px; overflow: hidden; }
+  /* Entdecken-Karten (App-Pixel @3x) */
+  .c-img { position: absolute; left: 0; top: 0; width: 542px; height: 379px; border-radius: 26px; display: block; }
+  .c-t { font-size: 40px; font-weight: 600; color: #2d3748; }
+  .c-d { font-size: 36px; font-weight: 500; color: #6b7280; }
+  .c-b { position: absolute; left: 0; top: 555px; height: 76px; padding: 0 25px; border-radius: 22px; background: #d8c28f; white-space: nowrap; }
+  .c-b .ov { position: relative; display: block; margin-top: 19.55px; font-size: 37px; font-weight: 500; color: #000; }
+  #shine { position: absolute; left: 16px; top: 571px; width: 296px; height: 76px; border-radius: 24px; overflow: hidden; }
   #shine i { position: absolute; top: -20px; left: -160px; width: 110px; height: 120px; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, 0) 100%); transform: skewX(-18deg); }
   .ring { position: absolute; border-radius: 50%; border: 3px solid var(--gold); pointer-events: none; }
 
@@ -114,11 +119,11 @@
       <img src="img/entdecken-base.png" alt="">
       <div id="phA-cards"></div>
     </div><div class="island"></div><div class="glare"></div></div>
-    <img class="abs" id="fl-t1" src="img/tile-nikin.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
-    <img class="abs" id="fl-t2" src="img/tile-mediamarkt.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
+    <img class="abs" id="fl-t1" src="img/brand-rituals.png" alt="" style="left:0;top:0;width:542px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
+    <img class="abs" id="fl-t2" src="img/brand-mediamarkt.png" alt="" style="left:0;top:0;width:542px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
     <img class="abs" id="fl-b1" src="img/badge-sony.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <img class="abs" id="fl-b2" src="img/badge-decathlon.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
-    <div class="ui" id="detail"><div class="crop"></div><div id="shine"><i></i></div></div>
+    <div class="ui" id="detail"><div id="detail-card"></div><div id="shine"><i></i></div></div>
     <div class="ring" id="ring1"></div><div class="ring" id="ring2"></div>
 
     <!-- S4: Wallet (UI-Ausschnitte; Diagramme bewusst nicht verwendet) -->
@@ -153,7 +158,7 @@
     <div class="abs mask mw" id="mw3" style="top:452px"><span class="gold-text" data-text="m3"></span></div>
     <div class="phone" id="phL"><div class="scr"><img src="img/dokumente-anon.png" alt=""><div id="phL-ov"></div></div><div class="island"></div><div class="glare"></div></div>
     <div class="phone" id="phR"><div class="scr"><img src="img/login.png" alt=""></div><div class="island"></div><div class="glare"></div></div>
-    <div class="phone" id="phC"><div class="scr"><img src="img/entdecken.png" alt=""></div><div class="island"></div><div class="glare"></div></div>
+    <div class="phone" id="phC"><div class="scr"><img src="img/entdecken-base.png" alt=""><div id="phC-cards"></div></div><div class="island"></div><div class="glare"></div></div>
 
     <!-- S8: Endcard -->
     <img class="abs" id="e-logo" src="../assets/brand/allnova-logo-hell.png" alt="allnova">
@@ -206,10 +211,26 @@ const C = {
 applyTexts(C);
 
 // ---- Markup, das mehrfach vorkommt ----
-const TILE_NAMES = ['decathlon', 'sony', 'sky', 'hm', 'xbox', 'zalando'];
+// Entdecken-Raster: Kacheln + Texte wie in der App (Masse per Pixelvergleich kalibriert:
+// Titel Poppins 600 40 px, Text 500 36 px, Badge 500 37 px auf #D8C28F). Texte aus den App-Screenshots.
+const CARDS = [
+  { img: 'card-swarovski', t: 'Swarovski', d: 'Seit 1985 hat der Gründer Da...', c: '8% Cashback' },
+  { img: 'brand-powerfood', t: 'PowerFood', d: 'Als Geschenkidee ein Power...', c: '7% Cashback' },
+  { img: 'brand-manor', t: 'Manor', d: 'Erfüllen Sie viele Wünsche m...', c: '5% Cashback' },
+  { img: 'brand-orellfuessli', t: 'Orell Füssli', d: 'Bei Orell Füssli finden Sie me...', c: '5% Cashback' },
+  { img: 'card-ikea', t: 'IKEA', d: 'Für all Ihre Ideen! Mit dieser ...', c: '4% Cashback' },
+  { img: 'card-zalando', t: 'Zalando', d: 'Freu dich auf Zalando Fashi...', c: '3% Cashback' },
+];
 const TILE_POS = [[36, 142], [592, 142], [36, 857], [592, 857], [36, 1572], [592, 1572]];
-document.getElementById('phA-cards').innerHTML = TILE_NAMES.map((n, i) =>
-  `<img class="lay ent-card" src="img/ent-card-${n}.png" alt="" style="left:${TILE_POS[i][0] - 6}px;top:${TILE_POS[i][1] - 6}px;transform-origin:50% 40%">`).join('');
+const card = (k, x, y, cls = '') => `<div class="lay ent-card ${cls}" style="left:${x}px;top:${y}px;width:542px;height:640px;transform-origin:50% 40%">
+  <img class="c-img" src="img/${CARDS[k].img}.png" alt="">
+  <div class="ov c-t" style="left:1px;top:${456 - 0.85 * 40}px">${CARDS[k].t}</div>
+  <div class="ov c-d" style="left:-1px;top:${525 - 0.85 * 36}px">${CARDS[k].d}</div>
+  <div class="c-b"><span class="ov">${CARDS[k].c}</span></div></div>`;
+const grid = (cls) => CARDS.map((_, i) => card(i, TILE_POS[i][0], TILE_POS[i][1], cls)).join('');
+document.getElementById('phA-cards').innerHTML = grid('a');
+document.getElementById('phC-cards').innerHTML = grid('m');
+document.getElementById('detail-card').innerHTML = card(5, 16, 16);
 
 // Dokumentkarten: Bild + Demowerte (Kartenkoordinaten; Grundlinien 194 / 261 / 261)
 const docOv = (k) => `
@@ -222,16 +243,12 @@ document.getElementById('phB-cards').innerHTML = [0, 1, 2].map((k) =>
 document.getElementById('phL-ov').innerHTML = [0, 1, 2].map((k) =>
   `<div class="lay" style="left:30px;top:${604 + 315 * k}px;width:1110px;height:325px">${docOv(k)}</div>`).join('');
 
-// Hook: drei Reihen Gutscheinkacheln
-// Gutscheinkacheln aus der App, je Reihe versetzt, damit keine Marke gehäuft nebeneinander steht
-const STREAM = [
-  ['zalando', 'nikin', 'sony', 'ikea', 'hm', 'mediamarkt', 'xbox', 'decathlon', 'sky'],
-  ['ikea', 'xbox', 'sky', 'zalando', 'mediamarkt', 'nikin', 'decathlon', 'hm', 'sony'],
-  ['mediamarkt', 'decathlon', 'nikin', 'sony', 'sky', 'zalando', 'hm', 'ikea', 'xbox'],
-  ['sky', 'hm', 'zalando', 'nikin', 'ikea', 'xbox', 'sony', 'mediamarkt', 'decathlon'],
-];
+// Hook: Markenkacheln (einheitliches Format, teaser/brands/), je Reihe versetzt
+const BR = ['rituals', 'swarovski', 'powerfood', 'decathlon', 'manor', 'orellfuessli', 'ikea', 'zalando', 'justeat',
+  'mediamarkt', 'hm', 'airbnb', 'sony', 'skysport', 'nintendo', 'tchibo', 'mobility', 'adidas'];
+const STREAM = [0, 1, 2, 3].map((r) => Array.from({ length: 10 }, (_, i) => BR[(i * 7 + r * 5) % BR.length]));
 document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
-  `<div class="srow" id="sr${r}" style="top:${r * 214}px">${Array.from({ length: 10 }, (_, i) => `<img src="img/tile-${STREAM[r][i % STREAM[r].length]}.png" alt="">`).join('')}</div>`).join('');
+  `<div class="srow" id="sr${r}" style="top:${r * 214}px">${STREAM[r].map((n) => `<img src="img/brand-${n}.png" alt="">`).join('')}</div>`).join('');
 
 defineComposition({
   duration: 30,
@@ -258,7 +275,7 @@ defineComposition({
     gsap.set(inner('.mask'), { yPercent: 175 });
     gsap.set('.phone, .ui', { transformOrigin: '0 0' });
     gsap.set('#phA', { ...P(0.52, 540, 2000) });
-    gsap.set('.ent-card', { scale: 0.86, opacity: 0, y: 40 });
+    gsap.set('.ent-card.a', { scale: 0.86, opacity: 0, y: 40 });
     gsap.set('#fl-t1', { x: -560, y: 1060, rotation: -14, scale: 0.44 });
     gsap.set('#fl-t2', { x: 1100, y: 1330, rotation: 12, scale: 0.44 });
     gsap.set('#fl-b1', { x: -360, y: 1590, rotation: -6, scale: 0.62 });
@@ -320,7 +337,7 @@ defineComposition({
     reveal('#s2-l2', t2 + 0.3);
     gold('#s2-l2', t2 + 0.5, 3.0);
     tl.fromTo('#phA', { ...P(0.52, 540, 2000), rotation: 4 }, { ...P(0.52, 540, 640), rotation: 0, duration: 1.15, ease: 'expo.out' }, t2 - 0.08);
-    TILE_NAMES.forEach((n, i) => tl.to(`.ent-card:nth-child(${i + 1})`, { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.5)' }, t2 + 0.42 + i * (B / 2)));
+    CARDS.forEach((n, i) => tl.to(`.ent-card.a:nth-child(${i + 1})`, { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.5)' }, t2 + 0.42 + i * (B / 2)));
     // schwebende Kacheln rund ums Telefon (Tiefe)
     tl.to('#fl-t1', { x: -160, y: 980, rotation: -9, duration: 1.1 }, t2 + 0.7);
     tl.to('#fl-t2', { x: 600, y: 1290, rotation: 8, duration: 1.1 }, t2 + 0.85);
@@ -348,7 +365,7 @@ defineComposition({
       const s = 0.52; const ph = { x: 540 - 645 * s, y: 600 };
       const sx = ph.x + (60 + 576) * s; const sy = ph.y + (60 + 1556) * s;
       tl.set('#detail', { x: sx, y: sy, scale: s, opacity: 1 }, t3);
-      tl.set('.ent-card:nth-child(6)', { opacity: 0 }, t3);
+      tl.set('.ent-card.a:nth-child(6)', { opacity: 0 }, t3);
       tl.to('#detail', { x: 540 - 574 * 1.26 / 2, y: 640, scale: 1.26, duration: 1.0, ease: 'expo.inOut' }, t3);
       tl.to('#phA', { scale: 0.47, x: 540 - 645 * 0.47, y: 760, opacity: 0, duration: 0.9, ease: 'power3.inOut' }, t3 + 0.05);
     }
