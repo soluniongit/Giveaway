@@ -17,7 +17,7 @@ import wave
 import numpy as np
 
 SR = 48000
-SFX = 0.55  # Effekte gegenüber der Musik (vorher 1.0) — dezent, nicht lauter als das Musikbett
+SFX = 0.38  # Effekte gegenüber der Musik (vorher 1.0, dann 0.55) — dezent, nicht lauter als das Musikbett
 DUR = 30.0
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
