@@ -38,13 +38,13 @@ out/         fertige Exporte
 
 ## Markenlogos
 
-- **Hook:** 18 einheitliche Markenkacheln (`teaser/img/brand-*.png`, erzeugt mit `node teaser/brands/build-tiles.mjs` aus `teaser/brands/tiles.html`). Alle haben dasselbe Format (542 × 379, wie die App-Kacheln) und dieselbe optische Logofläche.
+- **Hook:** 20 einheitliche Markenkacheln (`teaser/img/brand-*.png`, erzeugt mit `node teaser/brands/build-tiles.mjs` aus `teaser/brands/tiles.html`). Alle haben dasselbe Format (542 × 379, wie die App-Kacheln) und dieselbe optische Logofläche.
 - **Herkunft der Logos (`teaser/brands/logos/`):**
   - von den Websites der Marken: Rituals, Manor, Orell Füssli, IKEA, MediaMarkt, Airbnb, Mobility, Tchibo und PowerFood
   - Simple Icons (offizielle Markenformen, einfarbig): Adidas, Sony, Sky, Nintendo und Just Eat (nur Haus-Symbol)
   - worldvectorlogo: H&M und Swarovski
   - Decathlon und Zalando: Original-Kacheln aus der App
-- **Fehlen noch:** Globus und Ticketcorner. Die aktuellen Logos waren nicht abrufbar (Bot-Schutz bzw. nur veraltete Versionen).
+- **Globus und Ticketcorner:** Logos von allnova geliefert (freigestellt).
 - **App-Szene:** Swarovski, PowerFood, Manor, Orell Füssli, IKEA und Zalando, Texte und Cashback aus den App-Screenshots. PowerFood, Manor und Orell Füssli haben die neuen Logo-Kacheln, weil auf den App-Kacheln das Logo nicht vollständig zu sehen war.
 
 ## Bauen

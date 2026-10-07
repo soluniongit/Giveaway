@@ -214,7 +214,7 @@ applyTexts(C);
 // Entdecken-Raster: Kacheln + Texte wie in der App (Masse per Pixelvergleich kalibriert:
 // Titel Poppins 600 40 px, Text 500 36 px, Badge 500 37 px auf #D8C28F). Texte aus den App-Screenshots.
 const CARDS = [
-  { img: 'card-swarovski', t: 'Swarovski', d: 'Seit 1985 hat der Gründer Da...', c: '8% Cashback' },
+  { img: 'card-swarovski', t: 'Swarovski', d: 'Seit 1895 hat der Gründer Da...', c: '8% Cashback' },
   { img: 'brand-powerfood', t: 'PowerFood', d: 'Als Geschenkidee ein Power...', c: '7% Cashback' },
   { img: 'brand-manor', t: 'Manor', d: 'Erfüllen Sie viele Wünsche m...', c: '5% Cashback' },
   { img: 'brand-orellfuessli', t: 'Orell Füssli', d: 'Bei Orell Füssli finden Sie me...', c: '5% Cashback' },
@@ -245,7 +245,7 @@ document.getElementById('phL-ov').innerHTML = [0, 1, 2].map((k) =>
 
 // Hook: Markenkacheln (einheitliches Format, teaser/brands/), je Reihe versetzt
 const BR = ['rituals', 'swarovski', 'powerfood', 'decathlon', 'manor', 'orellfuessli', 'ikea', 'zalando', 'justeat',
-  'mediamarkt', 'hm', 'airbnb', 'sony', 'skysport', 'nintendo', 'tchibo', 'mobility', 'adidas'];
+  'mediamarkt', 'hm', 'airbnb', 'ticketcorner', 'sony', 'skysport', 'nintendo', 'tchibo', 'mobility', 'adidas', 'globus'];
 const STREAM = [0, 1, 2, 3].map((r) => Array.from({ length: 10 }, (_, i) => BR[(i * 7 + r * 5) % BR.length]));
 document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
   `<div class="srow" id="sr${r}" style="top:${r * 214}px">${STREAM[r].map((n) => `<img src="img/brand-${n}.png" alt="">`).join('')}</div>`).join('');
