@@ -1,0 +1,34 @@
+/* Instagram-Visuals: gemeinsame Gestaltung (allnova CI: Anthrazit, Elfenbein, Gold) */
+@font-face { font-family: 'Poppins'; font-weight: 400; src: url('../assets/fonts/poppins-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 500; src: url('../assets/fonts/poppins-latin-500-normal.woff2') format('woff2'); }
+html, body { margin: 0; background: #0d0d0e; }
+#stage { position: relative; overflow: hidden; }
+#stage.post { width: 1080px; height: 1350px; }
+#stage.cover { width: 1080px; height: 1920px; }
+.dark { background: radial-gradient(90% 60% at 30% 25%, #222a23 0%, #151a16 45%, #0e110f 100%); color: var(--ivory); }
+.light { background: radial-gradient(120% 70% at 50% 30%, #fdfcf8 0%, var(--ivory) 55%, #eee9dd 100%); color: var(--ink); }
+.glow { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(201, 182, 142, .26), rgba(201, 182, 142, 0)); }
+.gold-text { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.eyebrow { position: absolute; display: flex; align-items: center; gap: 16px; font-size: 22px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-hi); white-space: nowrap; }
+.eyebrow i { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+.light .eyebrow { color: var(--gold-lo); }
+.h1 { position: absolute; font-size: 124px; font-weight: 800; letter-spacing: -.04em; line-height: 1.02; white-space: nowrap; }
+.h2 { position: absolute; font-family: var(--serif); font-style: italic; font-size: 140px; line-height: 1; white-space: nowrap; padding-right: 30px; }
+.body { position: absolute; font-size: 33px; line-height: 1.42; font-weight: 500; letter-spacing: -.005em; color: rgba(248, 246, 240, .78); }
+.light .body { color: var(--ink-3); }
+
+/* Telefon (App-Pixel @3x, per scale verkleinert) */
+.phone { position: absolute; left: 0; top: 0; width: 1290px; height: 2652px; border-radius: 206px; transform-origin: 0 0;
+  background: linear-gradient(150deg, #3a3c3b 0%, #141515 40%, #262827 100%);
+  box-shadow: inset 0 0 0 5px #5a5c5a, inset 0 0 0 16px #0a0b0b, 0 160px 220px -80px rgba(0, 0, 0, .7); }
+.light .phone { box-shadow: inset 0 0 0 5px #4a4c4a, inset 0 0 0 16px #0a0b0b, 0 160px 200px -90px rgba(48, 38, 14, .55), 0 40px 80px -30px rgba(48, 38, 14, .3); }
+.scr { position: absolute; left: 60px; top: 60px; width: 1170px; height: 2532px; border-radius: 148px; overflow: hidden; background: #f8fafc; }
+.scr > img, .lay { position: absolute; left: 0; top: 0; display: block; }
+.island { position: absolute; left: 460px; top: 93px; width: 370px; height: 108px; border-radius: 54px; background: #000; }
+.glare { position: absolute; inset: 60px; border-radius: 148px; background: linear-gradient(115deg, rgba(255, 255, 255, .14) 0%, rgba(255, 255, 255, 0) 32%); }
+.ov { position: absolute; font-family: 'Poppins', sans-serif; line-height: 1; white-space: nowrap; }
+.ov-nr { font-size: 34.5px; font-weight: 400; color: #1f2937; }
+.ov-date { font-size: 34.5px; font-weight: 400; color: #525252; }
+.ov-prem { font-size: 36px; font-weight: 500; color: #525252; text-align: right; }
+.demo { position: absolute; font-size: 18px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(248, 246, 240, .45); white-space: nowrap; }
+.light .demo { color: var(--muted); }

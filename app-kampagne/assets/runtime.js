@@ -19,6 +19,7 @@
     const faces = [
       '400 40px "Inter Tight"', '500 40px "Inter Tight"', '600 40px "Inter Tight"', '700 40px "Inter Tight"', '800 40px "Inter Tight"',
       '400 40px "Instrument Serif"', 'italic 400 40px "Instrument Serif"',
+      ...(window.EXTRA_FONTS || []), // z. B. Poppins für nachgebaute App-Oberflächen
     ];
     return Promise.all(faces.map((f) => document.fonts.load(f, 'AaÄäÖöÜü0123456789'))).then(() => document.fonts.ready);
   }

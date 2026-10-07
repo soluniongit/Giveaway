@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Sounddesign für die beiden Gewinnspiel-Videos — vollständig synthetisch (keine Lizenzfragen).
+Sounddesign für den allnova App-Teaser — vollständig synthetisch (keine Lizenzfragen).
 
-  python3 sound/sounddesign.py            → out/sound/<video>.wav (48 kHz, Stereo, 30 s)
+  python3 sound/sounddesign.py            → out/sound/teaser.wav (48 kHz, Stereo, 30 s)
 
 Aufbau pro Video:
   * Musikbett: warmer Pad-Akkord, Sub-Bass, Pluck-Arpeggio (Kalimba-artig), dezente Hi-Hats
@@ -244,143 +244,83 @@ def write(path, mix):
         w.writeframes(data.tobytes())
 
 
-# ------------------------------------------------------------------ Steuergewinnspiel (96 BPM, D-Dur)
-def steuer():
+# ------------------------------------------------------------------ App-Teaser (116 BPM, F-Dur, Puls)
+def app():
+    B = 60 / 116
     chords = [
-        (0.0, 5.0, ['D3', 'F#3', 'A3', 'C#4', 'E4']),
-        (5.0, 10.0, ['B2', 'D3', 'F#3', 'A3', 'C#4']),
-        (10.0, 15.0, ['G2', 'B2', 'D3', 'F#3', 'A3']),
-        (15.0, 20.0, ['E3', 'G3', 'B3', 'D4', 'F#4']),
-        (20.0, 23.45, ['A2', 'C#3', 'E3', 'G3', 'B3']),
-        (23.45, 30.0, ['D3', 'F#3', 'A3', 'C#4', 'E4']),
+        (0.0, 2.6, ['F2', 'C3', 'F3', 'A3', 'E4']),
+        (2.6, 6.72, ['D2', 'A2', 'D3', 'F3', 'C4']),
+        (6.72, 10.34, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
+        (10.34, 14.48, ['F2', 'C3', 'F3', 'A3', 'E4']),
+        (14.48, 18.62, ['G2', 'D3', 'G3', 'A#3', 'F4']),   # Dokumente: offener, Puls pausiert
+        (18.62, 21.72, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
+        (21.72, 25.34, ['C2', 'G2', 'C3', 'E3', 'D4']),
+        (25.34, 30.0, ['F2', 'C3', 'F3', 'A3', 'E4']),
     ]
-    mus = music(chords, 96, start_arp=0.25, stop_arp=26.6, hats=(4.0, 22.4))
+    mus = music(chords, 116, start_arp=2.6, stop_arp=25.3, hats=(2.6, 25.3), kicks=(2.6, 14.48), end_fade=(26.4, 30.0))
+    # Puls nach der Dokumentenszene wieder aufnehmen
+    t = 18.62
+    while t < 25.3:
+        place(mus, kick(), t, 0.22)
+        i0, i1 = int(t * SR), int((t + 0.22) * SR)
+        mus[:, i0:i1] *= np.linspace(0.6, 1.0, i1 - i0)
+        t += B
     s = np.zeros((2, N))
-    # 0–4 s: Hook
-    place(s, impact(), 0.25, 0.55)
-    place(s, shimmer([note('A5'), note('D6'), note('F#6'), note('A6')]), 0.3, 0.25)
-    for k, at in enumerate((0.75, 0.84, 0.93)):
-        place(s, swish(), at, 0.30)
-    for at in (0.2, 0.95, 1.55, 2.15):
-        place(s, pan(tick(), 0.1), at, 0.18)
-    # 4–10 s: Paket
-    place(s, whoosh(1.0, 300, 3500, peak=0.55), 3.55, 0.45)
-    place(s, swish(0.45), 4.0, 0.25)
-    place(s, pan(tick(), -0.1), 4.55, 0.18)
-    place(s, whoosh(1.3, 800, 7000, peak=0.85, width=0.4), 5.15, 0.18)
-    place(s, pan(pop(), 0), 6.05, 0.40)
-    place(s, chime(note('D6')), 6.1, 0.22)
-    place(s, pan(tick(), 0.1), 6.5, 0.18)
-    # 10–16 s: Leistung
-    place(s, whoosh(1.0, 300, 3500, peak=0.5), 9.45, 0.45)
-    place(s, whoosh(1.0, 1200, 300, peak=0.4), 9.85, 0.20)
-    place(s, pan(tick(), -0.1), 10.9, 0.16)
-    place(s, pan(pop(), -0.15), 11.45, 0.35)
-    place(s, chime(note('F#6')), 11.5, 0.22)
-    place(s, pan(pop(480, 980, 0.1), 0), 11.75, 0.18)
-    place(s, pan(tick(), 0.1), 12.0, 0.16)
-    place(s, pan(pop(), 0.15), 12.55, 0.35)
-    place(s, chime(note('A6')), 12.6, 0.22)
-    place(s, whoosh(0.5, 1500, 6000, peak=0.4), 12.75, 0.18)
-    place(s, whoosh(0.9, 500, 2500, peak=0.5), 13.2, 0.22)
-    place(s, whoosh(0.45, 2000, 7000, peak=0.5), 14.3, 0.16)
-    # 16–23 s: Teilnahme
-    place(s, whoosh(1.0, 300, 3500, peak=0.5), 15.45, 0.45)
-    place(s, pan(tick(), 0), 16.05, 0.16)
-    for k, at in enumerate((16.25, 16.37, 16.49)):
-        place(s, pan(pop(260, 520, 0.12), -0.3 + 0.3 * k), at, 0.22)
-    for at, n in ((17.0, 'D6'), (18.45, 'F#6'), (19.9, 'A6')):
-        place(s, pan(pop(), 0), at, 0.30)
-        place(s, chime(note(n)), at + 0.02, 0.24)
-    for at in (17.55, 19.0):
-        place(s, whoosh(1.0, 400, 2400, peak=0.8, width=0.4), at, 0.14)
-    place(s, pan(pop(500, 1100, 0.1), 0.2), 20.3, 0.25)
-    place(s, swish(0.4), 20.85, 0.22)
-    place(s, pan(tick(), 0), 21.05, 0.16)
-    # 23–30 s: Endkarte
-    place(s, whoosh(1.0, 300, 3500, peak=0.5), 22.75, 0.40)
-    place(s, impact(), 23.45, 0.65)
-    place(s, shimmer([note('D5'), note('A5'), note('D6'), note('F#6'), note('A6'), note('D7')], 3.4), 23.5, 0.30)
-    for at in (23.7, 23.85, 24.0):
-        place(s, pan(tick(2200), 0), at, 0.12)
-    place(s, whoosh(0.8, 600, 4000, peak=0.6), 24.4, 0.30)
-    place(s, pan(pop(380, 900, 0.12), 0.3), 24.95, 0.30)
-    place(s, pan(tick(2200), 0), 25.2, 0.12)
-    write('out/sound/steuer.wav', master(mus, s, 0.62, 1.0))
-
-
-# ------------------------------------------------------------------ Fahrstart (104 BPM, A-Dur, Puls)
-def fahrstart():
-    chords = [
-        (0.0, 3.85, ['A2', 'E3', 'A3', 'C#4', 'E4']),
-        (3.85, 9.75, ['F#2', 'C#3', 'F#3', 'A3', 'E4']),
-        (9.75, 15.75, ['D3', 'F#3', 'A3', 'C#4', 'E4']),
-        (15.75, 22.85, ['E3', 'G#3', 'B3', 'D4', 'F#4']),
-        (22.85, 30.0, ['A2', 'E3', 'A3', 'C#4', 'E4']),
-    ]
-    mus = music(chords, 104, start_arp=0.35, stop_arp=26.4, hats=(3.85, 22.6), kicks=(3.85, 22.6))
-    s = np.zeros((2, N))
-    # 0–4 s: Weglinie zeichnet sich, L-Schild
-    place(s, whoosh(2.2, 200, 1800, peak=0.7, width=0.45), 0.05, 0.40)
-    place(s, impact(), 0.35, 0.45)
-    place(s, pan(pop(260, 620, 0.16), -0.3), 0.4, 0.40)
-    for at in (0.55, 0.9, 1.25, 1.6, 1.75):
-        place(s, pan(tick(), 0.1), at, 0.16)
-    # Kamerafahrten (Szenenwechsel)
-    for at in (3.5, 9.4, 15.4, 22.5):
-        place(s, whoosh(1.6, 180, 2800, peak=0.55, width=0.6), at, 0.50)
-    # 4–10 s: Gewinne
-    place(s, swish(0.45), 4.45, 0.30)
-    place(s, swish(0.45), 4.6, 0.28)
-    for at in (4.5, 4.65):
-        place(s, pan(tick(), 0), at, 0.14)
-    place(s, pan(pop(), 0), 5.3, 0.35)
-    place(s, pan(pop(300, 700, 0.15), -0.2), 6.25, 0.35)
-    place(s, chime(note('E6')), 6.3, 0.18)
-    for at in (6.65, 7.2):
-        place(s, pan(tick(), 0.1), at, 0.15)
-    # 10–16 s: Anbieter
-    for at in (10.3, 10.45):
-        place(s, pan(tick(), 0), at, 0.15)
-    for k, at in enumerate((10.55, 10.67, 10.79)):
-        place(s, swish(0.35), at, 0.20)
-    for at, n in ((11.3, 'A5'), (11.8, 'C#6'), (12.3, 'E6')):
-        place(s, chime(note(n), 1.6), at, 0.22)
-        place(s, pan(pop(400, 900, 0.1), -0.4), at, 0.18)
-    place(s, whoosh(1.0, 800, 6000, peak=0.85, width=0.4), 12.75, 0.18)
-    place(s, pan(pop(), 0.3), 13.5, 0.35)
-    place(s, chime(note('A6')), 13.52, 0.22)
-    for at in (13.6, 13.8):
-        place(s, pan(tick(), 0), at, 0.14)
-    # 16–23 s: Formular → Umschlag
-    place(s, pan(pop(220, 480, 0.16), 0), 16.35, 0.30)
-    place(s, pan(tick(), -0.1), 16.6, 0.14)
-    for base in (16.95, 17.33, 17.71):
-        for j in range(5):
-            place(s, pan(tick(3400 + 400 * (j % 2), 0.03), 0.2), base + j * 0.07, 0.07)
-    place(s, pan(pop(600, 400, 0.08), 0), 18.2, 0.30)
-    place(s, whoosh(0.9, 3000, 700, peak=0.4, width=0.5), 18.55, 0.30)
-    place(s, whoosh(0.6, 1500, 5000, peak=0.6), 19.25, 0.16)
-    place(s, pan(tick(), 0), 19.45, 0.14)
-    place(s, pan(pop(), 0.2), 19.75, 0.38)
-    place(s, chime(note('E6')), 19.77, 0.24)
-    place(s, chime(note('A6')), 19.9, 0.18)
-    for at in (20.5, 20.65):
-        place(s, pan(pop(330, 700, 0.12), -0.2), at, 0.22)
-    # 23–30 s: Endkarte
-    place(s, impact(), 23.55, 0.65)
-    place(s, shimmer([note('A4'), note('E5'), note('A5'), note('C#6'), note('E6'), note('A6')], 3.4), 23.6, 0.30)
-    for at in (23.75, 23.9):
-        place(s, pan(tick(2200), 0), at, 0.12)
-    place(s, whoosh(0.9, 500, 4000, peak=0.7), 24.35, 0.30)
-    place(s, pan(pop(380, 900, 0.12), 0.3), 24.55, 0.30)
-    for at in (24.85, 25.0, 25.2):
-        place(s, pan(tick(2200), 0), at, 0.11)
-    write('out/sound/fahrstart.wav', master(mus, s, 0.62, 1.0))
+    # 0–2.6 s: Hook — feiner Klangimpuls, Wortwechsel
+    place(s, impact(), 0.05, 0.38)
+    place(s, shimmer([note('C5'), note('F5'), note('A5')], 2.0), 0.1, 0.08)
+    place(s, whoosh(2.6, 400, 1800, peak=0.5, width=0.7), 0.0, 0.12)
+    for at in (0.12, 0.32, 0.32 + 1.5 * B, 0.32 + 3 * B):
+        place(s, pan(tick(1500), 0.1), at, 0.07)
+    place(s, whoosh(0.7, 300, 4200, peak=0.7), 2.3, 0.42)
+    # 2.6–6.7 s: Marken
+    place(s, whoosh(0.9, 900, 250, peak=0.35), 2.55, 0.25)
+    for i in range(6):
+        place(s, pan(pop(300, 640, 0.1), -0.3 + 0.12 * i), 3.02 + i * B / 2, 0.20)
+    for k, at in enumerate((3.3, 3.45, 3.7, 3.8)):
+        place(s, swish(0.32), at, 0.16)
+    place(s, pan(tick(1500), 0), 3.5, 0.06)
+    # 6.7–10.3 s: Cashback — heller, warmer Ton (keine Kasse)
+    for at, p_ in ((6.47, -0.5), (6.52, 0.5)):
+        place(s, swish(0.35), at, 0.16)
+    place(s, whoosh(1.0, 400, 3000, peak=0.6), 6.7, 0.36)
+    place(s, chime(note('F5'), 2.6), 7.87, 0.15)
+    place(s, chime(note('C6'), 2.2), 7.93, 0.06)
+    place(s, shimmer([note('A5'), note('C6'), note('F6')], 1.4, 0.03), 7.84, 0.05)
+    # 10.3–14.5 s: Wallet — weich, Puls ruhig
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 10.0, 0.20)
+    place(s, swish(0.4), 10.39, 0.22)
+    for at in (10.34 + 2 * B, 10.34 + 3 * B, 10.34 + 4 * B):
+        place(s, pan(pop(240, 420, 0.09), 0.2), at + 0.05, 0.26)
+    place(s, pan(tick(1400), -0.1), 11.14, 0.05)
+    # 14.5–18.6 s: Dokumente — Rhythmus ausgedünnt, trockene Klicks
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 14.18, 0.20)
+    place(s, whoosh(1.0, 300, 2400, peak=0.6), 14.45, 0.30)
+    for k in range(3):
+        at = 14.48 + 0.62 + k * B
+        place(s, swish(0.3), at - 0.05, 0.14)
+        place(s, pan(pop(220, 380, 0.08), 0.1), at + 0.18, 0.28)
+    # 18.6–21.7 s: Kontakt — dezenter Ton zum Symbol
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 18.27, 0.20)
+    place(s, swish(0.4), 18.67, 0.22)
+    place(s, pan(tick(1500), 0.3), 18.62 + 2 * B, 0.07)
+    place(s, chime(note('A4'), 1.8), 18.62 + 2 * B + 0.12, 0.10)
+    # 21.7–25.3 s: Verdichtung — drei Akzente
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42, 0.20)
+    for k, n in enumerate(('F4', 'A4', 'C5')):
+        at = 21.72 + 0.05 + k * B
+        place(s, pan(pop(280, 600, 0.1), -0.3 + 0.3 * k), at + 0.1, 0.22)
+        place(s, chime(note(n), 1.4), at + 0.12, 0.08)
+    # 25.3–30 s: Endkarte — warmer Zweiklang, Ausklang
+    place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
+    place(s, impact(), 25.44, 0.40)
+    place(s, chime(note('F4'), 3.4), 25.46, 0.16)
+    place(s, chime(note('C5'), 3.2), 25.72, 0.12)
+    place(s, pan(pop(380, 900, 0.12), 0), 26.12, 0.24)
+    write('out/sound/teaser.wav', master(mus, s, 0.6, 1.0))
 
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    steuer()
-    fahrstart()
-    print('out/sound/steuer.wav, out/sound/fahrstart.wav')
+    app()
+    print('out/sound/teaser.wav')

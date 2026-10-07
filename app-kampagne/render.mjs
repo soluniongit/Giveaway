@@ -2,9 +2,8 @@
 /*
  * Renders the HTML/GSAP compositions to MP4 (1080×1920, 30 fps, H.264).
  *
- *   node render.mjs                     → both videos
- *   node render.mjs steuer              → only one
- *   node render.mjs steuer --stills=1,5.5,29   → PNG stills to out/stills (for review)
+ *   node render.mjs                     → App-Teaser (teaser/index.html)
+ *   node render.mjs teaser --stills=1,5.5,29   → PNG stills to out/stills (for review)
  *   node render.mjs --mux                → only re-attach out/sound/<name>.wav to the silent export
  *
  * Output: <name>.mp4 (with sound design) and <name>-ohne-ton.mp4 (silent).
@@ -23,8 +22,7 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(ROOT, 'out');
 
 const COMPOSITIONS = {
-  steuer: { page: 'steuer/index.html', file: 'allnova-steuergewinnspiel-30s' },
-  fahrstart: { page: 'fahrstart/index.html', file: 'allnova-fahrstart-gewinnspiel-30s' },
+  teaser: { page: 'teaser/index.html', file: 'allnova-app-teaser-30s' },
 };
 
 const args = process.argv.slice(2);
