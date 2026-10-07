@@ -62,13 +62,6 @@ eb = ent.copy()
 erase(eb, (0, 128, 1170, 2216), 120)
 save(eb, 'entdecken-base.png')
 
-# Migros / Coop (Entdecken, JPEG-Export) auf @3x skaliert
-dis = load('IMG_5411(1).jpeg')
-for n, box in [('migros', (22, 1073, 352, 1303)), ('coop', (358, 1073, 688, 1303))]:
-    t = dis.crop(box)
-    t = t.resize((round(t.width * JPG_TO_3X), round(t.height * JPG_TO_3X)), Image.LANCZOS)
-    save(rounded(t, 26), f'tile-{n}.png')
-
 # --- Login / Willkommen (keine persönlichen Daten) -----------------------------------
 save(load('IMG_5405(1).png'), 'login.png')
 

@@ -114,8 +114,8 @@
       <img src="img/entdecken-base.png" alt="">
       <div id="phA-cards"></div>
     </div><div class="island"></div><div class="glare"></div></div>
-    <img class="abs" id="fl-migros" src="img/tile-migros.png" alt="" style="left:0;top:0;width:544px;transform-origin:50% 50%">
-    <img class="abs" id="fl-coop" src="img/tile-coop.png" alt="" style="left:0;top:0;width:544px;transform-origin:50% 50%">
+    <img class="abs" id="fl-t1" src="img/tile-hm.png" alt="" style="left:0;top:0;width:544px;transform-origin:50% 50%">
+    <img class="abs" id="fl-t2" src="img/tile-xbox.png" alt="" style="left:0;top:0;width:544px;transform-origin:50% 50%">
     <img class="abs" id="fl-b1" src="img/badge-sony.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <img class="abs" id="fl-b2" src="img/badge-decathlon.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <div class="ui" id="detail"><div class="crop"></div><div id="shine"><i></i></div></div>
@@ -223,7 +223,7 @@ document.getElementById('phL-ov').innerHTML = [0, 1, 2].map((k) =>
   `<div class="lay" style="left:30px;top:${604 + 315 * k}px;width:1110px;height:325px">${docOv(k)}</div>`).join('');
 
 // Hook: drei Reihen Gutscheinkacheln
-const STREAM = ['zalando', 'sony', 'migros', 'decathlon', 'hm', 'coop', 'xbox', 'sky'];
+const STREAM = ['zalando', 'sony', 'decathlon', 'hm', 'xbox', 'sky'];
 document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
   `<div class="srow" id="sr${r}" style="top:${r * 214}px">${Array.from({ length: 10 }, (_, i) => `<img src="img/tile-${STREAM[(i + r * 3) % STREAM.length]}.png" alt="">`).join('')}</div>`).join('');
 
@@ -253,8 +253,8 @@ defineComposition({
     gsap.set('.phone, .ui', { transformOrigin: '0 0' });
     gsap.set('#phA', { ...P(0.52, 540, 2000) });
     gsap.set('.ent-card', { scale: 0.86, opacity: 0, y: 40 });
-    gsap.set('#fl-migros', { x: -560, y: 1060, rotation: -14, scale: 0.42 });
-    gsap.set('#fl-coop', { x: 1100, y: 1330, rotation: 12, scale: 0.42 });
+    gsap.set('#fl-t1', { x: -560, y: 1060, rotation: -14, scale: 0.42 });
+    gsap.set('#fl-t2', { x: 1100, y: 1330, rotation: 12, scale: 0.42 });
     gsap.set('#fl-b1', { x: -360, y: 1590, rotation: -6, scale: 0.62 });
     gsap.set('#fl-b2', { x: 1080, y: 860, rotation: 8, scale: 0.62 });
     gsap.set('#detail', { opacity: 0 });
@@ -316,12 +316,12 @@ defineComposition({
     tl.fromTo('#phA', { ...P(0.52, 540, 2000), rotation: 4 }, { ...P(0.52, 540, 640), rotation: 0, duration: 1.15, ease: 'expo.out' }, t2 - 0.08);
     TILE_NAMES.forEach((n, i) => tl.to(`.ent-card:nth-child(${i + 1})`, { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.5)' }, t2 + 0.42 + i * (B / 2)));
     // schwebende Kacheln rund ums Telefon (Tiefe)
-    tl.to('#fl-migros', { x: -120, y: 1020, rotation: -9, duration: 1.1 }, t2 + 0.7);
-    tl.to('#fl-coop', { x: 660, y: 1300, rotation: 8, duration: 1.1 }, t2 + 0.85);
+    tl.to('#fl-t1', { x: -120, y: 1020, rotation: -9, duration: 1.1 }, t2 + 0.7);
+    tl.to('#fl-t2', { x: 660, y: 1300, rotation: 8, duration: 1.1 }, t2 + 0.85);
     tl.to('#fl-b1', { x: -40, y: 1560, rotation: -5, duration: 1.0 }, t2 + 1.1);
     tl.to('#fl-b2', { x: 800, y: 860, rotation: 6, duration: 1.0 }, t2 + 1.2);
-    tl.to('#fl-migros', { y: '-=60', rotation: -6, duration: 1.9, ease: 'sine.inOut' }, t2 + 1.8);
-    tl.to('#fl-coop', { y: '-=80', rotation: 5, duration: 1.8, ease: 'sine.inOut' }, t2 + 1.9);
+    tl.to('#fl-t1', { y: '-=60', rotation: -6, duration: 1.9, ease: 'sine.inOut' }, t2 + 1.8);
+    tl.to('#fl-t2', { y: '-=80', rotation: 5, duration: 1.8, ease: 'sine.inOut' }, t2 + 1.9);
     tl.to('#fl-b1', { y: '-=50', duration: 1.6, ease: 'sine.inOut' }, t2 + 2.1);
     tl.to('#fl-b2', { y: '+=60', duration: 1.5, ease: 'sine.inOut' }, t2 + 2.2);
     tl.to('#phA', { y: 600, duration: 2.9, ease: 'sine.inOut' }, t2 + 1.1);
@@ -333,9 +333,9 @@ defineComposition({
     reveal('#s3-l1', t3 + 0.08);
     reveal('#s3-l2', t3 + 0.3);
     gold('#s3-l2', t3 + 0.5, 2.6);
-    tl.to('#fl-migros', { x: -700, rotation: -20, duration: 0.6, ease: 'power3.in' }, t3 - 0.25);
+    tl.to('#fl-t1', { x: -700, rotation: -20, duration: 0.6, ease: 'power3.in' }, t3 - 0.25);
     tl.to('#fl-b1', { x: -600, duration: 0.6, ease: 'power3.in' }, t3 - 0.2);
-    tl.to('#fl-coop', { x: 1300, rotation: 18, duration: 0.6, ease: 'power3.in' }, t3 - 0.25);
+    tl.to('#fl-t2', { x: 1300, rotation: 18, duration: 0.6, ease: 'power3.in' }, t3 - 0.25);
     tl.to('#fl-b2', { x: 1300, duration: 0.6, ease: 'power3.in' }, t3 - 0.2);
     // Match-Cut: Zalando-Kachel löst sich aus dem Telefon und wird gross (gleicher Ausschnitt, nur skaliert)
     {
