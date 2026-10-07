@@ -25,6 +25,8 @@ const JOBS = [
   ['post-links.html', 'allnova-ig-1-links-allnova', 1080, 1350],
   ['reel-cover.html', 'allnova-ig-2-mitte-reel-cover', 1080, 1920],
   ['post-rechts.html', 'allnova-ig-3-rechts-app', 1080, 1350],
+  // braucht die drei Exporte oben (Profilraster) → zuletzt
+  ['profil-mockup.html', 'allnova-ig-profil-iphone-mockup', 1440, 1800],
 ];
 const b = await chromium.launch({ args: ['--force-color-profile=srgb', '--font-render-hinting=none'] });
 for (const [page, file, w, h] of JOBS) {

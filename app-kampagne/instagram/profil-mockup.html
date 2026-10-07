@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<title>allnova · Instagram-Profil · iPhone-Mockup</title>
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="ig.css">
+<style>
+  /* Präsentation 4:5, iPhone mit nachgebautem Instagram-Profil (Besucheransicht).
+     Profildaten und Bio wie auf instagram.com/allnova.ch; das Raster zeigt die drei fixierten Beiträge
+     aus out/instagram/ (vorher `npm run instagram` ausführen). */
+  #stage.mock { width: 1440px; height: 1800px; }
+  .scr { background: #fff; }
+  /* Bildschirm in iOS-Punkten (390 × 844), per scale(3) auf App-Pixel @3x */
+  #ig { position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform: scale(3); transform-origin: 0 0;
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif; color: #000; font-size: 14px; letter-spacing: -.01em; }
+  #ig * { position: absolute; margin: 0; box-sizing: border-box; }
+  #ig .bio span, #ig .bio svg { position: static; }
+  #ig .em { font-family: 'Noto Color Emoji', 'Apple Color Emoji', sans-serif; font-size: 13px; margin-right: 4px; }
+  .sb-time { left: 0; width: 108px; top: 16px; text-align: center; font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+  .stat { width: 84px; text-align: center; top: 120px; }
+  #ig .stat b { position: static; display: block; font-size: 17px; font-weight: 700; line-height: 21px; }
+  #ig .stat span { position: static; display: block; font-size: 13.5px; line-height: 18px; }
+  .bio { left: 16px; top: 206px; width: 358px; line-height: 18px; }
+  #ig .bio div { position: static; white-space: nowrap; }
+  .btn { top: 368px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 600; line-height: 32px; text-align: center; }
+  .tile { width: 129px; height: 172px; overflow: hidden; background: #eee; }
+  .tile img { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tile svg { right: 7px; top: 7px; filter: drop-shadow(0 0 2px rgba(0, 0, 0, .45)); }
+</style>
+</head>
+<body>
+<div id="stage" class="mock light">
+  <div class="glow" style="left:-80px;top:260px;width:1600px;height:1600px;opacity:.85"></div>
+  <div class="phone" id="ph" style="transform: translate(314px, 64px) scale(.63)">
+    <div class="scr">
+      <div id="ig">
+        <!-- Statusleiste -->
+        <div class="sb-time">12:42</div>
+        <svg style="left:286px;top:20px" width="19" height="12" viewBox="0 0 19 12"><rect x="0" y="8" width="3.2" height="4" rx="1"/><rect x="5" y="5.5" width="3.2" height="6.5" rx="1"/><rect x="10" y="3" width="3.2" height="9" rx="1"/><rect x="15" y="0" width="3.2" height="12" rx="1"/></svg>
+        <svg style="left:310px;top:19px" width="17" height="13" viewBox="0 0 17 13"><path d="M8.5 2.6c2.5 0 4.8 1 6.5 2.6l1.3-1.3A11 11 0 0 0 8.5.8 11 11 0 0 0 .7 3.9L2 5.2a9.2 9.2 0 0 1 6.5-2.6Zm0 3.7c1.5 0 2.9.6 3.9 1.6l1.3-1.3a7.3 7.3 0 0 0-10.4 0l1.3 1.3c1-1 2.4-1.6 3.9-1.6Zm0 3.6c-.6 0-1.1.2-1.5.6L8.5 12l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z"/></svg>
+        <svg style="left:333px;top:18px" width="28" height="14" viewBox="0 0 28 14"><rect x=".5" y=".5" width="23.5" height="13" rx="4" fill="none" stroke="#000" stroke-opacity=".4"/><rect x="2.5" y="2.5" width="19.5" height="9" rx="2.3"/><path d="M25.5 4.8v4.4c.9-.3 1.5-1.2 1.5-2.2s-.6-1.9-1.5-2.2Z" fill-opacity=".45"/></svg>
+        <!-- Navigation -->
+        <svg style="left:12px;top:62px" width="14" height="24" viewBox="0 0 14 24" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2 2 12l9.5 10"/></svg>
+        <div style="left:40px;top:62px;font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:24px">allnova.ch</div>
+        <svg style="left:310px;top:61px" width="24" height="26" viewBox="0 0 24 26" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round"><path d="M12 2.5a7 7 0 0 0-7 7v5.2L2.8 19h18.4L19 14.7V9.5a7 7 0 0 0-7-7Z"/><path d="M8.8 22.5a3.3 3.3 0 0 0 6.4 0"/></svg>
+        <svg style="left:350px;top:72px" width="24" height="6" viewBox="0 0 24 6"><circle cx="3" cy="3" r="2.4"/><circle cx="12" cy="3" r="2.4"/><circle cx="21" cy="3" r="2.4"/></svg>
+        <!-- Kopf -->
+        <img src="img/ig-avatar.png" alt="" style="left:16px;top:106px;width:88px;height:88px;border-radius:50%">
+        <div class="stat" style="left:120px"><b>3</b><span>Beiträge</span></div>
+        <div class="stat" style="left:205px"><b>52</b><span>Follower</span></div>
+        <div class="stat" style="left:290px"><b>9</b><span>Gefolgt</span></div>
+        <!-- Bio -->
+        <div class="bio">
+          <div style="font-weight:600">allnova.ch</div>
+          <div style="color:#737373">Finanzberatung</div>
+          <div><span class="em">⚡</span>Finanzen easy gemacht.</div>
+          <div><span class="em">🚀</span>Mehr Cashflow. Weniger Stress.</div>
+          <div><span class="em">💡</span>Smart sparen, clever investieren.</div>
+          <div><span class="em">🎯</span>Deine Ziele. Unsere… <span style="position:static;color:#737373">mehr</span></div>
+          <div style="color:#737373">Chaltenbodenstrasse 6e, Schindellegi</div>
+          <div style="color:#00376b;font-weight:600"><svg style="position:static;vertical-align:-2px;margin-right:4px" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00376b" stroke-width="2.6" stroke-linecap="round"><path d="M10 14a5 5 0 0 0 7 0l3.5-3.5a5 5 0 0 0-7-7L12 5"/><path d="M14 10a5 5 0 0 0-7 0l-3.5 3.5a5 5 0 0 0 7 7L12 19"/></svg>allnova.ch</div>
+        </div>
+        <!-- Buttons -->
+        <div class="btn" style="left:16px;width:155px;background:#0095f6;color:#fff">Folgen</div>
+        <div class="btn" style="left:177px;width:155px;background:#efefef">Nachricht</div>
+        <div class="btn" style="left:338px;width:36px;background:#efefef"></div>
+        <svg style="left:346px;top:376px" width="20" height="16" viewBox="0 0 20 16" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="4.5" r="3.5"/><path d="M1 15c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 4v6M13 7h6"/></svg>
+        <!-- Tabs -->
+        <svg style="left:53px;top:425px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+        <svg style="left:183px;top:425px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><path d="M2.5 8h19M9 2.5 12 8M15 2.5 18 8"/><path d="M10 11.5v6l5-3Z" fill="#000" fill-opacity=".55" stroke="none"/></svg>
+        <svg style="left:313px;top:425px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2h-4l-3 2.5L9 20H5a2 2 0 0 1-2-2Z"/><circle cx="12" cy="9.5" r="3"/><path d="M6.5 17c.9-2.2 3-3.4 5.5-3.4s4.6 1.2 5.5 3.4"/></svg>
+        <div style="left:0;top:458px;width:130px;height:1px;background:#000"></div>
+        <div style="left:0;top:459px;width:390px;height:.5px;background:#dbdbdb"></div>
+        <!-- Raster: drei fixierte Beiträge (3:4) -->
+        <div class="tile" style="left:0;top:461px"><img src="../out/instagram/allnova-ig-1-links-allnova.png" alt=""></div>
+        <div class="tile" style="left:130.5px;top:461px"><img src="../out/instagram/allnova-ig-2-mitte-reel-cover.png" alt=""></div>
+        <div class="tile" style="left:261px;top:461px;width:129px"><img src="../out/instagram/allnova-ig-3-rechts-app.png" alt=""></div>
+        <!-- Tab-Leiste -->
+        <div style="left:0;top:760px;width:390px;height:84px;background:#fff;border-top:.5px solid #dbdbdb"></div>
+        <svg style="left:28px;top:772px" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3Z"/></svg>
+        <svg style="left:104px;top:772px" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5.5 5.5"/></svg>
+        <svg style="left:182px;top:772px" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><path d="M12 7.5v9M7.5 12h9"/></svg>
+        <svg style="left:260px;top:772px" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><path d="M2.5 8h19M9 2.5 12 8M15 2.5 18 8"/><path d="M10 11.5v6l5-3Z" fill="#000" stroke="none"/></svg>
+        <img src="img/ig-avatar.png" alt="" style="left:336px;top:772px;width:27px;height:27px;border-radius:50%;box-shadow:0 0 0 1.5px #fff, 0 0 0 3px #000">
+        <div style="left:128px;top:830px;width:134px;height:5px;border-radius:3px;background:#000"></div>
+      </div>
+    </div>
+    <div class="island"></div><div class="glare"></div>
+  </div>
+</div>
+<script src="phone.js"></script>
+<script>
+// Pin-Symbol oben rechts auf allen fixierten Beiträgen
+const PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M15.5 2.2 21.8 8.5l-1.6 1.6-1.5-.4-3.6 3.6.5 4.3-1.6 1.6-4-4-5.4 5.4-1.2-1.2 5.4-5.4-4-4 1.6-1.6 4.3.5 3.6-3.6-.4-1.5Z"/></svg>';
+document.querySelectorAll('.tile').forEach((t) => t.insertAdjacentHTML('beforeend', PIN));
+window.ready.then(() => document.fonts.load('600 14px Inter')).then(() => { document.body.dataset.ready = '1'; });
+</script>
+</body>
+</html>

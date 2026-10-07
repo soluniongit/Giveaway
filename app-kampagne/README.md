@@ -20,6 +20,7 @@ out/         fertige Exporte
 | `instagram/allnova-ig-2-mitte-reel-cover.png/.jpg` | **Cover** für das Reel in der Mitte (1080 × 1920, beim Hochladen als Titelbild wählen) |
 | `instagram/allnova-ig-3-rechts-app.png/.jpg` | Post **rechts** (1080 × 1350): «Alles an einem Ort.» + Telefon (Entdecken) + Store-Badges |
 | `instagram/vorschau-profilraster.png` | Vorschau, wie die drei Kacheln im Profil erscheinen (3:4-Ausschnitt) |
+| `instagram/allnova-ig-profil-iphone-mockup.png/.jpg` | Präsentation (1440 × 1800): nachgebautes Instagram-Profil (Besucheransicht) auf dem iPhone mit den drei fixierten Beiträgen |
 
 **Reihenfolge beim Fixieren:** Instagram zeigt die zuletzt fixierten Beiträge zuerst. Damit die Reihe «links – Reel – rechts» entsteht, die drei Beiträge in der Reihenfolge **rechts → Reel → links** fixieren (bei Bedarf in der Vorschau prüfen).
 
