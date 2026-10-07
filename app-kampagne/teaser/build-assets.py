@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bereinigte Bildebenen für den App-Teaser aus den Original-Screenshots erzeugen.
 
-    python3 teaser/build-assets.py <Ordner 02_Screenshots_Originale> [<Entdecken-Screenshot Nikin/IKEA/Deezer (.webp)>]
+    python3 teaser/build-assets.py <Ordner 02_Screenshots_Originale> [<Screenshot Nikin/IKEA>] [<Screenshot MediaMarkt>]
 
 Die Originale enthalten persönliche Daten und gehören NICHT ins Repository. Dieses Skript
 schreibt nur Ausschnitte ohne persönliche Daten nach app/img/. Persönliche Felder werden
@@ -100,17 +100,18 @@ for n, box in [('icon-contacts', (550, 138, 598, 186)), ('emoji-wave', (262, 166
     t = home.crop(box)
     save(t.resize((round(t.width * JPG_TO_3X), round(t.height * JPG_TO_3X)), Image.LANCZOS), f'{n}.png')
 
-# --- Weitere Gutscheinkacheln (Entdecken, zweiter Screenshot 924 × 2000) -------------------
-if len(sys.argv) > 2:
-    more = Image.open(sys.argv[2]).convert('RGB')
-    K = 542 / 429  # auf @3x-Kachelgrösse
-    for n, (x, y), cover in [
-        ('nikin', (28, 483), ((310, 0, 429, 34), (38, 48, 40))),   # Betragsangabe oben rechts abgedeckt
-        ('ikea', (467, 483), None),
-        ('deezer', (28, 1048), ((372, 0, 429, 32), (27, 24, 30))),  # angeschnittenes «GIFT C…» abgedeckt
-    ]:
-        t = more.crop((x + 1, y + 2, x + 429, y + 300))  # 1–2 px Rand des Nachbarbereichs weglassen
-        if cover:
-            ImageDraw.Draw(t).rectangle(cover[0], fill=cover[1])
-        t = t.resize((542, 380), Image.LANCZOS)
-        save(rounded(t, 26), f'tile-{n}.png')
+# --- Weitere Gutscheinkacheln (Entdecken, Screenshots 924 × 2000) -------------------------
+# argv[2]: Screenshot mit Nikin/IKEA, argv[3]: Screenshot mit MediaMarkt
+K = 542 / 429  # auf @3x-Kachelgrösse
+MORE = [
+    (2, 'nikin', (28, 483), ((310, 0, 429, 34), (38, 48, 40))),  # Betragsangabe oben rechts abgedeckt
+    (2, 'ikea', (467, 483), None),
+    (3, 'mediamarkt', (28, 408), None),
+]
+for arg, n, (x, y), cover in MORE:
+    if len(sys.argv) <= arg:
+        continue
+    t = Image.open(sys.argv[arg]).convert('RGB').crop((x + 1, y + 2, x + 429, y + 300))  # 1–2 px Rand weglassen
+    if cover:
+        ImageDraw.Draw(t).rectangle(cover[0], fill=cover[1])
+    save(rounded(t.resize((542, 380), Image.LANCZOS), 26), f'tile-{n}.png')

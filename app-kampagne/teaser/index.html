@@ -115,7 +115,7 @@
       <div id="phA-cards"></div>
     </div><div class="island"></div><div class="glare"></div></div>
     <img class="abs" id="fl-t1" src="img/tile-nikin.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
-    <img class="abs" id="fl-t2" src="img/tile-ikea.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
+    <img class="abs" id="fl-t2" src="img/tile-mediamarkt.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
     <img class="abs" id="fl-b1" src="img/badge-sony.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <img class="abs" id="fl-b2" src="img/badge-decathlon.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <div class="ui" id="detail"><div class="crop"></div><div id="shine"><i></i></div></div>
@@ -225,10 +225,10 @@ document.getElementById('phL-ov').innerHTML = [0, 1, 2].map((k) =>
 // Hook: drei Reihen Gutscheinkacheln
 // Gutscheinkacheln aus der App, je Reihe versetzt, damit keine Marke gehäuft nebeneinander steht
 const STREAM = [
-  ['zalando', 'nikin', 'sony', 'ikea', 'hm', 'deezer', 'xbox', 'decathlon', 'sky'],
-  ['ikea', 'xbox', 'sky', 'zalando', 'deezer', 'nikin', 'decathlon', 'hm', 'sony'],
-  ['deezer', 'decathlon', 'nikin', 'sony', 'sky', 'zalando', 'hm', 'ikea', 'xbox'],
-  ['sky', 'hm', 'zalando', 'nikin', 'ikea', 'xbox', 'sony', 'deezer', 'decathlon'],
+  ['zalando', 'nikin', 'sony', 'ikea', 'hm', 'mediamarkt', 'xbox', 'decathlon', 'sky'],
+  ['ikea', 'xbox', 'sky', 'zalando', 'mediamarkt', 'nikin', 'decathlon', 'hm', 'sony'],
+  ['mediamarkt', 'decathlon', 'nikin', 'sony', 'sky', 'zalando', 'hm', 'ikea', 'xbox'],
+  ['sky', 'hm', 'zalando', 'nikin', 'ikea', 'xbox', 'sony', 'mediamarkt', 'decathlon'],
 ];
 document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
   `<div class="srow" id="sr${r}" style="top:${r * 214}px">${Array.from({ length: 10 }, (_, i) => `<img src="img/tile-${STREAM[r][i % STREAM[r].length]}.png" alt="">`).join('')}</div>`).join('');
