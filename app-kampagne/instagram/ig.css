@@ -12,8 +12,8 @@ html, body { margin: 0; background: #0d0d0e; }
 .eyebrow { position: absolute; display: flex; align-items: center; gap: 16px; font-size: 22px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-hi); white-space: nowrap; }
 .eyebrow i { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
 .light .eyebrow { color: var(--gold-lo); }
-.h1 { position: absolute; font-size: 124px; font-weight: 800; letter-spacing: -.04em; line-height: 1.02; white-space: nowrap; }
-.h2 { position: absolute; font-family: var(--serif); font-style: italic; font-size: 140px; line-height: 1; white-space: nowrap; padding-right: 30px; }
+.h1 { position: absolute; font-size: 150px; font-weight: 800; letter-spacing: -.04em; line-height: 1.02; white-space: nowrap; }
+.h2 { position: absolute; font-family: var(--serif); font-style: italic; font-size: 176px; line-height: 1; white-space: nowrap; padding-right: 30px; }
 .body { position: absolute; font-size: 33px; line-height: 1.42; font-weight: 500; letter-spacing: -.005em; color: rgba(248, 246, 240, .78); }
 .light .body { color: var(--ink-3); }
 
@@ -32,3 +32,7 @@ html, body { margin: 0; background: #0d0d0e; }
 .ov-prem { font-size: 36px; font-weight: 500; color: #525252; text-align: right; }
 .demo { position: absolute; font-size: 18px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(248, 246, 240, .45); white-space: nowrap; }
 .light .demo { color: var(--muted); }
+
+.logo { position: absolute; width: 220px; }
+.foot { position: absolute; font-size: 22px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: rgba(248, 246, 240, .5); white-space: nowrap; }
+.sub { position: absolute; font-size: 30px; font-weight: 600; letter-spacing: -.005em; color: rgba(248, 246, 240, .72); white-space: nowrap; }

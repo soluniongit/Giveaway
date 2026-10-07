@@ -7,35 +7,23 @@
 <link rel="stylesheet" href="ig.css">
 <style>
   /* Im Profilraster sichtbar: mittlerer 3:4-Ausschnitt (y ≈ 240–1680) */
-  #logo { position: absolute; left: 360px; top: 300px; width: 360px; }
   .c { left: 0; width: 1080px; text-align: center; }
-  .fl { position: absolute; width: 544px; transform-origin: 50% 50%; filter: drop-shadow(0 40px 50px rgba(48, 38, 14, .28)); }
 </style>
 </head>
 <body>
 <div id="stage" class="cover light">
-  <div class="glow" style="left:-420px;top:200px;width:1200px;height:1200px"></div>
-  <div class="glow" style="left:300px;top:1000px;width:1300px;height:1300px;opacity:.8"></div>
-  <img class="fl" src="../teaser/img/tile-migros.png" alt="" style="left:-150px;top:1010px;transform:rotate(-9deg) scale(.4)">
-  <img class="fl" src="../teaser/img/tile-coop.png" alt="" style="left:690px;top:1270px;transform:rotate(8deg) scale(.4)">
-  <div class="phone" id="ph" style="transform: translate(282px, 760px) scale(.4)"></div>
-  <img id="logo" src="../assets/brand/allnova-logo-hell.png" alt="allnova">
-  <div class="eyebrow" style="left:0;width:1080px;justify-content:center;top:452px"><i></i><span data-t="eyebrow"></span></div>
-  <div class="h1 c fit" data-max="900" style="top:500px" data-t="h1"></div>
-  <div class="h2 c fit gold-text" data-max="900" style="top:628px;padding:0" data-t="h2"></div>
+  <div class="glow" style="left:-60px;top:500px;width:1200px;height:1200px;opacity:.8"></div>
+  <img class="logo" src="../assets/brand/allnova-logo-hell.png" alt="allnova" style="left:430px;top:300px">
+  <div class="h1 c" style="top:420px" data-t="l1"></div>
+  <div class="h2 gold-text c" style="top:592px;padding:0;font-size:148px" data-t="l2"></div>
+  <div class="phone" id="ph" style="transform: translate(243px, 820px) scale(.46)"></div>
 </div>
 <script src="phone.js"></script>
 <script>
-const T = { eyebrow: 'Die allnova App', h1: 'Mehr für dich.', h2: 'Jetzt entdecken.' };
+const T = { l1: 'Mehr für dich.', l2: 'Die allnova App.' };
 document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = T[el.dataset.t]; });
 document.getElementById('ph').innerHTML = phone('entdecken');
-window.ready.then(() => {
-  document.querySelectorAll('.fit').forEach((el) => {
-    const r = document.createRange(); r.selectNodeContents(el); const w = r.getBoundingClientRect().width;
-    const max = +el.dataset.max; if (w > max) el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * max / w}px`;
-  });
-  document.body.dataset.ready = '1';
-});
+window.ready.then(() => { document.body.dataset.ready = '1'; });
 </script>
 </body>
 </html>

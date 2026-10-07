@@ -5,51 +5,25 @@
 <title>allnova · Instagram · Post links (allnova)</title>
 <link rel="stylesheet" href="../assets/base.css">
 <link rel="stylesheet" href="ig.css">
-<style>
-  #logo { position: absolute; left: 90px; top: 104px; width: 300px; }
-  .chips { position: absolute; left: 90px; top: 1000px; width: 560px; display: flex; flex-wrap: wrap; gap: 14px; }
-  .chips span { display: inline-flex; align-items: center; gap: 12px; height: 58px; padding: 0 24px; border-radius: 29px; font-size: 25px; font-weight: 700; letter-spacing: -.005em; color: var(--ivory); box-shadow: inset 0 0 0 2px rgba(201, 182, 142, .45); background: rgba(201, 182, 142, .07); white-space: nowrap; }
-  .chips span i { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
-  #claim { position: absolute; left: 90px; top: 1182px; font-family: var(--serif); font-style: italic; font-size: 46px; line-height: 1; white-space: nowrap; color: var(--gold-hi); }
-</style>
 </head>
 <body>
 <div id="stage" class="post dark">
-  <div class="glow" style="left:-380px;top:-300px;width:1100px;height:1100px"></div>
-  <div class="glow" style="left:560px;top:620px;width:900px;height:900px;opacity:.7"></div>
-  <div class="phone" id="ph" style="transform: translate(736px, 600px) rotate(7deg) scale(.44)"></div>
-
-  <img id="logo" src="../assets/brand/allnova-logo.png" alt="allnova">
-  <div class="eyebrow" style="left:90px;top:252px"><i></i><span data-t="eyebrow"></span></div>
-  <div class="h1 fit" data-max="900" style="left:90px;top:304px" data-t="h1"></div>
-  <div class="h2 fit gold-text" data-max="930" style="left:86px;top:440px" data-t="h2"></div>
-  <div class="body" style="left:90px;top:650px;width:540px" data-t="body"></div>
-  <div class="chips" id="chips"></div>
-  <div id="claim" data-t="claim"></div>
-  <div class="demo" style="left:90px;top:1262px" data-t="demo"></div>
+  <div class="glow" style="left:-420px;top:-360px;width:1200px;height:1200px"></div>
+  <img class="logo" src="../assets/brand/allnova-logo.png" alt="allnova" style="left:90px;top:100px">
+  <div class="h1" style="left:90px;top:236px" data-t="l1"></div>
+  <div class="h2 gold-text" style="left:84px;top:404px" data-t="l2"></div>
+  <div class="h2 gold-text" style="left:84px;top:574px" data-t="l3"></div>
+  <div class="phone" id="ph" style="transform: translate(632px, 800px) scale(.5)"></div>
+  <div class="foot" style="left:90px;top:1236px" data-t="url"></div>
+  <div class="foot" style="left:90px;top:1200px;font-size:15px;letter-spacing:.24em;opacity:.7" data-t="demo"></div>
 </div>
 <script src="phone.js"></script>
 <script>
 /* Texte — hier editieren */
-const T = {
-  eyebrow: 'Finanzberatung · Schindellegi · Zürich',
-  h1: 'Finanzen.',
-  h2: 'einfach im Griff.',
-  body: 'Persönliche Beratung für Versicherungen, Vorsorge und Finanzplanung – und mit der allnova App alles digital im Blick.',
-  chips: ['Versicherungen', 'Vorsorge & 3a', 'Finanzplanung', 'Steuern'],
-  claim: 'Mehr vom Leben. Mehr für dich.',
-  demo: 'Demodaten',
-};
+const T = { l1: 'Finanzen.', l2: 'einfach', l3: 'im Griff.', url: 'allnova.ch', demo: 'App-Ansicht mit Demodaten' };
 document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = T[el.dataset.t]; });
-document.getElementById('chips').innerHTML = T.chips.map((c) => `<span><i></i>${c}</span>`).join('');
 document.getElementById('ph').innerHTML = phone('dokumente');
-window.ready.then(() => {
-  document.querySelectorAll('.fit').forEach((el) => {
-    const r = document.createRange(); r.selectNodeContents(el); const w = r.getBoundingClientRect().width;
-    const max = +el.dataset.max; if (w > max) el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * max / w}px`;
-  });
-  document.body.dataset.ready = '1';
-});
+window.ready.then(() => { document.body.dataset.ready = '1'; });
 </script>
 </body>
 </html>
