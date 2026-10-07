@@ -114,8 +114,8 @@
       <img src="img/entdecken-base.png" alt="">
       <div id="phA-cards"></div>
     </div><div class="island"></div><div class="glare"></div></div>
-    <img class="abs" id="fl-t1" src="img/cat-wellness.png" alt="" style="left:0;top:0;width:640px;filter:drop-shadow(0 40px 40px rgba(48,38,14,.25));transform-origin:50% 50%">
-    <img class="abs" id="fl-t2" src="img/cat-sport.png" alt="" style="left:0;top:0;width:640px;filter:drop-shadow(0 40px 40px rgba(48,38,14,.25));transform-origin:50% 50%">
+    <img class="abs" id="fl-t1" src="img/tile-zalando.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
+    <img class="abs" id="fl-t2" src="img/tile-decathlon.png" alt="" style="left:0;top:0;width:544px;filter:drop-shadow(0 30px 34px rgba(48,38,14,.28));transform-origin:50% 50%">
     <img class="abs" id="fl-b1" src="img/badge-sony.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <img class="abs" id="fl-b2" src="img/badge-decathlon.png" alt="" style="left:0;top:0;width:303px;transform-origin:50% 50%">
     <div class="ui" id="detail"><div class="crop"></div><div id="shine"><i></i></div></div>
@@ -223,10 +223,15 @@ document.getElementById('phL-ov').innerHTML = [0, 1, 2].map((k) =>
   `<div class="lay" style="left:30px;top:${604 + 315 * k}px;width:1110px;height:325px">${docOv(k)}</div>`).join('');
 
 // Hook: drei Reihen Gutscheinkacheln
-// Gutscheinkacheln aus der App, gemischt mit den allnova Kategorie-Illustrationen (allnova.ch)
-const STREAM = ['zalando', 'cat-beauty', 'sony', 'cat-lebensmittel', 'decathlon', 'cat-zuhause', 'hm', 'cat-buecher', 'xbox', 'cat-wellness', 'sky', 'cat-sport'];
+// Gutscheinkacheln aus der App, je Reihe versetzt, damit keine Marke gehäuft nebeneinander steht
+const STREAM = [
+  ['zalando', 'sony', 'hm', 'xbox', 'decathlon', 'sky'],
+  ['decathlon', 'xbox', 'sky', 'zalando', 'hm', 'sony'],
+  ['sky', 'hm', 'decathlon', 'sony', 'zalando', 'xbox'],
+  ['xbox', 'zalando', 'sony', 'sky', 'decathlon', 'hm'],
+];
 document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
-  `<div class="srow" id="sr${r}" style="top:${r * 214}px">${Array.from({ length: 10 }, (_, i) => `<img src="img/tile-${STREAM[(i + r * 5) % STREAM.length]}.png" alt="">`).join('')}</div>`).join('');
+  `<div class="srow" id="sr${r}" style="top:${r * 214}px">${Array.from({ length: 10 }, (_, i) => `<img src="img/tile-${STREAM[r][i % 6]}.png" alt="">`).join('')}</div>`).join('');
 
 defineComposition({
   duration: 30,
@@ -254,8 +259,8 @@ defineComposition({
     gsap.set('.phone, .ui', { transformOrigin: '0 0' });
     gsap.set('#phA', { ...P(0.52, 540, 2000) });
     gsap.set('.ent-card', { scale: 0.86, opacity: 0, y: 40 });
-    gsap.set('#fl-t1', { x: -560, y: 1060, rotation: -14, scale: 0.58 });
-    gsap.set('#fl-t2', { x: 1100, y: 1330, rotation: 12, scale: 0.58 });
+    gsap.set('#fl-t1', { x: -560, y: 1060, rotation: -14, scale: 0.44 });
+    gsap.set('#fl-t2', { x: 1100, y: 1330, rotation: 12, scale: 0.44 });
     gsap.set('#fl-b1', { x: -360, y: 1590, rotation: -6, scale: 0.62 });
     gsap.set('#fl-b2', { x: 1080, y: 860, rotation: 8, scale: 0.62 });
     gsap.set('#detail', { opacity: 0 });
