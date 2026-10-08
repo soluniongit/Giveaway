@@ -1,4 +1,4 @@
-# allnova Gewinnspiele: Videos, Webseiten, Datenbank
+# allnova Gewinnspiele: Webseiten, Datenbank
 
 Umsetzung der beiden Gewinnspiele aus den Videoskripten und dem Marketingkonzept (Stand 06.10.2026).
 Veranstalterin und Sponsorin ist die Allfinanz Consulting GmbH unter der Marke allnova.
@@ -12,57 +12,23 @@ Veranstalterin und Sponsorin ist die Allfinanz Consulting GmbH unter der Marke a
 | Teilnahme | ab 18, Wohnsitz ZH, SZ, ZG oder SG | ab 18, Wohnsitz ZH, SZ, ZG oder SG |
 | Seite | `/gewinnen/steuern` | `/gewinnen/fahrstart` |
 
-Die Termine stammen aus dem Marketingkonzept (Planungsvorschläge, noch keine Zusagen). Sie sind an einer Stelle pro Medium hinterlegt: in der Datenbank (`campaigns`), im Video (Textobjekt `C`) und als Fallback in `web/gewinnen/assets/js/demo-data.js`.
+Die Termine stammen aus dem Marketingkonzept (Planungsvorschläge, noch keine Zusagen). Sie sind an einer Stelle pro Medium hinterlegt: in der Datenbank (`campaigns`), im Video (Textobjekt `C`, Repository Video-Giveaway) und als Fallback in `web/gewinnen/assets/js/demo-data.js`.
 
 ```
-videos/     Motion-Design-Animationen (HTML + GSAP) und Renderer → MP4
 web/        Statische Gewinnspielseiten unter /gewinnen/ (kein Build nötig)
 supabase/   Datenbank-Migrationen, Startdaten und Tests
 docs/       Quellen und Referenzrechnung der Steuertarife 2026
 ```
 
-Alles, was nicht zu den Gewinnspielen gehört, liegt getrennt in **`app-kampagne/`** (App-Teaser-Video und Instagram-Visuals, eigene Pipeline, siehe `app-kampagne/README.md`).
+Die Videos (Gewinnspiel-Videos und App-Kampagne) liegen im Repository [soluniongit/Video-Giveaway](https://github.com/soluniongit/Video-Giveaway).
 
 ---
 
-## 1. Motion-Design-Videos
+## 1. Videos → Repository `soluniongit/Video-Giveaway`
 
-Fertige Exporte liegen in `videos/out/`:
+Die Motion-Design-Videos (Steuergewinnspiel, Fahrstart-Gewinnspiel) mit Renderer und Sounddesign sowie die App-Kampagne (App-Teaser, Instagram-Visuals) liegen seit dem 08.10.2026 im eigenen Repository **[soluniongit/Video-Giveaway](https://github.com/soluniongit/Video-Giveaway)**. Die frühere Versionsgeschichte der Videos ist hier im Git-Verlauf erhalten.
 
-- `allnova-steuergewinnspiel-30s.mp4`
-- `allnova-fahrstart-gewinnspiel-30s.mp4`
-
-Beide sind 1080 × 1920, 30 fps, H.264, 30 s lang, **mit Sounddesign** (AAC, ca. −14 LUFS). Zusätzlich gibt es je eine stumme Fassung (`…-ohne-ton.mp4`, wie im Konzept gewünscht) und ein Posterbild (Endkarte).
-
-- **Sounddesign:** vollständig synthetisch erzeugt (`videos/sound/sounddesign.py`), also ohne Musikrechte-Fragen. Ein Musikbett (Pad, Sub-Bass, Pluck-Arpeggio; Fahrstart mit weichem Puls) und Effekte synchron zur Animation: Whooshes bei Szenenwechseln, Ticks bei Texten, Pops/Chimes bei Häkchen und Badges, ein weicher Impact auf der Endkarte. Über der statischen Endkarte klingt die Musik aus.
-- **Logo:** auf hellem Grund die helle Fassung («all» Gold, «nova» Anthrazit; `assets/brand/allnova-logo-hell.png`), auf Anthrazit das Original.
-- **Textprüfung:** `node clipcheck.mjs steuer 3.7,9.4,…` vergleicht jedes Bild mit geöffneten Masken und meldet abgeschnittene Glyphen (Umlaute, Unterlängen, kursive Überhänge).
-
-- **Gestaltung:** Elfenbein #F8F6F0, Anthrazit #111512 und Gold #B69A5C/#C9B68E nach Konzept. Schrift: Inter Tight, mit Akzenten in Instrument Serif.
-- **Original-Logo:** unverändert aus dem PDF übernommen, auf Elfenbein in einer anthrazitfarbenen Fläche.
-- **Endkarte:** die letzten 3 Sekunden sind vollständig statisch.
-- **Sicherheitszonen:** Logo, Headline und CTA stehen in der mittleren sicheren Fläche.
-- **Steuern:** grosse goldene 3, Dokumentkarten 2026–2028, goldener Paketrahmen mit «1 Person» und Häkchen/Sendepfeil. Der Hinweis «Deine Steuerrechnung bleibt bei dir» erscheint, danach die Schritte Öffnen → Ausfüllen → Bestätigen. Keine Partikel, kein Geldregen, nirgends «steuerfrei».
-- **Fahrstart:** eine durchgehende goldene Weglinie mit Kamerafahrt durch alle fünf Szenen. Dazu kommen ein reduziertes blaues L-Schild, Gewinnkarten und die Erklärung «VKU = Verkehrskundekurs». Die Anbieter-Karten bleiben neutral (A/B/C, ohne Orte oder Logos), bis Zusagen vorliegen. Am Ende verwandelt sich das Formular in einen Umschlag mit Häkchen.
-
-**Texte ändern:** In `videos/steuer/index.html` bzw. `videos/fahrstart/index.html` steht oben im Skript das Objekt `C` mit allen Bildschirmtexten (Datum, Region, Gewinne usw.).
-
-**Neu rendern:**
-
-```bash
-cd videos
-npm install
-npm run render            # Ton erzeugen + beide Videos rendern (Motion-Blur 8×, ~15 min pro Video)
-npm run sound             # nur die Tonspuren (out/sound/*.wav)
-node render.mjs --mux     # Ton neu unter die stummen Exporte legen
-npm run render:steuer     # nur eines
-node render.mjs steuer --stills=2,8,29   # Einzelbilder zur Kontrolle
-npm run preview           # Live-Vorschau im Browser: http://localhost:8080/steuer/
-```
-
-Der Renderer (`render.mjs`) spielt die GSAP-Timeline Frame für Frame in Chromium ab (Playwright) und kodiert sie mit ffmpeg. Für Motion-Blur verwendet er 8 Teilbilder pro Frame. Beim Fahrstart heben sich die Inhalte vor jeder Kamerafahrt ab, damit nur die Weglinie mitfährt.
-
-Noch offen laut Konzept: 10-Sekunden-Schnitte und eine Version mit Voice-over (dann mit Untertiteln). Die Musikrechte sind zu klären, falls Musik gewünscht ist.
+Die Seiten verwenden die 720-px-Webfassungen in `web/gewinnen/assets/video/` (bereits im Repository). Nach einem neuen Video-Render diese mit `npm run vendor` aktualisieren (siehe Abschnitt 2).
 
 ---
 
@@ -107,7 +73,7 @@ Bleiben die Felder leer, läuft die Seite im **Demo-Modus**: Das Formular simuli
 - **Test:** `cd web && npm install && npm test`
 - **Datenschutz:** Eingaben bleiben im Browser. Getrackt wird nur «Rechner genutzt» mit dem Kanton, ohne Beträge.
 
-**Videos für das Web** (720p, MP4 + WebM, Poster als JPG) erzeugt `npm run vendor` aus `videos/out/`. Derselbe Befehl kopiert auch GSAP, Lenis, die Schriften und das Logo. `npm run map` erzeugt die Karte der Pilotregion (BFS/swisstopo-Grenzen via `swiss-maps`).
+**Videos für das Web** (720p, MP4 + WebM, Poster als JPG) erzeugt `npm run vendor` aus `videos/out/` des Repositorys Video-Giveaway. Standardpfad ist ein Klon `Video-Giveaway` neben diesem Repository, sonst `VIDEOS_DIR=/pfad/zu/Video-Giveaway/videos npm run vendor`. Derselbe Befehl kopiert auch GSAP, Lenis, die Schriften und das Logo. `npm run map` erzeugt die Karte der Pilotregion (BFS/swisstopo-Grenzen via `swiss-maps`).
 
 **Tracking** (anonym, ohne IP, über `track_event`): `page_view`, `video_play`, `calculator_used`, `roadmap_used`, `quiz_completed`, `pool_selected`, `form_started`, `form_submitted`, `app_cta_click`, `app_later_click`, `partner_link_click`, `share_click`. UTM-Parameter werden pro Sitzung gemerkt und mit der Teilnahme gespeichert.
 

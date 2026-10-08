@@ -16,7 +16,13 @@ for (const f of ['gsap', 'ScrollTrigger', 'SplitText', 'DrawSVGPlugin', 'MotionP
 }
 copy(path.join(root, 'node_modules/lenis/dist/lenis.min.js'), path.join(A, 'vendor/lenis.min.js'));
 
-const videos = path.join(root, '../videos');
+// Videos (Schriften, Logo, Master-MP4s) liegen im Repository soluniongit/Video-Giveaway.
+// Standard: Klon «Video-Giveaway» neben diesem Repository; sonst VIDEOS_DIR=/pfad/zu/Video-Giveaway/videos
+const videos = process.env.VIDEOS_DIR ? path.resolve(process.env.VIDEOS_DIR) : path.join(root, '../../Video-Giveaway/videos');
+if (!fs.existsSync(path.join(videos, 'out'))) {
+  console.error(`Video-Ordner nicht gefunden: ${videos}\nRepository soluniongit/Video-Giveaway klonen oder VIDEOS_DIR setzen.`);
+  process.exit(1);
+}
 for (const f of fs.readdirSync(path.join(videos, 'assets/fonts'))) copy(path.join(videos, 'assets/fonts', f), path.join(A, 'fonts', f));
 copy(path.join(videos, 'assets/brand/allnova-logo.png'), path.join(A, 'brand/allnova-logo.png'));
 // Web versions: 720 × 1280 WebM/VP9 + H.264 (the 1080 × 1920 masters stay in videos/out) + JPEG posters
