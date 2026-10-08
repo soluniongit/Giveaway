@@ -82,6 +82,15 @@
   #tap { position: absolute; left: 1065px; top: 165px; width: 0; height: 0; }
   #tap i { position: absolute; left: -70px; top: -70px; width: 140px; height: 140px; border-radius: 50%; background: rgba(17, 21, 18, .16); box-shadow: inset 0 0 0 3px rgba(17, 21, 18, .25); }
 
+  /* Dokumentdetails (Cashback-Status, @3x; Masse aus dem Screenshot, siehe build-cashback.py) */
+  #dd { width: 1170px; height: 2532px; background: #f9fafc; }
+  #dd-pct { left: -0.6px; width: 1170px; top: 1137.7px; text-align: center; font-size: 104.6px; font-weight: 500; color: #1f9a63; }
+  #dd-amt { left: -0.6px; width: 1170px; top: 1795.8px; text-align: center; font-size: 49.7px; font-weight: 400; color: #17181a; }
+  #phB-dim { position: absolute; inset: 0; background: #000; opacity: 0; }
+  .tapc { position: absolute; width: 0; height: 0; }
+  .tapc i { position: absolute; left: -70px; top: -70px; width: 140px; height: 140px; border-radius: 50%; background: rgba(17, 21, 18, .16); box-shadow: inset 0 0 0 3px rgba(17, 21, 18, .25); }
+  #foot2 { left: 92px; top: 500px; height: 36px; font-size: 26px; font-weight: 500; color: var(--muted); letter-spacing: .005em; white-space: nowrap; }
+
   /* ---------- Montage-Wörter & Endcard ---------- */
   .mw { left: 90px; height: 128px; font-size: 112px; font-weight: 800; letter-spacing: -.04em; line-height: 124px; white-space: nowrap; }
   #mw3 { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: 136px; letter-spacing: -.01em; height: 150px; line-height: 146px; padding-right: 40px; }
@@ -112,6 +121,9 @@
     <div class="abs mask l2" id="s4-l2"><span class="gold-text" data-text="s4_l2"></span></div>
     <div class="abs mask l1" id="s5-l1"><span data-text="s5_l1"></span></div>
     <div class="abs mask l2" id="s5-l2"><span class="gold-text" data-text="s5_l2"></span></div>
+    <div class="abs mask l1" id="s5b-l1"><span data-text="s5b_l1"></span></div>
+    <div class="abs mask l2" id="s5b-l2"><span class="gold-text" data-text="s5b_l2"></span></div>
+    <div class="abs mask" id="foot2"><span data-text="foot2"></span></div>
     <div class="abs mask l1" id="s6-l1"><span data-text="s6_l1"></span></div>
     <div class="abs mask l2" id="s6-l2"><span class="gold-text" data-text="s6_l2"></span></div>
     <div class="demo-tag" id="tag4"><i></i><span data-text="demo"></span></div>
@@ -140,6 +152,22 @@
     <div class="phone" id="phB"><div class="scr">
       <img src="img/dokumente-base.png" alt="">
       <div id="phB-cards"></div>
+      <div id="phB-dim"></div>
+      <div class="tapc" id="tap2" style="left:900px;top:1329px"><i></i></div>
+      <!-- S5b: Dokumentdetails mit Cashback-Status (Tipp auf die 100%-Police) -->
+      <div class="lay" id="dd"><img src="img/doc-detail.png" alt="" style="position:absolute;left:0;top:0">
+        <svg style="position:absolute;left:0;top:0" width="1170" height="2532" viewBox="0 0 1170 2532" aria-hidden="true">
+          <g id="dd-ring">
+            <circle cx="584.4" cy="1189.9" r="209.9" fill="none" stroke="#d3ebe3" stroke-width="15"/>
+            <circle id="dd-dash" cx="584.4" cy="1189.9" r="230.4" fill="none" stroke="#0c9559" stroke-width="9" stroke-dasharray="30.16 30.16"/>
+            <circle cx="584.4" cy="1189.9" r="189.5" fill="#fff"/>
+            <circle cx="584.4" cy="1189.9" r="194.4" fill="none" stroke="#e6f3ee" stroke-width="10"/>
+            <circle id="dd-arc" cx="584.4" cy="1189.9" r="194.4" fill="none" stroke="#059756" stroke-width="10" pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="100" transform="rotate(-90 584.4 1189.9)"/>
+          </g>
+        </svg>
+        <div class="ov" id="dd-pct">0%</div>
+        <div class="ov" id="dd-amt">0.00 CHF!</div>
+      </div>
     </div><div class="island"></div><div class="glare"></div></div>
 
     <!-- S6: Kontakt -->
@@ -201,6 +229,8 @@ const C = {
   s3_l1: 'Geschenkkarten kaufen.', s3_l2: 'Cashback sichern.*',
   s4_l1: 'Dein Guthaben.', s4_l2: 'Immer im Blick.',
   s5_l1: 'Policen & Dokumente.', s5_l2: 'An einem Ort.',
+  s5b_l1: 'Cashback auf Policen.', s5b_l2: 'Bis zu 30 CHF.*',
+  foot2: '*20 oder 30 CHF, je nach Art der Versicherung.',
   s6_l1: 'Fragen?', s6_l2: 'Direkt zu allnova.',
   m1: 'Sparen.', m2: 'Profitieren.', m3: 'Entdecken.',
   end_l1: 'Jetzt kostenlos', end_l2: 'herunterladen.',
@@ -254,7 +284,7 @@ document.getElementById('stream').innerHTML = [0, 1, 2, 3].map((r) =>
   `<div class="srow" id="sr${r}" style="top:${r * 214}px">${STREAM[r].map((n) => `<img src="img/brand-${n}.png" alt="">`).join('')}</div>`).join('');
 
 defineComposition({
-  duration: 30,
+  duration: 30 + 7 * 60 / 116, // 30 s + Cashback-Szene (7 Schläge)
   fps: 30,
   build() {
     const $ = (s) => document.querySelector(s);
@@ -295,6 +325,9 @@ defineComposition({
     gsap.set('#tag5', { left: 92, top: 500 });
     gsap.set('#phB', { ...P(0.55, 540, 2000) });
     gsap.set('.doc-card', { x: 1240, opacity: 0 });
+    gsap.set('.doc-card', { transformOrigin: '50% 50%' });
+    gsap.set('#dd', { x: 1170 });
+    gsap.set('#tap2', { scale: 0.3, opacity: 0 });
     gsap.set('#home', { x: 1180, y: 860, scale: 0.82 });
     gsap.set('#h-nav', { x: 1180, y: 1236, scale: 0.82 });
     gsap.set('.wa-ring', { scale: 0.6, opacity: 0 });
@@ -309,6 +342,7 @@ defineComposition({
 
     const tl = gsap.timeline({ defaults: { ease: 'expo.out', duration: 1 } });
     const pts = { v: 0 };
+    const cb = { p: 0, a: 0 }; // Cashback-Ring (%) und Betrag (CHF)
     const reveal = (sel, at, o = {}) => tl.to(inner(sel), { yPercent: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08, ...o }, at);
     const hide = (sel, at, o = {}) => tl.to(inner(sel), { yPercent: -45, opacity: 0, duration: 0.38, ease: 'power3.in', stagger: 0.04, ...o }, at);
     const gold = (sel, at, d = 2.4) => tl.to(inner(sel), { backgroundPosition: '100% 0', duration: d, ease: 'sine.inOut' }, at);
@@ -409,10 +443,35 @@ defineComposition({
     tl.to('#tag5', { opacity: 1, y: 0, duration: 0.6 }, t5 + 0.9);
     tl.to('#phB', { ...P(0.58, 540, 590), duration: 2.8, ease: 'sine.inOut' }, t5 + 0.9);
 
-    // ================= 18.6 – 21.7 s · Kontakt =================
-    const t6 = 18.62;
-    hide('#s5-l1, #s5-l2', t6 - 0.3);
-    tl.to('#tag5', { opacity: 0, duration: 0.3, ease: 'power1.in' }, t6 - 0.3);
+    // ================= 18.6 – 22.2 s · Cashback auf Policen (Tipp auf die 100%-Police) =================
+    const tc = 18.62;
+    tl.to('#tap2', { scale: 1, opacity: 1, duration: 0.22, ease: 'power2.out' }, tc - 0.5);
+    tl.to('.doc-card:nth-child(3)', { scale: 0.97, duration: 0.14, ease: 'power2.out' }, tc - 0.4);
+    tl.to('.doc-card:nth-child(3)', { scale: 1, duration: 0.3, ease: 'power2.out' }, tc - 0.24);
+    tl.to('#tap2', { scale: 1.3, opacity: 0, duration: 0.45, ease: 'power2.out' }, tc - 0.26);
+    hide('#s5-l1, #s5-l2', tc - 0.3);
+    tl.to('#tag5', { opacity: 0, duration: 0.3, ease: 'power1.in' }, tc - 0.3);
+    // iOS-Push: Details von rechts, Liste weicht leicht nach links und wird abgedunkelt
+    tl.to('#dd', { x: 0, duration: 0.62, ease: 'power3.out' }, tc - 0.12);
+    tl.to(['#phB .scr > img', '#phB-cards'], { x: -340, duration: 0.62, ease: 'power3.out' }, tc - 0.12);
+    tl.to('#phB-dim', { opacity: 0.1, duration: 0.62, ease: 'power3.out' }, tc - 0.12);
+    tl.to('#phB', { ...P(0.64, 540, 560), duration: 1.0, ease: 'expo.out' }, tc - 0.05);
+    tl.to('#phB', { ...P(0.66, 540, 540), duration: 2.6, ease: 'sine.inOut' }, tc + 0.95);
+    reveal('#s5b-l1', tc + 0.08);
+    reveal('#s5b-l2', tc + 0.3);
+    gold('#s5b-l2', tc + 0.5, 2.4);
+    reveal('#foot2', tc + 0.5, { duration: 0.7 });
+    // Ring füllt sich auf 100 %, dann Betrag
+    tl.to(cb, { p: 100, duration: 1.15, ease: 'power2.inOut' }, tc + 0.4);
+    tl.fromTo('#dd-dash', { rotation: -20, svgOrigin: '584.4 1189.9' }, { rotation: 10, svgOrigin: '584.4 1189.9', duration: 3.2, ease: 'sine.out' }, tc);
+    tl.to('#dd-ring', { scale: 1.05, svgOrigin: '584.4 1189.9', duration: 0.18, ease: 'power2.out' }, tc + 1.55);
+    tl.to('#dd-ring', { scale: 1, svgOrigin: '584.4 1189.9', duration: 0.7, ease: 'elastic.out(1, .5)' }, tc + 1.73);
+    tl.to(cb, { a: 30, duration: 0.7, ease: 'power2.out' }, tc + 1.62);
+    tl.fromTo('#dd-amt', { scale: 0.92, transformOrigin: '50% 60%' }, { scale: 1, duration: 0.8, ease: 'expo.out' }, tc + 1.62);
+
+    // ================= 22.2 – 25.3 s · Kontakt =================
+    const t6 = tc + 7 * B;
+    hide('#s5b-l1, #s5b-l2, #foot2', t6 - 0.3);
     tl.to('#phB', { y: 2100, rotation: 5, duration: 0.6, ease: 'power3.in' }, t6 - 0.35);
     reveal('#s6-l1', t6 + 0.08);
     reveal('#s6-l2', t6 + 0.3);
@@ -426,8 +485,8 @@ defineComposition({
     ['#war1', '#war2'].forEach((id, i) => tl.fromTo(id, { scale: 0.6, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.1, ease: 'power2.out' }, t6 + 2 * B + 0.15 + i * 0.25));
     tl.to(['#home', '#h-nav'], { y: '-=24', duration: 1.9, ease: 'sine.inOut' }, t6 + 0.9);
 
-    // ================= 21.7 – 25.3 s · Montage =================
-    const t7 = 21.72;
+    // ================= 25.3 – 29.0 s · Montage =================
+    const t7 = t6 + 3.1;
     hide('#s6-l1, #s6-l2', t7 - 0.3);
     tl.to(['#home', '#h-nav'], { x: -1200, duration: 0.55, ease: 'power3.in', stagger: 0.05 }, t7 - 0.3);
     reveal('#mw1', t7 + 0.05, { duration: 0.6 });
@@ -441,8 +500,8 @@ defineComposition({
     tl.to('#phL', { y: 770, rotation: -11, duration: 1.6, ease: 'sine.inOut' }, t7 + 0.05 + B + 0.9);
     tl.to('#phR', { y: 770, rotation: 11, duration: 1.2, ease: 'sine.inOut' }, t7 + 0.05 + 2 * B + 0.9);
 
-    // ================= 25.3 – 30 s · Endcard =================
-    const t8 = 25.34;
+    // ================= 29.0 – 33.6 s · Endcard =================
+    const t8 = t7 + 3.62;
     hide('#mw1, #mw2, #mw3', t8 - 0.3);
     tl.to('#phL', { y: 2100, rotation: -16, duration: 0.6, ease: 'power3.in' }, t8 - 0.3);
     tl.to('#phR', { y: 2100, rotation: 16, duration: 0.6, ease: 'power3.in' }, t8 - 0.26);
@@ -454,11 +513,16 @@ defineComposition({
     tl.to('#cta', { scale: 1, opacity: 1, duration: 0.01 }, t8 + 0.75);
     tl.to('#cta img', { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', stagger: 0.12 }, t8 + 0.75);
     reveal('#e-url', t8 + 1.0);
-    // ab ~26.6 s steht das Endbild ruhig bis 30 s
+    // ab ~30.2 s steht das Endbild ruhig bis zum Schluss
 
     return {
       timeline: tl,
-      onSeek() { $('#w-pts').textContent = `${pts.v.toFixed(2)} Punkte`; },
+      onSeek() {
+        $('#w-pts').textContent = `${pts.v.toFixed(2)} Punkte`;
+        $('#dd-arc').setAttribute('stroke-dashoffset', (100 - cb.p).toFixed(3));
+        $('#dd-pct').textContent = `${Math.round(cb.p)}%`;
+        $('#dd-amt').textContent = `${cb.a.toFixed(2)} CHF!`;
+      },
     };
   },
 });

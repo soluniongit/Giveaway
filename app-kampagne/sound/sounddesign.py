@@ -2,7 +2,7 @@
 """
 Sounddesign für den allnova App-Teaser — vollständig synthetisch (keine Lizenzfragen).
 
-  python3 sound/sounddesign.py            → out/sound/teaser.wav (48 kHz, Stereo, 30 s)
+  python3 sound/sounddesign.py            → out/sound/teaser.wav (48 kHz, Stereo, 33.6 s)
 
 Aufbau pro Video:
   * Musikbett: warmer Pad-Akkord, Sub-Bass, Pluck-Arpeggio (Kalimba-artig), dezente Hi-Hats
@@ -18,7 +18,7 @@ import numpy as np
 
 SR = 48000
 SFX = 0.07  # Effekte gegenüber der Musik (vorher 1.0 → 0.55 → 0.38 → 0.22; jetzt −10 dB) — dezent, nicht lauter als das Musikbett
-DUR = 30.0
+DUR = 30.0 + 7 * 60 / 116  # 30 s + Cashback-Szene (7 Schläge bei 116 BPM)
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
 
@@ -248,20 +248,22 @@ def write(path, mix):
 # ------------------------------------------------------------------ App-Teaser (116 BPM, F-Dur, Puls)
 def app():
     B = 60 / 116
+    O = 7 * B  # Versatz aller Szenen nach der eingefügten Cashback-Szene (18.62 s)
     chords = [
         (0.0, 2.6, ['F2', 'C3', 'F3', 'A3', 'E4']),
         (2.6, 6.72, ['D2', 'A2', 'D3', 'F3', 'C4']),
         (6.72, 10.34, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
         (10.34, 14.48, ['F2', 'C3', 'F3', 'A3', 'E4']),
         (14.48, 18.62, ['G2', 'D3', 'G3', 'A#3', 'F4']),   # Dokumente: offener, Puls pausiert
-        (18.62, 21.72, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
-        (21.72, 25.34, ['C2', 'G2', 'C3', 'E3', 'D4']),
-        (25.34, 30.0, ['F2', 'C3', 'F3', 'A3', 'E4']),
+        (18.62, 18.62 + O, ['D2', 'A2', 'D3', 'F3', 'C4']),  # Cashback auf Policen: Puls setzt wieder ein
+        (18.62 + O, 21.72 + O, ['A#1', 'F2', 'A#2', 'D3', 'A3']),
+        (21.72 + O, 25.34 + O, ['C2', 'G2', 'C3', 'E3', 'D4']),
+        (25.34 + O, DUR, ['F2', 'C3', 'F3', 'A3', 'E4']),
     ]
-    mus = music(chords, 116, start_arp=2.6, stop_arp=25.3, hats=(2.6, 25.3), kicks=(2.6, 14.48), end_fade=(26.4, 30.0))
-    # Puls nach der Dokumentenszene wieder aufnehmen
+    mus = music(chords, 116, start_arp=2.6, stop_arp=25.3 + O, hats=(2.6, 25.3 + O), kicks=(2.6, 14.48), end_fade=(26.4 + O, DUR))
+    # Puls nach der Dokumentenszene (mit dem Tipp auf die Police) wieder aufnehmen
     t = 18.62
-    while t < 25.3:
+    while t < 25.3 + O:
         place(mus, kick(), t, 0.22)
         i0, i1 = int(t * SR), int((t + 0.22) * SR)
         mus[:, i0:i1] *= np.linspace(0.6, 1.0, i1 - i0)
@@ -300,18 +302,26 @@ def app():
         at = 14.48 + 0.62 + k * B
         place(s, swish(0.3), at - 0.05, 0.14)
         place(s, pan(pop(220, 380, 0.08), 0.1), at + 0.18, 0.28)
-    # 18.6–21.7 s: Kontakt — dezenter Ton zum Symbol
-    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 18.27, 0.20)
-    place(s, swish(0.4), 18.67, 0.22)
-    place(s, pan(tick(1500), 0.3), 18.62 + 2 * B, 0.07)
-    place(s, chime(note('A4'), 1.8), 18.62 + 2 * B + 0.12, 0.10)
-    # 21.7–25.3 s: Verdichtung — die drei Handys kommen ohne Klang-Akzente (nur Musik)
-    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42, 0.20)
-    # 25.3–30 s: Endkarte — Handys raus (fallender Whoosh), Logo/Text rein (Swoosh, Spitze ~25.55 s), Ausklang
-    place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04, 0.28)
-    place(s, whoosh(0.75, 420, 3400, peak=0.42, width=0.6), 25.24, 0.26)
-    place(s, impact(), 25.44, 0.16)
-    place(s, swish(0.32), 26.0, 0.12)   # Store-Badges
+    # 18.6–22.2 s: Cashback auf Policen — Klick auf die 100%-Police, Push in die Details, Ring füllt sich
+    tc = 18.62
+    place(s, pan(tick(1900, 0.05), 0.15), tc - 0.4, 0.16)          # Klick (Finger auf die Karte)
+    place(s, pan(pop(170, 240, 0.06), 0.15), tc - 0.4, 0.22)       # Körper des Klicks
+    place(s, swish(0.36), tc - 0.16, 0.20)                          # Push von rechts
+    place(s, whoosh(1.2, 500, 2600, peak=0.85, width=0.5), tc + 0.4, 0.10)  # Ring füllt sich
+    place(s, pan(pop(300, 680, 0.1), 0), tc + 1.55, 0.24)           # 100 %
+    place(s, pan(tick(1500), 0.1), tc + 1.62, 0.06)                 # Betrag
+    # 22.2–25.3 s: Kontakt — dezenter Ton zum Symbol
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 18.27 + O, 0.20)
+    place(s, swish(0.4), 18.67 + O, 0.22)
+    place(s, pan(tick(1500), 0.3), 18.62 + O + 2 * B, 0.07)
+    place(s, chime(note('A4'), 1.8), 18.62 + O + 2 * B + 0.12, 0.10)
+    # 25.3–29.0 s: Verdichtung — die drei Handys kommen ohne Klang-Akzente (nur Musik)
+    place(s, whoosh(0.6, 2000, 6000, peak=0.5), 21.42 + O, 0.20)
+    # 29.0–33.6 s: Endkarte — Handys raus (fallender Whoosh), Logo/Text rein (Swoosh), Ausklang
+    place(s, whoosh(0.8, 3000, 400, peak=0.4), 25.04 + O, 0.28)
+    place(s, whoosh(0.75, 420, 3400, peak=0.42, width=0.6), 25.24 + O, 0.26)
+    place(s, impact(), 25.44 + O, 0.16)
+    place(s, swish(0.32), 26.0 + O, 0.12)   # Store-Badges
     # Effekte weicher: Höhen sanft absenken (weniger spitz/penetrant)
     s = np.stack([onepole_lp(ch, 4500) for ch in s])
     write('out/sound/teaser.wav', master(mus, s, 0.6, SFX))
