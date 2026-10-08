@@ -54,7 +54,6 @@ const cfg = window.ALLNOVA_CONFIG || {};
 const main = document.querySelector('.confirm');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtDate = (d) => (d ? new Date(`${d}T12:00:00`).toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '');
-const PAGES = { giveaway: '../' };
 const seal = `<svg class="seal" viewBox="0 0 128 128" aria-hidden="true"><circle class="s-ring" cx="64" cy="64" r="58" fill="none" stroke="#b69a5c" stroke-width="5"/><circle class="s-fill" cx="64" cy="64" r="50" fill="#b69a5c"/><path class="s-check" d="M42 65l15 15 30-33" fill="none" stroke="#111512" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
 
@@ -123,7 +122,9 @@ function inviteCard(r, back) {
 const token = new URLSearchParams(location.search).get('token') || '';
 let r;
 try { r = await confirmEntry(token); } catch (e) { r = { ok: false, error: 'network' }; }
-const back = PAGES[r.kind] || '../';
+// Zurück zur Seite des jeweiligen Giveaways (mehrere möglich): Pfad aus public_url der Kampagne
+let back = '../';
+try { if (r.public_url) back = new URL(r.public_url).pathname; } catch (e) { /* ungültige URL */ }
 
 if (r.ok) {
   const again = r.status === 'already_confirmed';

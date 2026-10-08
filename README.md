@@ -9,12 +9,12 @@ Webseite und Datenbank für das Giveaway von allnova. Veranstalterin und Sponsor
 | Auslosung | 19.11.2026, unter allen gültigen Teilnahmen |
 | Wer | ab 18 Jahren, Wohnsitz in der Schweiz; eine Teilnahme pro Person, gratis und ohne Kauf |
 | Bonus | «Doppelte Chance»: 1 Bonuslos, wenn jemand über den persönlichen Einladungslink gültig teilnimmt |
-| Domain | `https://gewinnspiel.allnova.ch/` (Seite liegt im Web-Root) |
+| Domain | `https://gewinnspiel.allnova.ch/` (Übersicht aller Giveaways), dieses Giveaway unter `/ps5-gta6/` |
 
-Die Daten stehen pro Medium an einer Stelle: in der Datenbank (`campaigns`), als Fallback in `web/assets/js/demo-data.js` und als Text in `web/index.html` (Hero, Fakten, FAQ, Bedingungen).
+Die Daten stehen pro Medium an einer Stelle: in der Datenbank (`campaigns`), als Fallback in `web/assets/js/demo-data.js` und als Text in `web/ps5-gta6/index.html` (Hero, Fakten, FAQ, Bedingungen).
 
 ```
-web/        Statische Giveaway-Seite (kein Build nötig) + Bestätigungsseite
+web/        Übersicht aller Giveaways + je Giveaway eine statische Seite (kein Build nötig) + Bestätigungsseite
 supabase/   Datenbank-Migrationen, Startdaten und Tests
 ```
 
@@ -26,8 +26,9 @@ Die Motion-Design-Videos und Instagram-Visuals liegen im Repository [soluniongit
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Giveaway-Seite: Hero mit Live-Countdown bis Teilnahmeschluss, Produktbildern (PS5 Pro, GTA VI) mit 3D-Neigung, Ticker, Gewinn-Kacheln, «So geht's» in 3 Schritten mit «Doppelte Chance», **Instagram-Einbettung**, Teilnahmeformular, FAQ, Teilnahmebedingungen, Datenschutz |
-| `bestaetigen/` | Ziel des Bestätigungslinks (Double-Opt-in): «Deine Teilnahme ist bestätigt.», persönlicher Einladungslink, App-CTA |
+| `index.html` | **Übersicht** aller Giveaways: eine Karte pro Giveaway (aktuell PS5 Pro + GTA VI) und ein Platzhalter «Weitere Giveaways folgen». Neues Giveaway: Ordner wie `ps5-gta6/` anlegen, Kampagne in der DB ergänzen und eine weitere Karte `<a class="tile">` einfügen |
+| `ps5-gta6/index.html` | Giveaway-Seite: Hero mit Live-Countdown bis Teilnahmeschluss, Produktbildern (PS5 Pro, GTA VI) mit 3D-Neigung, Ticker, Gewinn-Kacheln, «So geht's» in 3 Schritten mit «Doppelte Chance», **Instagram-Einbettung**, Teilnahmeformular, FAQ, Teilnahmebedingungen, Datenschutz |
+| `bestaetigen/` | Ziel des Bestätigungslinks für alle Giveaways (Double-Opt-in): «Deine Teilnahme ist bestätigt.», persönlicher Einladungslink zur jeweiligen Giveaway-Seite (aus `campaigns.public_url`), App-CTA |
 | `assets/` | `css/site.css` (Design-System), `css/giveaway.css`, `js/` (Seite, Formular, API), `img/` (Produktbilder), `brand/` (Logo, Profilbild), `fonts/`, `vendor/` (GSAP, Lenis) |
 
 Technik: statisches HTML/CSS/JS mit GSAP (ScrollTrigger, SplitText, DrawSVG) und Lenis Smooth Scroll. Mobile-first, berücksichtigt `prefers-reduced-motion`, kein Build-Schritt. Gestaltung im allnova-CI (Anthrazit, Gold, Inter Tight + Instrument Serif) mit Sonnenuntergang als Akzent.
@@ -48,7 +49,8 @@ instagramPostUrl: 'https://www.instagram.com/p/<ID>/',   // auch /reel/<ID>/
 ```bash
 cd web
 npx http-server . -p 8080 -c-1
-# http://localhost:8080/            ?phase=upcoming|open|closed simuliert den Status (Demo-Modus)
+# http://localhost:8080/            Übersicht
+# http://localhost:8080/ps5-gta6/   ?phase=upcoming|open|closed simuliert den Status (Demo-Modus)
 # http://localhost:8080/bestaetigen/?token=demo   (&bonus=1 zeigt das aktive Bonuslos)
 ```
 

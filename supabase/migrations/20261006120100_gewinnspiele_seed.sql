@@ -5,7 +5,7 @@
 -- Teilnahmebedingungen, Mailversand und Instagram-Beitrag:
 --   update public.campaigns set status = 'published' where slug = 'ps5-gta6-2026';
 -- Teilnahmeschluss 18.11.2026, 23:59 (Europe/Zurich); Auslosung 19.11.2026.
--- Die Seite selbst (web/index.html) enthält FAQ und Bedingungen als HTML;
+-- Die Seite selbst (web/ps5-gta6/index.html; Übersicht aller Giveaways: web/index.html) enthält FAQ und Bedingungen als HTML;
 -- landing_pages.content trägt hier nur die Texte für Formular und Bestätigung.
 -- =====================================================================
 
@@ -17,7 +17,7 @@ insert into public.campaigns (
   'PS5 Pro + GTA VI Giveaway',
   'Gewinne eine PS5 Pro mit GTA VI.',
   '1 Person gewinnt eine PlayStation 5 Pro mit Grand Theft Auto VI für PS5.',
-  'https://gewinnspiel.allnova.ch/',
+  'https://gewinnspiel.allnova.ch/ps5-gta6/',
   'https://gewinnspiel.allnova.ch/bestaetigen/',
   '2026-10-08 00:00:00 Europe/Zurich', '2026-11-18 23:59:59 Europe/Zurich',
   '2026-11-19', null, '{}', false, 'ps5-gta6-2026-v1'
@@ -34,7 +34,7 @@ select c.id, 'hauptpreis', null,
   from public.campaigns c where c.slug = 'ps5-gta6-2026';
 
 insert into public.landing_pages (campaign_id, path, seo_title, seo_description, video_url, content)
-select c.id, '/',
+select c.id, '/ps5-gta6/',
        'Giveaway: Gewinne eine PS5 Pro + GTA VI | allnova',
        'allnova verlost eine PlayStation 5 Pro mit Grand Theft Auto VI. Kostenlos mitmachen bis 18.11.2026 – ab 18, Wohnsitz in der Schweiz.',
        null,
