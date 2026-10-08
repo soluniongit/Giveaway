@@ -20,7 +20,7 @@ alter table public.events drop constraint events_event_type_check;
 alter table public.events add constraint events_event_type_check check (event_type in (
   'page_view', 'video_play', 'calculator_used', 'quiz_completed', 'roadmap_used', 'pool_selected',
   'form_started', 'form_submitted', 'app_cta_click', 'app_later_click', 'partner_link_click', 'share_click',
-  'referral_visit', 'invite_share', 'invite_copy', 'invite_whatsapp'));
+  'referral_visit', 'invite_share', 'invite_copy', 'invite_whatsapp', 'instagram_click', 'instagram_embed_load'));
 
 alter table public.draws add column ticket_count integer;
 comment on column public.draws.ticket_count is 'Anzahl Lose im Pool (gültige Teilnahmen + Bonuslose) zum Zeitpunkt der Ziehung.';
@@ -188,7 +188,8 @@ create or replace function public.submit_entry(
   p_pool text default null,
   p_source jsonb default '{}'::jsonb,
   p_form_started_at timestamptz default null,
-  p_website text default null
+  p_website text default null,
+  p_instagram text default null
 )
 returns jsonb
 language plpgsql
@@ -204,6 +205,7 @@ declare
   v_email text := lower(private.clean_text(p_email, 254));
   v_plz text := private.clean_text(p_postal_code, 4);
   v_canton text := upper(private.clean_text(p_canton, 2));
+  v_insta text := nullif(lower(ltrim(private.clean_text(p_instagram, 31), '@')), '');
   v_ip text := private.request_ip();
   v_ip_hash text;
   v_is_test boolean;
@@ -254,8 +256,12 @@ begin
   if v_plz is null or v_plz !~ '^[1-9][0-9]{3}$' then
     return jsonb_build_object('ok', false, 'error', 'invalid_postal_code');
   end if;
-  if v_canton is null or not (v_canton = any (c.allowed_cantons)) then
+  -- leere Liste allowed_cantons = ganze Schweiz (Kanton dann optional)
+  if cardinality(c.allowed_cantons) > 0 and (v_canton is null or not (v_canton = any (c.allowed_cantons))) then
     return jsonb_build_object('ok', false, 'error', 'invalid_canton');
+  end if;
+  if v_insta is not null and v_insta !~ '^[a-z0-9._]{1,30}$' then
+    return jsonb_build_object('ok', false, 'error', 'invalid_instagram');
   end if;
   if not coalesce(p_consent_terms, false) then
     return jsonb_build_object('ok', false, 'error', 'consent_required');
@@ -298,7 +304,7 @@ begin
       if v_existing.last_confirmation_sent_at > now() - interval '2 minutes' then
         update public.entries
            set pool_id = v_pool_id, first_name = v_first, last_name = v_last, email = v_email,
-               postal_code = v_plz, canton = v_canton,
+               postal_code = v_plz, canton = v_canton, instagram_handle = v_insta,
                consent_terms = true, consent_terms_at = now(), terms_version = c.terms_version,
                marketing_opt_in = coalesce(p_marketing_opt_in, false),
                marketing_opt_in_at = case when coalesce(p_marketing_opt_in, false) then now() end,
@@ -308,7 +314,7 @@ begin
       end if;
       update public.entries
          set pool_id = v_pool_id, first_name = v_first, last_name = v_last, email = v_email,
-             postal_code = v_plz, canton = v_canton,
+             postal_code = v_plz, canton = v_canton, instagram_handle = v_insta,
              consent_terms = true, consent_terms_at = now(), terms_version = c.terms_version,
              marketing_opt_in = coalesce(p_marketing_opt_in, false),
              marketing_opt_in_at = case when coalesce(p_marketing_opt_in, false) then now() end,
@@ -334,13 +340,13 @@ begin
     end if;
   else
     insert into public.entries (
-      campaign_id, pool_id, is_test, first_name, last_name, email, email_normalized, postal_code, canton,
+      campaign_id, pool_id, is_test, first_name, last_name, email, email_normalized, postal_code, canton, instagram_handle,
       consent_terms, consent_terms_at, terms_version, marketing_opt_in, marketing_opt_in_at,
       confirm_token_hash, confirm_token_expires_at, confirmation_sent_count, last_confirmation_sent_at,
       utm_source, utm_medium, utm_campaign, utm_content, utm_term, referrer, landing_path,
       ip_hash, user_agent, share_code, referred_by)
     values (
-      c.id, v_pool_id, v_is_test, v_first, v_last, v_email, v_email, v_plz, v_canton,
+      c.id, v_pool_id, v_is_test, v_first, v_last, v_email, v_email, v_plz, v_canton, v_insta,
       true, now(), c.terms_version, coalesce(p_marketing_opt_in, false),
       case when coalesce(p_marketing_opt_in, false) then now() end,
       extensions.digest(v_token, 'sha256'), v_expires, 1, now(),
@@ -520,7 +526,7 @@ begin
 
   update public.entries e
      set first_name = null, last_name = null, email = null, email_normalized = null,
-         postal_code = null, ip_hash = null, user_agent = null, referrer = null,
+         postal_code = null, instagram_handle = null, ip_hash = null, user_agent = null, referrer = null,
          confirm_token_hash = null, share_code = null, status = 'anonymized', anonymized_at = now()
    where e.campaign_id = v_campaign_id
      and e.status <> 'anonymized'
@@ -542,7 +548,7 @@ $$;
 -- ---------------------------------------------------------------------
 create or replace view public.entries_export with (security_invoker = true) as
 select c.slug as campaign, p.key as pool, p.title as prize,
-       e.id as entry_id, e.first_name, e.last_name, e.email, e.postal_code, e.canton,
+       e.id as entry_id, e.first_name, e.last_name, e.email, e.postal_code, e.canton, e.instagram_handle,
        e.confirmed_at, e.marketing_opt_in, e.utm_source, e.utm_medium, e.utm_campaign, e.utm_content,
        private.bonus_entries(e.id) as bonus_entries, e.referred_by as referred_by_entry_id
   from public.entries e
@@ -559,23 +565,3 @@ select c.slug as campaign,
   left join public.entries f on f.campaign_id = c.id and not f.is_test
  group by c.slug;
 revoke all on public.entries_export, public.campaign_referral_stats from anon;
-
--- ---------------------------------------------------------------------
--- Inhalte: Teilnahmebedingungen v2 (Ziehung nach Losen, neue Ziffer 9), FAQ
--- ---------------------------------------------------------------------
-update public.campaigns set terms_version = 'v2' where slug in ('steuern-2027', 'fahrstart-2026');
-
-update public.landing_pages lp
-   set content = jsonb_set(
-         jsonb_set(lp.content, '{terms}',
-           (select jsonb_agg(case when t ->> 'title' = '4. Ziehung'
-                                  then jsonb_build_object('title', '4. Ziehung', 'text',
-                                         case c.slug when 'steuern-2027' then 'Die Gewinnperson wird am 02.03.2027 zufällig unter allen gültigen Teilnahmen gezogen. Jede gültige Teilnahme zählt mit einem Los, ein Bonuslos gemäss Ziffer 9 mit einem zweiten Los derselben Person. Die Ziehung wird intern dokumentiert.' else 'Am 01.12.2026 wird je eine Person pro gewähltem Anbieter/Preispool zufällig gezogen; die Gewinnchance hängt von der Zahl gültiger Lose im jeweiligen Pool ab. Jede gültige Teilnahme zählt mit einem Los, ein Bonuslos gemäss Ziffer 9 mit einem zweiten Los im selben Pool. Pro Person höchstens ein Preis. Die Ziehung wird intern dokumentiert.' end)
-                                  else t end order by n)
-              from jsonb_array_elements(lp.content -> 'terms') with ordinality as x(t, n))
-           || jsonb_build_array(jsonb_build_object('title', '9. Bonuslos durch Einladung', 'text', 'Nach bestätigter Teilnahme erhältst du einen persönlichen Einladungslink. Nimmt eine andere Person über diesen Link teil und bestätigt ihre Teilnahme gültig innerhalb der Laufzeit, erhältst du ein Bonuslos – höchstens eines pro Person, also maximal zwei Lose (doppelte Gewinnchance). Das Bonuslos setzt keinen Kauf, keine Werbeeinwilligung und kein Teilen auf einer bestimmten Plattform voraus; das Weiterleiten des Links ist freiwillig. Teile ihn nur mit Personen, die damit einverstanden sind, und nicht als Massenversand. Die eingeladene Person nimmt zu den gleichen Bedingungen teil, ihre eigene Gewinnchance ändert sich dadurch nicht. Du erfährst nicht, wer über deinen Link teilgenommen hat. Selbsteinladungen, Teilnahmen über denselben Internetanschluss sowie fiktive oder mehrfach angelegte Adressen zählen nicht und können zum Ausschluss führen.'))),
-         '{faq}',
-         (lp.content -> 'faq') || jsonb_build_array(jsonb_build_object('q', 'Kann ich meine Gewinnchance verdoppeln?', 'a', 'Ja. Nach deiner Bestätigung bekommst du einen persönlichen Einladungslink. Macht eine Freundin oder ein Freund darüber gültig mit, erhältst du ein Bonuslos – maximal eines, also doppelte Chance. Für Käufe, Newsletter oder App gibt es keine zusätzlichen Lose.')))
-  from public.campaigns c
- where c.id = lp.campaign_id and c.slug in ('steuern-2027', 'fahrstart-2026')
-   and not (lp.content -> 'terms') @> '[{"title": "9. Bonuslos durch Einladung"}]';

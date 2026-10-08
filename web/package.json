@@ -2,19 +2,13 @@
   "name": "allnova-gewinnspiel-web",
   "private": true,
   "type": "module",
-  "description": "Statische Gewinnspielseiten (allnova.ch/gewinnen/…) — kein Build nötig; Skripte nur für Vendor-Dateien, Karte und Tests.",
+  "description": "Giveaway-Seite gewinnspiel.allnova.ch — statisch, kein Build nötig; Skript nur für Vendor-Dateien.",
   "scripts": {
     "serve": "npx http-server . -p 8080 -c-1",
-    "vendor": "node scripts/vendor.mjs",
-    "map": "node scripts/build-map.mjs",
-    "test": "node scripts/test-taxcalc.mjs"
+    "vendor": "node scripts/vendor.mjs"
   },
   "devDependencies": {
-    "d3-geo": "^3.1.1",
     "gsap": "3.15.0",
-    "lenis": "^1.3.0",
-    "swiss-maps": "^4.5.0",
-    "topojson-client": "^3.1.0",
-    "topojson-simplify": "^3.0.3"
+    "lenis": "^1.3.0"
   }
 }

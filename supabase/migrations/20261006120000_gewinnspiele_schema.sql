@@ -1,12 +1,12 @@
 -- =====================================================================
--- allnova Gewinnspiele — Datenbasis für die Gewinnspielseiten
+-- allnova Gewinnspiele — Datenbasis für die Giveaway-Seite (gewinnspiel.allnova.ch)
 --
--- Abgebildet nach dem Marketingkonzept (Stand 06.10.2026):
+-- Grundsätze (Marketingkonzept 06.10.2026, gilt für jedes Giveaway):
 --   * ein Datensatz pro Person und Gewinnspiel (deduplizierte E-Mail)
 --   * serverseitige Fristprüfung, E-Mail-Bestätigung per Einmal-Link
 --   * einfache Bot-Bremse (Honeypot, Mindestausfüllzeit, IP-Rate-Limit)
 --   * Kampagnenkennung + Quelle (UTM) je Teilnahme, App-Klicks separat
---   * Preispools (Fahrstart: Anbieter A/B/C), Ziehung mit Protokoll
+--   * Preispools (ein oder mehrere Gewinne), Ziehung mit Protokoll
 --   * Anonymisierung der Nicht-Gewinner nach der Abwicklung
 --
 -- Zugriff von aussen (anon / Landingpages) ausschliesslich über RPCs:
@@ -20,7 +20,7 @@ revoke all on schema private from public;
 -- ---------------------------------------------------------------------
 -- Typen
 -- ---------------------------------------------------------------------
-create type public.campaign_kind as enum ('steuer', 'fahrstart');
+create type public.campaign_kind as enum ('giveaway');
 create type public.publication_status as enum ('draft', 'published', 'archived');
 create type public.partner_status as enum ('angefragt', 'im_gespraech', 'zugesagt', 'abgesagt');
 create type public.entry_status as enum ('pending', 'confirmed', 'disqualified', 'anonymized');
@@ -59,7 +59,7 @@ create table public.campaigns (
   draw_on date,
   redeem_until date,
   min_age integer not null default 18 check (min_age >= 18),
-  allowed_cantons text[] not null default '{ZH,SZ,ZG,SG}',
+  allowed_cantons text[] not null default '{}',
   requires_pool_choice boolean not null default false,
   terms_version text not null default 'v1',
   response_days integer not null default 7 check (response_days > 0),
@@ -71,6 +71,7 @@ create table public.campaigns (
 comment on table public.campaigns is 'Ein Gewinnspiel (Welle). status=published schaltet die Landingpage und das Formular frei; test_mode erlaubt Testteilnahmen ausserhalb der Laufzeit (als Test markiert).';
 comment on column public.campaigns.confirm_url is 'Seite, die den Bestätigungslink entgegennimmt; ?token=… wird angehängt.';
 comment on column public.campaigns.response_days is 'Rückmeldefrist der Gewinnperson in Kalendertagen, danach Nachziehung aus der Reserve.';
+comment on column public.campaigns.allowed_cantons is 'Zugelassene Wohnkantone; leer = ganze Schweiz (Kanton im Formular dann optional).';
 comment on column public.campaigns.retention_days is 'Nicht-Gewinner spätestens so viele Tage nach Abschluss der Gewinnabwicklung löschen/anonymisieren.';
 
 create table public.partners (
@@ -100,7 +101,7 @@ create table public.partners (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
-comment on table public.partners is 'Preispartner (Fahrschulen/VKU-Anbieter). Name, Ort und Logo erscheinen öffentlich erst mit status=zugesagt; bis dahin nur das neutrale label.';
+comment on table public.partners is 'Optionale Preispartner. Name, Ort und Logo erscheinen öffentlich erst mit status=zugesagt; bis dahin nur das neutrale label.';
 
 create table public.prize_pools (
   id uuid primary key default gen_random_uuid(),
@@ -118,7 +119,7 @@ create table public.prize_pools (
   updated_at timestamptz not null default now(),
   unique (campaign_id, key)
 );
-comment on table public.prize_pools is 'Preispool = was gewonnen werden kann. Fahrstart: je ein Pool pro Anbieter (Ziehung innerhalb des Pools). Steuern: ein Pool.';
+comment on table public.prize_pools is 'Preispool = was gewonnen werden kann (Ziehung innerhalb des Pools). PS5-Giveaway: ein Pool.';
 
 create table public.landing_pages (
   id uuid primary key default gen_random_uuid(),
@@ -146,6 +147,7 @@ create table public.entries (
   email_normalized text,
   postal_code text,
   canton text,
+  instagram_handle text check (instagram_handle ~ '^[a-z0-9._]{1,30}$'),
   consent_terms boolean not null,
   consent_terms_at timestamptz not null default now(),
   terms_version text not null,
@@ -172,7 +174,8 @@ create table public.entries (
   constraint entries_one_per_person unique (campaign_id, email_normalized),
   constraint entries_consent_required check (consent_terms)
 );
-comment on table public.entries is 'Teilnahmen. Gültig erst mit status=confirmed (E-Mail bestätigt innerhalb der Laufzeit). Keine Steuerunterlagen, AHV-Nummern o. Ä. erfassen.';
+comment on table public.entries is 'Teilnahmen. Gültig erst mit status=confirmed (E-Mail bestätigt innerhalb der Laufzeit). Keine AHV-Nummern, Ausweis- oder Zahlungsdaten erfassen.';
+comment on column public.entries.instagram_handle is 'Freiwillig: Instagram-Name ohne @ (nur für Gewinnerkontakt). Wird bei der Anonymisierung gelöscht.';
 
 create table public.marketing_consents (
   id uuid primary key default gen_random_uuid(),
@@ -194,7 +197,8 @@ create table public.events (
   entry_id uuid references public.entries (id) on delete set null,
   event_type text not null check (event_type in (
     'page_view', 'video_play', 'calculator_used', 'quiz_completed', 'roadmap_used', 'pool_selected',
-    'form_started', 'form_submitted', 'app_cta_click', 'app_later_click', 'partner_link_click', 'share_click'
+    'form_started', 'form_submitted', 'app_cta_click', 'app_later_click', 'partner_link_click', 'share_click',
+    'instagram_click', 'instagram_embed_load'
   )),
   session_id text,
   meta jsonb not null default '{}'::jsonb,
@@ -470,7 +474,8 @@ create or replace function public.submit_entry(
   p_pool text default null,
   p_source jsonb default '{}'::jsonb,
   p_form_started_at timestamptz default null,
-  p_website text default null
+  p_website text default null,
+  p_instagram text default null
 )
 returns jsonb
 language plpgsql
@@ -486,6 +491,7 @@ declare
   v_email text := lower(private.clean_text(p_email, 254));
   v_plz text := private.clean_text(p_postal_code, 4);
   v_canton text := upper(private.clean_text(p_canton, 2));
+  v_insta text := nullif(lower(ltrim(private.clean_text(p_instagram, 31), '@')), '');
   v_ip text := private.request_ip();
   v_ip_hash text;
   v_is_test boolean;
@@ -535,8 +541,12 @@ begin
   if v_plz is null or v_plz !~ '^[1-9][0-9]{3}$' then
     return jsonb_build_object('ok', false, 'error', 'invalid_postal_code');
   end if;
-  if v_canton is null or not (v_canton = any (c.allowed_cantons)) then
+  -- leere Liste allowed_cantons = ganze Schweiz (Kanton dann optional)
+  if cardinality(c.allowed_cantons) > 0 and (v_canton is null or not (v_canton = any (c.allowed_cantons))) then
     return jsonb_build_object('ok', false, 'error', 'invalid_canton');
+  end if;
+  if v_insta is not null and v_insta !~ '^[a-z0-9._]{1,30}$' then
+    return jsonb_build_object('ok', false, 'error', 'invalid_instagram');
   end if;
   if not coalesce(p_consent_terms, false) then
     return jsonb_build_object('ok', false, 'error', 'consent_required');
@@ -571,7 +581,7 @@ begin
       if v_existing.last_confirmation_sent_at > now() - interval '2 minutes' then
         update public.entries
            set pool_id = v_pool_id, first_name = v_first, last_name = v_last, email = v_email,
-               postal_code = v_plz, canton = v_canton,
+               postal_code = v_plz, canton = v_canton, instagram_handle = v_insta,
                consent_terms = true, consent_terms_at = now(), terms_version = c.terms_version,
                marketing_opt_in = coalesce(p_marketing_opt_in, false),
                marketing_opt_in_at = case when coalesce(p_marketing_opt_in, false) then now() end
@@ -580,7 +590,7 @@ begin
       end if;
       update public.entries
          set pool_id = v_pool_id, first_name = v_first, last_name = v_last, email = v_email,
-             postal_code = v_plz, canton = v_canton,
+             postal_code = v_plz, canton = v_canton, instagram_handle = v_insta,
              consent_terms = true, consent_terms_at = now(), terms_version = c.terms_version,
              marketing_opt_in = coalesce(p_marketing_opt_in, false),
              marketing_opt_in_at = case when coalesce(p_marketing_opt_in, false) then now() end,
@@ -605,13 +615,13 @@ begin
     end if;
   else
     insert into public.entries (
-      campaign_id, pool_id, is_test, first_name, last_name, email, email_normalized, postal_code, canton,
+      campaign_id, pool_id, is_test, first_name, last_name, email, email_normalized, postal_code, canton, instagram_handle,
       consent_terms, consent_terms_at, terms_version, marketing_opt_in, marketing_opt_in_at,
       confirm_token_hash, confirm_token_expires_at, confirmation_sent_count, last_confirmation_sent_at,
       utm_source, utm_medium, utm_campaign, utm_content, utm_term, referrer, landing_path,
       ip_hash, user_agent)
     values (
-      c.id, v_pool_id, v_is_test, v_first, v_last, v_email, v_email, v_plz, v_canton,
+      c.id, v_pool_id, v_is_test, v_first, v_last, v_email, v_email, v_plz, v_canton, v_insta,
       true, now(), c.terms_version, coalesce(p_marketing_opt_in, false),
       case when coalesce(p_marketing_opt_in, false) then now() end,
       extensions.digest(v_token, 'sha256'), v_expires, 1, now(),
@@ -830,7 +840,7 @@ begin
 
   update public.entries e
      set first_name = null, last_name = null, email = null, email_normalized = null,
-         postal_code = null, ip_hash = null, user_agent = null, referrer = null,
+         postal_code = null, instagram_handle = null, ip_hash = null, user_agent = null, referrer = null,
          confirm_token_hash = null, status = 'anonymized', anonymized_at = now()
    where e.campaign_id = v_campaign_id
      and e.status <> 'anonymized'
@@ -886,7 +896,7 @@ select c.slug as campaign, ev.event_type, count(*) as events, count(distinct ev.
 -- Exportliste für die Ziehung: nur gültige (bestätigte) Teilnahmen, eine pro Person.
 create view public.entries_export with (security_invoker = true) as
 select c.slug as campaign, p.key as pool, p.title as prize,
-       e.id as entry_id, e.first_name, e.last_name, e.email, e.postal_code, e.canton,
+       e.id as entry_id, e.first_name, e.last_name, e.email, e.postal_code, e.canton, e.instagram_handle,
        e.confirmed_at, e.marketing_opt_in, e.utm_source, e.utm_medium, e.utm_campaign, e.utm_content
   from public.entries e
   join public.campaigns c on c.id = e.campaign_id
@@ -934,13 +944,13 @@ grant all on private.email_outbox to service_role;
 grant execute on function private.mark_email_sent(bigint, text) to service_role;
 
 revoke execute on function public.get_campaign(text), public.confirm_entry(text),
-  public.submit_entry(text, text, text, text, text, text, boolean, boolean, text, jsonb, timestamptz, text),
+  public.submit_entry(text, text, text, text, text, text, boolean, boolean, text, jsonb, timestamptz, text, text),
   public.track_event(text, text, jsonb, jsonb, text),
   public.admin_draw(text, text, integer, text, text, text), public.admin_anonymize_campaign(text)
   from public, anon, authenticated;
 revoke execute on function private.mark_email_sent(bigint, text) from public;
 grant execute on function public.get_campaign(text) to anon, authenticated, service_role;
-grant execute on function public.submit_entry(text, text, text, text, text, text, boolean, boolean, text, jsonb, timestamptz, text) to anon, authenticated, service_role;
+grant execute on function public.submit_entry(text, text, text, text, text, text, boolean, boolean, text, jsonb, timestamptz, text, text) to anon, authenticated, service_role;
 grant execute on function public.confirm_entry(text) to anon, authenticated, service_role;
 grant execute on function public.track_event(text, text, jsonb, jsonb, text) to anon, authenticated, service_role;
 grant execute on function public.admin_draw(text, text, integer, text, text, text) to authenticated, service_role;

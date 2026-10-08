@@ -1,5 +1,5 @@
 /*
- * Gemeinsames Verhalten beider Gewinnspielseiten:
+ * Gemeinsames Verhalten der Gewinnspielseiten:
  * Smooth Scroll, Header, Reveal-/Text-Animationen, magnetische Buttons, Akkordeons,
  * Video-Autoplay, Kampagnenstatus (Laufzeit, Phase, Countdown), Teilnahmeformular, Tracking.
  * Benötigt global: gsap, ScrollTrigger, SplitText, Lenis (siehe <script>-Tags der Seiten).
@@ -206,20 +206,21 @@ const PHASE_TEXT = {
 };
 
 function countdown(c, phase) {
-  const box = $('[data-countdown]');
-  if (!box) return;
   const end = Date.parse(c.ends_at);
-  // Konzept: kein künstlicher Countdown — nur in der echten Schlussphase (letzte 7 Tage)
-  if (phase !== 'open' || end - Date.now() > 7 * 864e5) { box.hidden = true; return; }
-  box.hidden = false;
-  const vals = $$('.v', box);
-  const tick = () => {
-    const s = Math.max(0, Math.floor((end - Date.now()) / 1000));
-    [Math.floor(s / 86400), Math.floor((s % 86400) / 3600), Math.floor((s % 3600) / 60), s % 60]
-      .forEach((n, i) => { vals[i].textContent = String(n).padStart(2, '0'); });
-  };
-  tick();
-  setInterval(tick, 1000);
+  $$('[data-countdown]').forEach((box) => {
+    // Standard: nur in der echten Schlussphase (letzte 7 Tage); data-countdown="always" → während der ganzen Laufzeit
+    const always = box.dataset.countdown === 'always';
+    if (phase !== 'open' || (!always && end - Date.now() > 7 * 864e5)) { box.hidden = true; return; }
+    box.hidden = false;
+    const vals = $$('.v', box);
+    const tick = () => {
+      const s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+      [Math.floor(s / 86400), Math.floor((s % 86400) / 3600), Math.floor((s % 3600) / 60), s % 60]
+        .forEach((n, i) => { if (vals[i]) vals[i].textContent = String(n).padStart(2, '0'); });
+    };
+    tick();
+    setInterval(tick, 1000);
+  });
 }
 
 function applyCampaign(data) {
@@ -243,7 +244,8 @@ const ERRORS = {
   invalid_name: ['first_name', 'Bitte gib deinen Vor- und Nachnamen an.'],
   invalid_email: ['email', 'Bitte prüfe deine E-Mail-Adresse.'],
   invalid_postal_code: ['postal_code', 'Bitte gib eine Schweizer PLZ (4 Ziffern) an.'],
-  invalid_canton: ['canton', 'Teilnahme nur mit Wohnsitz in ZH, SZ, ZG oder SG.'],
+  invalid_canton: ['canton', 'Teilnahme nur mit Wohnsitz in einem zugelassenen Kanton.'],
+  invalid_instagram: ['instagram', 'Bitte prüfe deinen Instagram-Namen (nur Buchstaben, Zahlen, Punkt und Unterstrich).'],
   consent_required: ['consent_terms', 'Bitte bestätige die Teilnahmebedingungen.'],
   invalid_pool: ['pool', 'Bitte wähle einen Anbieter bzw. Gewinn.'],
   too_fast: [null, 'Bitte nimm dir einen kurzen Moment und sende das Formular erneut.'],
@@ -260,7 +262,9 @@ function validate(form, requirePool) {
   if (!v.last_name?.trim()) errs.last_name = 'Bitte gib deinen Nachnamen an.';
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((v.email || '').trim())) errs.email = 'Bitte prüfe deine E-Mail-Adresse.';
   if (!/^[1-9]\d{3}$/.test((v.postal_code || '').trim())) errs.postal_code = 'Bitte gib eine Schweizer PLZ (4 Ziffern) an.';
-  if (!['ZH', 'SZ', 'ZG', 'SG'].includes(v.canton)) errs.canton = 'Bitte wähle deinen Wohnkanton.';
+  if (form.elements.canton && !v.canton) errs.canton = 'Bitte wähle deinen Wohnkanton.';
+  const ig = (v.instagram || '').trim().replace(/^@/, '');
+  if (ig && !/^[A-Za-z0-9._]{1,30}$/.test(ig)) errs.instagram = 'Bitte prüfe deinen Instagram-Namen (nur Buchstaben, Zahlen, Punkt und Unterstrich).';
   if (!v.consent_terms) errs.consent_terms = 'Bitte bestätige die Teilnahmebedingungen.';
   if (requirePool && !v.pool) errs.pool = 'Bitte wähle einen Anbieter bzw. Gewinn.';
   return { v, errs };
@@ -310,7 +314,8 @@ function entryForm(slug, getPhase, requirePool) {
     try {
       const res = await submitEntry(slug, {
         first_name: v.first_name.trim(), last_name: v.last_name.trim(), email: v.email.trim(),
-        postal_code: v.postal_code.trim(), canton: v.canton,
+        postal_code: v.postal_code.trim(), canton: v.canton || null,
+        instagram: (v.instagram || '').trim().replace(/^@/, '').toLowerCase() || null,
         consent_terms: !!v.consent_terms, marketing_opt_in: !!v.marketing_opt_in,
         pool: v.pool || null, source: source(), form_started_at: started, website: v.website,
       });

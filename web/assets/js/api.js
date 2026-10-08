@@ -41,10 +41,11 @@ export async function submitEntry(slug, data) {
   return rpc('submit_entry', {
     p_campaign: slug,
     p_first_name: data.first_name, p_last_name: data.last_name, p_email: data.email,
-    p_postal_code: data.postal_code, p_canton: data.canton,
+    p_postal_code: data.postal_code, p_canton: data.canton || null,
     p_consent_terms: data.consent_terms, p_marketing_opt_in: data.marketing_opt_in,
     p_pool: data.pool || null, p_source: data.source || {},
     p_form_started_at: data.form_started_at || null, p_website: data.website || null,
+    p_instagram: data.instagram || null,
   });
 }
 
@@ -53,8 +54,8 @@ export async function confirmEntry(token) {
     await new Promise((r) => setTimeout(r, 700));
     let demo = null;
     try { demo = JSON.parse(sessionStorage.getItem('allnova_demo_entry') || 'null'); } catch (e) { /* ignore */ }
-    const slug = params.get('kampagne') || demo?.slug || 'steuern-2027';
-    const c = DEMO_CAMPAIGNS[slug] || DEMO_CAMPAIGNS['steuern-2027'];
+    const slug = params.get('kampagne') || demo?.slug || 'ps5-gta6-2026';
+    const c = DEMO_CAMPAIGNS[slug] || DEMO_CAMPAIGNS['ps5-gta6-2026'];
     if (token === 'abgelaufen') return { ok: false, error: 'expired', kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url };
     if (!token) return { ok: false, error: 'invalid_token' };
     const bonus = params.get('bonus') === '1' ? 1 : 0; // Vorschau: ?bonus=1 zeigt das aktive Bonuslos

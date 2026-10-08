@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
-  "redirects": [{ "source": "/", "destination": "/gewinnen/", "permanent": false }],
-  "headers": [{ "source": "/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }]
+  "redirects": [
+    { "source": "/gewinnen", "destination": "/", "permanent": false },
+    { "source": "/gewinnen/:path*", "destination": "/", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/bestaetigen/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/(.*)", "headers": [{ "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }, { "key": "X-Content-Type-Options", "value": "nosniff" }] }
+  ]
 }

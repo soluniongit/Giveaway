@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Teilnahme bestätigen | allnova Gewinnspiel</title>
+<title>Teilnahme bestätigen | allnova Giveaway</title>
 <meta name="robots" content="noindex">
 <link rel="preload" href="../assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -35,9 +35,9 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
-<body class="theme-ivory">
+<body class="theme-dark">
 <main class="confirm" aria-live="polite">
-  <span class="brand"><img src="../assets/brand/allnova-logo-hell.png" data-logo alt="allnova" width="2140" height="375" style="height: 24px; width: auto"></span>
+  <span class="brand"><img src="../assets/brand/allnova-logo.png" data-logo alt="allnova" width="2140" height="375" style="height: 24px; width: auto"></span>
   <div data-view="loading"><div class="spinner" role="status" aria-label="Wird bestätigt"></div></div>
   <p class="lead" data-view="loading">Wir bestätigen deine Teilnahme …</p>
 </main>
@@ -54,15 +54,11 @@ const cfg = window.ALLNOVA_CONFIG || {};
 const main = document.querySelector('.confirm');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtDate = (d) => (d ? new Date(`${d}T12:00:00`).toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '');
-const PAGES = { steuer: '../steuern/', fahrstart: '../fahrstart/' };
+const PAGES = { giveaway: '../' };
 const seal = `<svg class="seal" viewBox="0 0 128 128" aria-hidden="true"><circle class="s-ring" cx="64" cy="64" r="58" fill="none" stroke="#b69a5c" stroke-width="5"/><circle class="s-fill" cx="64" cy="64" r="50" fill="#b69a5c"/><path class="s-check" d="M42 65l15 15 30-33" fill="none" stroke="#111512" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
 
-function render(html, kind) {
-  if (kind === 'fahrstart') {
-    document.body.classList.replace('theme-ivory', 'theme-dark');
-    document.querySelector('[data-logo]').src = '../assets/brand/allnova-logo.png';
-  }
+function render(html) {
   main.querySelectorAll('[data-view]').forEach((el) => el.remove());
   main.insertAdjacentHTML('beforeend', html);
   gsap.from(main.querySelectorAll('[data-view="result"] > *, [data-view="result"]'), { opacity: 0, y: 26, duration: 1, ease: 'expo.out', stagger: 0.07 });
@@ -78,8 +74,7 @@ function render(html, kind) {
 // Persönlicher Einladungslink: Bonuslos, sobald eine eingeladene Person gültig teilnimmt
 const tickets = (active) => `<svg class="tickets${active ? ' is-active' : ''}" viewBox="0 0 132 84" aria-hidden="true"><g transform="translate(6 30) rotate(-8)"><path class="t1" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><path class="t1-l" d="M44 6v28"/><text x="22" y="25" class="t1-x">1</text></g><g class="t2g" transform="translate(62 12) rotate(9)"><path class="t2" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><text x="32" y="26" class="t2-x">+1</text></g></svg>`;
 const SHARE_TEXT = {
-  steuer: 'Ich mache beim allnova Steuergewinnspiel mit – zu gewinnen gibt es 3 Jahre Steuererklärung. Mach auch mit:',
-  fahrstart: 'Beim allnova Fahrstart-Gewinnspiel gibt es Fahrlektionen und einen VKU-Kursplatz zu gewinnen. Mach auch mit:',
+  giveaway: 'Ich mache beim allnova Giveaway mit – zu gewinnen gibt es eine PS5 Pro mit GTA VI. Mach auch mit:',
 };
 function inviteCard(r, back) {
   const slot = main.querySelector('[data-invite-slot]');
@@ -145,7 +140,7 @@ if (r.ok) {
       <p class="h3">Entdecke jetzt regionale Vorteile in der allnova App.</p>
       <div class="actions">${appBtn}<a class="btn btn--ghost" href="${back}" data-later>Später</a></div>
       <p class="small">${r.share_code ? 'Zusätzliche Lose gibt es nur über deinen Einladungslink – nicht für App, Newsletter oder Beratung.' : 'Für Installation, Newsletter oder Beratung gibt es keine zusätzlichen Lose.'}</p>
-    </div>`, r.kind);
+    </div>`);
   if (r.share_code) inviteCard(r, back);
   main.querySelector('[data-app]')?.addEventListener('click', () => track(r.campaign, 'app_cta_click'));
   main.querySelector('[data-later]')?.addEventListener('click', () => track(r.campaign, 'app_later_click'));
@@ -158,8 +153,8 @@ if (r.ok) {
   const [h, p] = T[r.error] || T.invalid_token;
   render(`<div data-view="result" style="display:grid;gap:22px;justify-items:center">
       <h1>${h}</h1><p class="lead">${p}</p>
-      <div class="actions"><a class="btn btn--gold" href="${back}">Zur Gewinnspielseite${arrow}</a></div>
-    </div>`, r.kind);
+      <div class="actions"><a class="btn btn--gold" href="${back}">Zum Giveaway${arrow}</a></div>
+    </div>`);
 }
 </script>
 </body>

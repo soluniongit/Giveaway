@@ -1,141 +1,117 @@
-# allnova Gewinnspiele: Webseiten, Datenbank
+# allnova Giveaway: PS5 Pro + GTA VI (gewinnspiel.allnova.ch)
 
-Umsetzung der beiden Gewinnspiele aus den Videoskripten und dem Marketingkonzept (Stand 06.10.2026).
-Veranstalterin und Sponsorin ist die Allfinanz Consulting GmbH unter der Marke allnova.
+Webseite und Datenbank für das Giveaway von allnova. Veranstalterin und Sponsorin ist die Allfinanz Consulting GmbH unter der Marke allnova.
 
-| | Steuergewinnspiel | Fahrstart-Gewinnspiel |
-|---|---|---|
-| Leitidee | «3 Jahre. Steuererklärung. Gratis.» | «Dein Start. Dein Führerausweis.» |
-| Gewinn | 1 Person: Erstellung und Einreichung je einer privaten Standard-Steuererklärung für die Steuerjahre 2026, 2027 und 2028 | 3 Personen: 2 × 2 Fahrlektionen à 50 Min. (Kat. B) + 1 × VKU-Kursplatz, je ein Preispool pro Anbieter |
-| Laufzeit | 01.02.2027, 09:00 bis 28.02.2027, 23:59 | 02.11.2026, 09:00 bis 29.11.2026, 23:59 |
-| Auslosung | 02.03.2027 | 01.12.2026 (Einlösung bis 31.05.2027) |
-| Teilnahme | ab 18, Wohnsitz ZH, SZ, ZG oder SG | ab 18, Wohnsitz ZH, SZ, ZG oder SG |
-| Seite | `/gewinnen/steuern` | `/gewinnen/fahrstart` |
-
-Die Termine stammen aus dem Marketingkonzept (Planungsvorschläge, noch keine Zusagen). Sie sind an einer Stelle pro Medium hinterlegt: in der Datenbank (`campaigns`), im Video (Textobjekt `C`, Repository Video-Giveaway) und als Fallback in `web/gewinnen/assets/js/demo-data.js`.
-
-```
-web/        Statische Gewinnspielseiten unter /gewinnen/ (kein Build nötig)
-supabase/   Datenbank-Migrationen, Startdaten und Tests
-docs/       Quellen und Referenzrechnung der Steuertarife 2026
-```
-
-Die Videos (Gewinnspiel-Videos und App-Kampagne) liegen im Repository [soluniongit/Video-Giveaway](https://github.com/soluniongit/Video-Giveaway).
-
----
-
-## 1. Videos → Repository `soluniongit/Video-Giveaway`
-
-Die Motion-Design-Videos (Steuergewinnspiel, Fahrstart-Gewinnspiel) mit Renderer und Sounddesign sowie die App-Kampagne (App-Teaser, Instagram-Visuals) liegen seit dem 08.10.2026 im eigenen Repository **[soluniongit/Video-Giveaway](https://github.com/soluniongit/Video-Giveaway)**. Die frühere Versionsgeschichte der Videos ist hier im Git-Verlauf erhalten.
-
-Die Seiten verwenden die 720-px-Webfassungen in `web/gewinnen/assets/video/` (bereits im Repository). Nach einem neuen Video-Render diese mit `npm run vendor` aktualisieren (siehe Abschnitt 2).
-
----
-
-## 2. Gewinnspielseiten (`web/gewinnen/`)
-
-| Seite | Inhalt |
+| | |
 |---|---|
-| `steuern/` | Hero mit «werfbaren» Dokumentkarten (Drag & Throw) und eine Paket-Szene, die sich beim Scrollen zeichnet. Dazu: Leistungsumfang, **Steuerrechner 2026**, Ablauf mit Video, Teilnahmeformular, FAQ, Bedingungen |
-| `fahrstart/` | Goldene Weglinie mit kleinem Auto, die beim Scrollen mitfährt, und ein L-Schild zum Umdrehen. Dazu: Gewinnkarten mit 3D-Neigung, **Roadmap «Wo stehst du?»** mit Gewinn-Empfehlung, **Anbieterwahl mit Karte der Pilotregion**, **Verkehrsquiz**, Formular mit Preispool-Auswahl |
-| `bestaetigen/` | Ziel des Bestätigungslinks (Double-Opt-in). Danach: «Deine Teilnahme ist bestätigt.» mit App-CTA und «Später» |
-| `index.html` | Übersicht beider Gewinnspiele |
+| Gewinn | 1 Person: PlayStation 5 Pro (mit DualSense-Controller) + Grand Theft Auto VI für PS5 |
+| Teilnahme | ab sofort bis **18.11.2026, 23:59 Uhr** (Europe/Zurich), E-Mail-Bestätigung nötig |
+| Auslosung | 19.11.2026, unter allen gültigen Teilnahmen |
+| Wer | ab 18 Jahren, Wohnsitz in der Schweiz; eine Teilnahme pro Person, gratis und ohne Kauf |
+| Bonus | «Doppelte Chance»: 1 Bonuslos, wenn jemand über den persönlichen Einladungslink gültig teilnimmt |
+| Domain | `https://gewinnspiel.allnova.ch/` (Seite liegt im Web-Root) |
 
-Technik: statisches HTML/CSS/JS mit GSAP (ScrollTrigger, SplitText, DrawSVG, Draggable) und Lenis Smooth Scroll. Die Seiten sind Mobile-first, berücksichtigen `prefers-reduced-motion` und brauchen keinen Build-Schritt.
+Die Daten stehen pro Medium an einer Stelle: in der Datenbank (`campaigns`), als Fallback in `web/assets/js/demo-data.js` und als Text in `web/index.html` (Hero, Fakten, FAQ, Bedingungen).
+
+```
+web/        Statische Giveaway-Seite (kein Build nötig) + Bestätigungsseite
+supabase/   Datenbank-Migrationen, Startdaten und Tests
+```
+
+Die Motion-Design-Videos und Instagram-Visuals liegen im Repository [soluniongit/Video-Giveaway](https://github.com/soluniongit/Video-Giveaway). Die früheren Gewinnspiele (Steuern, Fahrstart) sind entfernt; sie sind im Git-Verlauf erhalten.
+
+---
+
+## 1. Webseite (`web/`)
+
+| Datei | Inhalt |
+|---|---|
+| `index.html` | Giveaway-Seite: Hero mit Live-Countdown bis Teilnahmeschluss, Produktbildern (PS5 Pro, GTA VI) mit 3D-Neigung, Ticker, Gewinn-Kacheln, «So geht's» in 3 Schritten mit «Doppelte Chance», **Instagram-Einbettung**, Teilnahmeformular, FAQ, Teilnahmebedingungen, Datenschutz |
+| `bestaetigen/` | Ziel des Bestätigungslinks (Double-Opt-in): «Deine Teilnahme ist bestätigt.», persönlicher Einladungslink, App-CTA |
+| `assets/` | `css/site.css` (Design-System), `css/giveaway.css`, `js/` (Seite, Formular, API), `img/` (Produktbilder), `brand/` (Logo, Profilbild), `fonts/`, `vendor/` (GSAP, Lenis) |
+
+Technik: statisches HTML/CSS/JS mit GSAP (ScrollTrigger, SplitText, DrawSVG) und Lenis Smooth Scroll. Mobile-first, berücksichtigt `prefers-reduced-motion`, kein Build-Schritt. Gestaltung im allnova-CI (Anthrazit, Gold, Inter Tight + Instrument Serif) mit Sonnenuntergang als Akzent.
+
+**Formular:** Vorname, Nachname, E-Mail, PLZ, Instagram-Name (freiwillig), Pflicht-Checkbox (18+, Wohnsitz Schweiz, Bedingungen), freiwilliges Werbe-Opt-in. Validierung im Browser und nochmals serverseitig.
+
+**Instagram-Einbettung:** Der Link zum Giveaway-Beitrag wird in `web/assets/js/config.js` eingetragen:
+
+```js
+instagramPostUrl: 'https://www.instagram.com/p/<ID>/',   // auch /reel/<ID>/
+```
+
+- Leer → Platzhalter «Der Beitrag ist bald live» mit Link zum Profil @allnova.ch.
+- Gesetzt → Vorschaukarte mit «Instagram-Beitrag laden». Erst nach dem Klick wird das Skript von Instagram geladen (Datenschutz: keine Daten an Meta ohne Klick). Die Zustimmung merkt sich der Browser für spätere Besuche.
 
 **Lokal ansehen:**
 
 ```bash
 cd web
 npx http-server . -p 8080 -c-1
-# http://localhost:8080/gewinnen/steuern/?phase=open
+# http://localhost:8080/            ?phase=upcoming|open|closed simuliert den Status (Demo-Modus)
+# http://localhost:8080/bestaetigen/?token=demo   (&bonus=1 zeigt das aktive Bonuslos)
 ```
 
-`?phase=open|upcoming|closed` simuliert im Demo-Modus den Kampagnenstatus. Ohne den Parameter gilt das echte Datum: Beide Gewinnspiele sind aktuell «upcoming», das Formular ist also bis zum Start gesperrt. Die Bestätigungsseite lässt sich mit `bestaetigen/?token=demo&kampagne=steuern-2027` ansehen, `&bonus=1` zeigt das aktive Bonuslos.
-
-**Konfiguration** (`web/gewinnen/assets/js/config.js`):
+**Konfiguration** (`web/assets/js/config.js`):
 
 ```js
 supabaseUrl: 'https://<projekt>.supabase.co',
 supabaseKey: '<publishable/anon key>',
 appUrl: '<Link zur allnova App>',
+instagramPostUrl: '<Link zum Instagram-Beitrag>',
 ```
 
-Bleiben die Felder leer, läuft die Seite im **Demo-Modus**: Das Formular simuliert die Teilnahme, und es werden keine Daten gesendet.
+Bleiben `supabaseUrl`/`supabaseKey` leer, läuft die Seite im **Demo-Modus**: Das Formular simuliert die Teilnahme, es werden **keine Daten gesendet**.
 
-**Steuerrechner:** Er rechnet die Einkommenssteuer 2026 (Bund, Kanton, Bezirk, Gemeinde, Kirche, ZH-Personalsteuer; ohne Vermögenssteuer) auf dem *steuerbaren* Einkommen – für **alle 276 Gemeinden** in ZH (160), SZ (30), ZG (11) und SG (75).
+**Vendor-Dateien** aktualisieren (GSAP, Lenis): `cd web && npm install && npm run vendor`.
 
-- **Funktionen:** Gemeindesuche, Zivilstand/Kinder (Elternabzug Bund), Konfession (Kirchensteuer), Ergebnis mit Durchschnitts- und Grenzsteuersatz, Aufteilung nach Ebenen, interaktive **Steuerkurve**, **Abzugsrechner** (Säule 3a bis CHF 7'258 für 2026 + weitere Abzüge → Steuerersparnis), **Rangliste** der Gemeinden im eigenen Kanton bzw. Hauptorte & Zürichsee, offengelegter **Rechnungsweg**.
+**Tracking** (anonym, ohne IP, über `track_event`): `page_view`, `form_started`, `form_submitted`, `share_click`, `instagram_click`, `instagram_embed_load`, `referral_visit`, `invite_share`, `invite_copy`, `invite_whatsapp`, `app_cta_click`, `app_later_click`. UTM-Parameter werden pro Sitzung gemerkt und mit der Teilnahme gespeichert.
 
-- **Daten:** Tarife und Steuerfüsse 2026 aus amtlichen Quellen, in `assets/data/steuertarife-2026.json`. Quellen und Herleitung stehen in `docs/steuerrechner-tarife-2026.md`.
-- **Prüfung gegen den ESTV-Steuerrechner 2026:** 196 Tariffälle (max. 1.43 CHF), 20 Fälle in zusätzlichen Gemeinden (max. 1.24 CHF), 9 Kirchensteuerfälle (max. 0.44 CHF) und die Steuerfüsse aller 276 Gemeinden (0 Abweichungen). Abweichungen in Franken entstehen, weil die ESTV jede Position auf ganze Franken rundet. Ausnahme: der St.-Galler Spitzensatz für Verheiratete, wo bewusst Gesetz und amtliche Tabelle gelten (ESTV ca. 20 CHF höher). Quellen und offene Punkte: `docs/steuerrechner-tarife-2026.md`, `docs/steuerrechner-gemeinden-2026.md`.
-- **Bekannte Grenzen:** Gemeinden mit zwei Steuerfuss-Gebieten rechnen mit dem Hauptgebiet; in 5 St.-Galler Gemeinden ist kein einheitlicher Kirchensteuerfuss publiziert (dort wird keine Kirchensteuer gerechnet); Bürgergemeindesteuer ZG und konfessionsverschiedene Ehepaare sind nicht abgebildet.
-- **Test:** `cd web && npm install && npm test`
-- **Datenschutz:** Eingaben bleiben im Browser. Getrackt wird nur «Rechner genutzt» mit dem Kanton, ohne Beträge.
+**Hosting (Vercel):** Projekt-Root `web/`. `vercel.json` leitet alte `/gewinnen/…`-Pfade auf `/` um und setzt `noindex` nur für die Bestätigungsseite. Domain `gewinnspiel.allnova.ch` im Vercel-Projekt hinzufügen und beim DNS-Anbieter von allnova.ch einen CNAME `gewinnspiel` → `cname.vercel-dns.com` setzen.
 
-**Videos für das Web** (720p, MP4 + WebM, Poster als JPG) erzeugt `npm run vendor` aus `videos/out/` des Repositorys Video-Giveaway. Standardpfad ist ein Klon `Video-Giveaway` neben diesem Repository, sonst `VIDEOS_DIR=/pfad/zu/Video-Giveaway/videos npm run vendor`. Derselbe Befehl kopiert auch GSAP, Lenis, die Schriften und das Logo. `npm run map` erzeugt die Karte der Pilotregion (BFS/swisstopo-Grenzen via `swiss-maps`).
-
-**Tracking** (anonym, ohne IP, über `track_event`): `page_view`, `video_play`, `calculator_used`, `roadmap_used`, `quiz_completed`, `pool_selected`, `form_started`, `form_submitted`, `app_cta_click`, `app_later_click`, `partner_link_click`, `share_click`. UTM-Parameter werden pro Sitzung gemerkt und mit der Teilnahme gespeichert.
-
-**Konzept-Regeln umgesetzt:**
-
-- Countdown erst in den letzten 7 Tagen
-- Werbe-Opt-in freiwillig und standardmässig leer
-- Pflicht-Checkbox mit Konzepttext
-- Datenschutzhinweis direkt beim Formular
-- keine zusätzlichen Lose für App/Newsletter
-- Plattform-Hinweis (Instagram/Facebook)
-- Anbieter neutral bis zur Zusage
+**Marken:** PlayStation/PS5 (Sony Interactive Entertainment) und Grand Theft Auto (Take-Two Interactive) werden nur zur Beschreibung des Preises genannt; Hinweis im Footer und in Ziffer 8 der Bedingungen.
 
 ---
 
-## 3. Datenbank (Supabase)
+## 2. Datenbank (Supabase)
 
-Migrationen: `supabase/migrations/20261006120000_gewinnspiele_schema.sql` (Schema) und `…120100_gewinnspiele_seed.sql` (beide Kampagnen inkl. Seiteninhalten, FAQ, Bedingungen, Mail-Vorlagen).
+Migrationen:
+
+- `20261006120000_gewinnspiele_schema.sql`: Schema, RLS, RPCs
+- `20261006120100_gewinnspiele_seed.sql`: Kampagne `ps5-gta6-2026`, Preis, Formular-/Bestätigungstexte, Mail-Vorlagen
+- `20261006120200_einladung_bonuslos.sql`: Einladungslink und Bonuslos («Doppelte Chance»)
+
+Die Migrationen sind noch auf **kein** Supabase-Projekt angewendet.
 
 **Tabellen** (alle mit RLS; Zugriff nur für Admins bzw. `service_role`):
 
 | Tabelle | Zweck |
 |---|---|
-| `campaigns` | Gewinnspiel: Laufzeit, Region, Status (`draft`/`published`/`archived`), `test_mode` |
-| `prize_pools` | Was gewonnen werden kann. Fahrstart: ein Pool pro Anbieter (A/B/C) |
-| `partners` | Preispartner. Name, Ort und Logo sind erst öffentlich, wenn `status = 'zugesagt'` gesetzt ist |
-| `landing_pages` | Seiteninhalte als JSON (Hero, Umfang, FAQ, Formular- und Rechtstexte) |
-| `entries` | Teilnahmen, eine pro Person und Gewinnspiel. Gültig erst nach E-Mail-Bestätigung innerhalb der Frist. Mit Einladungscode (`share_code`) und Herkunft (`referred_by`) |
+| `campaigns` | Giveaway: Laufzeit, zugelassene Kantone (leer = ganze Schweiz), Status (`draft`/`published`/`archived`), `test_mode` |
+| `prize_pools` | Was gewonnen werden kann (hier ein Pool `hauptpreis`) |
+| `landing_pages` | Texte für Formular und Bestätigung als JSON |
+| `entries` | Teilnahmen, eine pro Person. Gültig erst nach E-Mail-Bestätigung innerhalb der Frist. Mit freiwilligem `instagram_handle`, Einladungscode (`share_code`) und Herkunft (`referred_by`) |
 | `marketing_consents` | Freiwillige Werbeeinwilligungen, getrennt dokumentiert |
-| `events` | Anonyme Interaktionen, z. B. App-Klicks |
-| `draws`, `draw_results` | Ziehungsprotokoll mit Gewinnern und Reserveliste |
+| `events` | Anonyme Interaktionen |
+| `draws`, `draw_results` | Ziehungsprotokoll mit Gewinnperson und Reserveliste |
 | `email_templates`, `private.email_outbox` | Mail-Vorlagen und Warteschlange für Bestätigungsmails |
-| `admins` | Supabase-Benutzer mit Admin-Rechten |
+| `partners`, `admins` | Optionale Preispartner; Supabase-Benutzer mit Admin-Rechten |
 
-**Öffentliche RPCs** für die Seiten: `get_campaign`, `submit_entry`, `confirm_entry`, `track_event`.
+**Öffentliche RPCs:** `get_campaign`, `submit_entry`, `confirm_entry`, `track_event`.
 
-- **Antwort auf `submit_entry`:** Die Funktion prüft Frist, Kanton, PLZ, E-Mail, Einwilligung und Pool serverseitig. Sie antwortet immer gleich, ob die Adresse schon erfasst ist oder nicht.
-- **Bot-Bremse:** Honeypot, eine Mindestausfüllzeit von 3 s und maximal 10 Teilnahmen pro IP-Hash und Stunde.
-- **Bestätigungslink:** Der Token wird nur gehasht gespeichert.
+- `submit_entry` prüft Frist, PLZ, E-Mail, Instagram-Name, Einwilligung und (falls konfiguriert) Kanton serverseitig und antwortet immer gleich, ob die Adresse schon erfasst ist oder nicht.
+- Bot-Bremse: Honeypot, Mindestausfüllzeit 3 s, max. 10 Teilnahmen pro IP-Hash und Stunde.
+- Bestätigungstoken nur gehasht gespeichert.
 
-**Admin-RPCs:**
+**Admin-RPCs:** `admin_draw('ps5-gta6-2026')` zieht gewichtet (Schlüssel `-ln(u)/Lose`, CSPRNG) und protokolliert; `admin_anonymize_campaign('ps5-gta6-2026')` anonymisiert Nicht-Gewinner inkl. Instagram-Name (Frist: 90 Tage). Auswertungs-Views: `campaign_stats`, `campaign_source_stats`, `campaign_event_stats`, `campaign_referral_stats`, `entries_export`.
 
-- `admin_draw('fahrstart-2026')` zieht je Pool mit kryptografischem Zufall und protokolliert die Ziehung.
-- `admin_anonymize_campaign(...)` anonymisiert Nicht-Gewinner (Frist: 90 Tage).
-
-**Doppelte Chance durch Einladung** (Migration `20261006120200_einladung_bonuslos.sql`):
-
-- Nach der Bestätigung zeigt die Bestätigungsseite einen persönlichen Link (`…/steuern/?ref=k7m2p9qa`) mit Kopieren-, Teilen- und WhatsApp-Knopf. Über den Link aus der Bestätigungsmail lässt sich der Status jederzeit wieder ansehen.
-- Ein **Bonuslos** gibt es erst, wenn eine andere Person über den Link teilnimmt **und** ihre E-Mail bestätigt. Pro Person höchstens 1 Bonuslos (`campaigns.referral_bonus_max`, 0 schaltet die Funktion ab), also maximal 2 Lose.
-- Nicht gezählt werden die eigene E-Mail, derselbe Internetanschluss (kampagnenbezogener IP-Hash), Codes anderer Kampagnen und Testteilnahmen.
-- `admin_draw` zieht gewichtet: Schlüssel `-ln(u)/Lose` mit `u` aus dem CSPRNG. Wer 2 Lose hat, liegt mit Wahrscheinlichkeit 2/3 vor einer Person mit 1 Los (im Test gemessen). Das Protokoll enthält Teilnahmen und Lose.
-- **Rechtlicher Rahmen (Schweiz):** Die Teilnahme bleibt gratis und ohne Kauf, darum ist das kein Geldspiel im Sinne des BGS. Die Regeln stehen transparent in den Teilnahmebedingungen (Ziffern 4 und 9, Version `v2`). allnova verschickt selbst keine Einladungsmails, es gibt also kein Spam-Risiko nach UWG. Belohnt wird nicht das Posten auf einer Plattform, sondern die gültige Teilnahme einer weiteren Person. Damit bleibt die Funktion auch mit den Promotion-Regeln von Meta vereinbar; in Instagram- und Facebook-Posts daher «Lade Freunde ein» schreiben, nicht «Teile diesen Beitrag für ein Extralos». Die Bedingungen vor dem Livegang juristisch freigeben lassen.
-
-Für die Auswertung gibt es die Views `campaign_stats`, `campaign_source_stats`, `campaign_event_stats`, `campaign_referral_stats` und `entries_export` (inkl. `bonus_entries`).
+**Doppelte Chance:** Ein Bonuslos gibt es erst, wenn eine andere Person über den Link teilnimmt **und** bestätigt; höchstens 1 pro Person. Nicht gezählt: eigene E-Mail, derselbe Internetanschluss, fremde Codes, Testteilnahmen. In Instagram-Posts daher «Lade Freunde ein» schreiben, nicht «Teile diesen Beitrag für ein Extralos» (Meta-Promotion-Regeln).
 
 **Lokal testen** (Postgres 16+):
 
 ```bash
 psql -d test -f supabase/tests/local_supabase_shim.sql
-psql -d test -f supabase/migrations/20261006120000_gewinnspiele_schema.sql
-psql -d test -f supabase/migrations/20261006120100_gewinnspiele_seed.sql
-psql -d test -f supabase/migrations/20261006120200_einladung_bonuslos.sql
+for f in supabase/migrations/*.sql; do psql -d test -f "$f"; done
 psql -U authenticator -d test -f supabase/tests/rpc_tests.sql        # → ALL RPC TESTS PASSED
 # auf einer zweiten, frisch aufgesetzten DB:
 psql -U authenticator -d test2 -f supabase/tests/referral_tests.sql  # → ALL REFERRAL TESTS PASSED
@@ -144,23 +120,19 @@ psql -U authenticator -d test2 -f supabase/tests/referral_tests.sql  # → ALL R
 **Freischalten:**
 
 ```sql
-update campaigns set test_mode = true where slug = 'steuern-2027';
-update campaigns set status = 'published', test_mode = false where slug = 'steuern-2027';
+update campaigns set test_mode = true where slug = 'ps5-gta6-2026';                      -- Testteilnahmen
+update campaigns set status = 'published', test_mode = false where slug = 'ps5-gta6-2026'; -- live
 ```
 
-- `test_mode = true` erlaubt Testteilnahmen vor dem Start (sie werden als Test markiert).
-- `status = 'published'` schaltet live, nach den sechs Freigaben aus dem Konzept.
-
-**Noch zu ergänzen:** der eigentliche Mailversand. Bestätigungsmails landen in `private.email_outbox`. Eine Edge Function oder ein Mail-Dienst mit `service_role` versendet sie mit den Vorlagen aus `email_templates` und ruft danach `private.mark_email_sent(id)` auf, das den Klartext-Token entfernt. Der Mail-Anbieter (z. B. Resend, Postmark, SMTP von allnova) ist noch festzulegen.
+**Noch zu ergänzen: Mailversand.** Bestätigungsmails landen in `private.email_outbox`. Eine Edge Function oder ein Mail-Dienst mit `service_role` versendet sie mit den Vorlagen aus `email_templates` und ruft danach `private.mark_email_sent(id)` auf. Ohne Mailversand kann niemand seine Teilnahme bestätigen.
 
 ---
 
-## 4. Offene Punkte vor dem Livegang
+## 3. Offene Punkte vor dem Livegang
 
-1. **Supabase-Projekt:** Die Migrationen sind bereit, aber noch auf kein Projekt angewendet. Die Organisation hat das Limit von 2 Gratisprojekten erreicht. Die Entscheidung steht noch aus.
-2. **Partnerzusagen Fahrstart:** Namen, Orte, Getriebe, Sprache, Logo und Buchungslink in `partners` eintragen und `status = 'zugesagt'` setzen. Danach erscheinen sie automatisch auf Seite und Karte.
-3. **Steuer-Team:** Leistungsumfang und Standard-Dossier für drei Jahre bestätigen, ebenso die Kantonsabdeckung.
-4. **Mailversand** (siehe oben) und **App-Link** (`appUrl`) einrichten.
-5. **Teilnahmebedingungen:** sind ein redaktioneller Entwurf aus dem Konzept und müssen fachlich geprüft werden. Dazu einen Link auf die vollständigen Datenschutzhinweise ergänzen.
-6. **Domain:** `allnova.ch/gewinnen/steuern` und `/fahrstart` sind vorgeschlagen, aber noch nicht eingerichtet. Die Seiten sind statisch und lassen sich unter jedem Pfad hosten.
-7. **Termine:** Die Konzept-Daten sind Vorschläge. Bei einer Verschiebung die ganze 28-Tage-Welle zusammen in DB, Video-Texten und Fallback-Daten ändern.
+1. **Supabase-Projekt** anlegen, Migrationen anwenden, `supabaseUrl`/`supabaseKey` in `config.js` eintragen. Bis dahin sendet das Formular keine Daten (Demo-Modus).
+2. **Mailversand** einrichten (Anbieter festlegen, z. B. Resend, Postmark oder SMTP von allnova) und testen.
+3. **Instagram-Link** in `config.js` (`instagramPostUrl`) eintragen, sobald der Beitrag live ist.
+4. **Domain** `gewinnspiel.allnova.ch` in Vercel verbinden (CNAME, siehe oben).
+5. **Teilnahmebedingungen** sind ein redaktioneller Entwurf und müssen fachlich geprüft werden (u. a. Start, Auslosung 19.11.2026, Versand, Markenhinweis). Link auf die vollständigen Datenschutzhinweise ergänzen (`privacyUrl`).
+6. **App-Link** (`appUrl`) für die Bestätigungsseite eintragen.
