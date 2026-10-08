@@ -30,7 +30,7 @@
 
   /* ---------- Headlines ---------- */
   .l1 { left: 90px; top: 222px; width: 920px; height: 124px; font-size: 104px; font-weight: 800; letter-spacing: -.035em; line-height: 120px; white-space: nowrap; }
-  .l2 { left: 86px; top: 330px; width: 940px; height: 150px; font-family: var(--serif); font-style: italic; font-size: 132px; line-height: 146px; padding-right: 40px; white-space: nowrap; }
+  .l2 { left: 86px; top: 330px; width: 954px; height: 150px; font-family: var(--serif); font-style: italic; font-size: 132px; line-height: 146px; padding-right: 40px; white-space: nowrap; }
   .gold-text { background: var(--gold-grad); background-size: 220% 100%; background-position: 0% 0; -webkit-background-clip: text; background-clip: text; color: transparent; }
   #foot { left: 92px; top: 500px; height: 36px; font-size: 26px; font-weight: 500; color: var(--muted); letter-spacing: .005em; white-space: nowrap; }
   .demo-tag { position: absolute; display: inline-flex; align-items: center; gap: 12px; height: 46px; padding: 0 20px; border-radius: 23px; font-size: 21px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); box-shadow: inset 0 0 0 2px var(--line); background: rgba(255, 254, 251, .7); white-space: nowrap; }
@@ -296,7 +296,7 @@ defineComposition({
     $$('.l1, .l2, .mw').forEach((el) => {
       const sp = el.firstElementChild;
       const r = document.createRange(); r.selectNodeContents(sp); const w = r.getBoundingClientRect().width;
-      const max = el.classList.contains('l2') || el.id === 'mw3' ? 930 : 900;
+      const max = el.classList.contains('l2') ? 880 : el.id === 'mw3' ? 930 : 900; // l2: Platz für den Kursiv-Überhang (z. B. Sternchen)
       if (w > max) el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * (max / w)}px`;
     });
     // Emoji direkt hinter dem (anonymisierten) Namen
