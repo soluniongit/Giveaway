@@ -33,7 +33,7 @@ declare r jsonb;
 begin
   r := public.get_campaign('ps5-gta6-2026');
   assert (r ->> 'ok')::boolean, 'test-mode campaign visible';
-  assert r -> 'campaign' ->> 'ends_at_label' = '18.11.2026, 23:59 Uhr', 'ends label ' || (r -> 'campaign' ->> 'ends_at_label');
+  assert r -> 'campaign' ->> 'ends_at_label' = '15.11.2026, 23:59 Uhr', 'ends label ' || (r -> 'campaign' ->> 'ends_at_label');
   assert jsonb_array_length(r -> 'campaign' -> 'allowed_cantons') = 0, 'whole Switzerland';
   assert jsonb_array_length(r -> 'pools') = 1, 'one pool';
   assert r #>> '{pools,0,short_title}' = 'PS5 Pro + GTA VI', 'prize';

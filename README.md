@@ -5,8 +5,8 @@ Webseite und Datenbank für das Giveaway von allnova. Veranstalterin und Sponsor
 | | |
 |---|---|
 | Gewinn | 1 Person: PlayStation 5 Pro (mit DualSense-Controller) + Grand Theft Auto VI für PS5 |
-| Teilnahme | ab sofort bis **18.11.2026, 23:59 Uhr** (Europe/Zurich), E-Mail-Bestätigung nötig |
-| Auslosung | 19.11.2026, unter allen gültigen Teilnahmen |
+| Teilnahme | ab sofort bis **15.11.2026, 23:59 Uhr** (Europe/Zurich), E-Mail-Bestätigung nötig |
+| Auslosung | 16.11.2026, unter allen gültigen Teilnahmen |
 | Wer | ab 18 Jahren, Wohnsitz in der Schweiz; eine Teilnahme pro Person, gratis und ohne Kauf |
 | Bonus | «Doppelte Chance»: 1 Bonuslos, wenn jemand über den persönlichen Einladungslink gültig teilnimmt |
 | Domain | `https://gewinnspiel.allnova.ch/` (Übersicht aller Giveaways), dieses Giveaway unter `/ps5-gta6/` |
@@ -136,5 +136,5 @@ update campaigns set status = 'published', test_mode = false where slug = 'ps5-g
 2. **Mailversand** einrichten (Anbieter festlegen, z. B. Resend, Postmark oder SMTP von allnova) und testen.
 3. **Instagram-Link** in `config.js` (`instagramPostUrl`) eintragen, sobald der Beitrag live ist.
 4. **Domain** `gewinnspiel.allnova.ch` in Vercel verbinden (CNAME, siehe oben).
-5. **Teilnahmebedingungen** sind ein redaktioneller Entwurf und müssen fachlich geprüft werden (u. a. Start, Auslosung 19.11.2026, Versand, Markenhinweis). Link auf die vollständigen Datenschutzhinweise ergänzen (`privacyUrl`).
+5. **Teilnahmebedingungen** sind ein redaktioneller Entwurf und müssen fachlich geprüft werden (u. a. Start, Auslosung 16.11.2026, Versand, Markenhinweis). Link auf die vollständigen Datenschutzhinweise ergänzen (`privacyUrl`).
 6. **App-Link** (`appUrl`) für die Bestätigungsseite eintragen.

@@ -4,7 +4,7 @@
 -- Startet als status = 'draft'. Freischalten erst nach Freigabe von Preis,
 -- Teilnahmebedingungen, Mailversand und Instagram-Beitrag:
 --   update public.campaigns set status = 'published' where slug = 'ps5-gta6-2026';
--- Teilnahmeschluss 18.11.2026, 23:59 (Europe/Zurich); Auslosung 19.11.2026.
+-- Teilnahmeschluss 15.11.2026, 23:59 (Europe/Zurich); Auslosung 16.11.2026.
 -- Die Seite selbst (web/ps5-gta6/index.html; Übersicht aller Giveaways: web/index.html) enthält FAQ und Bedingungen als HTML;
 -- landing_pages.content trägt hier nur die Texte für Formular und Bestätigung.
 -- =====================================================================
@@ -19,8 +19,8 @@ insert into public.campaigns (
   '1 Person gewinnt eine PlayStation 5 Pro mit Grand Theft Auto VI für PS5.',
   'https://gewinnspiel.allnova.ch/ps5-gta6/',
   'https://gewinnspiel.allnova.ch/bestaetigen/',
-  '2026-10-08 00:00:00 Europe/Zurich', '2026-11-18 23:59:59 Europe/Zurich',
-  '2026-11-19', null, '{}', false, 'ps5-gta6-2026-v1'
+  '2026-10-08 00:00:00 Europe/Zurich', '2026-11-15 23:59:59 Europe/Zurich',
+  '2026-11-16', null, '{}', false, 'ps5-gta6-2026-v1'
 );
 
 insert into public.prize_pools (campaign_id, key, partner_id, title, short_title, description, winners, details, sort_order)
@@ -36,13 +36,13 @@ select c.id, 'hauptpreis', null,
 insert into public.landing_pages (campaign_id, path, seo_title, seo_description, video_url, content)
 select c.id, '/ps5-gta6/',
        'Giveaway: Gewinne eine PS5 Pro + GTA VI | allnova',
-       'allnova verlost eine PlayStation 5 Pro mit Grand Theft Auto VI. Kostenlos mitmachen bis 18.11.2026 – ab 18, Wohnsitz in der Schweiz.',
+       'allnova verlost eine PlayStation 5 Pro mit Grand Theft Auto VI. Kostenlos mitmachen bis 15.11.2026 – ab 18, Wohnsitz in der Schweiz.',
        null,
        $json${
   "legal_status": "Entwurf – Bedingungen vor Veröffentlichung fachlich prüfen lassen.",
   "hero": {
     "headline": "Gewinne eine PS5 Pro + GTA VI.",
-    "subline": "allnova verlost eine PlayStation 5 Pro mit Grand Theft Auto VI. Kostenlos mitmachen – bis am 18. November.",
+    "subline": "allnova verlost eine PlayStation 5 Pro mit Grand Theft Auto VI. Kostenlos mitmachen – bis am 15. November.",
     "cta": "Jetzt teilnehmen"
   },
   "form": {
