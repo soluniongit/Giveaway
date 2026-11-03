@@ -1,0 +1,171 @@
+/* Weitere Gewinnspielseiten (steuern/, buergenstock/) — ergänzt giveaway.css.
+   Gleicher Aufbau und Look wie die PS5-Seite; eigene Akzentfarbe und eine gezeichnete Bühne je Kampagne. */
+
+/* ---------------- Akzentfarben je Kampagne ---------------- */
+.page-steuern {
+  --sun-1: #2f9a5e; --sun-2: #8fcf9f; --sun-3: #f1e3b5;
+  --sun-grad: linear-gradient(160deg, var(--sun-3) 0%, var(--sun-2) 50%, var(--sun-1) 100%);
+  background: radial-gradient(120% 70% at 75% 0%, #17221b 0%, #0f1310 55%) #0f1310;
+}
+.page-buergenstock {
+  --sun-1: #2b6f8f; --sun-2: #77b9d1; --sun-3: #f1e3b5;
+  --sun-grad: linear-gradient(160deg, var(--sun-3) 0%, var(--sun-2) 50%, var(--sun-1) 100%);
+  background: radial-gradient(120% 70% at 75% 0%, #15202a 0%, #0f1310 55%) #0f1310;
+}
+.page-steuern .hero-sun { background: radial-gradient(closest-side, rgba(47, 154, 94, .22), rgba(201, 182, 142, .1) 50%, rgba(201, 182, 142, 0) 72%); }
+.page-buergenstock .hero-sun { background: radial-gradient(closest-side, rgba(119, 185, 209, .22), rgba(201, 182, 142, .1) 50%, rgba(201, 182, 142, 0) 72%); }
+.page-steuern .hero-title .l3, .page-buergenstock .hero-title .l3 { font-size: .72em; }
+.page-steuern .hero-title .l1 { font-size: .5em; }
+
+/* ---------------- Bühne: gemeinsame Bausteine ---------------- */
+.art { position: absolute; transform-style: preserve-3d; }
+.paper-zig { background: #fffefb;
+  -webkit-mask: conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 50% 0 / 22px 51% repeat-x, conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% 100% / 22px 51% repeat-x;
+  mask: conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 50% 0 / 22px 51% repeat-x, conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% 100% / 22px 51% repeat-x; }
+.coin { display: grid; place-content: center; text-align: center; border-radius: 50%; color: rgba(45, 34, 10, .85);
+  background: radial-gradient(circle at 35% 28%, #fff4d6, #dccaa3 34%, #b69a5c 68%, #8a7140);
+  box-shadow: inset 0 0 0 8px rgba(255, 246, 220, .35), inset 0 -10px 24px rgba(90, 70, 25, .35), 0 40px 60px -24px rgba(0, 0, 0, .7); }
+.coin::before { content: ''; position: absolute; inset: 14px; border-radius: 50%; border: 2px dashed rgba(45, 34, 10, .3); }
+.coin small { font-size: 13px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
+.coin b { font-size: 46px; font-weight: 900; letter-spacing: -.04em; line-height: .95; }
+
+/* ---------------- Steuern: Beleg, Siegel, Münze, Post-it ---------------- */
+.art-receipt { left: -170px; top: -270px; width: 330px; transform: translateZ(40px) rotate(4deg); filter: drop-shadow(0 50px 50px rgba(0, 0, 0, .55)); }
+.art-receipt .paper-zig { position: absolute; inset: 0; }
+.art-receipt .in { position: relative; padding: 40px 30px 36px; color: var(--ink); display: grid; gap: 10px; }
+.art-receipt .logo { height: 28px; width: auto; justify-self: center; margin-bottom: 4px; }
+.art-receipt .k { text-align: center; font-size: 11px; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; color: #8b8676; }
+.art-receipt .sep { border-top: 2px dashed rgba(17, 21, 18, .2); margin: 4px 0; }
+.art-receipt .row { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.art-receipt .row i { flex: 1; border-bottom: 2px dotted rgba(17, 21, 18, .28); transform: translateY(4px); }
+.art-receipt .price { position: relative; display: grid; justify-items: center; gap: 0; padding-top: 4px; }
+.art-receipt .old { position: relative; font-size: 22px; font-weight: 800; color: #8b8676; }
+.art-receipt .old .strike { position: absolute; left: -4px; right: -4px; top: 50%; height: 4px; margin-top: -2px; border-radius: 2px; background: #d8443a; transform-origin: 0 50%; }
+.art-receipt .new { font-size: 62px; line-height: 1; font-weight: 900; letter-spacing: -.04em; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.art-receipt .pill { justify-self: center; display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 14px; border-radius: 15px; background: var(--gold-grad); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.art-receipt .small { font-size: 11px; color: #6e6c63; text-transform: none; letter-spacing: .02em; font-weight: 600; }
+.art-seal { left: 110px; top: -300px; width: 140px; height: 140px; transform: translateZ(110px) rotate(12deg); }
+.art-seal b { font-size: 54px; }
+.art-coin { left: -330px; top: 30px; width: 200px; height: 200px; transform: translateZ(80px) rotate(-10deg); }
+.art-coin b { font-size: 40px; }
+.art-note { left: 90px; top: 70px; width: 190px; height: 190px; padding: 22px 18px; display: grid; place-items: center; text-align: center; transform: translateZ(60px) rotate(8deg);
+  background: linear-gradient(160deg, #fff0a6 0%, #ffe27a 55%, #f4d25c 100%); color: #26261f; font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1;
+  box-shadow: 0 30px 40px -20px rgba(0, 0, 0, .6), inset 0 -24px 30px -24px rgba(160, 120, 20, .35); }
+.art-note s { text-decoration: none; position: relative; }
+.art-note .x { position: absolute; left: 10%; right: 10%; top: 50%; height: 5px; border-radius: 3px; background: #d8443a; transform: rotate(-12deg); }
+
+/* ---------------- Bürgenstock: Gutschein über dem See ---------------- */
+.hero-scene { position: absolute; left: 0; right: 0; bottom: 0; height: 48%; pointer-events: none; opacity: .75;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%); mask-image: linear-gradient(to bottom, transparent 0%, #000 35%); }
+.hero-scene svg { width: 100%; height: 100%; display: block; }
+.art-voucher { left: -230px; top: -200px; width: 440px; height: 270px; border-radius: 26px; transform: translateZ(60px) rotate(-7deg); overflow: hidden; color: var(--ink);
+  background: linear-gradient(150deg, #f7ecd0 0%, #dccaa3 38%, #c2a66b 70%, #e6d6ad 100%);
+  box-shadow: 0 60px 80px -36px rgba(0, 0, 0, .75), inset 0 0 0 1.5px rgba(255, 255, 255, .4); }
+.art-voucher::before { content: ''; position: absolute; inset: 12px; border-radius: 18px; border: 1.5px solid rgba(17, 21, 18, .25); }
+.art-voucher .ribbon { position: absolute; right: 92px; top: 0; bottom: 0; width: 26px; background: linear-gradient(90deg, #1f4f66, #2b6f8f 50%, #1f4f66); box-shadow: 0 0 0 1px rgba(0, 0, 0, .1); }
+.art-voucher .k { position: absolute; left: 36px; top: 34px; font-size: 12px; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; color: rgba(17, 21, 18, .6); }
+.art-voucher .v { position: absolute; left: 32px; top: 64px; font-size: 92px; font-weight: 900; letter-spacing: -.05em; line-height: .9; }
+.art-voucher .v small { font-size: .32em; letter-spacing: .02em; margin-right: 6px; vertical-align: .9em; }
+.art-voucher .h { position: absolute; left: 36px; bottom: 34px; font-family: var(--serif); font-style: italic; font-size: 38px; line-height: 1; }
+.art-voucher .h span { display: block; font-family: var(--sans); font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .26em; text-transform: uppercase; color: rgba(17, 21, 18, .55); margin-top: 8px; }
+.art-bow { left: 82px; top: -250px; width: 130px; height: 100px; transform: translateZ(100px) rotate(-7deg); }
+.art-bow svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 16px 18px rgba(0, 0, 0, .45)); }
+.art-tag { left: 120px; top: 60px; width: 170px; padding: 20px 18px 18px; border-radius: 16px 16px 16px 60px; background: #fffefb; color: var(--ink); text-align: center;
+  transform: translateZ(90px) rotate(9deg); box-shadow: 0 30px 40px -20px rgba(0, 0, 0, .6); }
+.art-tag::before { content: ''; position: absolute; left: 22px; top: 18px; width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 3px #c9b68e; }
+.art-tag p { font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1; }
+.art-tag span { display: block; margin-top: 8px; font-size: 10px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; color: #8b8676; }
+.snow { position: absolute; left: var(--x); top: -4%; width: var(--s, 5px); height: var(--s, 5px); border-radius: 50%; background: rgba(248, 246, 240, .75); pointer-events: none;
+  animation: snow var(--t, 9s) var(--d, 0s) linear infinite; opacity: 0; }
+@keyframes snow { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: .9; } 100% { transform: translate(var(--dx, 30px), 110vh); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+@media (max-width: 980px) {
+  .page-steuern .float, .page-buergenstock .float { transform: translateX(10px) scale(.78); }
+}
+@media (max-width: 480px) {
+  .page-steuern .float, .page-buergenstock .float { transform: translateX(8px) scale(.64); }
+}
+
+/* ---------------- Inhalte ---------------- */
+.tile--offer { grid-column: span 2; grid-row: span 2; align-content: stretch; grid-template-rows: 1fr auto;
+  background: radial-gradient(70% 60% at 50% 35%, color-mix(in srgb, var(--sun-1) 22%, transparent), transparent 70%), var(--surface); }
+.tile--offer .tile-art { position: relative; display: grid; place-items: center; min-height: 300px; }
+.tile--wide { grid-column: span 2; grid-template-columns: auto 1fr; align-items: center; align-content: center; gap: 28px;
+  background: radial-gradient(60% 90% at 15% 50%, color-mix(in srgb, var(--sun-1) 20%, transparent), transparent 70%), var(--surface); }
+.tile--wide .ic { width: 92px; height: 92px; border-radius: 28px; display: grid; place-items: center; background: var(--sun-grad); color: var(--ink); }
+.tile--wide .ic svg { width: 46px; height: 46px; }
+.tile .big.money { font-weight: 800; letter-spacing: -.05em; }
+.tile-art .art { position: relative; left: auto; top: auto; }
+.tile-art .art-receipt { transform: rotate(3deg); }
+.tile-art .art-voucher { transform: rotate(-5deg); }
+@media (max-width: 980px) { .tile--offer, .tile--wide { grid-column: span 2; } .tile--offer { grid-row: span 1; } }
+@media (max-width: 560px) {
+  .tile--offer, .tile--wide { grid-column: auto; }
+  .tile--wide { grid-template-columns: 1fr; }
+  .tile-art .art-receipt { transform: rotate(3deg) scale(.86); }
+  .tile-art .art-voucher { transform: rotate(-5deg) scale(.7); }
+}
+
+/* Checkliste Unterlagen / Hinweis-Karten */
+.check-card { display: grid; gap: 14px; padding: 24px 26px; border-radius: var(--r-m); background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--line-2); }
+.check-card .bonus-kicker { margin: 0; }
+.check-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.check-card li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 15px; line-height: 1.45; color: var(--text-2); }
+.check-card li svg { width: 22px; height: 22px; color: var(--sun-2); margin-top: 1px; }
+.price-note { display: inline-flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; font-size: 15px; color: var(--text-2); }
+.price-note strong { color: var(--text); }
+
+.success-note { max-width: 46ch; margin: 4px auto 0; padding: 14px 18px; border-radius: var(--r-m); background: color-mix(in srgb, var(--gold) 12%, transparent); font-size: 15px; }
+.tile .big.money { font-size: clamp(44px, 4.4vw, 64px); line-height: .95; }
+.page-steuern .tile--date .big, .page-buergenstock .tile--date .big { font-size: clamp(56px, 5.4vw, 84px); }
+
+/* ================= Thema Steuern: helle Papier- und Bürowelt ================= */
+.page-steuern { background: radial-gradient(110% 70% at 80% 0%, #fdfcf8 0%, var(--ivory) 55%) var(--ivory); }
+.page-steuern .hero-sun { background: radial-gradient(closest-side, rgba(47, 154, 94, .14), rgba(201, 182, 142, .16) 50%, rgba(201, 182, 142, 0) 72%); }
+/* Linienpapier mit rotem Rand, sanft ausgeblendet */
+.hero-ledger { position: absolute; inset: 0;
+  background-image: linear-gradient(90deg, transparent 0 calc(var(--gutter) + 6px), rgba(216, 68, 58, .22) calc(var(--gutter) + 6px) calc(var(--gutter) + 8px), transparent calc(var(--gutter) + 8px)),
+    repeating-linear-gradient(transparent 0 39px, rgba(47, 90, 140, .09) 39px 40px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 95%); mask-image: linear-gradient(to bottom, #000 30%, transparent 95%); }
+.page-steuern .hero-title .l2 { color: var(--ink); }
+.page-steuern .stage-ring { border-color: rgba(182, 154, 92, .4); }
+.page-steuern .stage-ring--2 { border-color: rgba(182, 154, 92, .22); }
+.page-steuern .art-receipt, .page-steuern .art-note, .page-steuern .coin { filter: drop-shadow(0 40px 40px rgba(60, 48, 20, .28)); }
+.page-steuern .art-receipt .paper-zig { background: #fff; }
+.page-steuern .tile--wide .ic, .page-steuern .ig-hint svg { background: linear-gradient(160deg, #bfe5c9, #2f9a5e); color: #fff; }
+.page-steuern .check-card li svg { color: var(--sun-1); }
+.page-steuern .countdown--hero .u { background: var(--paper); box-shadow: inset 0 0 0 1.5px var(--line-2), var(--shadow); }
+.page-steuern .countdown--hero .v { background: none; color: var(--ink); -webkit-background-clip: initial; background-clip: initial; }
+.page-steuern .success .env rect { fill: #fffefb; }
+.page-steuern .success .env .env-check { stroke: #fff; }
+.page-steuern .success .env circle { fill: var(--sun-1); }
+
+/* ================= Thema Bürgenstock: Winternacht über dem See ================= */
+.page-buergenstock {
+  --bg: #0c141b; --bg-2: #101b24; --surface: #13202a; --surface-2: #172633;
+  --line: rgba(220, 235, 245, .10); --line-2: rgba(119, 185, 209, .26);
+  background: linear-gradient(180deg, #0b1620 0%, #0c141b 40%, #0c141b 100%);
+}
+.page-buergenstock .hero-sun { background: radial-gradient(closest-side, rgba(119, 185, 209, .2), rgba(201, 182, 142, .08) 50%, rgba(201, 182, 142, 0) 72%); }
+.hero-aurora { position: absolute; left: -10%; right: -10%; top: -20%; height: 70%; filter: blur(40px); opacity: .55;
+  background: radial-gradient(40% 50% at 30% 50%, rgba(119, 185, 209, .35), transparent 70%), radial-gradient(35% 45% at 70% 40%, rgba(201, 182, 142, .22), transparent 70%);
+  animation: aurora 14s ease-in-out infinite alternate; }
+@keyframes aurora { to { transform: translateX(6%) scaleY(1.15); opacity: .8; } }
+.hero-lake { position: absolute; left: 0; right: 0; bottom: 0; height: 22%;
+  background: repeating-linear-gradient(transparent 0 14px, rgba(201, 182, 142, .07) 14px 15px), linear-gradient(transparent, rgba(43, 111, 143, .22));
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%); mask-image: linear-gradient(to bottom, transparent, #000 40%); }
+.page-buergenstock .stage-ring { border-color: rgba(119, 185, 209, .3); }
+.page-buergenstock .stage-ring--2 { border-color: rgba(119, 185, 209, .14); }
+.page-buergenstock .hero-copy { text-shadow: 0 2px 30px rgba(12, 20, 27, .6); }
+@media (prefers-reduced-motion: reduce) { .hero-aurora { animation: none; } }
+.page-steuern .tile--date .big, .page-buergenstock .tile--date .big { font-size: clamp(48px, 4.6vw, 72px); }
+/* CTA-Band ist auf Elfenbein dunkel → Kontraste anpassen */
+.page-steuern .cta-band .eyebrow { color: var(--gold-hi); }
+.page-steuern .cta-band .eyebrow::before { background: var(--gold-hi); }
+.page-steuern .cta-band .btn--ink { background: var(--gold-grad); color: var(--ink); }
+.page-steuern .cta-share { color: var(--ivory); box-shadow: inset 0 0 0 1.5px rgba(248, 246, 240, .35); }
+.page-steuern .cta-band .countdown .u { background: rgba(248, 246, 240, .08); }
+.tile--offer { grid-template-columns: minmax(0, 1fr); }
+.tile--offer .tile-art { min-width: 0; overflow: hidden; padding: 20px 0; }
+@media (max-width: 560px) { .tile-art .art-voucher { transform: rotate(-5deg) scale(.66); transform-origin: 50% 50%; margin: -40px -80px; } }

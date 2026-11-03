@@ -109,6 +109,12 @@ Die Migrationen sind noch auf **kein** Supabase-Projekt angewendet.
 
 **Doppelte Chance:** Ein Bonuslos gibt es erst, wenn eine andere Person über den Link teilnimmt **und** bestätigt; höchstens 1 pro Person. Nicht gezählt: eigene E-Mail, derselbe Internetanschluss, fremde Codes, Testteilnahmen. In Instagram-Posts daher «Lade Freunde ein» schreiben, nicht «Teile diesen Beitrag für ein Extralos» (Meta-Promotion-Regeln).
 
+**Weitere Kampagnen (Migrationen `20261103…`):**
+- `steuern/` – **steuern-2027**: Erste Steuererklärung gratis (dank KI) + Verlosung CHF 1'000 unter allen, die einen Beratungstermin anfragen, bestätigen und **wahrnehmen**. Ohne Einladungs-Bonus. Anfrage bis 31.03.2027, Termin bis 15.04.2027, Auslosung 20.04.2027. Termin nach dem Gespräch markieren: `admin_mark_appointment('steuern-2027', 'mail@beispiel.ch')`; `admin_draw` zieht nur Teilnahmen mit wahrgenommenem Termin (`campaigns.requires_appointment`).
+- `buergenstock/` – **buergenstock-2026**: Gutschein CHF 150 für das Bürgenstock Hotel, mit Einladungs-Bonus. 16.11.–14.12.2026, Auslosung 15.12.2026.
+- Beide Formulare fragen wie allnova.ch/gewinnspiele zusätzlich **Telefon** und **Geburtsdatum** ab (`campaigns.collect_contact_details`; Alter ≥ 18 wird serverseitig geprüft, Telefon auf +41… normalisiert). Die PS5-Seite bleibt unverändert.
+- Gemeinsames Seitenskript `assets/js/kampagne.js`, Gestaltung `assets/css/kampagne.css` (Steuern: helle Papierwelt; Bürgenstock: Winternacht über dem See).
+
 **Lokal testen** (Postgres 16+):
 
 ```bash
@@ -117,6 +123,8 @@ for f in supabase/migrations/*.sql; do psql -d test -f "$f"; done
 psql -U authenticator -d test -f supabase/tests/rpc_tests.sql        # → ALL RPC TESTS PASSED
 # auf einer zweiten, frisch aufgesetzten DB:
 psql -U authenticator -d test2 -f supabase/tests/referral_tests.sql  # → ALL REFERRAL TESTS PASSED
+# auf einer dritten, frisch aufgesetzten DB:
+psql -U authenticator -d test3 -f supabase/tests/termin_tests.sql    # → ALL TERMIN TESTS PASSED
 ```
 
 **Freischalten:**

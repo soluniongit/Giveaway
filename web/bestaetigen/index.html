@@ -14,6 +14,7 @@
   .seal { width: 128px; height: 128px; }
   .confirm h1 { font-weight: 800; letter-spacing: -.035em; line-height: 1.02; font-size: clamp(40px, 6vw, 72px); }
   .confirm .lead { margin: 0 auto; max-width: 46ch; }
+  .confirm .next-step { margin: 0 auto; max-width: 46ch; padding: 16px 20px; border-radius: 18px; background: rgba(201, 182, 142, .1); box-shadow: inset 0 0 0 1.5px rgba(201, 182, 142, .3); font-weight: 600; }
   .app { width: 100%; display: grid; gap: 18px; justify-items: center; padding: clamp(26px, 4vw, 40px); border-radius: var(--r-l); background: var(--surface); box-shadow: var(--shadow); }
   .theme-dark .app { box-shadow: inset 0 0 0 1.5px var(--line-2); }
   .app .h3 { max-width: 24ch; }
@@ -73,14 +74,19 @@ function render(html) {
 // Persönlicher Einladungslink: Bonuslos, sobald eine eingeladene Person gültig teilnimmt
 const tickets = (active) => `<svg class="tickets${active ? ' is-active' : ''}" viewBox="0 0 132 84" aria-hidden="true"><g transform="translate(6 30) rotate(-8)"><path class="t1" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><path class="t1-l" d="M44 6v28"/><text x="22" y="25" class="t1-x">1</text></g><g class="t2g" transform="translate(62 12) rotate(9)"><path class="t2" d="M6 0h52a6 6 0 0 1 6 6v8a6 6 0 0 0 0 12v8a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6v-8a6 6 0 0 0 0-12V6a6 6 0 0 1 6-6z"/><text x="32" y="26" class="t2-x">+1</text></g></svg>`;
 const SHARE_TEXT = {
-  giveaway: 'Ich mache beim allnova Giveaway mit – zu gewinnen gibt es eine PS5 Pro mit GTA VI. Mach auch mit:',
+  'ps5-gta6-2026': 'Ich mache beim allnova Giveaway mit – zu gewinnen gibt es eine PS5 Pro mit GTA VI. Mach auch mit:',
+  'buergenstock-2026': 'Ich mache beim allnova Giveaway mit – zu gewinnen gibt es einen Gutschein über CHF 150 für das Bürgenstock Hotel. Mach auch mit:',
+};
+// Zusatzhinweis nach der Bestätigung (z. B. Termin als Voraussetzung für die Verlosung)
+const NEXT_STEP = {
+  'steuern-2027': "Wir melden uns innert 2 Arbeitstagen bei dir, um den Beratungstermin zu vereinbaren. Sobald du den Termin wahrgenommen hast, bist du bei der Verlosung von CHF 1'000 dabei.",
 };
 function inviteCard(r, back) {
   const slot = main.querySelector('[data-invite-slot]');
   const url = new URL(back, location.href);
   url.search = new URLSearchParams({ ref: r.share_code, utm_source: 'einladung', utm_medium: 'referral' }).toString();
   const link = url.toString();
-  const text = SHARE_TEXT[r.kind] || 'Mach mit beim allnova Gewinnspiel:';
+  const text = SHARE_TEXT[r.campaign] || 'Mach mit beim allnova Gewinnspiel:';
   const active = (r.bonus_entries || 0) >= (r.bonus_max || 1);
   slot.className = 'invite';
   slot.hidden = false;
@@ -135,6 +141,7 @@ if (r.ok) {
       ${seal}
       <h1>${again ? 'Du bist bereits dabei.' : 'Deine Teilnahme ist bestätigt.'}</h1>
       <p class="lead">${r.first_name ? `${esc(r.first_name)}, du` : 'Du'} nimmst am ${esc(r.campaign_title)} teil.${r.draw_on ? ` Die Auslosung findet am ${fmtDate(r.draw_on)} statt.` : ''} Viel Glück!</p>
+      ${NEXT_STEP[r.campaign] ? `<p class="next-step">${esc(NEXT_STEP[r.campaign])}</p>` : ''}
     </div>
     <div data-view="result" data-invite-slot hidden></div>
     <div class="app" data-view="result">

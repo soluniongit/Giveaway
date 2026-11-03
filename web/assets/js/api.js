@@ -46,6 +46,7 @@ export async function submitEntry(slug, data) {
     p_pool: data.pool || null, p_source: data.source || {},
     p_form_started_at: data.form_started_at || null, p_website: data.website || null,
     p_instagram: data.instagram || null,
+    p_phone: data.phone || null, p_birth_date: data.birth_date || null,
   });
 }
 
@@ -59,7 +60,7 @@ export async function confirmEntry(token) {
     if (token === 'abgelaufen') return { ok: false, error: 'expired', kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url };
     if (!token) return { ok: false, error: 'invalid_token' };
     const bonus = params.get('bonus') === '1' ? 1 : 0; // Vorschau: ?bonus=1 zeigt das aktive Bonuslos
-    return { ok: true, status: bonus ? 'already_confirmed' : 'confirmed', demo: true, kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url, first_name: demo?.first_name || null, prize: c.pools[0].title, draw_on: c.draw_on, share_code: 'k7m2p9qa', bonus_entries: bonus, bonus_max: 1 };
+    return { ok: true, status: bonus ? 'already_confirmed' : 'confirmed', demo: true, kind: c.kind, campaign: c.slug, campaign_title: c.title, public_url: c.public_url, first_name: demo?.first_name || null, prize: c.pools[0].title, draw_on: c.draw_on, ...(c.referral_bonus_max ? { share_code: 'k7m2p9qa', bonus_entries: bonus, bonus_max: c.referral_bonus_max } : {}) };
   }
   return rpc('confirm_entry', { p_token: token });
 }

@@ -246,6 +246,9 @@ const ERRORS = {
   invalid_postal_code: ['postal_code', 'Bitte gib eine Schweizer PLZ (4 Ziffern) an.'],
   invalid_canton: ['canton', 'Teilnahme nur mit Wohnsitz in einem zugelassenen Kanton.'],
   invalid_instagram: ['instagram', 'Bitte prüfe deinen Instagram-Namen (nur Buchstaben, Zahlen, Punkt und Unterstrich).'],
+  invalid_phone: ['phone', 'Bitte gib eine gültige Telefonnummer an, z. B. 079 123 45 67.'],
+  invalid_birth_date: ['birth_date', 'Bitte gib dein Geburtsdatum an.'],
+  too_young: ['birth_date', 'Teilnahme ab 18 Jahren.'],
   consent_required: ['consent_terms', 'Bitte bestätige die Teilnahmebedingungen.'],
   invalid_pool: ['pool', 'Bitte wähle einen Anbieter bzw. Gewinn.'],
   too_fast: [null, 'Bitte nimm dir einen kurzen Moment und sende das Formular erneut.'],
@@ -255,6 +258,27 @@ const ERRORS = {
   not_found: [null, 'Dieses Gewinnspiel ist derzeit nicht verfügbar.'],
 };
 
+/** Telefon wie in submit_entry normalisieren: 079 … / 0041 … / +41 (0)… → +41…; ungültig → null */
+export function normPhone(raw) {
+  let p = String(raw || '').replace(/[^0-9+]/g, '');
+  if (p.startsWith('00')) p = `+${p.slice(2)}`;
+  if (/^0[1-9]/.test(p)) p = `+41${p.slice(1)}`;
+  p = p.replace(/^\+410/, '+41');
+  if (!/^\+[1-9]\d{7,14}$/.test(p)) return null;
+  if (p.startsWith('+41') && !/^\+41[1-9]\d{8}$/.test(p)) return null;
+  return p;
+}
+
+/** Alter in ganzen Jahren am heutigen Tag; ungültiges Datum → null */
+function ageOn(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+  if (!m) return null;
+  const [y, mo, d] = [+m[1], +m[2], +m[3]];
+  const now = new Date();
+  if (y < 1900 || new Date(y, mo - 1, d) > now) return null;
+  return now.getFullYear() - y - (now.getMonth() + 1 < mo || (now.getMonth() + 1 === mo && now.getDate() < d) ? 1 : 0);
+}
+
 function validate(form, requirePool) {
   const v = Object.fromEntries(new FormData(form));
   const errs = {};
@@ -263,6 +287,15 @@ function validate(form, requirePool) {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((v.email || '').trim())) errs.email = 'Bitte prüfe deine E-Mail-Adresse.';
   if (!/^[1-9]\d{3}$/.test((v.postal_code || '').trim())) errs.postal_code = 'Bitte gib eine Schweizer PLZ (4 Ziffern) an.';
   if (form.elements.canton && !v.canton) errs.canton = 'Bitte wähle deinen Wohnkanton.';
+  if (form.elements.phone) {
+    const p = normPhone(v.phone);
+    if (!p) errs.phone = 'Bitte gib eine gültige Telefonnummer an, z. B. 079 123 45 67.';
+  }
+  if (form.elements.birth_date) {
+    const age = ageOn(v.birth_date);
+    if (age === null) errs.birth_date = 'Bitte gib dein Geburtsdatum an.';
+    else if (age < 18) errs.birth_date = 'Teilnahme ab 18 Jahren.';
+  }
   const ig = (v.instagram || '').trim().replace(/^@/, '');
   if (ig && !/^[A-Za-z0-9._]{1,30}$/.test(ig)) errs.instagram = 'Bitte prüfe deinen Instagram-Namen (nur Buchstaben, Zahlen, Punkt und Unterstrich).';
   if (!v.consent_terms) errs.consent_terms = 'Bitte bestätige die Teilnahmebedingungen.';
@@ -315,6 +348,7 @@ function entryForm(slug, getPhase, requirePool) {
       const res = await submitEntry(slug, {
         first_name: v.first_name.trim(), last_name: v.last_name.trim(), email: v.email.trim(),
         postal_code: v.postal_code.trim(), canton: v.canton || null,
+        phone: form.elements.phone ? normPhone(v.phone) : null, birth_date: v.birth_date || null,
         instagram: (v.instagram || '').trim().replace(/^@/, '').toLowerCase() || null,
         consent_terms: !!v.consent_terms, marketing_opt_in: !!v.marketing_opt_in,
         pool: v.pool || null, source: source(), form_started_at: started, website: v.website,

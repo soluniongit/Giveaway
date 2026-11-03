@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Giveaways | allnova</title>
-<meta name="description" content="Die aktuellen Giveaways von allnova: Gewinne eine PlayStation 5 Pro mit Grand Theft Auto VI. Teilnahme kostenlos, ab 18, Wohnsitz in der Schweiz.">
+<meta name="description" content="Die aktuellen Giveaways von allnova: PS5 Pro + GTA VI, CHF 1'000 mit der Gratis-Steuererklärung und ein Bürgenstock-Gutschein. Teilnahme kostenlos, ab 18, Wohnsitz in der Schweiz.">
 <link rel="canonical" href="https://gewinnspiel.allnova.ch/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gewinnspiel.allnova.ch/">
@@ -24,7 +24,7 @@
   .intro { padding: 4vh var(--gutter) 5vh; max-width: var(--maxw); margin: 0 auto; display: grid; gap: 18px; justify-items: start; }
   .intro h1 { font-weight: 800; letter-spacing: -.045em; line-height: .96; font-size: clamp(46px, 7vw, 104px); }
   .intro .serif { padding-right: .1em; }
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 18px; padding: 0 var(--gutter) 6vh; max-width: var(--maxw); margin: 0 auto; perspective: 1600px; }
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 0 var(--gutter) 6vh; max-width: var(--maxw); margin: 0 auto; perspective: 1600px; }
   .tile { position: relative; min-height: 600px; border-radius: var(--r-xl); overflow: hidden; padding: clamp(28px, 4vw, 52px); display: grid; align-content: space-between; text-decoration: none; transform-style: preserve-3d; box-shadow: var(--shadow-lg); }
   .tile .k { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--gold-hi); }
   .tile .k i { width: 9px; height: 9px; border-radius: 50%; background: #4c9a6a; box-shadow: 0 0 0 4px rgba(76, 154, 106, .25); }
@@ -42,6 +42,28 @@
   .tile--gta .ps5 { position: absolute; right: 4%; bottom: 6%; width: min(420px, 82%); height: auto; filter: drop-shadow(0 40px 40px rgba(0, 0, 0, .6)); }
   .tile--gta .case { position: absolute; right: 52%; bottom: 26%; width: min(190px, 34%); height: auto; border-radius: 10px; transform: rotate(-9deg); filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .6)); }
   .tile--gta .ring { position: absolute; right: -6%; bottom: -10%; width: 520px; height: 520px; border-radius: 50%; border: 1.5px solid rgba(201, 182, 142, .24); }
+  /* Karte Steuern (Papierwelt) */
+  .tile--steuern { color: var(--ink); background: repeating-linear-gradient(transparent 0 35px, rgba(47, 90, 140, .08) 35px 36px), radial-gradient(90% 70% at 70% 80%, rgba(47, 154, 94, .14), transparent 70%), #f8f6f0; box-shadow: inset 0 0 0 1.5px rgba(182, 154, 92, .4), var(--shadow-lg); }
+  .tile--steuern p { color: #4b4f49; }
+  .tile--steuern .k { color: #8a7140; }
+  .tile--steuern .date { color: var(--ink); }
+  /* Karte Bürgenstock (Winternacht) */
+  .tile--bg { color: var(--ivory); background: linear-gradient(180deg, rgba(12, 20, 27, 0) 50%, rgba(43, 111, 143, .25)), radial-gradient(80% 60% at 70% 20%, rgba(119, 185, 209, .2), transparent 70%), #0e1922; box-shadow: inset 0 0 0 1.5px rgba(119, 185, 209, .3), var(--shadow-lg); }
+  .tile--bg .k i { background: var(--gold-hi); box-shadow: 0 0 0 4px rgba(201, 182, 142, .25); }
+  .mini { position: relative; height: 190px; margin: 6px 0 4px; }
+  .mini-coin { position: absolute; display: grid; place-content: center; text-align: center; border-radius: 50%; color: rgba(45, 34, 10, .85); font-weight: 900; letter-spacing: -.03em; line-height: .95;
+    background: radial-gradient(circle at 35% 28%, #fff4d6, #dccaa3 34%, #b69a5c 68%, #8a7140); box-shadow: inset 0 0 0 6px rgba(255, 246, 220, .35), 0 24px 40px -18px rgba(60, 48, 20, .55); }
+  .mini-coin small { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; font-weight: 800; }
+  .mini-coin.c1 { left: 6%; top: 10px; width: 160px; height: 160px; font-size: 30px; transform: rotate(-8deg); }
+  .mini-coin.c2 { left: 52%; top: 40px; width: 110px; height: 110px; font-size: 40px; transform: rotate(10deg); }
+  .mini-voucher { position: absolute; left: 4%; top: 18px; width: 300px; max-width: 88%; height: 170px; border-radius: 20px; transform: rotate(-6deg); color: var(--ink); overflow: hidden;
+    background: linear-gradient(150deg, #f7ecd0 0%, #dccaa3 38%, #c2a66b 70%, #e6d6ad 100%); box-shadow: 0 40px 60px -26px rgba(0, 0, 0, .7); }
+  .mini-voucher i { position: absolute; right: 60px; top: 0; bottom: 0; width: 18px; background: linear-gradient(90deg, #1f4f66, #2b6f8f 50%, #1f4f66); }
+  .mini-voucher b { position: absolute; left: 22px; top: 26px; font-size: 62px; font-weight: 900; letter-spacing: -.05em; line-height: .9; }
+  .mini-voucher b small { font-size: 18px; letter-spacing: 0; margin-right: 4px; vertical-align: .9em; }
+  .mini-voucher em { position: absolute; left: 24px; bottom: 22px; font-family: var(--serif); font-size: 26px; }
+  .tile--next { grid-column: span 2; }
+  @media (max-width: 860px) { .tiles { grid-template-columns: 1fr; } .tile--next { grid-column: auto; } }
   /* Platzhalter für weitere Giveaways */
   .tile--next { min-height: 0; color: var(--text-2); background: transparent; box-shadow: inset 0 0 0 1.5px var(--line-2); border-style: dashed; }
   .tile--next h3 { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: var(--text); margin-top: 14px; }
@@ -73,11 +95,21 @@
       </div>
       <div class="meta"><span class="date">Bis 15.11.2026, 23:59 Uhr</span><span class="btn btn--gold btn--sm"><span class="label">Zum Giveaway</span></span></div>
     </a>
+    <a class="tile tile--steuern" href="steuern/" data-tile>
+      <div><span class="k"><i></i>Läuft jetzt</span><h2>Steuern gratis. <br><span class="serif it gold">+ CHF 1'000.</span></h2><p>Dank KI ist deine erste Steuererklärung bei allnova gratis. Termin anfragen und bei der Verlosung von CHF 1'000 dabei sein.</p></div>
+      <div class="mini" aria-hidden="true"><span class="mini-coin c1"><small>Verlosung</small>CHF<br>1'000</span><span class="mini-coin c2"><small>Dank</small>KI</span></div>
+      <div class="meta"><span class="date">Bis 31.03.2027, 23:59 Uhr</span><span class="btn btn--gold btn--sm"><span class="label">Termin anfragen</span></span></div>
+    </a>
+    <a class="tile tile--bg" href="buergenstock/" data-tile>
+      <div><span class="k"><i></i>Ab 16.11.2026</span><h2>CHF 150 <br><span class="serif it gold">Bürgenstock.</span></h2><p>1 Person gewinnt einen Gutschein über CHF 150 für das Bürgenstock Hotel. Gratis und ohne Kauf.</p></div>
+      <div class="mini" aria-hidden="true"><span class="mini-voucher"><i></i><b><small>CHF</small>150</b><em>Bürgenstock Hotel</em></span></div>
+      <div class="meta"><span class="date">16.11.–14.12.2026</span><span class="btn btn--gold btn--sm"><span class="label">Zum Giveaway</span></span></div>
+    </a>
     <div class="tile tile--next">
       <div><span class="eyebrow">Demnächst</span><h3>Weitere Giveaways folgen.</h3><p>Folge <a href="https://www.instagram.com/allnova.ch/" target="_blank" rel="noopener">@allnova.ch</a> auf Instagram, damit du das nächste nicht verpasst.</p></div>
     </div>
   </section>
-  <p class="foot">Veranstalterin: Allfinanz Consulting GmbH / allnova, Chaltenbodenstrasse 26, 8834 Schindellegi · Teilnahme kostenlos, ab 18, Wohnsitz in der Schweiz · Bedingungen je Giveaway auf der jeweiligen Seite. PlayStation, PS5 und PS5 Pro sind Marken von Sony Interactive Entertainment Inc., Grand Theft Auto ist eine Marke von Take-Two Interactive Software, Inc.; keine Verbindung zu diesen Unternehmen oder zu Instagram.</p>
+  <p class="foot">Veranstalterin: Allfinanz Consulting GmbH / allnova, Chaltenbodenstrasse 26, 8834 Schindellegi · Teilnahme kostenlos, ab 18, Wohnsitz in der Schweiz · Bedingungen je Giveaway auf der jeweiligen Seite. Bürgenstock ist eine Marke der Bürgenstock Hotels AG. PlayStation, PS5 und PS5 Pro sind Marken von Sony Interactive Entertainment Inc., Grand Theft Auto ist eine Marke von Take-Two Interactive Software, Inc.; keine Verbindung zu diesen Unternehmen oder zu Instagram.</p>
 </main>
 <script src="assets/vendor/gsap.min.js"></script>
 <script>
