@@ -1,4 +1,6 @@
-# allnova Giveaway: PS5 Pro + GTA VI (gewinnspiel.allnova.ch)
+# allnova Gewinnspiele (gewinnspiel.allnova.ch)
+
+> **Für den Hoster:** Aufbau, Dateien je Seite und Änderungen stehen in [UEBERGABE.md](UEBERGABE.md). Gewinnspiele: `web/ps5-gta6/`, `web/steuern/`, `web/buergenstock/`, Übersicht `web/index.html`.
 
 Webseite und Datenbank für das Giveaway von allnova. Veranstalterin und Sponsorin ist die Allfinanz Consulting GmbH unter der Marke allnova.
 
@@ -109,7 +111,7 @@ Die Migrationen sind noch auf **kein** Supabase-Projekt angewendet.
 
 **Doppelte Chance:** Ein Bonuslos gibt es erst, wenn eine andere Person über den Link teilnimmt **und** bestätigt; höchstens 1 pro Person. Nicht gezählt: eigene E-Mail, derselbe Internetanschluss, fremde Codes, Testteilnahmen. In Instagram-Posts daher «Lade Freunde ein» schreiben, nicht «Teile diesen Beitrag für ein Extralos» (Meta-Promotion-Regeln).
 
-**Weitere Kampagnen (Migrationen `20261103…`):**
+**Weitere Kampagnen (Migrationen `20261103…`)** – Übergabe-Anleitung für den Hoster: [UEBERGABE.md](UEBERGABE.md)
 - `steuern/` – **steuern-2027**: Erste Steuererklärung gratis (dank KI) + Verlosung CHF 1'000 unter allen, die einen Beratungstermin anfragen, bestätigen und **wahrnehmen**. Ohne Einladungs-Bonus. Anfrage 05.11.2026 – 31.03.2027, Termin bis 15.04.2027, Auslosung 20.04.2027. Termin nach dem Gespräch markieren: `admin_mark_appointment('steuern-2027', 'mail@beispiel.ch')`; `admin_draw` zieht nur Teilnahmen mit wahrgenommenem Termin (`campaigns.requires_appointment`).
 - `buergenstock/` – **buergenstock-2026**: Gutschein CHF 150 für das Bürgenstock Hotel, mit Einladungs-Bonus. 05.11.–14.12.2026, Auslosung 15.12.2026.
 - Beide Formulare fragen wie allnova.ch/gewinnspiele zusätzlich **Telefon** und **Geburtsdatum** ab (`campaigns.collect_contact_details`; Alter ≥ 18 wird serverseitig geprüft, Telefon auf +41… normalisiert). Die PS5-Seite bleibt unverändert.
