@@ -12,8 +12,8 @@ export const DEMO_CAMPAIGNS = {
   'steuern-2027': {
     slug: 'steuern-2027', kind: 'giveaway', status: 'draft', title: 'allnova Steuer-Gewinnspiel',
     tagline: "Erste Steuererklärung gratis – und CHF 1'000 gewinnen.",
-    starts_at: '2026-11-02T23:00:00Z', ends_at: '2027-03-31T21:59:59Z',
-    starts_at_label: '03.11.2026, 00:00 Uhr', ends_at_label: '31.03.2027, 23:59 Uhr',
+    starts_at: '2026-11-04T23:00:00Z', ends_at: '2027-03-31T21:59:59Z',
+    starts_at_label: '05.11.2026, 00:00 Uhr', ends_at_label: '31.03.2027, 23:59 Uhr',
     draw_on: '2027-04-20', redeem_until: null, min_age: 18, allowed_cantons: [],
     requires_pool_choice: false, referral_bonus_max: 0, collect_contact_details: true, requires_appointment: true,
     public_url: 'https://gewinnspiel.allnova.ch/steuern/',
@@ -22,8 +22,8 @@ export const DEMO_CAMPAIGNS = {
   'buergenstock-2026': {
     slug: 'buergenstock-2026', kind: 'giveaway', status: 'draft', title: 'Bürgenstock-Giveaway',
     tagline: 'Gewinne einen Gutschein über CHF 150 für das Bürgenstock Hotel.',
-    starts_at: '2026-11-15T23:00:00Z', ends_at: '2026-12-14T22:59:59Z',
-    starts_at_label: '16.11.2026, 00:00 Uhr', ends_at_label: '14.12.2026, 23:59 Uhr',
+    starts_at: '2026-11-04T23:00:00Z', ends_at: '2026-12-14T22:59:59Z',
+    starts_at_label: '05.11.2026, 00:00 Uhr', ends_at_label: '14.12.2026, 23:59 Uhr',
     draw_on: '2026-12-15', redeem_until: null, min_age: 18, allowed_cantons: [],
     requires_pool_choice: false, referral_bonus_max: 1, collect_contact_details: true, requires_appointment: false,
     public_url: 'https://gewinnspiel.allnova.ch/buergenstock/',

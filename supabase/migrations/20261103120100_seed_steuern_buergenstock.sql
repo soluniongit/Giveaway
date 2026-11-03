@@ -6,9 +6,9 @@
 -- 1) steuern-2027: Erste Steuererklärung bei allnova gratis (dank KI) + Verlosung CHF 1'000
 --    unter allen, die über das Formular einen Beratungstermin anfragen, bestätigen und wahrnehmen.
 --    Ohne Einladungs-Bonus (referral_bonus_max = 0). Ziehung nur mit appointment_attended_at.
---    Anmeldung bis 31.03.2027, Termin wahrnehmen bis 15.04.2027, Auslosung 20.04.2027.
+--    Anmeldung 05.11.2026 – 31.03.2027, Termin wahrnehmen bis 15.04.2027, Auslosung 20.04.2027.
 -- 2) buergenstock-2026: Gutschein CHF 150 für das Bürgenstock Hotel. Mit Einladungs-Bonus (max. 1).
---    Teilnahme 16.11.–14.12.2026, Auslosung 15.12.2026.
+--    Teilnahme 05.11.–14.12.2026, Auslosung 15.12.2026.
 -- Beide: Telefon + Geburtsdatum im Formular (collect_contact_details).
 -- =====================================================================
 
@@ -23,7 +23,7 @@ insert into public.campaigns (
   'Dank KI ist die erste Steuererklärung bei allnova gratis. Unter allen, die einen Beratungstermin wahrnehmen, verlosen wir CHF 1''000.',
   'https://gewinnspiel.allnova.ch/steuern/',
   'https://gewinnspiel.allnova.ch/bestaetigen/',
-  '2026-11-03 00:00:00 Europe/Zurich', '2027-03-31 23:59:59 Europe/Zurich',
+  '2026-11-05 00:00:00 Europe/Zurich', '2027-03-31 23:59:59 Europe/Zurich',
   '2027-04-20', null, '{}', false, 'steuern-2027-v1',
   0, true, true
 ), (
@@ -33,7 +33,7 @@ insert into public.campaigns (
   '1 Person gewinnt einen Gutschein im Wert von CHF 150 für das Bürgenstock Hotel.',
   'https://gewinnspiel.allnova.ch/buergenstock/',
   'https://gewinnspiel.allnova.ch/bestaetigen/',
-  '2026-11-16 00:00:00 Europe/Zurich', '2026-12-14 23:59:59 Europe/Zurich',
+  '2026-11-05 00:00:00 Europe/Zurich', '2026-12-14 23:59:59 Europe/Zurich',
   '2026-12-15', null, '{}', false, 'buergenstock-2026-v1',
   1, true, false
 );
