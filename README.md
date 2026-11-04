@@ -113,7 +113,7 @@ Die Migrationen sind noch auf **kein** Supabase-Projekt angewendet.
 
 **Weitere Kampagnen (Migrationen `20261103…`)** – Übergabe-Anleitung für den Hoster: [UEBERGABE.md](UEBERGABE.md)
 - `steuern/` – **steuern-2027**: Erste Steuererklärung gratis (dank KI) + Verlosung CHF 1'000 unter allen, die einen Beratungstermin anfragen, bestätigen und **wahrnehmen**. Ohne Einladungs-Bonus. Anfrage 05.11.2026 – 31.03.2027, Termin bis 15.04.2027, Auslosung 20.04.2027. Termin nach dem Gespräch markieren: `admin_mark_appointment('steuern-2027', 'mail@beispiel.ch')`; `admin_draw` zieht nur Teilnahmen mit wahrgenommenem Termin (`campaigns.requires_appointment`).
-- `buergenstock/` – **buergenstock-2026**: Gutschein CHF 150 für das Bürgenstock Hotel, mit Einladungs-Bonus. 05.11.–14.12.2026, Auslosung 15.12.2026.
+- `buergenstock/` – **buergenstock-2026**: 1 Übernachtung für 2 Personen im Bürgenstock Hotel (Wert CHF 500), mit Einladungs-Bonus. 05.11.–14.12.2026, Auslosung 15.12.2026.
 - Beide Formulare fragen wie allnova.ch/gewinnspiele zusätzlich **Telefon** und **Geburtsdatum** ab (`campaigns.collect_contact_details`; Alter ≥ 18 wird serverseitig geprüft, Telefon auf +41… normalisiert). Die PS5-Seite bleibt unverändert.
 - Gemeinsames Seitenskript `assets/js/kampagne.js`, Gestaltung `assets/css/kampagne.css` (Steuern: helle Papierwelt; Bürgenstock: Winternacht über dem See).
 

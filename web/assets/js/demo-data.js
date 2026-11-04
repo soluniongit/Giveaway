@@ -21,12 +21,12 @@ export const DEMO_CAMPAIGNS = {
   },
   'buergenstock-2026': {
     slug: 'buergenstock-2026', kind: 'giveaway', status: 'draft', title: 'Bürgenstock-Giveaway',
-    tagline: 'Gewinne einen Gutschein über CHF 150 für das Bürgenstock Hotel.',
+    tagline: 'Gewinne eine Nacht für zwei im Bürgenstock Hotel.',
     starts_at: '2026-11-04T23:00:00Z', ends_at: '2026-12-14T22:59:59Z',
     starts_at_label: '05.11.2026, 00:00 Uhr', ends_at_label: '14.12.2026, 23:59 Uhr',
     draw_on: '2026-12-15', redeem_until: null, min_age: 18, allowed_cantons: [],
     requires_pool_choice: false, referral_bonus_max: 1, collect_contact_details: true, requires_appointment: false,
     public_url: 'https://gewinnspiel.allnova.ch/buergenstock/',
-    pools: [{ key: 'hauptpreis', title: 'Gutschein CHF 150 für das Bürgenstock Hotel', short_title: 'Bürgenstock CHF 150', winners: 1, details: { type: 'gutschein', value_chf: 150 }, partner: null }],
+    pools: [{ key: 'hauptpreis', title: '1 Übernachtung für 2 Personen im Bürgenstock Hotel (Wert CHF 500)', short_title: '1 Nacht für 2 im Bürgenstock', winners: 1, details: { type: 'gutschein', value_chf: 500, nights: 1, persons: 2 }, partner: null }],
   },
 };

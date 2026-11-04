@@ -9,7 +9,7 @@ web/
 ├── index.html            Übersicht «Mitmachen. Gewinnen.» – zeigt alle Gewinnspiele als Karten
 ├── ps5-gta6/index.html   Gewinnspiel PS5 + GTA VI            (bestehend, unverändert)
 ├── steuern/index.html    Gewinnspiel Gratis-Steuererklärung + CHF 1'000   ← NEU
-├── buergenstock/index.html  Gewinnspiel Bürgenstock-Gutschein CHF 150     ← NEU
+├── buergenstock/index.html  Gewinnspiel Bürgenstock: 1 Nacht für 2 (CHF 500) ← NEU
 ├── bestaetigen/index.html   Bestätigungsseite (Link aus der Mail), für alle Gewinnspiele gemeinsam
 ├── assets/               gemeinsame Dateien aller Seiten (CSS, JS, Schriften, Bilder)
 └── vercel.json           Weiterleitungen/Header (nur bei Vercel nötig)

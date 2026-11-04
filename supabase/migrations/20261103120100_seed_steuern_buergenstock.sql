@@ -7,7 +7,7 @@
 --    unter allen, die über das Formular einen Beratungstermin anfragen, bestätigen und wahrnehmen.
 --    Ohne Einladungs-Bonus (referral_bonus_max = 0). Ziehung nur mit appointment_attended_at.
 --    Anmeldung 05.11.2026 – 31.03.2027, Termin wahrnehmen bis 15.04.2027, Auslosung 20.04.2027.
--- 2) buergenstock-2026: Gutschein CHF 150 für das Bürgenstock Hotel. Mit Einladungs-Bonus (max. 1).
+-- 2) buergenstock-2026: 1 Übernachtung für 2 Personen im Bürgenstock Hotel (Wert CHF 500, als Gutschein). Mit Einladungs-Bonus (max. 1).
 --    Teilnahme 05.11.–14.12.2026, Auslosung 15.12.2026.
 -- Beide: Telefon + Geburtsdatum im Formular (collect_contact_details).
 -- =====================================================================
@@ -29,8 +29,8 @@ insert into public.campaigns (
 ), (
   'buergenstock-2026', 'giveaway', 'draft',
   'Bürgenstock-Giveaway',
-  'Gewinne einen Gutschein über CHF 150 für das Bürgenstock Hotel.',
-  '1 Person gewinnt einen Gutschein im Wert von CHF 150 für das Bürgenstock Hotel.',
+  'Gewinne eine Nacht für zwei im Bürgenstock Hotel.',
+  '1 Person gewinnt eine Übernachtung für zwei Personen im Bürgenstock Hotel im Wert von CHF 500.',
   'https://gewinnspiel.allnova.ch/buergenstock/',
   'https://gewinnspiel.allnova.ch/bestaetigen/',
   '2026-11-05 00:00:00 Europe/Zurich', '2026-12-14 23:59:59 Europe/Zurich',
@@ -50,11 +50,11 @@ select c.id, 'hauptpreis', null,
 
 insert into public.prize_pools (campaign_id, key, partner_id, title, short_title, description, winners, details, sort_order)
 select c.id, 'hauptpreis', null,
-       'Gutschein CHF 150 für das Bürgenstock Hotel',
-       'Bürgenstock CHF 150',
-       'Ein Wertgutschein über CHF 150 für das Bürgenstock Hotel am Vierwaldstättersee, einlösbar gemäss den Bedingungen des Hotels. Versand kostenlos an eine Adresse in der Schweiz.',
+       '1 Übernachtung für 2 Personen im Bürgenstock Hotel (Wert CHF 500)',
+       '1 Nacht für 2 im Bürgenstock',
+       'Eine Übernachtung für zwei Personen im Bürgenstock Hotel am Vierwaldstättersee im Wert von CHF 500, als Gutschein; einlösbar gemäss den Bedingungen des Hotels. Versand kostenlos an eine Adresse in der Schweiz.',
        1,
-       '{"type": "gutschein", "value_chf": 150, "shipping": "CH"}'::jsonb,
+       '{"type": "gutschein", "value_chf": 500, "nights": 1, "persons": 2, "shipping": "CH"}'::jsonb,
        1
   from public.campaigns c where c.slug = 'buergenstock-2026';
 
@@ -76,12 +76,12 @@ select c.id, '/steuern/',
 
 insert into public.landing_pages (campaign_id, path, seo_title, seo_description, video_url, content)
 select c.id, '/buergenstock/',
-       'Giveaway: Gewinne CHF 150 für das Bürgenstock Hotel | allnova',
-       'allnova verlost einen Gutschein über CHF 150 für das Bürgenstock Hotel. Kostenlos mitmachen bis 14.12.2026 – ab 18, Wohnsitz in der Schweiz.',
+       'Giveaway: Gewinne eine Nacht für zwei im Bürgenstock Hotel | allnova',
+       'allnova verlost eine Übernachtung für zwei Personen im Bürgenstock Hotel im Wert von CHF 500. Kostenlos mitmachen bis 14.12.2026 – ab 18, Wohnsitz in der Schweiz.',
        null,
        $json${
   "legal_status": "Entwurf – Bedingungen vor Veröffentlichung fachlich prüfen lassen.",
   "form": {"submit": "Kostenlos teilnehmen"},
-  "platform_note": "Veranstalterin ist Allfinanz Consulting GmbH / allnova. Das Giveaway steht in keiner Verbindung zu Instagram, Facebook oder den Bürgenstock Hotels; der Gutschein wurde von der Veranstalterin erworben."
+  "platform_note": "Veranstalterin ist Allfinanz Consulting GmbH / allnova. Das Giveaway steht in keiner Verbindung zu Instagram, Facebook oder den Bürgenstock Hotels; der Preis wurde von der Veranstalterin erworben."
 }$json$::jsonb
   from public.campaigns c where c.slug = 'buergenstock-2026';
