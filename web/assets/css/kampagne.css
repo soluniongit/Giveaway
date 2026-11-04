@@ -29,7 +29,7 @@
 .coin small { font-size: 13px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
 .coin b { font-size: 46px; font-weight: 900; letter-spacing: -.04em; line-height: .95; }
 
-/* ---------------- Steuern: Beleg, Siegel, Münze, Post-it ---------------- */
+/* ---------------- Steuern: Beleg, Siegel, Münze ---------------- */
 .art-receipt { left: -170px; top: -270px; width: 330px; transform: translateZ(40px) rotate(4deg); filter: drop-shadow(0 50px 50px rgba(0, 0, 0, .55)); }
 .art-receipt .paper-zig { position: absolute; inset: 0; }
 .art-receipt .in { position: relative; padding: 40px 30px 36px; color: var(--ink); display: grid; gap: 10px; }
@@ -48,11 +48,6 @@
 .art-seal b { font-size: 54px; }
 .art-coin { left: -330px; top: 30px; width: 200px; height: 200px; transform: translateZ(80px) rotate(-10deg); }
 .art-coin b { font-size: 40px; }
-.art-note { left: 90px; top: 70px; width: 190px; height: 190px; padding: 22px 18px; display: grid; place-items: center; text-align: center; transform: translateZ(60px) rotate(8deg);
-  background: linear-gradient(160deg, #fff0a6 0%, #ffe27a 55%, #f4d25c 100%); color: #26261f; font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1;
-  box-shadow: 0 30px 40px -20px rgba(0, 0, 0, .6), inset 0 -24px 30px -24px rgba(160, 120, 20, .35); }
-.art-note s { text-decoration: none; position: relative; }
-.art-note .x { position: absolute; left: 10%; right: 10%; top: 50%; height: 5px; border-radius: 3px; background: #d8443a; transform: rotate(-12deg); }
 
 /* ---------------- Bürgenstock: Gutschein über dem See ---------------- */
 .hero-scene { position: absolute; left: 0; right: 0; bottom: 0; height: 48%; pointer-events: none; opacity: .75;
@@ -131,7 +126,7 @@
 .page-steuern .hero-title .l2 { color: var(--ink); }
 .page-steuern .stage-ring { border-color: rgba(182, 154, 92, .4); }
 .page-steuern .stage-ring--2 { border-color: rgba(182, 154, 92, .22); }
-.page-steuern .art-receipt, .page-steuern .art-note, .page-steuern .coin { filter: drop-shadow(0 40px 40px rgba(60, 48, 20, .28)); }
+.page-steuern .art-receipt, .page-steuern .coin { filter: drop-shadow(0 40px 40px rgba(60, 48, 20, .28)); }
 .page-steuern .art-receipt .paper-zig { background: #fff; }
 .page-steuern .tile--wide .ic, .page-steuern .ig-hint svg { background: linear-gradient(160deg, #bfe5c9, #2f9a5e); color: #fff; }
 .page-steuern .check-card li svg { color: var(--sun-1); }
