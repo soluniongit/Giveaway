@@ -61,13 +61,13 @@ select c.id, 'hauptpreis', null,
 insert into public.landing_pages (campaign_id, path, seo_title, seo_description, video_url, content)
 select c.id, '/steuern/',
        'Erste Steuererklärung gratis + CHF 1''000 gewinnen | allnova',
-       'Dank KI ist deine erste Steuererklärung bei allnova gratis. Termin anfragen und CHF 1''000 gewinnen – ab 18, Wohnsitz in der Schweiz.',
+       'Dank KI ist deine erste Steuererklärung bei allnova gratis. Interesse anmelden und CHF 1''000 gewinnen – ab 18, Wohnsitz in der Schweiz.',
        null,
        $json${
   "legal_status": "Entwurf – Bedingungen (Verlosung mit Termin) vor Veröffentlichung rechtlich prüfen lassen.",
-  "form": {"submit": "Termin anfragen & mitmachen"},
+  "form": {"submit": "Interesse anmelden & mitmachen"},
   "confirmation": {
-    "title": "Deine Anfrage ist bestätigt.",
+    "title": "Deine Anmeldung ist bestätigt.",
     "text": "Wir melden uns innert 2 Arbeitstagen für deinen Beratungstermin. Mit dem wahrgenommenen Termin bist du bei der Verlosung von CHF 1'000 dabei."
   },
   "contact": {"email": "steuern@allnova.ch", "phone": "+41 44 687 55 44"}
