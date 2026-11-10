@@ -66,3 +66,60 @@ Vor dem Start zeigen die Seiten «Start am 05.11.2026», das Formular ist gesper
 - Teilnahmebedingungen fachlich/rechtlich prüfen (u. a. Verlosung mit Termin als Bedingung, Bürgenstock-Markenhinweis).
 - Datenschutzerklärung von allnova um Telefon, Geburtsdatum und KI-gestützte Bearbeitung der Steuerunterlagen ergänzen.
 - Termine der Steuer-Kampagne nach dem Gespräch markieren: `select admin_mark_appointment('steuern-2027', 'mail@beispiel.ch');` – nur markierte Teilnahmen kommen in die Ziehung.
+
+## SMS-Bestätigung der Handynummer (Twilio) – Stand 10.11.2026
+
+Für **alle** Gewinnspiele (PS5, Steuern, Bürgenstock) muss die Handynummer im Formular per SMS-Code bestätigt werden. Die Bestätigung per E-Mail-Link bleibt zusätzlich bestehen. Ablauf für Teilnehmende: Handynummer eintragen → «Code per SMS senden» → 6-stelligen Code eingeben → Formular absenden → Link in der Mail klicken.
+
+### Geänderte und neue Dateien
+
+**Web** (zusammen mit dem restlichen `web/`-Ordner ausliefern)
+- `web/assets/js/core.js` – SMS-Block im Telefonfeld, Prüfung vor dem Absenden
+- `web/assets/js/api.js` – Aufrufe der Edge Function `sms-verify`, Token an `submit_entry`
+- `web/assets/js/config.js` – neues Feld `smsVerifyUrl` (leer lassen = `<supabaseUrl>/functions/v1/sms-verify`)
+- `web/assets/js/demo-data.js` – Vorschau-Modus: SMS wird simuliert, Code ist immer `123456`
+- `web/assets/css/site.css` – Gestaltung des SMS-Blocks
+- `web/ps5-gta6/index.html` – neues Pflichtfeld Handynummer; Texte (So geht's, FAQ, Bedingungen, Datenschutz)
+- `web/steuern/index.html`, `web/buergenstock/index.html` – Texte (So geht's, FAQ, Bedingungen, Datenschutz)
+
+**Supabase**
+- `supabase/migrations/20261110120000_sms_bestaetigung.sql` – Datenbank (nach den bisherigen Migrationen einspielen)
+- `supabase/functions/sms-verify/` – Edge Function, spricht mit Twilio
+
+### Einrichtung
+
+1. **Twilio** (twilio.com, Konto mit Guthaben):
+   - Console → Verify → Services → *Create new*: Name «allnova» (steht in der SMS), Code-Länge 6. Die **Service SID** (`VA…`) notieren.
+   - Zugangsdaten: Account SID + Auth Token, besser einen eigenen API-Key (Account → API keys).
+   - Verify → Settings → **Geo permissions**: nur **Schweiz** erlauben. **Fraud Guard** eingeschaltet lassen.
+2. **Migration** einspielen: `supabase/migrations/20261110120000_sms_bestaetigung.sql`.
+3. **Edge Function** deployen und Secrets setzen (Supabase CLI im Repo-Ordner):
+   ```bash
+   supabase functions deploy sms-verify --no-verify-jwt
+   supabase secrets set TWILIO_VERIFY_SERVICE_SID=VA… TWILIO_ACCOUNT_SID=AC… TWILIO_AUTH_TOKEN=…
+   # statt Auth Token auch möglich: TWILIO_API_KEY_SID=SK… TWILIO_API_KEY_SECRET=…
+   # optional, falls die Seiten unter einer anderen Domain laufen (Komma-getrennt):
+   supabase secrets set ALLOWED_ORIGINS=https://gewinnspiel.allnova.ch,https://www.allnova.ch
+   ```
+   `--no-verify-jwt` ist nötig, weil die Seiten ohne Login aufrufen; die Funktion prüft die Herkunft (`ALLOWED_ORIGINS`) und die Datenbank begrenzt die Anzahl SMS.
+4. **Testen ohne SMS-Kosten:** `supabase secrets set SMS_TEST_CODE=1` → für Gewinnspiele im **Testmodus** (`test_mode = true`, nicht veröffentlicht) wird keine SMS gesendet, der Code ist `123456`. Für veröffentlichte Gewinnspiele gilt das nie. Vor dem Livegang wieder entfernen: `supabase secrets unset SMS_TEST_CODE`.
+
+### Schutz vor Missbrauch und Kosten
+
+- Nur Schweizer Handynummern (074–079); Festnetz und Auslandsnummern werden abgelehnt.
+- Pro Nummer höchstens 3 Codes in 15 Minuten und 6 pro Tag, pro Internetanschluss 10 pro Stunde, pro Gewinnspiel 300 pro Stunde.
+- Eine bestätigte Nummer gilt nur für **eine** Teilnahme pro Gewinnspiel.
+- Twilio-Zugangsdaten liegen nur in den Supabase Secrets, nie im Browser. Nummern werden in den SMS-Tabellen nur gehasht gespeichert und nach 2 Tagen gelöscht.
+- Kosten: rund 5 US-Cent pro erfolgreicher Bestätigung plus SMS-Gebühr in die Schweiz (aktuelle Preise: twilio.com/verify/pricing).
+
+### Rechtliches
+
+- Twilio (USA) erhält die Telefonnummer zum Versand des Codes. Der Hinweis steht im Formular und im Abschnitt Datenschutz jeder Seite. Die Datenschutzerklärung von allnova entsprechend ergänzen und den Auftragsverarbeitungsvertrag (Data Protection Addendum) von Twilio abschliessen.
+- In den Teilnahmebedingungen steht jetzt: «Pro Person und Handynummer ist eine Teilnahme erlaubt», gültig erst nach Bestätigung von Handynummer und E-Mail.
+
+### Tests
+
+```bash
+psql -U authenticator -d <frische_db> -f supabase/tests/sms_tests.sql   # → ALL SMS TESTS PASSED
+node supabase/tests/sms_verify_function.test.ts                          # → ALL EDGE FUNCTION TESTS PASSED
+```

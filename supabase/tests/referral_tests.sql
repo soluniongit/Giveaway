@@ -2,7 +2,7 @@
 --   psql -U authenticator -d <db> -v ON_ERROR_STOP=1 -f tests/referral_tests.sql
 \set QUIET on
 set role service_role;
-update public.campaigns set test_mode = true;
+update public.campaigns set test_mode = true, requires_phone_verification = false;  -- SMS-Bestätigung eigene Tests (sms_tests.sql)
 -- zweite Kampagne nur für den Test (fremder Einladungscode, abschaltbare Funktion)
 insert into public.campaigns (slug, kind, status, test_mode, title, public_url, confirm_url, starts_at, ends_at, allowed_cantons, terms_version)
 values ('zweit-test', 'giveaway', 'draft', true, 'Zweit-Test', 'https://example.ch/', 'https://example.ch/bestaetigen/',

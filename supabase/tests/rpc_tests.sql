@@ -23,7 +23,7 @@ reset role;
 
 -- enable test mode (as service_role, the platform's trusted key)
 set role service_role;
-update public.campaigns set test_mode = true;
+update public.campaigns set test_mode = true, requires_phone_verification = false;  -- SMS-Bestätigung eigene Tests (sms_tests.sql)
 reset role;
 
 -- 2) Giveaway: submit, validation (ganze Schweiz, Instagram optional), duplicates, honeypot, confirmation

@@ -4,6 +4,7 @@
 \set QUIET on
 set role service_role;
 update public.campaigns set test_mode = true where slug in ('steuern-2027', 'buergenstock-2026');
+update public.campaigns set requires_phone_verification = false;  -- SMS-Bestätigung eigene Tests (sms_tests.sql)
 
 create function pg_temp.enter(p_campaign text, p_email text, p_phone text, p_birth date)
 returns jsonb language plpgsql as $$

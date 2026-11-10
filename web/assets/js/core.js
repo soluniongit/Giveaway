@@ -4,7 +4,7 @@
  * Video-Autoplay, Kampagnenstatus (Laufzeit, Phase, Countdown), Teilnahmeformular, Tracking.
  * Benötigt global: gsap, ScrollTrigger, SplitText, Lenis (siehe <script>-Tags der Seiten).
  */
-import { DEMO, getCampaign, submitEntry, source, referral, track } from './api.js';
+import { DEMO, getCampaign, submitEntry, smsStart, smsCheck, source, referral, track } from './api.js';
 
 const { gsap, ScrollTrigger, SplitText } = window;
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -256,7 +256,152 @@ const ERRORS = {
   closed: [null, 'Die Teilnahmefrist ist abgelaufen.'],
   not_started: [null, 'Die Teilnahme ist noch nicht geöffnet.'],
   not_found: [null, 'Dieses Gewinnspiel ist derzeit nicht verfügbar.'],
+  phone_not_verified: ['phone', 'Bitte bestätige deine Handynummer mit dem SMS-Code.'],
+  phone_in_use: ['phone', 'Diese Handynummer wird bereits für eine andere Teilnahme verwendet.'],
 };
+
+// Meldungen der SMS-Bestätigung (Edge Function sms-verify)
+const SMS_ERRORS = {
+  invalid_phone: 'Bitte gib eine gültige Handynummer an, z. B. 079 123 45 67.',
+  phone_not_mobile: 'Bitte gib eine Schweizer Handynummer an (074 bis 079).',
+  rate_limited: 'Zu viele Codes angefordert. Bitte versuche es in 15 Minuten noch einmal.',
+  busy: 'Gerade sind sehr viele Anfragen unterwegs. Bitte versuche es in ein paar Minuten noch einmal.',
+  blocked: 'An diese Nummer können wir leider keine SMS senden.',
+  sms_failed: 'Die SMS konnte nicht gesendet werden. Bitte prüfe die Nummer und versuche es erneut.',
+  invalid_code: 'Der Code stimmt nicht. Bitte prüfe die SMS.',
+  code_expired: 'Der Code ist abgelaufen. Bitte fordere einen neuen an.',
+  closed: 'Die Teilnahmefrist ist abgelaufen.',
+  not_started: 'Die Teilnahme ist noch nicht geöffnet.',
+  not_found: 'Dieses Gewinnspiel ist derzeit nicht verfügbar.',
+};
+
+/**
+ * SMS-Bestätigung der Handynummer: «Code per SMS senden» → Code eingeben → Einmal-Token für submit_entry.
+ * Wird erst aktiv, wenn das Gewinnspiel es verlangt (campaign.requires_phone_verification).
+ */
+function smsVerify(form, slug) {
+  const field = $('[data-field="phone"]', form);
+  const input = form.elements.phone;
+  const state = { required: false, token: null, phone: null, sentTo: null, timer: 0 };
+  if (!field || !input) return { get required() { return false; }, token: () => null, phone: () => null, reset() {}, activate() {} };
+
+  const box = document.createElement('div');
+  box.className = 'sms';
+  box.hidden = true;
+  box.innerHTML = `
+    <button type="button" class="sms-send" data-sms-send><span>Code per SMS senden</span></button>
+    <div class="sms-code" data-sms-code hidden>
+      <label for="f-sms">SMS-Code</label>
+      <div class="sms-row">
+        <input class="input" id="f-sms" name="sms_code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]*" placeholder="6-stelliger Code">
+        <button type="button" class="sms-check" data-sms-check>Bestätigen</button>
+      </div>
+      <button type="button" class="sms-resend" data-sms-resend disabled></button>
+    </div>
+    <p class="sms-ok" data-sms-ok hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Handynummer bestätigt</span></p>
+    <p class="sms-msg" data-sms-msg aria-live="polite"></p>`;
+  field.insertBefore(box, $('[data-err="phone"]', field));
+  const sendBtn = $('[data-sms-send]', box);
+  const codeWrap = $('[data-sms-code]', box);
+  const codeIn = $('#f-sms', box);
+  const checkBtn = $('[data-sms-check]', box);
+  const resend = $('[data-sms-resend]', box);
+  const ok = $('[data-sms-ok]', box);
+  const msg = $('[data-sms-msg]', box);
+  const say = (text, isError = false) => { msg.textContent = text || ''; msg.classList.toggle('is-error', !!isError); };
+
+  function cooldown(sec) {
+    clearInterval(state.timer);
+    let left = sec;
+    const tick = () => {
+      resend.disabled = left > 0;
+      resend.textContent = left > 0 ? `Neuen Code senden (${left} s)` : 'Neuen Code senden';
+      if (left-- <= 0) clearInterval(state.timer);
+    };
+    tick();
+    state.timer = setInterval(tick, 1000);
+  }
+
+  function reset() {
+    state.token = null; state.phone = null; state.sentTo = null;
+    clearInterval(state.timer);
+    codeWrap.hidden = true; ok.hidden = true; sendBtn.hidden = false; sendBtn.disabled = false;
+    codeIn.value = '';
+    field.classList.remove('is-verified');
+    say('');
+  }
+
+  async function send() {
+    const phone = normPhone(input.value);
+    if (!phone) { showErrors(form, { phone: SMS_ERRORS.invalid_phone }); return; }
+    showErrors(form, {});
+    sendBtn.disabled = true; resend.disabled = true;
+    say('SMS wird gesendet …');
+    try {
+      const r = await smsStart(slug, phone);
+      if (!r.ok) { say(SMS_ERRORS[r.error] || SMS_ERRORS.sms_failed, true); sendBtn.disabled = false; resend.disabled = false; return; }
+      state.sentTo = phone;
+      sendBtn.hidden = true; codeWrap.hidden = false;
+      say(r.demo ? 'Vorschau: Es wird keine SMS gesendet. Code 123456 eingeben.' : `Wir haben dir einen Code an ${input.value.trim()} gesendet.`);
+      track(slug, 'sms_sent');
+      cooldown(30);
+      codeIn.focus({ preventScroll: true });
+      refreshSoon();
+    } catch (e) {
+      say('Das hat nicht geklappt. Bitte prüfe deine Verbindung und versuche es erneut.', true);
+      sendBtn.disabled = false; resend.disabled = false;
+    }
+  }
+
+  async function check() {
+    const code = codeIn.value.replace(/\D/g, '');
+    if (code.length < 4) { say('Bitte gib den Code aus der SMS ein.', true); codeIn.focus(); return; }
+    checkBtn.disabled = true;
+    say('Code wird geprüft …');
+    try {
+      const r = await smsCheck(slug, state.sentTo, code);
+      if (!r.ok) { say(SMS_ERRORS[r.error] || SMS_ERRORS.invalid_code, true); return; }
+      state.token = r.token; state.phone = state.sentTo;
+      clearInterval(state.timer);
+      codeWrap.hidden = true; ok.hidden = false;
+      field.classList.add('is-verified');
+      showErrors(form, {});
+      say('');
+      track(slug, 'sms_verified');
+      refreshSoon();
+    } catch (e) {
+      say('Das hat nicht geklappt. Bitte prüfe deine Verbindung und versuche es erneut.', true);
+    } finally {
+      checkBtn.disabled = false;
+    }
+  }
+
+  sendBtn.addEventListener('click', send);
+  resend.addEventListener('click', send);
+  checkBtn.addEventListener('click', check);
+  codeIn.addEventListener('input', () => {
+    codeIn.value = codeIn.value.replace(/\D/g, '').slice(0, 6);
+    if (codeIn.value.length === 6) check();
+  });
+  codeIn.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter' && state.required && !state.token) { e.preventDefault(); send(); } });
+  // Nummer geändert → neu bestätigen
+  input.addEventListener('input', () => { if (state.sentTo && normPhone(input.value) !== state.sentTo) reset(); });
+
+  return {
+    get required() { return state.required; },
+    token: () => state.token,
+    phone: () => state.phone,
+    reset,
+    activate() {
+      state.required = true;
+      box.hidden = false;
+      field.classList.add('field--full', 'has-sms');
+      const help = $('label', field);
+      if (help && !$('.opt', help)) help.insertAdjacentHTML('beforeend', ' <span class="opt">(Bestätigung per SMS)</span>');
+    },
+  };
+}
 
 /** Telefon wie in submit_entry normalisieren: 079 … / 0041 … / +41 (0)… → +41…; ungültig → null */
 export function normPhone(raw) {
@@ -290,6 +435,7 @@ function validate(form, requirePool) {
   if (form.elements.phone) {
     const p = normPhone(v.phone);
     if (!p) errs.phone = 'Bitte gib eine gültige Telefonnummer an, z. B. 079 123 45 67.';
+    else if (form._sms?.required && (!form._sms.token() || form._sms.phone() !== p)) errs.phone = 'Bitte bestätige deine Handynummer mit dem SMS-Code.';
   }
   if (form.elements.birth_date) {
     const age = ageOn(v.birth_date);
@@ -322,6 +468,7 @@ function entryForm(slug, getPhase, requirePool) {
   const msg = $('[data-form-msg]', form);
   const btn = $('button[type="submit"]', form);
   let started = null;
+  form._sms = smsVerify(form, slug);
   form.addEventListener('input', () => {
     if (!started) { started = new Date().toISOString(); track(slug, 'form_started'); }
   });
@@ -349,6 +496,7 @@ function entryForm(slug, getPhase, requirePool) {
         first_name: v.first_name.trim(), last_name: v.last_name.trim(), email: v.email.trim(),
         postal_code: v.postal_code.trim(), canton: v.canton || null,
         phone: form.elements.phone ? normPhone(v.phone) : null, birth_date: v.birth_date || null,
+        phone_token: form._sms?.token() || null,
         instagram: (v.instagram || '').trim().replace(/^@/, '').toLowerCase() || null,
         consent_terms: !!v.consent_terms, marketing_opt_in: !!v.marketing_opt_in,
         pool: v.pool || null, source: source(), form_started_at: started, website: v.website,
@@ -357,6 +505,8 @@ function entryForm(slug, getPhase, requirePool) {
         track(slug, 'form_submitted');
         success(form);
       } else {
+        // Token verbraucht oder abgelaufen → Nummer neu bestätigen lassen
+        if (res.error === 'phone_not_verified' || res.error === 'phone_in_use') form._sms?.reset();
         const [field, text] = ERRORS[res.error] || [null, 'Das hat nicht geklappt. Bitte versuche es erneut.'];
         if (field) showErrors(form, { [field]: text });
         else { msg.textContent = text; msg.classList.add('is-error'); }
@@ -455,6 +605,7 @@ export async function boot({ slug, requirePool = false }) {
       $$('[data-bonus], [data-invite], .success-bonus').forEach((el) => { el.hidden = true; });
     }
     const form = $('form[data-entry-form]');
+    if (form?._sms && data.campaign.requires_phone_verification) form._sms.activate();
     if (form) {
       form.dataset.phase = phase;
       const closed = $('[data-form-closed]');

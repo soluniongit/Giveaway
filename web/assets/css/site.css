@@ -309,6 +309,8 @@ ul, ol { padding: 0; list-style: none; }
   -webkit-appearance: none; appearance: none;
 }
 .select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5l4 4 4-4' fill='none' stroke='%23b69a5c' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px; }
+.input[type="date"] { min-width: 0; max-width: 100%; display: block; padding: 0 12px 0 16px; }
+.input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 .input:hover, .select:hover { box-shadow: inset 0 0 0 1.5px var(--line-2); }
 .input:focus, .select:focus { outline: none; box-shadow: inset 0 0 0 2px var(--gold); background: var(--surface); }
 .field.has-error .input, .field.has-error .select { box-shadow: inset 0 0 0 2px #c0533a; }
@@ -328,6 +330,32 @@ ul, ol { padding: 0; list-style: none; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; margin-top: 8px; }
 .form-msg { font-size: 15px; font-weight: 600; }
 .form-msg.is-error { color: #c0533a; }
+
+/* SMS-Bestätigung der Handynummer (core.js smsVerify) */
+.sms { display: grid; gap: 12px; }
+.sms[hidden], .sms [hidden] { display: none; }
+.sms-send, .sms-check, .sms-resend { font: 700 15px/1 var(--sans); cursor: pointer; border: 0; transition: background .3s, box-shadow .3s, opacity .3s; }
+.sms-send { justify-self: start; display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 20px; border-radius: 23px;
+  color: var(--text); background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--gold); }
+.sms-send::before { content: ''; width: 18px; height: 18px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 5h16v11H8l-4 4z' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 5h16v11H8l-4 4z' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+.sms-send:hover { background: color-mix(in srgb, var(--gold) 14%, var(--surface)); }
+.sms-send:focus-visible, .sms-check:focus-visible, .sms-resend:focus-visible { outline: none; box-shadow: var(--focus); }
+.sms-send:disabled, .sms-check:disabled { opacity: .55; cursor: progress; }
+.sms-code { display: grid; gap: 8px; }
+.sms-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+.sms-row .input { letter-spacing: .3em; font-weight: 700; }
+.sms-row .input::placeholder { letter-spacing: 0; font-weight: 500; }
+.sms-check { height: 60px; padding: 0 22px; border-radius: 16px; color: var(--ink); background: var(--gold-grad); }
+.sms-resend { justify-self: start; padding: 4px 0; background: none; color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; font-size: 14px; }
+.sms-resend:disabled { text-decoration: none; opacity: .7; cursor: default; }
+.sms-ok { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: #2f8a57; }
+.sms-ok svg { width: 18px; height: 18px; }
+.sms-msg { font-size: 14px; color: var(--text-2); line-height: 1.5; }
+.sms-msg:empty { display: none; }
+.sms-msg.is-error { color: #c0533a; font-weight: 600; }
+.field.is-verified .input[name="phone"] { box-shadow: inset 0 0 0 2px #2f8a57; }
 .form-closed { padding: 26px 28px; border-radius: var(--r-m); background: var(--bg-2); font-weight: 600; }
 .demo-badge { display: inline-flex; gap: 8px; align-items: center; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
 .success { display: none; text-align: center; padding: clamp(20px, 4vw, 40px) 0; }

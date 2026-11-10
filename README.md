@@ -35,7 +35,7 @@ Die Motion-Design-Videos und Instagram-Visuals liegen im Repository [soluniongit
 
 Technik: statisches HTML/CSS/JS mit GSAP (ScrollTrigger, SplitText, DrawSVG) und Lenis Smooth Scroll. Mobile-first, berücksichtigt `prefers-reduced-motion`, kein Build-Schritt. Gestaltung im allnova-CI (Anthrazit, Gold, Inter Tight + Instrument Serif) mit Sonnenuntergang als Akzent.
 
-**Formular:** Vorname, Nachname, E-Mail, PLZ, Instagram-Name (freiwillig), Pflicht-Checkbox (18+, Wohnsitz Schweiz, Bedingungen), freiwilliges Werbe-Opt-in. Validierung im Browser und nochmals serverseitig.
+**Formular:** Vorname, Nachname, E-Mail, Handynummer (Bestätigung per SMS-Code), PLZ, Instagram-Name (freiwillig), Pflicht-Checkbox (18+, Wohnsitz Schweiz, Bedingungen), freiwilliges Werbe-Opt-in. Validierung im Browser und nochmals serverseitig.
 
 **Instagram-Einbettung:** Der Link zum Giveaway-Beitrag wird in `web/assets/js/config.js` eingetragen:
 
@@ -117,6 +117,11 @@ Die Migrationen sind noch auf **kein** Supabase-Projekt angewendet.
 - Beide Formulare fragen wie allnova.ch/gewinnspiele zusätzlich **Telefon** und **Geburtsdatum** ab (`campaigns.collect_contact_details`; Alter ≥ 18 wird serverseitig geprüft, Telefon auf +41… normalisiert). Die PS5-Seite bleibt unverändert.
 - Gemeinsames Seitenskript `assets/js/kampagne.js`, Gestaltung `assets/css/kampagne.css` (Steuern: helle Papierwelt; Bürgenstock: Winternacht über dem See).
 
+**SMS-Bestätigung (Migration `20261110120000…`, Edge Function `supabase/functions/sms-verify`)** – Einrichtung siehe [UEBERGABE.md](UEBERGABE.md#sms-bestätigung-der-handynummer-twilio--stand-10112026)
+- Alle Gewinnspiele (`campaigns.requires_phone_verification`): Handynummer per SMS-Code (Twilio Verify) bestätigen, zusätzlich zur E-Mail-Bestätigung.
+- Formular → Edge Function `sms-verify` (start/check, Twilio-Zugangsdaten nur dort) → `public.sms_verify_start` / `public.sms_verify_approved` (nur `service_role`) → Einmal-Token (30 Min.) → `submit_entry(…, p_phone_token)` setzt `entries.phone_verified_at`.
+- Nur Schweizer Handynummern, Rate-Limits pro Nummer/IP/Gewinnspiel, eine bestätigte Nummer pro Teilnahme.
+
 **Lokal testen** (Postgres 16+):
 
 ```bash
@@ -127,6 +132,9 @@ psql -U authenticator -d test -f supabase/tests/rpc_tests.sql        # → ALL R
 psql -U authenticator -d test2 -f supabase/tests/referral_tests.sql  # → ALL REFERRAL TESTS PASSED
 # auf einer dritten, frisch aufgesetzten DB:
 psql -U authenticator -d test3 -f supabase/tests/termin_tests.sql    # → ALL TERMIN TESTS PASSED
+# auf einer vierten, frisch aufgesetzten DB:
+psql -U authenticator -d test4 -f supabase/tests/sms_tests.sql        # → ALL SMS TESTS PASSED
+node supabase/tests/sms_verify_function.test.ts                       # → ALL EDGE FUNCTION TESTS PASSED (Node ≥ 22.18)
 ```
 
 **Freischalten:**

@@ -6,6 +6,8 @@
 window.ALLNOVA_CONFIG = {
   supabaseUrl: '',            // z. B. 'https://<projekt>.supabase.co'
   supabaseKey: '',            // publishable bzw. anon key
+  // SMS-Bestätigung (Edge Function sms-verify); leer → <supabaseUrl>/functions/v1/sms-verify
+  smsVerifyUrl: '',
   appUrl: '',                 // Link zur allnova App (Store/Deep-Link) für die Bestätigungsseite
   privacyUrl: '',             // Datenschutzhinweise; leer → Abschnitt auf der Seite
   // Instagram-Beitrag zum Giveaway, z. B. 'https://www.instagram.com/p/ABC123xyz/'.

@@ -47,7 +47,37 @@ export async function submitEntry(slug, data) {
     p_form_started_at: data.form_started_at || null, p_website: data.website || null,
     p_instagram: data.instagram || null,
     p_phone: data.phone || null, p_birth_date: data.birth_date || null,
+    p_phone_token: data.phone_token || null,
   });
+}
+
+/**
+ * SMS-Bestätigung (Edge Function sms-verify → Twilio Verify).
+ * Demo-Modus: kein Versand, der Code ist immer 123456.
+ */
+const smsUrl = () => cfg.smsVerifyUrl || `${(cfg.supabaseUrl || '').replace(/\/$/, '')}/functions/v1/sms-verify`;
+async function sms(body) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (cfg.supabaseKey) headers.apikey = cfg.supabaseKey;
+  const res = await fetch(smsUrl(), { method: 'POST', headers, body: JSON.stringify(body) });
+  const data = await res.json().catch(() => null);
+  if (!data) throw new Error(`sms-verify: ${res.status}`);
+  return data;
+}
+const DEMO_MOBILE = /^\+417[4-9]\d{7}$/;
+export async function smsStart(slug, phone) {
+  if (DEMO) {
+    await new Promise((r) => setTimeout(r, 700));
+    return DEMO_MOBILE.test(phone) ? { ok: true, phone, demo: true } : { ok: false, error: 'phone_not_mobile' };
+  }
+  return sms({ action: 'start', campaign: slug, phone });
+}
+export async function smsCheck(slug, phone, code) {
+  if (DEMO) {
+    await new Promise((r) => setTimeout(r, 600));
+    return code === '123456' ? { ok: true, token: 'demo-token', phone } : { ok: false, error: 'invalid_code' };
+  }
+  return sms({ action: 'check', campaign: slug, phone, code });
 }
 
 export async function confirmEntry(token) {
